@@ -7,10 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ConnectionHandler.h"
+#import "XMLParseHandler.h"
 
 
-@interface ShipmentListViewController : UITableViewController {
-
+@interface ShipmentListViewController : UITableViewController <ConnectionHandlerDelegate, XMLParseHandlerDelegate> {
+	NSString	*whichStat;
 }
+
+@property (nonatomic, retain) NSString *whichStat;
+
+// Connection Handler Delegate Method
+-(void) connectionFinishedWithFilePath:(NSString *)filePath;
+
+// XML Parse Handler Delegate Method
+-(void) xmlDidFinishParsingWithArray: (NSMutableArray *) array;
 
 @end

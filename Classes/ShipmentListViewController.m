@@ -11,6 +11,19 @@
 
 @implementation ShipmentListViewController
 
+@synthesize whichStat;
+
+#pragma mark -
+#pragma mark Connection Handler Delegate Method
+-(void) connectionFinishedWithFilePath:(NSString *)filePath {
+	
+}
+
+#pragma mark -
+#pragma mark XML Parse Handler Delegate Method
+-(void) xmlDidFinishParsingWithArray: (NSMutableArray *) array {
+	
+}
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -155,10 +168,12 @@
 - (void)viewDidUnload {
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
+	self.whichStat = nil;
 }
 
 
 - (void)dealloc {
+	self.whichStat = nil;
     [super dealloc];
 }
 

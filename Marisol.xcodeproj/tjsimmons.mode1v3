@@ -273,7 +273,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>12</integer>
+									<integer>8</integer>
 									<integer>2</integer>
 									<integer>1</integer>
 									<integer>0</integer>
@@ -317,7 +317,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Shipment.m</string>
+								<string>ShipmentListViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,35 +325,35 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Shipment.m</string>
+										<string>ShipmentListViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>5FF3A18A115FFBC300D99A27</string>
+										<string>5FF3A19F115FFCB800D99A27</string>
 										<key>history</key>
 										<array>
-											<string>5F009F7D115F1B0500AE2F0C</string>
 											<string>5F009F7E115F1B0500AE2F0C</string>
 											<string>5F009F8B115F1B7D00AE2F0C</string>
 											<string>5F009F96115F1BAB00AE2F0C</string>
 											<string>5F009FA4115F1BE400AE2F0C</string>
 											<string>5F009FA6115F1BE400AE2F0C</string>
-											<string>5F009FBA115F1CA700AE2F0C</string>
-											<string>5F009FCC115F230600AE2F0C</string>
 											<string>5F009FCD115F230600AE2F0C</string>
 											<string>5F009FCE115F230600AE2F0C</string>
 											<string>5F009FD0115F230600AE2F0C</string>
 											<string>5F009FE4115F241700AE2F0C</string>
 											<string>5F009FEF115F246500AE2F0C</string>
 											<string>5F00A002115F25C900AE2F0C</string>
-											<string>5F00A004115F25C900AE2F0C</string>
-											<string>5FC407F3115FBBA9000B1AD7</string>
 											<string>5FF3A183115FFBC300D99A27</string>
 											<string>5FF3A184115FFBC300D99A27</string>
 											<string>5FF3A185115FFBC300D99A27</string>
 											<string>5FF3A187115FFBC300D99A27</string>
 											<string>5FF3A188115FFBC300D99A27</string>
-											<string>5FF3A189115FFBC300D99A27</string>
+											<string>5FF3A199115FFCB800D99A27</string>
+											<string>5FF3A19A115FFCB800D99A27</string>
+											<string>5FF3A19B115FFCB800D99A27</string>
+											<string>5FF3A19C115FFCB800D99A27</string>
+											<string>5FF3A19D115FFCB800D99A27</string>
+											<string>5FF3A19E115FFCB800D99A27</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -574,12 +574,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>XMLParseHandler.m</string>
+								<string>ShipmentListViewController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -596,8 +598,6 @@
 							<string>536pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
