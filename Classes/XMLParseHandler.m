@@ -9,6 +9,11 @@
 #import "XMLParseHandler.h"
 #import "Shipment.h"
 
+#define kShipmentElementName			@"shipment"
+#define kMarisolNumElementName			@"marisolNum"
+#define kDeliveryDateElementName		@"deliveryDate"
+#define kColdStorageDateElementName		@"coldStorageDate"
+
 @implementation XMLParseHandler
 
 @synthesize delegate;
@@ -46,8 +51,6 @@
 	// per Apple's instructions, must create an autorelease pool for each secondary thread
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	
-	//self.currentParsedCharacterData = [NSMutableString string];
-	
 	NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL: [NSURL fileURLWithPath: xmlFile]];
 	
 	[parser setDelegate: self];
@@ -65,10 +68,43 @@
 #pragma mark NSXMLParser Delegate Methods
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
 	// override
+	if ( [elementName isEqualToString: kShipmentElementName] ) {
+		Shipment *shipment = [[Shipment alloc] init];
+		
+		self.currentObject = shipment;
+		[shipment release];
+		
+		currentObject.shipmentID = [[attributeDict objectForKey: @"id"] integerValue];
+	} else if ( [elementName isEqualToString: kMarisolNumElementName] || [elementName isEqualToString: kDeliveryDateElementName] || [elementName isEqualToString: kColdStorageDateElementName] ) {
+		accumulatingCharacterData = YES;
+		
+		self.currentParsedCharacterData = [NSMutableString string];
+		
+		[self.currentParsedCharacterData setString: @""];
+	}
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
 	// override
+	if ( [elementName isEqualToString: kMarisolNumElementName] ) {
+		currentObject.marisolNum = self.currentParsedCharacterData;
+		
+		self.currentParsedCharacterData = nil;
+	} else if ( [elementName isEqualToString: kDeliveryDateElementName] ) {
+		currentObject.deliveryDateString = self.currentParsedCharacterData;
+		
+		self.currentParsedCharacterData = nil;
+	} else if ( [elementName isEqualToString: kColdStorageDateElementName] ) {
+		currentObject.coldStorageDateString = self.currentParsedCharacterData;
+		
+		self.currentParsedCharacterData = nil;
+	} else if ( [elementName isEqualToString: kShipmentElementName] ) {
+		[self.objectList addObject: currentObject];
+		
+		self.currentObject = nil;
+	}
+	
+	accumulatingCharacterData = NO;
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
