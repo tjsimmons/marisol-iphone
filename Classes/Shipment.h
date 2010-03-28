@@ -10,7 +10,15 @@
 
 
 @interface Shipment : NSObject {
-
+	NSInteger	shipmentID;
+	NSString	*marisolNum;
+	NSString	*coldStorageDateString;
+	NSString	*deliveryDateString;
 }
+
+@property NSInteger shipmentID;
+@property (nonatomic, retain) NSString *marisolNum;
+@property (nonatomic, retain) NSString *coldStorageDateString;
+@property (nonatomic, retain) NSString *deliveryDateString;
 
 @end

@@ -11,4 +11,9 @@
 
 @implementation Shipment
 
+@synthesize shipmentID;
+@synthesize marisolNum;
+@synthesize coldStorageDateString;
+@synthesize deliveryDateString;
+
 @end
