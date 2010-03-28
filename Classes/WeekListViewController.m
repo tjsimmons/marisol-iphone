@@ -16,22 +16,27 @@
 @implementation WeekListViewController
 
 @synthesize whichStat;
+@synthesize weekList;
 
 
 #pragma mark -
 #pragma mark View lifecycle
 
-/*
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	NSDictionary *weekDict = [[NSDictionary alloc] initWithContentsOfFile: [[NSBundle mainBundle] pathForResource: @"weeklist" ofType: @"plist"]];
+	
+	self.weekList = [weekDict objectForKey: @"2010"];
+	
+	[weekDict release];
 
     // Uncomment the following line to preserve selection between presentations.
-    self.clearsSelectionOnViewWillAppear = NO;
+    //self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-*/
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
@@ -73,7 +78,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 1;
+    return [weekList count];
 }
 
 
@@ -84,11 +89,21 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
     
     // Configure the cell...
-    
+    NSInteger row = [indexPath row];
+	NSDictionary *cellTextDict = [weekList objectAtIndex: row];
+	NSString *weekString = [[NSString alloc] initWithFormat: @"Week %i", row + 1];
+	NSString *dateString = [[NSString alloc] initWithFormat: @"%@ - %@", [cellTextDict objectForKey: @"Start"], [cellTextDict objectForKey: @"End"]];
+	
+	cell.textLabel.text = weekString;
+	cell.detailTextLabel.text = dateString;
+	
+	[weekString release];
+	[dateString release];
+	
     return cell;
 }
 
@@ -178,6 +193,7 @@
 
 - (void)dealloc {
 	self.whichStat = nil;
+	self.weekList = nil;
     [super dealloc];
 }
 
