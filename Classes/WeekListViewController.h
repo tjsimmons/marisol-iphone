@@ -10,7 +10,9 @@
 
 
 @interface WeekListViewController : UITableViewController {
-
+	NSString	*whichStat;
 }
+
+@property (nonatomic, retain) NSString *whichStat;
 
 @end
