@@ -7,9 +7,15 @@
 //
 
 #import "WeekListViewController.h"
+#import "ShipmentListViewController.h"
+
+#define kIStat		@"iSTAT"
+#define kExStat		@"exSTAT"
 
 
 @implementation WeekListViewController
+
+@synthesize whichStat;
 
 
 #pragma mark -
@@ -139,6 +145,18 @@
 	 [self.navigationController pushViewController:detailViewController animated:YES];
 	 [detailViewController release];
 	 */
+	
+	ShipmentListViewController *shipmentListViewController = [[ShipmentListViewController alloc] initWithNibName: @"ShipmentListViewController" bundle: nil];
+	
+	if ( [whichStat isEqualToString: kIStat] ) {
+		shipmentListViewController.title = @"iSTAT Shipment List";
+	} else {
+		shipmentListViewController.title = @"exSTAT Shipment List";
+	}
+	
+	[self.navigationController pushViewController: shipmentListViewController animated: YES];
+	
+	[shipmentListViewController release];
 }
 
 
@@ -159,6 +177,7 @@
 
 
 - (void)dealloc {
+	self.whichStat = nil;
     [super dealloc];
 }
 
