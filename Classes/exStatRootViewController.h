@@ -10,7 +10,9 @@
 
 
 @interface exStatRootViewController : UIViewController {
-
+	UINavigationController *navController;
 }
+
+@property (nonatomic, retain) IBOutlet UINavigationController *navController;
 
 @end

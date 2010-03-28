@@ -7,9 +7,12 @@
 //
 
 #import "exStatRootViewController.h"
+#import "WeekListViewController.h"
 
 
 @implementation exStatRootViewController
+
+@synthesize navController;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -21,12 +24,23 @@
 }
 */
 
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	WeekListViewController *weekController = [[WeekListViewController alloc] initWithNibName: @"WeekListViewController" bundle: nil];
+	
+	weekController.title = @"exSTAT Week List";
+	weekController.whichStat = @"exSTAT";
+	
+	NSArray *array = [[NSArray alloc] initWithObjects: weekController, nil];
+	
+	[self.navController setViewControllers: array animated: NO];
+	[self.view addSubview: navController.view];
+	
+	[weekController release];
+	[array release];
 }
-*/
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -47,10 +61,12 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+	self.navController = nil;
 }
 
 
 - (void)dealloc {
+	self.navController = nil;
     [super dealloc];
 }
 
