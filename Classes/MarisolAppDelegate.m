@@ -11,12 +11,13 @@
 @implementation MarisolAppDelegate
 
 @synthesize window;
+@synthesize tabBarController;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
 
     // Override point for customization after application launch
-	
+	[window addSubview: tabBarController.view];
     [window makeKeyAndVisible];
 	
 	return YES;
@@ -25,6 +26,7 @@
 
 - (void)dealloc {
     [window release];
+	[tabBarController release];
     [super dealloc];
 }
 
