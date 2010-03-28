@@ -23,7 +23,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 5F528500115F16AF00715B4A /* Marisol */;
-		activeSDKPreference = iphonesimulator3.0;
+		activeSDKPreference = iphoneos3.0;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* Marisol */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* Marisol */,
@@ -110,17 +110,17 @@
 	};
 	5F009F64115F1AA500AE2F0C /* WeekListViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1123, 555}}";
-			sepNavSelRange = "{306, 0}";
-			sepNavVisRange = "{0, 313}";
+			sepNavIntBoundsRect = "{{0, 0}, {1123, 535}}";
+			sepNavSelRange = "{376, 0}";
+			sepNavVisRange = "{0, 383}";
 		};
 	};
 	5F009F65115F1AA500AE2F0C /* WeekListViewController.m */ = {
 		uiCtxt = {
-			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{3792, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{3843, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{3893, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 5087}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1123, 2288}}";
-			sepNavSelRange = "{4494, 0}";
-			sepNavVisRange = "{3614, 1385}";
+			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{4496, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{4547, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{4597, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 5813}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1123, 2782}}";
+			sepNavSelRange = "{2640, 0}";
+			sepNavVisRange = "{1806, 1394}";
 		};
 	};
 	5F009F69115F1AC900AE2F0C /* ShipmentListViewController.h */ = {
@@ -222,30 +222,30 @@
 	};
 	5F009F9A115F1BD300AE2F0C /* iStatRootViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1123, 555}}";
-			sepNavSelRange = "{229, 22}";
+			sepNavIntBoundsRect = "{{0, 0}, {1123, 535}}";
+			sepNavSelRange = "{229, 38}";
 			sepNavVisRange = "{0, 355}";
 		};
 	};
 	5F009F9B115F1BD300AE2F0C /* iStatRootViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1146, 910}}";
-			sepNavSelRange = "{1047, 0}";
-			sepNavVisRange = "{182, 1404}";
+			sepNavIntBoundsRect = "{{0, 0}, {1146, 897}}";
+			sepNavSelRange = "{820, 0}";
+			sepNavVisRange = "{142, 1375}";
 		};
 	};
 	5F009F9F115F1BDB00AE2F0C /* exStatRootViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1123, 555}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 239}";
+			sepNavIntBoundsRect = "{{0, 0}, {1123, 535}}";
+			sepNavSelRange = "{350, 0}";
+			sepNavVisRange = "{0, 357}";
 		};
 	};
 	5F009FA0115F1BDB00AE2F0C /* exStatRootViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1146, 702}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1261}";
+			sepNavIntBoundsRect = "{{0, 0}, {1146, 975}}";
+			sepNavSelRange = "{1223, 0}";
+			sepNavVisRange = "{822, 1189}";
 		};
 	};
 	5F009FA4115F1BE400AE2F0C /* PBXTextBookmark */ = {
@@ -394,7 +394,7 @@
 		fRef = 5F009F64115F1AA500AE2F0C /* WeekListViewController.h */;
 		name = "WeekListViewController.h: 16";
 		rLen = 0;
-		rLoc = 306;
+		rLoc = 376;
 		rType = 0;
 		vrLen = 313;
 		vrLoc = 0;
@@ -446,7 +446,7 @@
 		fRef = 5F009F65115F1AA500AE2F0C /* WeekListViewController.m */;
 		name = "WeekListViewController.m: 158";
 		rLen = 0;
-		rLoc = 4551;
+		rLoc = 5255;
 		rType = 0;
 		vrLen = 1442;
 		vrLoc = 3614;
