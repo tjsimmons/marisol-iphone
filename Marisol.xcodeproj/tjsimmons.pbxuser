@@ -77,8 +77,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 291444820;
-			PBXWorkspaceStateSaveDate = 291444820;
+			PBXPerProjectTemplateStateSaveDate = 291448490;
+			PBXWorkspaceStateSaveDate = 291448490;
 		};
 		perUserProjectItems = {
 			5F009F7D115F1B0500AE2F0C /* PBXTextBookmark */ = 5F009F7D115F1B0500AE2F0C /* PBXTextBookmark */;
@@ -100,8 +100,8 @@
 			5F00A002115F25C900AE2F0C /* PBXTextBookmark */ = 5F00A002115F25C900AE2F0C /* PBXTextBookmark */;
 			5F00A003115F25C900AE2F0C /* PBXTextBookmark */ = 5F00A003115F25C900AE2F0C /* PBXTextBookmark */;
 			5F00A004115F25C900AE2F0C /* PBXTextBookmark */ = 5F00A004115F25C900AE2F0C /* PBXTextBookmark */;
-			5F00A005115F25C900AE2F0C /* PBXTextBookmark */ = 5F00A005115F25C900AE2F0C /* PBXTextBookmark */;
-			5F00A008115F25DF00AE2F0C /* PBXTextBookmark */ = 5F00A008115F25DF00AE2F0C /* PBXTextBookmark */;
+			5FC21CF3115F26C000EC57A4 /* PBXTextBookmark */ = 5FC21CF3115F26C000EC57A4 /* PBXTextBookmark */;
+			5FC21CF4115F26C000EC57A4 /* PBXTextBookmark */ = 5FC21CF4115F26C000EC57A4 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 5F52850C115F16C100715B4A /* Source Control */;
 		userBuildSettings = {
@@ -117,7 +117,7 @@
 	5F009F65115F1AA500AE2F0C /* WeekListViewController.m */ = {
 		uiCtxt = {
 			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{3792, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{3843, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{3893, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 5087}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1123, 2418}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1123, 2431}}";
 			sepNavSelRange = "{4259, 0}";
 			sepNavVisRange = "{0, 912}";
 		};
@@ -320,7 +320,7 @@
 		);
 		name = "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/Classes/weeklist.plist";
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	5F009FCE115F230600AE2F0C /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -366,7 +366,7 @@
 		);
 		name = "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/Marisol-Info.plist";
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	5F009FF0115F246500AE2F0C /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -406,26 +406,6 @@
 		rLoc = 306;
 		rType = 0;
 		vrLen = 313;
-		vrLoc = 0;
-	};
-	5F00A005115F25C900AE2F0C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 5F009F65115F1AA500AE2F0C /* WeekListViewController.m */;
-		name = "WeekListViewController.m: 13";
-		rLen = 0;
-		rLoc = 271;
-		rType = 0;
-		vrLen = 1386;
-		vrLoc = 3477;
-	};
-	5F00A008115F25DF00AE2F0C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 5F009F65115F1AA500AE2F0C /* WeekListViewController.m */;
-		name = "WeekListViewController.m: 151";
-		rLen = 0;
-		rLoc = 4316;
-		rType = 0;
-		vrLen = 912;
 		vrLoc = 0;
 	};
 	5F528500115F16AF00715B4A /* Marisol */ = {
@@ -469,5 +449,25 @@
 	5F52850D115F16C100715B4A /* Code sense */ = {
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
+	};
+	5FC21CF3115F26C000EC57A4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F65115F1AA500AE2F0C /* WeekListViewController.m */;
+		name = "WeekListViewController.m: 151";
+		rLen = 0;
+		rLoc = 4316;
+		rType = 0;
+		vrLen = 912;
+		vrLoc = 0;
+	};
+	5FC21CF4115F26C000EC57A4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F65115F1AA500AE2F0C /* WeekListViewController.m */;
+		name = "WeekListViewController.m: 151";
+		rLen = 0;
+		rLoc = 4316;
+		rType = 0;
+		vrLen = 912;
+		vrLoc = 0;
 	};
 }

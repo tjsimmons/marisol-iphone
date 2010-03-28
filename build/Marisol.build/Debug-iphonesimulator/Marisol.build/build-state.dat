@@ -1,7 +1,7 @@
 TMarisol
 v7
 r0
-t291448265.103189
+t291448505.133745
 cCheck dependencies
 cProcessInfoPlistFile "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app/Info.plist" Marisol-Info.plist
 cCompileXIB "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/MainWindow.xib"
@@ -265,11 +265,11 @@ i<Foundation/Foundation.h>
 i<UIKit/UIKit.h>
 
 N/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app
-t1269755464
+t1269755705
 s476
 
 N/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app.dSYM
-t1269755464
+t1269755705
 s102
 
 N/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app/Info.plist
@@ -285,7 +285,7 @@ t1269754960
 s2255
 
 N/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app/Marisol
-t1269755463
+t1269755704
 s40432
 
 N/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app/PkgInfo
@@ -350,7 +350,7 @@ t1269754965
 s32704
 
 N/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/Objects-normal/i386/WeekListViewController.o
-t1269755463
+t1269755702
 s34844
 
 N/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/Objects-normal/i386/XMLParseHandler.o
@@ -390,7 +390,7 @@ s913
 
 CCheck dependencies
 r0
-lSLF07#2@18"Check dependencies291448265#291448265#0(0"0(0#1#0"4300911832#0"0#
+lSLF07#2@18"Check dependencies291448501#291448501#0(0"0(0#1#0"7947009927035180032#0"0#
 
 CCompileC build/Marisol.build/Debug-iphonesimulator/Marisol.build/Objects-normal/i386/ConnectionHandler.o "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/Classes/ConnectionHandler.m" normal i386 objective-c com.apple.compilers.gcc.4_2
 s291447765.332454
@@ -471,8 +471,8 @@ xcom.apple.compilers.gcc.4_2
 lSLF07#2@94"Compile /Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/Classes/ShipmentListViewController.m291447765#291447765#0(0"0(0#0#86"/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/Classes/ShipmentListViewController.m4300911832#2052"    cd "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.0.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/Marisol-generated-files.hmap" "-I/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/Marisol-own-target-headers.hmap" "-I/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/Marisol-all-target-headers.hmap" -iquote "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/Marisol-project-headers.hmap" "-F/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator" "-I/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/include" "-I/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/DerivedSources/i386" "-I/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/DerivedSources" -include /var/folders/rk/rkGrlK+3Fb4LG9cIEUjzF++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Marisol_Prefix-bcklugxhfjeitndgfhexexjzsrcn/Marisol_Prefix.pch -c "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/Classes/ShipmentListViewController.m" -o "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/Objects-normal/i386/ShipmentListViewController.o"0#
 
 CCompileC build/Marisol.build/Debug-iphonesimulator/Marisol.build/Objects-normal/i386/WeekListViewController.o "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/Classes/WeekListViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
-s291448263.451171
-e291448263.793339
+s291448501.603912
+e291448502.253924
 r1
 xCompileC
 xbuild/Marisol.build/Debug-iphonesimulator/Marisol.build/Objects-normal/i386/WeekListViewController.o
@@ -481,7 +481,7 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@90"Compile /Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/Classes/WeekListViewController.m291448263#291448263#0(0"0(0#0#82"/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/Classes/WeekListViewController.m4300911832#2044"    cd "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.0.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/Marisol-generated-files.hmap" "-I/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/Marisol-own-target-headers.hmap" "-I/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/Marisol-all-target-headers.hmap" -iquote "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/Marisol-project-headers.hmap" "-F/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator" "-I/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/include" "-I/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/DerivedSources/i386" "-I/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/DerivedSources" -include /var/folders/rk/rkGrlK+3Fb4LG9cIEUjzF++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Marisol_Prefix-bcklugxhfjeitndgfhexexjzsrcn/Marisol_Prefix.pch -c "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/Classes/WeekListViewController.m" -o "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/Objects-normal/i386/WeekListViewController.o"0#
+lSLF07#2@90"Compile /Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/Classes/WeekListViewController.m291448501#291448502#0(0"0(0#0#82"/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/Classes/WeekListViewController.m5794214508112069632#2044"    cd "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.0.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/Marisol-generated-files.hmap" "-I/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/Marisol-own-target-headers.hmap" "-I/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/Marisol-all-target-headers.hmap" -iquote "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/Marisol-project-headers.hmap" "-F/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator" "-I/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/include" "-I/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/DerivedSources/i386" "-I/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/DerivedSources" -include /var/folders/rk/rkGrlK+3Fb4LG9cIEUjzF++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Marisol_Prefix-bcklugxhfjeitndgfhexexjzsrcn/Marisol_Prefix.pch -c "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/Classes/WeekListViewController.m" -o "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/Objects-normal/i386/WeekListViewController.o"0#
 
 CCompileC build/Marisol.build/Debug-iphonesimulator/Marisol.build/Objects-normal/i386/XMLParseHandler.o "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/Classes/XMLParseHandler.m" normal i386 objective-c com.apple.compilers.gcc.4_2
 s291447765.428898
@@ -610,23 +610,23 @@ xClasses/icon.png
 lSLF07#2@21"Copy Classes/icon.png291447830#291447830#0(0"0(0#0#66"/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/Classes/icon.png4300911832#499"    cd "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/Classes/icon.png" "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app"0#
 
 CGenerateDSYMFile "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app.dSYM" "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app/Marisol"
-s291448263.934052
-e291448264.182783
+s291448504.677414
+e291448505.059219
 r1
 xGenerateDSYMFile
 x/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app.dSYM
 x/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app/Marisol
-lSLF07#2@109"GenerateDSYMFile build/Debug-iphonesimulator/Marisol.app.dSYM build/Debug-iphonesimulator/Marisol.app/Marisol291448263#291448264#0(0"0(0#0#97"/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app/Marisol4300911832#422"    cd "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app/Marisol" -o "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app.dSYM"0#
+lSLF07#2@109"GenerateDSYMFile build/Debug-iphonesimulator/Marisol.app.dSYM build/Debug-iphonesimulator/Marisol.app/Marisol291448504#291448505#0(0"0(0#0#97"/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app/Marisol4300911832#422"    cd "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app/Marisol" -o "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app.dSYM"0#
 
 CLd "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app/Marisol" normal i386
-s291448263.793484
-e291448263.933946
+s291448502.254032
+e291448504.677041
 r1
 xLd
 x/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app/Marisol
 xnormal
 xi386
-lSLF07#2@102"Link /Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app/Marisol291448263#291448263#0(0"0(0#0#0"4300911832#927"    cd "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol"    setenv MACOSX_DEPLOYMENT_TARGET 10.5    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.0.sdk "-L/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator" "-F/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator" -filelist "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/Objects-normal/i386/Marisol.LinkFileList" -mmacosx-version-min=10.5 -framework Foundation -framework UIKit -framework CoreGraphics -o "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app/Marisol"0#
+lSLF07#2@102"Link /Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app/Marisol291448502#291448504#0(0"0(0#0#0"4300911832#927"    cd "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol"    setenv MACOSX_DEPLOYMENT_TARGET 10.5    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.0.sdk "-L/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator" "-F/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator" -filelist "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/Objects-normal/i386/Marisol.LinkFileList" -mmacosx-version-min=10.5 -framework Foundation -framework UIKit -framework CoreGraphics -o "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app/Marisol"0#
 
 CProcessInfoPlistFile "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app/Info.plist" Marisol-Info.plist
 s291447830.186841
@@ -664,10 +664,10 @@ xcom.apple.compilers.gcc.4_2
 lSLF07#2@29"Precompile Marisol_Prefix.pch291447761#291447764#0(0"0(0#0#68"/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/Marisol_Prefix.pch4300911832#1879"    cd "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.0.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/Marisol-generated-files.hmap" "-I/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/Marisol-own-target-headers.hmap" "-I/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/Marisol-all-target-headers.hmap" -iquote "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/Marisol-project-headers.hmap" "-F/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator" "-I/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/include" "-I/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/DerivedSources/i386" "-I/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Marisol.build/Debug-iphonesimulator/Marisol.build/DerivedSources" -c "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/Marisol_Prefix.pch" -o /var/folders/rk/rkGrlK+3Fb4LG9cIEUjzF++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Marisol_Prefix-bcklugxhfjeitndgfhexexjzsrcn/Marisol_Prefix.pch.gch0#
 
 CTouch "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app"
-s291448264.182877
-e291448264.190937
+s291448505.059350
+e291448505.133653
 r1
 xTouch
 x/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app
-lSLF07#2@95"Touch /Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app291448264#291448264#0(0"0(0#0#0"4300911832#304"    cd "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app"0#
+lSLF07#2@95"Touch /Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app291448505#291448505#0(0"0(0#0#0"4300911832#304"    cd "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/build/Debug-iphonesimulator/Marisol.app"0#
 
