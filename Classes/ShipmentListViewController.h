@@ -14,11 +14,15 @@
 @interface ShipmentListViewController : UITableViewController <ConnectionHandlerDelegate, XMLParseHandlerDelegate> {
 	NSString			*whichStat;
 	NSMutableArray		*shipmentList;
+	NSString			*startDate;
+	NSString			*endDate;
 	BOOL				dataLoaded;
 }
 
 @property (nonatomic, retain) NSString *whichStat;
 @property (nonatomic, retain) NSMutableArray *shipmentList;
+@property (nonatomic, retain) NSString *startDate;
+@property (nonatomic, retain) NSString *endDate;
 
 -(void) startConnectionProcess;
 
