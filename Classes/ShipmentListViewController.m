@@ -39,7 +39,7 @@
 #pragma mark -
 #pragma mark Connection Handler Delegate Method
 -(void) connectionFinishedWithFilePath:(NSString *)filePath {
-	NSLog(@"finished with file path %@", filePath);
+
 }
 
 #pragma mark -

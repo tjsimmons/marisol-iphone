@@ -30,7 +30,9 @@
 	self.weekList = [weekDict objectForKey: @"2010"];
 	
 	[weekDict release];
-
+	
+	//NSLog(@"week list frame is %.2f, %.2f", self.tableView.frame.size.height, self.tableView.frame.size.width);
+	//NSLog(@"superview frame is %.2f, %.2f", self.tableView.superview.frame.size.height, self.tableView.superview.frame.size.width);
     // Uncomment the following line to preserve selection between presentations.
     //self.clearsSelectionOnViewWillAppear = NO;
  
