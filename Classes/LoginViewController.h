@@ -8,9 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@class iStatRootViewController;
 
 @interface LoginViewController : UIViewController {
-
+	UITextField *usernameField;
+	UITextField *passwordField;
+	
+	iStatRootViewController *rootViewController;
 }
+
+@property (nonatomic, retain) IBOutlet UITextField *usernameField;
+@property (nonatomic, retain) IBOutlet UITextField *passwordField;
+@property (nonatomic, retain) iStatRootViewController *rootViewController;
+
+-(IBAction) loginButtonPressed;
 
 @end

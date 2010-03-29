@@ -8,27 +8,40 @@
 
 #import "iStatRootViewController.h"
 #import "WeekListViewController.h"
+#import "LoginViewController.h"
 
 
 @implementation iStatRootViewController
 
 @synthesize navController;
 
+#pragma mark -
+#pragma mark Custom Methods
+-(void) loginViewDidDismiss {
+	NSLog(@"login view did dismiss");
+}
+
+#pragma mark -
+#pragma mark View Methods
+
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
+ - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+ if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+ // Custom initialization
+ }
+ return self;
+ }
+ */
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
 	WeekListViewController *weekViewController = [[WeekListViewController alloc] initWithNibName: @"WeekListViewController" bundle: nil];
+	LoginViewController *loginController = [[LoginViewController alloc] initWithNibName: @"LoginViewController" bundle: nil];
+	
+	loginController.rootViewController = self;
 	
 	weekViewController.title = @"iSTAT Week List";
 	weekViewController.whichStat = @"iSTAT";
@@ -36,19 +49,25 @@
 	NSArray *array = [[NSArray alloc] initWithObjects: weekViewController, nil];
 	
 	[self.navController setViewControllers: array animated: NO];
+	
+	// present the login controller
+	[self presentModalViewController: loginController animated: YES];
+	
+	// behind that, add in the iSTAT view
 	[self.view addSubview: self.navController.view];
 	
 	[array release];
 	[weekViewController release];
+	[loginController release];
 }
 
 /*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
+ // Override to allow orientations other than the default portrait orientation.
+ - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+ // Return YES for supported orientations
+ return (interfaceOrientation == UIInterfaceOrientationPortrait);
+ }
+ */
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.

@@ -7,9 +7,26 @@
 //
 
 #import "LoginViewController.h"
+#import "iStatRootViewController.h"
 
 
 @implementation LoginViewController
+
+@synthesize usernameField;
+@synthesize passwordField;
+@synthesize rootViewController;
+
+#pragma mark -
+#pragma mark Custom Methods
+-(IBAction) loginButtonPressed {
+	[self dismissModalViewControllerAnimated: YES];
+	
+	// tell our iStat controller the login finished
+	[self.rootViewController loginViewDidDismiss];
+}
+
+#pragma mark -
+#pragma mark View Methods
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -47,10 +64,15 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+	self.usernameField = nil;
+	self.passwordField = nil;
 }
 
 
 - (void)dealloc {
+	self.usernameField = nil;
+	self.passwordField = nil;
+	self.rootViewController = nil;
     [super dealloc];
 }
 
