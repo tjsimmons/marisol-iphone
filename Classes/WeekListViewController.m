@@ -173,10 +173,20 @@
 		shipmentListViewController.whichStat = kExStat;
 	}
 	
+	NSInteger row = [indexPath row];
+	NSDictionary *cellTextDict = [weekList objectAtIndex: row];
+	NSString *start = [[NSString alloc] initWithString: [cellTextDict objectForKey: @"Start"]];
+	NSString *end = [[NSString alloc] initWithString: [cellTextDict objectForKey: @"End"]];
+	
+	shipmentListViewController.startDate = start;
+	shipmentListViewController.endDate = end;
+	
 	[shipmentListViewController startConnectionProcess];
 	
 	[self.navigationController pushViewController: shipmentListViewController animated: YES];
 	
+	[start release];
+	[end release];
 	[shipmentListViewController release];
 }
 
