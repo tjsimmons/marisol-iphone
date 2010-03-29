@@ -31,6 +31,21 @@
 	
 	[weekDict release];
 	
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	NSDate *now = [[NSDate alloc] init];
+	
+	[dateFormatter setDateFormat: @"w"];
+	
+	NSInteger currentWeek = [[dateFormatter stringFromDate: now] integerValue] - 2;		// subtracting 2 makes this whole thing work. go figure.
+	
+	// apparently we have to reload the table before we can set the offset. bizarre.
+	[self.tableView reloadData];
+	// default cell height is 44px, so multiply the week we want by that to set the view to the right week
+	[self.tableView setContentOffset: CGPointMake(0.0, currentWeek * 44.0) animated: NO];
+	
+	[dateFormatter release];
+	[now release];
+	
 	//NSLog(@"week list frame is %.2f, %.2f", self.tableView.frame.size.height, self.tableView.frame.size.width);
 	//NSLog(@"superview frame is %.2f, %.2f", self.tableView.superview.frame.size.height, self.tableView.superview.frame.size.width);
     // Uncomment the following line to preserve selection between presentations.
