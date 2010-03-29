@@ -32,10 +32,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.shipmentIDLabel.text = [NSString stringWithFormat: @"%i", shipment.shipmentID];
+	NSString *shipmentIDString = [[NSString alloc] initWithFormat: @"%i", shipment.shipmentID];
+	
+	self.shipmentIDLabel.text = shipmentIDString;
 	self.marisolNumLabel.text = shipment.marisolNum;
 	self.deliveryDateLabel.text = shipment.deliveryDateString;
 	self.coldStorageLabel.text = shipment.coldStorageDateString;
+	
+	[shipmentIDString release];
 }
 
 /*
