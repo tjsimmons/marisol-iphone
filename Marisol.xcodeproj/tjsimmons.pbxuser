@@ -9,7 +9,7 @@
 	};
 	1D3623250D0F684500981E51 /* MarisolAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1123, 523}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1123, 511}}";
 			sepNavSelRange = "{606, 0}";
 			sepNavVisRange = "{0, 637}";
 		};
@@ -91,6 +91,20 @@
 			5F04EC6B1160E331003EF573 /* PBXTextBookmark */ = 5F04EC6B1160E331003EF573 /* PBXTextBookmark */;
 			5F04EC6C1160E331003EF573 /* PBXTextBookmark */ = 5F04EC6C1160E331003EF573 /* PBXTextBookmark */;
 			5F04EC6D1160E331003EF573 /* PBXTextBookmark */ = 5F04EC6D1160E331003EF573 /* PBXTextBookmark */;
+			5F04EC841160E53E003EF573 /* PBXTextBookmark */ = 5F04EC841160E53E003EF573 /* PBXTextBookmark */;
+			5F04EC851160E53E003EF573 /* PlistBookmark */ = 5F04EC851160E53E003EF573 /* PlistBookmark */;
+			5F04EC8B1160E925003EF573 /* PlistBookmark */ = 5F04EC8B1160E925003EF573 /* PlistBookmark */;
+			5F04EC8C1160E925003EF573 /* PBXTextBookmark */ = 5F04EC8C1160E925003EF573 /* PBXTextBookmark */;
+			5F04EC8D1160E925003EF573 /* PBXTextBookmark */ = 5F04EC8D1160E925003EF573 /* PBXTextBookmark */;
+			5F04EC8E1160E925003EF573 /* PBXTextBookmark */ = 5F04EC8E1160E925003EF573 /* PBXTextBookmark */;
+			5F04EC8F1160E925003EF573 /* PBXTextBookmark */ = 5F04EC8F1160E925003EF573 /* PBXTextBookmark */;
+			5F04EC901160E925003EF573 /* PBXTextBookmark */ = 5F04EC901160E925003EF573 /* PBXTextBookmark */;
+			5F04EC931160E949003EF573 /* PBXTextBookmark */ = 5F04EC931160E949003EF573 /* PBXTextBookmark */;
+			5F04EC941160E949003EF573 /* PBXTextBookmark */ = 5F04EC941160E949003EF573 /* PBXTextBookmark */;
+			5F04EC951160E949003EF573 /* PBXTextBookmark */ = 5F04EC951160E949003EF573 /* PBXTextBookmark */;
+			5F04ECBC1160EA13003EF573 /* PBXTextBookmark */ = 5F04ECBC1160EA13003EF573 /* PBXTextBookmark */;
+			5F04ECC11160EA27003EF573 /* PBXTextBookmark */ = 5F04ECC11160EA27003EF573 /* PBXTextBookmark */;
+			5F04ECC21160EA35003EF573 /* PBXTextBookmark */ = 5F04ECC21160EA35003EF573 /* PBXTextBookmark */;
 			5F0E42141160370300768B65 = 5F0E42141160370300768B65 /* PBXTextBookmark */;
 			5F0E42161160370300768B65 = 5F0E42161160370300768B65 /* PBXTextBookmark */;
 			5F0E42171160370300768B65 = 5F0E42171160370300768B65 /* PBXTextBookmark */;
@@ -126,10 +140,10 @@
 	};
 	5F009F65115F1AA500AE2F0C /* WeekListViewController.m */ = {
 		uiCtxt = {
-			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{4739, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{4790, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{4840, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 6616}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1123, 2756}}";
-			sepNavSelRange = "{5481, 0}";
-			sepNavVisRange = "{4511, 1533}";
+			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{4806, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{4857, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{4907, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 6683}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1123, 2782}}";
+			sepNavSelRange = "{3189, 0}";
+			sepNavVisRange = "{2193, 1317}";
 		};
 	};
 	5F009F69115F1AC900AE2F0C /* ShipmentListViewController.h */ = {
@@ -141,10 +155,10 @@
 	};
 	5F009F6A115F1AC900AE2F0C /* ShipmentListViewController.m */ = {
 		uiCtxt = {
-			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{5651, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{5702, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{5752, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 7031}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1123, 3393}}";
-			sepNavSelRange = "{973, 0}";
-			sepNavVisRange = "{91, 988}";
+			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{5722, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{5773, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{5823, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 7630}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1123, 3484}}";
+			sepNavSelRange = "{6985, 0}";
+			sepNavVisRange = "{6137, 1294}";
 		};
 	};
 	5F009F73115F1AF200AE2F0C /* LoginViewController.h */ = {
@@ -174,15 +188,15 @@
 	5F009F8E115F1B9B00AE2F0C /* ConnectionHandler.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1123, 520}}";
-			sepNavSelRange = "{0, 0}";
+			sepNavSelRange = "{431, 0}";
 			sepNavVisRange = "{0, 969}";
 		};
 	};
 	5F009F8F115F1B9B00AE2F0C /* ConnectionHandler.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1123, 1222}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1123, 1261}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{1267, 1017}";
+			sepNavVisRange = "{172, 922}";
 		};
 	};
 	5F009F91115F1B9B00AE2F0C /* XMLParseHandler.h */ = {
@@ -196,7 +210,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1370, 1768}}";
 			sepNavSelRange = "{3259, 0}";
-			sepNavVisRange = "{2400, 1364}";
+			sepNavVisRange = "{0, 845}";
 		};
 	};
 	5F009F9A115F1BD300AE2F0C /* iStatRootViewController.h */ = {
@@ -302,7 +316,7 @@
 		fRef = 5F009F65115F1AA500AE2F0C /* WeekListViewController.m */;
 		name = "WeekListViewController.m: 176";
 		rLen = 0;
-		rLoc = 5538;
+		rLoc = 5605;
 		rType = 0;
 		vrLen = 1590;
 		vrLoc = 4511;
@@ -312,7 +326,7 @@
 		fRef = 5F009F6A115F1AC900AE2F0C /* ShipmentListViewController.m */;
 		name = "ShipmentListViewController.m: 254";
 		rLen = 0;
-		rLoc = 6999;
+		rLoc = 7598;
 		rType = 0;
 		vrLen = 962;
 		vrLoc = 0;
@@ -326,6 +340,150 @@
 		rType = 0;
 		vrLen = 988;
 		vrLoc = 91;
+	};
+	5F04EC841160E53E003EF573 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6A115F1AC900AE2F0C /* ShipmentListViewController.m */;
+		name = "ShipmentListViewController.m: 37";
+		rLen = 0;
+		rLoc = 973;
+		rType = 0;
+		vrLen = 1128;
+		vrLoc = 91;
+	};
+	5F04EC851160E53E003EF573 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Marisol-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			NSMainNibFile,
+		);
+		name = "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/Marisol-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	5F04EC8B1160E925003EF573 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Marisol-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			NSMainNibFile,
+		);
+		name = "/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/Marisol-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	5F04EC8C1160E925003EF573 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* MarisolAppDelegate.m */;
+		name = "MarisolAppDelegate.m: 29";
+		rLen = 0;
+		rLoc = 606;
+		rType = 0;
+		vrLen = 637;
+		vrLoc = 0;
+	};
+	5F04EC8D1160E925003EF573 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F8E115F1B9B00AE2F0C /* ConnectionHandler.h */;
+		name = "ConnectionHandler.h: 19";
+		rLen = 0;
+		rLoc = 431;
+		rType = 0;
+		vrLen = 969;
+		vrLoc = 0;
+	};
+	5F04EC8E1160E925003EF573 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F92115F1B9B00AE2F0C /* XMLParseHandler.m */;
+		name = "XMLParseHandler.m: 105";
+		rLen = 0;
+		rLoc = 3259;
+		rType = 0;
+		vrLen = 845;
+		vrLoc = 0;
+	};
+	5F04EC8F1160E925003EF573 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F8F115F1B9B00AE2F0C /* ConnectionHandler.m */;
+		name = "ConnectionHandler.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 922;
+		vrLoc = 172;
+	};
+	5F04EC901160E925003EF573 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F65115F1AA500AE2F0C /* WeekListViewController.m */;
+		name = "WeekListViewController.m: 105";
+		rLen = 0;
+		rLoc = 3189;
+		rType = 0;
+		vrLen = 1317;
+		vrLoc = 2193;
+	};
+	5F04EC931160E949003EF573 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F65115F1AA500AE2F0C /* WeekListViewController.m */;
+		name = "WeekListViewController.m: 105";
+		rLen = 0;
+		rLoc = 3189;
+		rType = 0;
+		vrLen = 1317;
+		vrLoc = 2193;
+	};
+	5F04EC941160E949003EF573 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6A115F1AC900AE2F0C /* ShipmentListViewController.m */;
+		name = "ShipmentListViewController.m: 37";
+		rLen = 0;
+		rLoc = 973;
+		rType = 0;
+		vrLen = 940;
+		vrLoc = 91;
+	};
+	5F04EC951160E949003EF573 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6A115F1AC900AE2F0C /* ShipmentListViewController.m */;
+		name = "ShipmentListViewController.m: 156";
+		rLen = 0;
+		rLoc = 4130;
+		rType = 0;
+		vrLen = 1333;
+		vrLoc = 3386;
+	};
+	5F04ECBC1160EA13003EF573 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6A115F1AC900AE2F0C /* ShipmentListViewController.m */;
+		name = "ShipmentListViewController.m: 234";
+		rLen = 0;
+		rLoc = 6561;
+		rType = 0;
+		vrLen = 1382;
+		vrLoc = 5510;
+	};
+	5F04ECC11160EA27003EF573 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6A115F1AC900AE2F0C /* ShipmentListViewController.m */;
+		name = "ShipmentListViewController.m: 245";
+		rLen = 0;
+		rLoc = 7042;
+		rType = 0;
+		vrLen = 1292;
+		vrLoc = 6194;
+	};
+	5F04ECC21160EA35003EF573 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6A115F1AC900AE2F0C /* ShipmentListViewController.m */;
+		name = "ShipmentListViewController.m: 245";
+		rLen = 0;
+		rLoc = 7042;
+		rType = 0;
+		vrLen = 1294;
+		vrLoc = 6194;
 	};
 	5F0E42141160370300768B65 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;

@@ -153,6 +153,7 @@
 		
 		cell.textLabel.text = shipment.marisolNum;
 		cell.detailTextLabel.text = shipment.coldStorageDateString;
+		cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
 	} else {
 		cell.textLabel.text = @"Loading...";
 	}
@@ -228,6 +229,19 @@
 		
 		[detailController release];
 	}
+}
+
+-(void) tableView: (UITableView *) tableView accessoryButtonTappedForRowWithIndexPath: (NSIndexPath *) indexPath {
+	NSInteger row = [indexPath row];
+	Shipment *theShipment = [self.shipmentList objectAtIndex: row];
+	
+	ShipmentDetailViewController *detailController = [[ShipmentDetailViewController alloc] initWithNibName: @"ShipmentDetailViewController" bundle: nil];
+	
+	detailController.shipment = theShipment;
+	
+	[self.navigationController pushViewController: detailController animated: YES];
+	
+	[detailController release];
 }
 
 
