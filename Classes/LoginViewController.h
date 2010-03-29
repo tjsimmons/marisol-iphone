@@ -11,9 +11,13 @@
 @class iStatRootViewController;
 
 @interface LoginViewController : UIViewController {
+	// IB stuff
 	UITextField *usernameField;
 	UITextField *passwordField;
+	UIButton *loginButton;
+	UIActivityIndicatorView *activityIndicator;
 	
+	// stuff to log in with
 	NSMutableData	*theData;
 	NSString		*tempFilePath;
 	NSURLConnection *connection;
@@ -21,6 +25,8 @@
 
 @property (nonatomic, retain) IBOutlet UITextField *usernameField;
 @property (nonatomic, retain) IBOutlet UITextField *passwordField;
+@property (nonatomic, retain) IBOutlet UIButton *loginButton;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, retain) NSURLConnection *connection;
 
 -(IBAction) usernameFieldDoneEditing;
