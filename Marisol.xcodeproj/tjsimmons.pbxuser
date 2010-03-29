@@ -3,14 +3,14 @@
 	1D3623240D0F684500981E51 /* MarisolAppDelegate.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1123, 511}}";
-			sepNavSelRange = "{430, 0}";
+			sepNavSelRange = "{295, 0}";
 			sepNavVisRange = "{0, 438}";
 		};
 	};
 	1D3623250D0F684500981E51 /* MarisolAppDelegate.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1123, 511}}";
-			sepNavSelRange = "{606, 0}";
+			sepNavSelRange = "{441, 0}";
 			sepNavVisRange = "{0, 637}";
 		};
 	};
@@ -177,6 +177,11 @@
 			5F04EE3C116120F6003EF573 /* PBXTextBookmark */ = 5F04EE3C116120F6003EF573 /* PBXTextBookmark */;
 			5F04EE3D116120F6003EF573 /* PBXTextBookmark */ = 5F04EE3D116120F6003EF573 /* PBXTextBookmark */;
 			5F04EE4211612133003EF573 /* PBXTextBookmark */ = 5F04EE4211612133003EF573 /* PBXTextBookmark */;
+			5F04EE49116129B6003EF573 /* PBXTextBookmark */ = 5F04EE49116129B6003EF573 /* PBXTextBookmark */;
+			5F04EE4A116129B6003EF573 /* PBXTextBookmark */ = 5F04EE4A116129B6003EF573 /* PBXTextBookmark */;
+			5F04EE4B116129B6003EF573 /* PBXTextBookmark */ = 5F04EE4B116129B6003EF573 /* PBXTextBookmark */;
+			5F04EE4C116129B6003EF573 /* PBXTextBookmark */ = 5F04EE4C116129B6003EF573 /* PBXTextBookmark */;
+			5F04EE4D11612A27003EF573 /* PBXTextBookmark */ = 5F04EE4D11612A27003EF573 /* PBXTextBookmark */;
 			5F0E42141160370300768B65 = 5F0E42141160370300768B65 /* PBXTextBookmark */;
 			5F0E42161160370300768B65 = 5F0E42161160370300768B65 /* PBXTextBookmark */;
 			5F0E42171160370300768B65 = 5F0E42171160370300768B65 /* PBXTextBookmark */;
@@ -230,7 +235,7 @@
 			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{6077, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{6128, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{6178, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 7985}\";\n    s = 0;\n}";
 			sepNavIntBoundsRect = "{{0, 0}, {1123, 3744}}";
 			sepNavSelRange = "{807, 0}";
-			sepNavVisRange = "{348, 1180}";
+			sepNavVisRange = "{0, 1107}";
 		};
 	};
 	5F009F73115F1AF200AE2F0C /* LoginViewController.h */ = {
@@ -1270,6 +1275,56 @@
 		rType = 0;
 		vrLen = 1180;
 		vrLoc = 348;
+	};
+	5F04EE49116129B6003EF573 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6A115F1AC900AE2F0C /* ShipmentListViewController.m */;
+		name = "ShipmentListViewController.m: 31";
+		rLen = 0;
+		rLoc = 807;
+		rType = 0;
+		vrLen = 1107;
+		vrLoc = 0;
+	};
+	5F04EE4A116129B6003EF573 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F69115F1AC900AE2F0C /* ShipmentListViewController.h */;
+		name = "ShipmentListViewController.h: 25";
+		rLen = 0;
+		rLoc = 686;
+		rType = 0;
+		vrLen = 928;
+		vrLoc = 0;
+	};
+	5F04EE4B116129B6003EF573 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* MarisolAppDelegate.m */;
+		name = "MarisolAppDelegate.m: 19";
+		rLen = 0;
+		rLoc = 441;
+		rType = 0;
+		vrLen = 637;
+		vrLoc = 0;
+	};
+	5F04EE4C116129B6003EF573 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* MarisolAppDelegate.h */;
+		name = "MarisolAppDelegate.h: 13";
+		rLen = 18;
+		rLoc = 256;
+		rType = 0;
+		vrLen = 438;
+		vrLoc = 0;
+	};
+	5F04EE4D11612A27003EF573 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* MarisolAppDelegate.h */;
+		name = "MarisolAppDelegate.h: 14";
+		rLen = 0;
+		rLoc = 295;
+		rType = 0;
+		vrLen = 438;
+		vrLoc = 0;
 	};
 	5F0E42141160370300768B65 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
