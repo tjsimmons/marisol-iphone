@@ -153,6 +153,33 @@
 			5F0E425411603B3600768B65 /* PBXTextBookmark */ = 5F0E425411603B3600768B65 /* PBXTextBookmark */;
 			5F0E425511603B3600768B65 /* PBXTextBookmark */ = 5F0E425511603B3600768B65 /* PBXTextBookmark */;
 			5F0E425611603B3600768B65 /* PBXTextBookmark */ = 5F0E425611603B3600768B65 /* PBXTextBookmark */;
+			5F0E425711603BDE00768B65 /* PBXTextBookmark */ = 5F0E425711603BDE00768B65 /* PBXTextBookmark */;
+			5F0E425E11603DF100768B65 /* PBXTextBookmark */ = 5F0E425E11603DF100768B65 /* PBXTextBookmark */;
+			5F0E425F11603DF100768B65 /* PBXTextBookmark */ = 5F0E425F11603DF100768B65 /* PBXTextBookmark */;
+			5F0E426011603DF100768B65 /* PBXTextBookmark */ = 5F0E426011603DF100768B65 /* PBXTextBookmark */;
+			5F0E426111603DF100768B65 /* PBXTextBookmark */ = 5F0E426111603DF100768B65 /* PBXTextBookmark */;
+			5F0E426211603DF100768B65 /* PBXTextBookmark */ = 5F0E426211603DF100768B65 /* PBXTextBookmark */;
+			5F0E426611603E1E00768B65 /* PBXTextBookmark */ = 5F0E426611603E1E00768B65 /* PBXTextBookmark */;
+			5F0E426711603E1E00768B65 /* PBXTextBookmark */ = 5F0E426711603E1E00768B65 /* PBXTextBookmark */;
+			5F0E426E11603E7600768B65 /* PBXTextBookmark */ = 5F0E426E11603E7600768B65 /* PBXTextBookmark */;
+			5F0E426F11603E7600768B65 /* PBXTextBookmark */ = 5F0E426F11603E7600768B65 /* PBXTextBookmark */;
+			5F0E427011603E7600768B65 /* PBXTextBookmark */ = 5F0E427011603E7600768B65 /* PBXTextBookmark */;
+			5F0E427411603EAD00768B65 /* PBXTextBookmark */ = 5F0E427411603EAD00768B65 /* PBXTextBookmark */;
+			5F0E427511603EAD00768B65 /* PBXTextBookmark */ = 5F0E427511603EAD00768B65 /* PBXTextBookmark */;
+			5F0E427611603EB800768B65 /* PBXTextBookmark */ = 5F0E427611603EB800768B65 /* PBXTextBookmark */;
+			5F0E427C11603ECD00768B65 /* PBXTextBookmark */ = 5F0E427C11603ECD00768B65 /* PBXTextBookmark */;
+			5F0E428111603F1A00768B65 /* PBXTextBookmark */ = 5F0E428111603F1A00768B65 /* PBXTextBookmark */;
+			5F0E428211603F1A00768B65 /* PBXTextBookmark */ = 5F0E428211603F1A00768B65 /* PBXTextBookmark */;
+			5F0E428311603F1A00768B65 /* PBXTextBookmark */ = 5F0E428311603F1A00768B65 /* PBXTextBookmark */;
+			5F0E428411603F1A00768B65 /* PBXTextBookmark */ = 5F0E428411603F1A00768B65 /* PBXTextBookmark */;
+			5F0E428D11603FE200768B65 /* PBXTextBookmark */ = 5F0E428D11603FE200768B65 /* PBXTextBookmark */;
+			5F0E428E11603FE200768B65 /* PBXTextBookmark */ = 5F0E428E11603FE200768B65 /* PBXTextBookmark */;
+			5F0E428F11603FE200768B65 /* PBXTextBookmark */ = 5F0E428F11603FE200768B65 /* PBXTextBookmark */;
+			5F0E429011603FE200768B65 /* PBXTextBookmark */ = 5F0E429011603FE200768B65 /* PBXTextBookmark */;
+			5F0E42951160401B00768B65 /* PBXTextBookmark */ = 5F0E42951160401B00768B65 /* PBXTextBookmark */;
+			5F0E42961160401B00768B65 /* PBXTextBookmark */ = 5F0E42961160401B00768B65 /* PBXTextBookmark */;
+			5F0E42971160401B00768B65 /* PBXTextBookmark */ = 5F0E42971160401B00768B65 /* PBXTextBookmark */;
+			5F0E42991160403200768B65 /* PBXTextBookmark */ = 5F0E42991160403200768B65 /* PBXTextBookmark */;
 			5FF3A183115FFBC300D99A27 = 5FF3A183115FFBC300D99A27 /* PBXTextBookmark */;
 			5FF3A184115FFBC300D99A27 = 5FF3A184115FFBC300D99A27 /* PBXTextBookmark */;
 			5FF3A185115FFBC300D99A27 = 5FF3A185115FFBC300D99A27 /* PBXTextBookmark */;
@@ -194,24 +221,24 @@
 	};
 	5F009F6A115F1AC900AE2F0C /* ShipmentListViewController.m */ = {
 		uiCtxt = {
-			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{5587, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{5638, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{5688, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 6456}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1123, 3055}}";
-			sepNavSelRange = "{249, 0}";
-			sepNavVisRange = "{4918, 1197}";
+			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{5587, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{5638, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{5688, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 6923}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1123, 3120}}";
+			sepNavSelRange = "{5887, 0}";
+			sepNavVisRange = "{5180, 1226}";
 		};
 	};
 	5F009F6E115F1AE500AE2F0C /* ShipmentDetailViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1123, 555}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 247}";
+			sepNavIntBoundsRect = "{{0, 0}, {1123, 523}}";
+			sepNavSelRange = "{192, 0}";
+			sepNavVisRange = "{0, 712}";
 		};
 	};
 	5F009F6F115F1AE500AE2F0C /* ShipmentDetailViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1146, 676}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1204}";
+			sepNavIntBoundsRect = "{{0, 0}, {1146, 962}}";
+			sepNavSelRange = "{1174, 0}";
+			sepNavVisRange = "{93, 1375}";
 		};
 	};
 	5F009F73115F1AF200AE2F0C /* LoginViewController.h */ = {
@@ -403,7 +430,7 @@
 		fRef = 5F009F6A115F1AC900AE2F0C /* ShipmentListViewController.m */;
 		name = "ShipmentListViewController.m: 181";
 		rLen = 0;
-		rLoc = 6450;
+		rLoc = 6917;
 		rType = 0;
 		vrLen = 929;
 		vrLoc = 0;
@@ -1009,6 +1036,276 @@
 		vrLen = 1254;
 		vrLoc = 4918;
 	};
+	5F0E425711603BDE00768B65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6A115F1AC900AE2F0C /* ShipmentListViewController.m */;
+		name = "ShipmentListViewController.m: 11";
+		rLen = 0;
+		rLoc = 249;
+		rType = 0;
+		vrLen = 1257;
+		vrLoc = 4918;
+	};
+	5F0E425E11603DF100768B65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6A115F1AC900AE2F0C /* ShipmentListViewController.m */;
+		name = "ShipmentListViewController.m: 212";
+		rLen = 0;
+		rLoc = 6377;
+		rType = 0;
+		vrLen = 1153;
+		vrLoc = 5272;
+	};
+	5F0E425F11603DF100768B65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F69115F1AC900AE2F0C /* ShipmentListViewController.h */;
+		name = "ShipmentListViewController.h: 11";
+		rLen = 0;
+		rLoc = 230;
+		rType = 0;
+		vrLen = 782;
+		vrLoc = 0;
+	};
+	5F0E426011603DF100768B65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6E115F1AE500AE2F0C /* ShipmentDetailViewController.h */;
+		name = "ShipmentDetailViewController.h: 27";
+		rLen = 0;
+		rLoc = 705;
+		rType = 0;
+		vrLen = 712;
+		vrLoc = 0;
+	};
+	5F0E426111603DF100768B65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6F115F1AE500AE2F0C /* ShipmentDetailViewController.m */;
+		name = "ShipmentDetailViewController.m: 20";
+		rLen = 0;
+		rLoc = 402;
+		rType = 0;
+		vrLen = 1162;
+		vrLoc = 3;
+	};
+	5F0E426211603DF100768B65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6F115F1AE500AE2F0C /* ShipmentDetailViewController.m */;
+		name = "ShipmentDetailViewController.m: 20";
+		rLen = 0;
+		rLoc = 402;
+		rType = 0;
+		vrLen = 1162;
+		vrLoc = 3;
+	};
+	5F0E426611603E1E00768B65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6F115F1AE500AE2F0C /* ShipmentDetailViewController.m */;
+		name = "ShipmentDetailViewController.m: 20";
+		rLen = 0;
+		rLoc = 390;
+		rType = 0;
+		vrLen = 1120;
+		vrLoc = 0;
+	};
+	5F0E426711603E1E00768B65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6E115F1AE500AE2F0C /* ShipmentDetailViewController.h */;
+		name = "ShipmentDetailViewController.h: 27";
+		rLen = 0;
+		rLoc = 705;
+		rType = 0;
+		vrLen = 712;
+		vrLoc = 0;
+	};
+	5F0E426E11603E7600768B65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6E115F1AE500AE2F0C /* ShipmentDetailViewController.h */;
+		name = "ShipmentDetailViewController.h: 27";
+		rLen = 0;
+		rLoc = 705;
+		rType = 0;
+		vrLen = 712;
+		vrLoc = 0;
+	};
+	5F0E426F11603E7600768B65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6F115F1AE500AE2F0C /* ShipmentDetailViewController.m */;
+		name = "ShipmentDetailViewController.m: 58";
+		rLen = 0;
+		rLoc = 1931;
+		rType = 0;
+		vrLen = 1120;
+		vrLoc = 0;
+	};
+	5F0E427011603E7600768B65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6F115F1AE500AE2F0C /* ShipmentDetailViewController.m */;
+		name = "ShipmentDetailViewController.m: 70";
+		rLen = 0;
+		rLoc = 2094;
+		rType = 0;
+		vrLen = 1090;
+		vrLoc = 794;
+	};
+	5F0E427411603EAD00768B65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6F115F1AE500AE2F0C /* ShipmentDetailViewController.m */;
+		name = "ShipmentDetailViewController.m: 19";
+		rLen = 0;
+		rLoc = 371;
+		rType = 0;
+		vrLen = 1120;
+		vrLoc = 0;
+	};
+	5F0E427511603EAD00768B65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6E115F1AE500AE2F0C /* ShipmentDetailViewController.h */;
+		name = "ShipmentDetailViewController.h: 16";
+		rLen = 0;
+		rLoc = 279;
+		rType = 0;
+		vrLen = 721;
+		vrLoc = 0;
+	};
+	5F0E427611603EB800768B65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6E115F1AE500AE2F0C /* ShipmentDetailViewController.h */;
+		name = "ShipmentDetailViewController.h: 16";
+		rLen = 0;
+		rLoc = 279;
+		rType = 0;
+		vrLen = 712;
+		vrLoc = 0;
+	};
+	5F0E427C11603ECD00768B65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6E115F1AE500AE2F0C /* ShipmentDetailViewController.h */;
+		name = "ShipmentDetailViewController.h: 11";
+		rLen = 0;
+		rLoc = 192;
+		rType = 0;
+		vrLen = 712;
+		vrLoc = 0;
+	};
+	5F0E428111603F1A00768B65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6F115F1AE500AE2F0C /* ShipmentDetailViewController.m */;
+		name = "ShipmentDetailViewController.m: 19";
+		rLen = 0;
+		rLoc = 371;
+		rType = 0;
+		vrLen = 1120;
+		vrLoc = 0;
+	};
+	5F0E428211603F1A00768B65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6E115F1AE500AE2F0C /* ShipmentDetailViewController.h */;
+		name = "ShipmentDetailViewController.h: 11";
+		rLen = 0;
+		rLoc = 192;
+		rType = 0;
+		vrLen = 712;
+		vrLoc = 0;
+	};
+	5F0E428311603F1A00768B65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6A115F1AC900AE2F0C /* ShipmentListViewController.m */;
+		name = "ShipmentListViewController.m: 212";
+		rLen = 0;
+		rLoc = 6377;
+		rType = 0;
+		vrLen = 1153;
+		vrLoc = 5272;
+	};
+	5F0E428411603F1A00768B65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6A115F1AC900AE2F0C /* ShipmentListViewController.m */;
+		name = "ShipmentListViewController.m: 223";
+		rLen = 0;
+		rLoc = 6377;
+		rType = 0;
+		vrLen = 1351;
+		vrLoc = 5114;
+	};
+	5F0E428D11603FE200768B65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6A115F1AC900AE2F0C /* ShipmentListViewController.m */;
+		name = "ShipmentListViewController.m: 223";
+		rLen = 0;
+		rLoc = 6377;
+		rType = 0;
+		vrLen = 1393;
+		vrLoc = 5114;
+	};
+	5F0E428E11603FE200768B65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6E115F1AE500AE2F0C /* ShipmentDetailViewController.h */;
+		name = "ShipmentDetailViewController.h: 11";
+		rLen = 0;
+		rLoc = 192;
+		rType = 0;
+		vrLen = 712;
+		vrLoc = 0;
+	};
+	5F0E428F11603FE200768B65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6F115F1AE500AE2F0C /* ShipmentDetailViewController.m */;
+		name = "ShipmentDetailViewController.m: 16";
+		rLen = 0;
+		rLoc = 283;
+		rType = 0;
+		vrLen = 978;
+		vrLoc = 913;
+	};
+	5F0E429011603FE200768B65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6F115F1AE500AE2F0C /* ShipmentDetailViewController.m */;
+		name = "ShipmentDetailViewController.m: 39";
+		rLen = 0;
+		rLoc = 1174;
+		rType = 0;
+		vrLen = 1377;
+		vrLoc = 93;
+	};
+	5F0E42951160401B00768B65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6E115F1AE500AE2F0C /* ShipmentDetailViewController.h */;
+		name = "ShipmentDetailViewController.h: 11";
+		rLen = 0;
+		rLoc = 192;
+		rType = 0;
+		vrLen = 712;
+		vrLoc = 0;
+	};
+	5F0E42961160401B00768B65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6F115F1AE500AE2F0C /* ShipmentDetailViewController.m */;
+		name = "ShipmentDetailViewController.m: 39";
+		rLen = 0;
+		rLoc = 1174;
+		rType = 0;
+		vrLen = 1375;
+		vrLoc = 93;
+	};
+	5F0E42971160401B00768B65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6A115F1AC900AE2F0C /* ShipmentListViewController.m */;
+		name = "ShipmentListViewController.m: 213";
+		rLen = 0;
+		rLoc = 5912;
+		rType = 0;
+		vrLen = 1251;
+		vrLoc = 5180;
+	};
+	5F0E42991160403200768B65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F6A115F1AC900AE2F0C /* ShipmentListViewController.m */;
+		name = "ShipmentListViewController.m: 215";
+		rLen = 0;
+		rLoc = 5944;
+		rType = 0;
+		vrLen = 1283;
+		vrLoc = 5180;
+	};
 	5F528500115F16AF00715B4A /* Marisol */ = {
 		isa = PBXExecutable;
 		activeArgIndices = (
@@ -1165,7 +1462,7 @@
 		comments = "Incomplete implementation of class 'ShipmentListViewController'";
 		fRef = 5F009F6A115F1AC900AE2F0C /* ShipmentListViewController.m */;
 		rLen = 1;
-		rLoc = 239;
+		rLoc = 254;
 		rType = 1;
 	};
 	5FF3A1A2115FFCFE00D99A27 /* PBXTextBookmark */ = {
@@ -1173,7 +1470,7 @@
 		fRef = 5F009F6A115F1AC900AE2F0C /* ShipmentListViewController.m */;
 		name = "ShipmentListViewController.m: 181";
 		rLen = 0;
-		rLoc = 6450;
+		rLoc = 6917;
 		rType = 0;
 		vrLen = 929;
 		vrLoc = 0;

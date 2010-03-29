@@ -210,6 +210,21 @@
 	 [self.navigationController pushViewController:detailViewController animated:YES];
 	 [detailViewController release];
 	 */
+	
+	if ( !dataLoaded ) {
+		return;
+	} else {
+		NSInteger row = [indexPath row];
+		Shipment *theShipment = [self.shipmentList objectAtIndex: row];
+		
+		ShipmentDetailViewController *detailController = [[ShipmentDetailViewController alloc] initWithNibName: @"ShipmentDetailViewController" bundle: nil];
+		
+		detailController.shipment = theShipment;
+		
+		[self.navigationController pushViewController: detailController animated: YES];
+		
+		[detailController release];
+	}
 }
 
 
