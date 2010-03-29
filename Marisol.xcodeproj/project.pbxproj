@@ -28,6 +28,7 @@
 		5F009FA3115F1BDB00AE2F0C /* exStatRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F009FA1115F1BDB00AE2F0C /* exStatRootViewController.xib */; };
 		5F009FB5115F1C9E00AE2F0C /* Shipment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F009FB4115F1C9E00AE2F0C /* Shipment.m */; };
 		5F009FE0115F240800AE2F0C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F009FDF115F240800AE2F0C /* icon.png */; };
+		5F04EE2111611F96003EF573 /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F04EE2011611F96003EF573 /* globe.png */; };
 		5F0E42A5116040F500768B65 /* ShipmentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0E42A3116040F500768B65 /* ShipmentDetailViewController.m */; };
 		5F0E42A6116040F500768B65 /* ShipmentDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F0E42A4116040F500768B65 /* ShipmentDetailViewController.xib */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,7 @@
 		5F009FB3115F1C9E00AE2F0C /* Shipment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shipment.h; sourceTree = "<group>"; };
 		5F009FB4115F1C9E00AE2F0C /* Shipment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shipment.m; sourceTree = "<group>"; };
 		5F009FDF115F240800AE2F0C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Classes/icon.png; sourceTree = "<group>"; };
+		5F04EE2011611F96003EF573 /* globe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = globe.png; sourceTree = "<group>"; };
 		5F0E42A2116040F500768B65 /* ShipmentDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShipmentDetailViewController.h; sourceTree = "<group>"; };
 		5F0E42A3116040F500768B65 /* ShipmentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShipmentDetailViewController.m; sourceTree = "<group>"; };
 		5F0E42A4116040F500768B65 /* ShipmentDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ShipmentDetailViewController.xib; path = Classes/ShipmentDetailViewController.xib; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				5F009F6B115F1AC900AE2F0C /* ShipmentListViewController.xib */,
 				5F009FA1115F1BDB00AE2F0C /* exStatRootViewController.xib */,
 				5F009F90115F1B9B00AE2F0C /* weeklist.plist */,
+				5F04EE2011611F96003EF573 /* globe.png */,
 				5F009FDF115F240800AE2F0C /* icon.png */,
 				5F009F9C115F1BD300AE2F0C /* iStatRootViewController.xib */,
 				5F009F75115F1AF200AE2F0C /* LoginViewController.xib */,
@@ -235,6 +238,7 @@
 				5F009FA3115F1BDB00AE2F0C /* exStatRootViewController.xib in Resources */,
 				5F009FE0115F240800AE2F0C /* icon.png in Resources */,
 				5F0E42A6116040F500768B65 /* ShipmentDetailViewController.xib in Resources */,
+				5F04EE2111611F96003EF573 /* globe.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
