@@ -328,7 +328,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>5F04EE4D11612A27003EF573</string>
+										<string>5F04EE6511612C97003EF573</string>
 										<key>history</key>
 										<array>
 											<string>5F009FE4115F241700AE2F0C</string>
@@ -355,7 +355,7 @@
 											<string>5F04EE49116129B6003EF573</string>
 											<string>5F04EE4A116129B6003EF573</string>
 											<string>5F04EE4B116129B6003EF573</string>
-											<string>5F04ECF51160F115003EF573</string>
+											<string>5F04EE4D11612A27003EF573</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -367,14 +367,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1184, 543}}</string>
+								<string>{{0, 0}, {1184, 537}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 59 1440 819 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>543pt</string>
+							<string>537pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -387,14 +387,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 548}, {1184, 230}}</string>
+								<string>{{0, 542}, {1184, 236}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 59 1440 819 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>230pt</string>
+							<string>236pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -413,9 +413,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>5F04EC6E1160E331003EF573</string>
+				<string>5F04EE5711612BBB003EF573</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>5F04EC6F1160E331003EF573</string>
+				<string>5F04EE5811612BBB003EF573</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -553,12 +553,10 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>5F04EC861160E53E003EF573</string>
-		<string>5F04EC791160E331003EF573</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>5F528512115F16D700715B4A</string>
-		<string>/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/Marisol.xcodeproj</string>
+		<string>/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol-Experimental/Marisol.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 59 1440 819 0 0 1440 878 </string>
@@ -638,7 +636,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>5F528512115F16D700715B4A</string>
-				<string>5F04EC701160E331003EF573</string>
+				<string>5F04EE5911612BBB003EF573</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -760,13 +758,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>5F04EC711160E331003EF573</string>
+				<string>5F04EE5E11612C7E003EF573</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>5F04EC721160E331003EF573</string>
-				<string>5F04EC731160E331003EF573</string>
-				<string>5F04EC741160E331003EF573</string>
-				<string>5F04EC751160E331003EF573</string>
-				<string>5F04EC761160E331003EF573</string>
+				<string>5F04EE5F11612C7E003EF573</string>
+				<string>5F04EE6011612C7E003EF573</string>
+				<string>5F04EE6111612C7E003EF573</string>
+				<string>5F04EE6211612C7E003EF573</string>
+				<string>5F04EE6311612C7E003EF573</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -893,8 +891,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -930,7 +926,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>5F04EC771160E331003EF573</string>
+				<string>5F04EE6411612C7E003EF573</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>

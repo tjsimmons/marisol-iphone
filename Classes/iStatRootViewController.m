@@ -47,11 +47,8 @@
 	NSArray *array = [[NSArray alloc] initWithObjects: weekViewController, nil];
 	
 	[self.navController setViewControllers: array animated: NO];
-	
-	// present the login controller
-	[self presentModalViewController: loginController animated: YES];
-	
-	// behind that, add in the iSTAT view
+		
+	// add in the iSTAT view
 	[self.view addSubview: self.navController.view];
 	
 	[array release];
