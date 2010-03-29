@@ -39,6 +39,7 @@
 	[customer release];
 	[handler release];
 	[path release];
+	[url release];
 }
 
 #pragma mark -

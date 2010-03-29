@@ -16,6 +16,8 @@
 
 @synthesize usernameField;
 @synthesize passwordField;
+@synthesize loginButton;
+@synthesize activityIndicator;
 @synthesize connection;
 
 #pragma mark -
@@ -48,6 +50,9 @@
 	
 	if ( ![passwordField.text isEqualToString: @""] && ![usernameField.text isEqualToString: @""] ) {
 		[defaults setObject: usernameField.text forKey: kUsernameKey];
+		
+		self.loginButton.hidden = YES;
+		self.activityIndicator.hidden = NO;
 		
 		[self initiateLogin];
 	}
@@ -101,6 +106,10 @@
 		
 		[connection cancel];
 		self.connection = nil;
+		
+		// revert activity indicator and login button
+		self.activityIndicator.hidden = YES;
+		self.loginButton.hidden = NO;
 	} else {
 		[usernameField resignFirstResponder];
 		[passwordField resignFirstResponder];
@@ -174,12 +183,16 @@
     // e.g. self.myOutlet = nil;
 	self.usernameField = nil;
 	self.passwordField = nil;
+	self.activityIndicator = nil;
+	self.loginButton = nil;
 }
 
 
 - (void)dealloc {
 	self.usernameField = nil;
 	self.passwordField = nil;
+	self.activityIndicator = nil;
+	self.loginButton = nil;
     [super dealloc];
 }
 

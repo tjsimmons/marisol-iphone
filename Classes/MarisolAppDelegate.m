@@ -20,7 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
 	BOOL iStat = YES;
-	BOOL exStat = YES;
+	BOOL exStat = NO;
 	
     // Override point for customization after application launch
 	UITabBarController *tabController = [[UITabBarController alloc] init];
@@ -65,6 +65,7 @@
 	self.tabBarController = tabController;
 	
 	[tabController release];
+	[viewControllers release];
 	
 	LoginViewController *loginController = [[LoginViewController alloc] initWithNibName: @"LoginViewController" bundle: nil];
 	
