@@ -14,6 +14,7 @@
 @interface ShipmentListViewController : UITableViewController <ConnectionHandlerDelegate, XMLParseHandlerDelegate> {
 	NSString			*whichStat;
 	NSMutableArray		*shipmentList;
+	BOOL				dataLoaded;
 }
 
 @property (nonatomic, retain) NSString *whichStat;
