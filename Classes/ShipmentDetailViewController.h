@@ -20,7 +20,6 @@
 }
 
 @property (nonatomic, retain) Shipment *shipment;
-
 @property (nonatomic, retain) IBOutlet UILabel *shipmentIDLabel;
 @property (nonatomic, retain) IBOutlet UILabel *marisolNumLabel;
 @property (nonatomic, retain) IBOutlet UILabel *coldStorageLabel;

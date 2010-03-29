@@ -17,8 +17,6 @@
 		5F009F68115F1AA500AE2F0C /* WeekListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F009F66115F1AA500AE2F0C /* WeekListViewController.xib */; };
 		5F009F6C115F1AC900AE2F0C /* ShipmentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F009F6A115F1AC900AE2F0C /* ShipmentListViewController.m */; };
 		5F009F6D115F1AC900AE2F0C /* ShipmentListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F009F6B115F1AC900AE2F0C /* ShipmentListViewController.xib */; };
-		5F009F71115F1AE500AE2F0C /* ShipmentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F009F6F115F1AE500AE2F0C /* ShipmentDetailViewController.m */; };
-		5F009F72115F1AE500AE2F0C /* ShipmentDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F009F70115F1AE500AE2F0C /* ShipmentDetailViewController.xib */; };
 		5F009F76115F1AF200AE2F0C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F009F74115F1AF200AE2F0C /* LoginViewController.m */; };
 		5F009F77115F1AF200AE2F0C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F009F75115F1AF200AE2F0C /* LoginViewController.xib */; };
 		5F009F93115F1B9B00AE2F0C /* ConnectionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F009F8F115F1B9B00AE2F0C /* ConnectionHandler.m */; };
@@ -30,6 +28,8 @@
 		5F009FA3115F1BDB00AE2F0C /* exStatRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F009FA1115F1BDB00AE2F0C /* exStatRootViewController.xib */; };
 		5F009FB5115F1C9E00AE2F0C /* Shipment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F009FB4115F1C9E00AE2F0C /* Shipment.m */; };
 		5F009FE0115F240800AE2F0C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F009FDF115F240800AE2F0C /* icon.png */; };
+		5F0E42A5116040F500768B65 /* ShipmentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0E42A3116040F500768B65 /* ShipmentDetailViewController.m */; };
+		5F0E42A6116040F500768B65 /* ShipmentDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F0E42A4116040F500768B65 /* ShipmentDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,9 +48,6 @@
 		5F009F69115F1AC900AE2F0C /* ShipmentListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShipmentListViewController.h; sourceTree = "<group>"; };
 		5F009F6A115F1AC900AE2F0C /* ShipmentListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShipmentListViewController.m; sourceTree = "<group>"; };
 		5F009F6B115F1AC900AE2F0C /* ShipmentListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ShipmentListViewController.xib; path = Classes/ShipmentListViewController.xib; sourceTree = "<group>"; };
-		5F009F6E115F1AE500AE2F0C /* ShipmentDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShipmentDetailViewController.h; sourceTree = "<group>"; };
-		5F009F6F115F1AE500AE2F0C /* ShipmentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShipmentDetailViewController.m; sourceTree = "<group>"; };
-		5F009F70115F1AE500AE2F0C /* ShipmentDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ShipmentDetailViewController.xib; path = Classes/ShipmentDetailViewController.xib; sourceTree = "<group>"; };
 		5F009F73115F1AF200AE2F0C /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		5F009F74115F1AF200AE2F0C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		5F009F75115F1AF200AE2F0C /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoginViewController.xib; path = Classes/LoginViewController.xib; sourceTree = "<group>"; };
@@ -68,6 +65,9 @@
 		5F009FB3115F1C9E00AE2F0C /* Shipment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shipment.h; sourceTree = "<group>"; };
 		5F009FB4115F1C9E00AE2F0C /* Shipment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shipment.m; sourceTree = "<group>"; };
 		5F009FDF115F240800AE2F0C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Classes/icon.png; sourceTree = "<group>"; };
+		5F0E42A2116040F500768B65 /* ShipmentDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShipmentDetailViewController.h; sourceTree = "<group>"; };
+		5F0E42A3116040F500768B65 /* ShipmentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShipmentDetailViewController.m; sourceTree = "<group>"; };
+		5F0E42A4116040F500768B65 /* ShipmentDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ShipmentDetailViewController.xib; path = Classes/ShipmentDetailViewController.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Marisol-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Marisol-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,10 +126,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5F0E42A4116040F500768B65 /* ShipmentDetailViewController.xib */,
 				5F009F6B115F1AC900AE2F0C /* ShipmentListViewController.xib */,
 				5F009FA1115F1BDB00AE2F0C /* exStatRootViewController.xib */,
 				5F009F90115F1B9B00AE2F0C /* weeklist.plist */,
-				5F009F70115F1AE500AE2F0C /* ShipmentDetailViewController.xib */,
 				5F009FDF115F240800AE2F0C /* icon.png */,
 				5F009F9C115F1BD300AE2F0C /* iStatRootViewController.xib */,
 				5F009F75115F1AF200AE2F0C /* LoginViewController.xib */,
@@ -154,9 +154,9 @@
 			isa = PBXGroup;
 			children = (
 				5F009F65115F1AA500AE2F0C /* WeekListViewController.m */,
-				5F009F6F115F1AE500AE2F0C /* ShipmentDetailViewController.m */,
 				5F009F8F115F1B9B00AE2F0C /* ConnectionHandler.m */,
 				5F009F9B115F1BD300AE2F0C /* iStatRootViewController.m */,
+				5F0E42A3116040F500768B65 /* ShipmentDetailViewController.m */,
 				5F009FB4115F1C9E00AE2F0C /* Shipment.m */,
 				5F009FA0115F1BDB00AE2F0C /* exStatRootViewController.m */,
 				5F009F74115F1AF200AE2F0C /* LoginViewController.m */,
@@ -176,10 +176,10 @@
 				5F009F8E115F1B9B00AE2F0C /* ConnectionHandler.h */,
 				5F009F91115F1B9B00AE2F0C /* XMLParseHandler.h */,
 				5F009F69115F1AC900AE2F0C /* ShipmentListViewController.h */,
-				5F009F6E115F1AE500AE2F0C /* ShipmentDetailViewController.h */,
 				5F009F73115F1AF200AE2F0C /* LoginViewController.h */,
 				5F009F9A115F1BD300AE2F0C /* iStatRootViewController.h */,
 				5F009FB3115F1C9E00AE2F0C /* Shipment.h */,
+				5F0E42A2116040F500768B65 /* ShipmentDetailViewController.h */,
 			);
 			name = Implementations;
 			sourceTree = "<group>";
@@ -229,12 +229,12 @@
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				5F009F68115F1AA500AE2F0C /* WeekListViewController.xib in Resources */,
 				5F009F6D115F1AC900AE2F0C /* ShipmentListViewController.xib in Resources */,
-				5F009F72115F1AE500AE2F0C /* ShipmentDetailViewController.xib in Resources */,
 				5F009F77115F1AF200AE2F0C /* LoginViewController.xib in Resources */,
 				5F009F94115F1B9B00AE2F0C /* weeklist.plist in Resources */,
 				5F009F9E115F1BD300AE2F0C /* iStatRootViewController.xib in Resources */,
 				5F009FA3115F1BDB00AE2F0C /* exStatRootViewController.xib in Resources */,
 				5F009FE0115F240800AE2F0C /* icon.png in Resources */,
+				5F0E42A6116040F500768B65 /* ShipmentDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,13 +249,13 @@
 				1D3623260D0F684500981E51 /* MarisolAppDelegate.m in Sources */,
 				5F009F67115F1AA500AE2F0C /* WeekListViewController.m in Sources */,
 				5F009F6C115F1AC900AE2F0C /* ShipmentListViewController.m in Sources */,
-				5F009F71115F1AE500AE2F0C /* ShipmentDetailViewController.m in Sources */,
 				5F009F76115F1AF200AE2F0C /* LoginViewController.m in Sources */,
 				5F009F93115F1B9B00AE2F0C /* ConnectionHandler.m in Sources */,
 				5F009F95115F1B9B00AE2F0C /* XMLParseHandler.m in Sources */,
 				5F009F9D115F1BD300AE2F0C /* iStatRootViewController.m in Sources */,
 				5F009FA2115F1BDB00AE2F0C /* exStatRootViewController.m in Sources */,
 				5F009FB5115F1C9E00AE2F0C /* Shipment.m in Sources */,
+				5F0E42A5116040F500768B65 /* ShipmentDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

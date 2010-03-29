@@ -16,4 +16,12 @@
 @synthesize coldStorageDateString;
 @synthesize deliveryDateString;
 
+-(void) dealloc {
+	self.marisolNum = nil;
+	self.coldStorageDateString = nil;
+	self.deliveryDateString = nil;
+	
+	[super dealloc];
+}
+
 @end
