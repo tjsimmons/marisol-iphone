@@ -18,7 +18,7 @@
 #pragma mark -
 #pragma mark Custom Methods
 -(void) loginViewDidDismiss {
-	NSLog(@"login view did dismiss");
+	
 }
 
 #pragma mark -
@@ -40,8 +40,6 @@
 	
 	WeekListViewController *weekViewController = [[WeekListViewController alloc] initWithNibName: @"WeekListViewController" bundle: nil];
 	LoginViewController *loginController = [[LoginViewController alloc] initWithNibName: @"LoginViewController" bundle: nil];
-	
-	loginController.rootViewController = self;
 	
 	weekViewController.title = @"iSTAT Week List";
 	weekViewController.whichStat = @"iSTAT";

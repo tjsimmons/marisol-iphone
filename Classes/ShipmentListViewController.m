@@ -27,8 +27,8 @@
 	ConnectionHandler *handler = [[ConnectionHandler alloc] initWithDelegate: self];
 	NSString *path = [[NSString alloc] initWithFormat: @"%@.xml", self.whichStat];
 	
-	NSString *customer = @"Primos";
-	
+	NSString *customer = [[NSString alloc] initWithString: [[NSUserDefaults standardUserDefaults] objectForKey: @"Customer"]];
+	NSLog(@"customer is %@", customer);
 	NSString *url = [[NSString alloc] initWithFormat: @"https://www.marisolintl.com/iphone/shipmentxml.asp?customer=%@&start=%@&end=%@", 
 					 customer, self.startDate, self.endDate];
 	
@@ -36,6 +36,7 @@
 	
 	[handler beginURLConnection: url];
 	
+	[customer release];
 	[handler release];
 	[path release];
 }
