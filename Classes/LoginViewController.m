@@ -73,6 +73,9 @@
 												  cancelButtonTitle: @"Okay" otherButtonTitles: nil];
 			[alert show];
 			[alert release];
+			
+			[self.connection cancel];
+			self.connection = nil;
 		}
 	}
 }
