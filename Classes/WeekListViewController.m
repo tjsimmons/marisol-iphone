@@ -165,9 +165,13 @@
 	
 	if ( [whichStat isEqualToString: kIStat] ) {
 		shipmentListViewController.title = @"iSTAT Shipment List";
+		shipmentListViewController.whichStat = kIStat;
 	} else {
 		shipmentListViewController.title = @"exSTAT Shipment List";
+		shipmentListViewController.whichStat = kExStat;
 	}
+	
+	[shipmentListViewController startConnectionProcess];
 	
 	[self.navigationController pushViewController: shipmentListViewController animated: YES];
 	

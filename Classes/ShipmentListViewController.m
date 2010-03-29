@@ -7,16 +7,39 @@
 //
 
 #import "ShipmentListViewController.h"
+#import "ShipmentDetailViewController.h"
+
+#define kIStat		@"iSTAT"
+#define kExStat		@"exSTAT"
 
 
 @implementation ShipmentListViewController
 
 @synthesize whichStat;
+@synthesize shipmentList;
+
+#pragma mark -
+#pragma mark Custom Methods
+-(void) startConnectionProcess {
+	ConnectionHandler *handler = [[ConnectionHandler alloc] initWithDelegate: self];
+	NSString *path = [[NSString alloc] initWithFormat: @"%@.xml", self.whichStat];
+	
+	NSString *customer = @"Primos";
+	
+	NSString *url = [[NSString alloc] initWithFormat: @"https://www.marisolintl.com/iphone/shipmentxml.asp?customer=%@", customer];
+	
+	handler.xmlPathComponent = path;
+	
+	[handler beginURLConnection: url];
+	
+	[handler release];
+	[path release];
+}
 
 #pragma mark -
 #pragma mark Connection Handler Delegate Method
 -(void) connectionFinishedWithFilePath:(NSString *)filePath {
-	
+	NSLog(@"finished with file path %@", filePath);
 }
 
 #pragma mark -
@@ -28,23 +51,32 @@
 #pragma mark -
 #pragma mark View lifecycle
 
-/*
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     // Uncomment the following line to preserve selection between presentations.
-    self.clearsSelectionOnViewWillAppear = NO;
+    //self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-*/
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-}
-*/
+	
+	ConnectionHandler *handler = [[ConnectionHandler alloc] initWithDelegate: self];
+	NSString *path = [[NSString alloc] initWithFormat: @"%@.xml", self.whichStat];
+	
+	handler.xmlPathComponent = path;
+	
+	NSLog(@"path is %@", path);
+	
+	[handler release];
+	[path release];
+}*/
+
 /*
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -174,6 +206,7 @@
 
 - (void)dealloc {
 	self.whichStat = nil;
+	self.shipmentList = nil;
     [super dealloc];
 }
 
