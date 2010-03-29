@@ -102,6 +102,7 @@
 	
 	cell.textLabel.text = weekString;
 	cell.detailTextLabel.text = dateString;
+	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	
 	[weekString release];
 	[dateString release];
