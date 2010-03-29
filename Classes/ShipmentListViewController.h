@@ -12,10 +12,14 @@
 
 
 @interface ShipmentListViewController : UITableViewController <ConnectionHandlerDelegate, XMLParseHandlerDelegate> {
-	NSString	*whichStat;
+	NSString			*whichStat;
+	NSMutableArray		*shipmentList;
 }
 
 @property (nonatomic, retain) NSString *whichStat;
+@property (nonatomic, retain) NSMutableArray *shipmentList;
+
+-(void) startConnectionProcess;
 
 // Connection Handler Delegate Method
 -(void) connectionFinishedWithFilePath:(NSString *)filePath;
