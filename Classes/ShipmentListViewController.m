@@ -28,7 +28,7 @@
 	NSString *path = [[NSString alloc] initWithFormat: @"%@.xml", self.whichStat];
 	
 	NSString *customer = [[NSString alloc] initWithString: [[NSUserDefaults standardUserDefaults] objectForKey: @"Customer"]];
-
+	
 	NSString *url = [[NSString alloc] initWithFormat: @"https://www.marisolintl.com/iphone/shipmentxml.asp?customer=%@&start=%@&end=%@", 
 					 customer, self.startDate, self.endDate];
 	
@@ -201,7 +201,6 @@
  }
  */
 
-
 /*
  // Override to support conditional rearranging of the table view.
  - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -215,28 +214,24 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-	/*
-	 <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-	 [self.navigationController pushViewController:detailViewController animated:YES];
-	 [detailViewController release];
-	 */
-	
+    // Navigation logic may go here. Create and push another view controller
 	if ( !dataLoaded ) {
 		return;
 	} else {
-		NSInteger row = [indexPath row];
-		Shipment *theShipment = [self.shipmentList objectAtIndex: row];
-		
-		ShipmentDetailViewController *detailController = [[ShipmentDetailViewController alloc] initWithNibName: @"ShipmentDetailViewController" bundle: nil];
-		
-		detailController.shipment = theShipment;
-		
-		[self.navigationController pushViewController: detailController animated: YES];
-		
-		[detailController release];
+		if ( [self.shipmentList count] > 0 ) {
+			NSInteger row = [indexPath row];
+			Shipment *theShipment = [self.shipmentList objectAtIndex: row];
+			
+			ShipmentDetailViewController *detailController = [[ShipmentDetailViewController alloc] initWithNibName: @"ShipmentDetailViewController" bundle: nil];
+			
+			detailController.shipment = theShipment;
+			
+			[self.navigationController pushViewController: detailController animated: YES];
+			
+			[detailController release];
+		} else {
+			return;
+		}
 	}
 }
 
