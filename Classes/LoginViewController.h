@@ -14,13 +14,21 @@
 	UITextField *usernameField;
 	UITextField *passwordField;
 	
-	iStatRootViewController *rootViewController;
+	NSMutableData	*theData;
+	NSString		*tempFilePath;
+	NSURLConnection *connection;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField *usernameField;
 @property (nonatomic, retain) IBOutlet UITextField *passwordField;
-@property (nonatomic, retain) iStatRootViewController *rootViewController;
+@property (nonatomic, retain) NSURLConnection *connection;
 
+-(IBAction) usernameFieldDoneEditing;
+-(IBAction) passwordFieldDoneEditing;
+-(IBAction) backgroundTap;
 -(IBAction) loginButtonPressed;
+
+-(void) initiateLogin;
+-(void) loginFinished;
 
 @end

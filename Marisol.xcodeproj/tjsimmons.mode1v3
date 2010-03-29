@@ -280,7 +280,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 1}, {234, 760}}</string>
+							<string>{{0, 0}, {234, 760}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -329,20 +329,15 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>5F04ECC51160EAEC003EF573</string>
+										<string>5F04ED481160F8DA003EF573</string>
 										<key>history</key>
 										<array>
-											<string>5F009F8B115F1B7D00AE2F0C</string>
 											<string>5F009FE4115F241700AE2F0C</string>
-											<string>5F00A002115F25C900AE2F0C</string>
 											<string>5FF3A185115FFBC300D99A27</string>
 											<string>5F0E42161160370300768B65</string>
-											<string>5F0E42171160370300768B65</string>
 											<string>5F0E42181160370300768B65</string>
-											<string>5F1BE98B11604410002E6AAF</string>
 											<string>5F1BE98C11604410002E6AAF</string>
 											<string>5F1BE98D11604410002E6AAF</string>
-											<string>5F1BE99111604410002E6AAF</string>
 											<string>5F1BE99311604410002E6AAF</string>
 											<string>5F1BE99411604410002E6AAF</string>
 											<string>5F1BE99511604410002E6AAF</string>
@@ -350,12 +345,17 @@
 											<string>5F04EC691160E331003EF573</string>
 											<string>5F04EC6A1160E331003EF573</string>
 											<string>5F04EC8B1160E925003EF573</string>
-											<string>5F04EC8C1160E925003EF573</string>
-											<string>5F04EC8D1160E925003EF573</string>
 											<string>5F04EC8E1160E925003EF573</string>
-											<string>5F04EC8F1160E925003EF573</string>
-											<string>5F04EC931160E949003EF573</string>
-											<string>5F04EC941160E949003EF573</string>
+											<string>5F04ECF51160F115003EF573</string>
+											<string>5F04ECF61160F115003EF573</string>
+											<string>5F04ECF91160F115003EF573</string>
+											<string>5F04ECFB1160F115003EF573</string>
+											<string>5F04ED2C1160F7B3003EF573</string>
+											<string>5F04ED2D1160F7B3003EF573</string>
+											<string>5F04ED3F1160F87D003EF573</string>
+											<string>5F04ED401160F87D003EF573</string>
+											<string>5F04ED411160F87D003EF573</string>
+											<string>5F04ED421160F87D003EF573</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -555,10 +555,10 @@
 	<array>
 		<string>5F04EC861160E53E003EF573</string>
 		<string>5F04EC791160E331003EF573</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>5F528512115F16D700715B4A</string>
 		<string>/Users/tjsimmons/Dropbox/Code/iPhone Apps/Marisol/Marisol.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 59 1440 819 0 0 1440 878 </string>
@@ -893,6 +893,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -938,7 +940,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
