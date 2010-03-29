@@ -8,6 +8,7 @@
 
 #import "ShipmentListViewController.h"
 #import "ShipmentDetailViewController.h"
+#import "Shipment.h"
 
 #define kIStat		@"iSTAT"
 #define kExStat		@"exSTAT"
@@ -39,13 +40,21 @@
 #pragma mark -
 #pragma mark Connection Handler Delegate Method
 -(void) connectionFinishedWithFilePath:(NSString *)filePath {
-
+	XMLParseHandler *handler = [[XMLParseHandler alloc] initWithDelegate: self];
+	
+	[handler startXMLParseWithFile: filePath];
+	
+	[handler release];
 }
 
 #pragma mark -
 #pragma mark XML Parse Handler Delegate Method
 -(void) xmlDidFinishParsingWithArray: (NSMutableArray *) array {
+	dataLoaded = YES;
 	
+	self.shipmentList = array;
+	
+	[self.tableView reloadData];
 }
 
 #pragma mark -
@@ -54,6 +63,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	NSMutableArray *array = [[NSMutableArray alloc] initWithObjects: @"firstLoad", nil];
+	
+	self.shipmentList = array;
+	
+	dataLoaded = NO;
+	
+	[array release];
 
     // Uncomment the following line to preserve selection between presentations.
     //self.clearsSelectionOnViewWillAppear = NO;
@@ -112,7 +129,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 1;
+    return [self.shipmentList count];
 }
 
 
@@ -127,6 +144,15 @@
     }
     
     // Configure the cell...
+	if ( dataLoaded ) {
+		NSInteger row = [indexPath row];
+		Shipment *shipment = [self.shipmentList objectAtIndex: row];
+		
+		cell.textLabel.text = shipment.marisolNum;
+		cell.detailTextLabel.text = shipment.coldStorageDateString;
+	} else {
+		cell.textLabel.text = @"Loading...";
+	}
     
     return cell;
 }
