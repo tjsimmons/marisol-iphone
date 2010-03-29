@@ -28,7 +28,7 @@
 	NSString *path = [[NSString alloc] initWithFormat: @"%@.xml", self.whichStat];
 	
 	NSString *customer = [[NSString alloc] initWithString: [[NSUserDefaults standardUserDefaults] objectForKey: @"Customer"]];
-	NSLog(@"customer is %@", customer);
+
 	NSString *url = [[NSString alloc] initWithFormat: @"https://www.marisolintl.com/iphone/shipmentxml.asp?customer=%@&start=%@&end=%@", 
 					 customer, self.startDate, self.endDate];
 	
@@ -133,7 +133,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [self.shipmentList count];
+    return ( [self.shipmentList count] > 0 ? [self.shipmentList count] : 1 );
 }
 
 
@@ -143,18 +143,25 @@
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
+	if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
     
     // Configure the cell...
 	if ( dataLoaded ) {
-		NSInteger row = [indexPath row];
-		Shipment *shipment = [self.shipmentList objectAtIndex: row];
-		
-		cell.textLabel.text = shipment.marisolNum;
-		cell.detailTextLabel.text = shipment.coldStorageDateString;
-		cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+		if ( [self.shipmentList count] > 0 ) {
+			NSInteger row = [indexPath row];
+			Shipment *shipment = [self.shipmentList objectAtIndex: row];
+			
+			cell.textLabel.text = shipment.marisolNum;
+			cell.detailTextLabel.text = shipment.coldStorageDateString;
+			cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+		} else {
+			NSString *textString = [[NSString alloc] initWithString: @"No shipments."];
+			cell.textLabel.text = textString;
+			
+			[textString release];
+		}
 	} else {
 		cell.textLabel.text = @"Loading...";
 	}
