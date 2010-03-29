@@ -8,6 +8,7 @@
 
 #import "MarisolAppDelegate.h"
 #import "LoginViewController.h"
+#import "HomeViewController.h"
 #import "iStatRootViewController.h"
 #import "exStatRootViewController.h"
 
@@ -24,6 +25,16 @@
     // Override point for customization after application launch
 	UITabBarController *tabController = [[UITabBarController alloc] init];
 	NSMutableArray *viewControllers = [[NSMutableArray alloc] init];
+	
+	HomeViewController *homeController = [[HomeViewController alloc] initWithNibName: @"HomeViewController" bundle: nil];
+	
+	NSString *homeTitle = [[NSString alloc] initWithString: @"Home"];
+	
+	homeController.title = homeTitle;
+	
+	[viewControllers addObject: homeController];
+	
+	[homeTitle release];
 	
 	if ( iStat ) {
 		iStatRootViewController *iStatController = [[iStatRootViewController alloc] initWithNibName: @"iStatRootViewController" bundle: nil];
