@@ -7,9 +7,17 @@
 //
 
 #import "ShipmentDetailViewController.h"
+#import "Shipment.h"
 
 
 @implementation ShipmentDetailViewController
+
+@synthesize shipment;
+
+@synthesize shipmentIDLabel;
+@synthesize marisolNumLabel;
+@synthesize coldStorageLabel;
+@synthesize deliveryDateLabel;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -21,12 +29,15 @@
 }
 */
 
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	shipmentIDLabel.text = [NSString stringWithFormat: @"%i", shipment.shipmentID];
+	marisolNumLabel.text = shipment.marisolNum;
+	coldStorageLabel.text = shipment.coldStorageDateString;
+	deliveryDateLabel.text = shipment.deliveryDateString;
 }
-*/
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -47,10 +58,19 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+	self.shipmentIDLabel = nil;
+	self.marisolNumLabel = nil;
+	self.coldStorageLabel = nil;
+	self.deliveryDateLabel = nil;
 }
 
 
 - (void)dealloc {
+	self.shipment = nil;
+	self.shipmentIDLabel = nil;
+	self.marisolNumLabel = nil;
+	self.coldStorageLabel = nil;
+	self.deliveryDateLabel = nil;
     [super dealloc];
 }
 
