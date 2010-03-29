@@ -13,7 +13,6 @@
 @implementation ShipmentDetailViewController
 
 @synthesize shipment;
-
 @synthesize shipmentIDLabel;
 @synthesize marisolNumLabel;
 @synthesize coldStorageLabel;
@@ -33,10 +32,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	shipmentIDLabel.text = [NSString stringWithFormat: @"%i", shipment.shipmentID];
-	marisolNumLabel.text = shipment.marisolNum;
-	coldStorageLabel.text = shipment.coldStorageDateString;
-	deliveryDateLabel.text = shipment.deliveryDateString;
+	self.shipmentIDLabel.text = [NSString stringWithFormat: @"%i", shipment.shipmentID];
+	self.marisolNumLabel.text = shipment.marisolNum;
+	self.deliveryDateLabel.text = shipment.deliveryDateString;
+	self.coldStorageLabel.text = shipment.coldStorageDateString;
 }
 
 /*
@@ -67,6 +66,7 @@
 
 - (void)dealloc {
 	self.shipment = nil;
+	
 	self.shipmentIDLabel = nil;
 	self.marisolNumLabel = nil;
 	self.coldStorageLabel = nil;
