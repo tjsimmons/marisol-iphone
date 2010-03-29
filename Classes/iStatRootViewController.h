@@ -15,4 +15,6 @@
 
 @property (nonatomic, retain) IBOutlet UINavigationController *navController;
 
+-(void) loginViewDidDismiss;
+
 @end
