@@ -114,6 +114,8 @@
 		[usernameField resignFirstResponder];
 		[passwordField resignFirstResponder];
 		
+		// need to do more here with iSTAT, exSTAT access, maybe XML which makes me sad.
+		
 		[[NSUserDefaults standardUserDefaults] setObject: loginData forKey: @"Customer"];
 		
 		[self dismissModalViewControllerAnimated: YES];
