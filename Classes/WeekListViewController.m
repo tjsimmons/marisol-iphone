@@ -24,6 +24,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	NSLog(@"week list view frame is %.2f, %.2f", self.view.frame.size.width, self.view.frame.size.height);
+	NSLog(@"week list table view frame is %.2f, %.2f", self.tableView.frame.size.width, self.tableView.frame.size.height);
+	NSLog(@"week list superview frame is %.2f, %.2f", self.view.superview.frame.size.width, self.view.superview.frame.size.height);
+	NSLog(@"week list table view superview frame is %.2f, %.2f", self.tableView.superview.frame.size.width, self.tableView.superview.frame.size.height);
 	
 	NSDictionary *weekDict = [[NSDictionary alloc] initWithContentsOfFile: [[NSBundle mainBundle] pathForResource: @"weeklist" ofType: @"plist"]];
 	
@@ -105,7 +109,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
     // Configure the cell...
@@ -178,7 +182,7 @@
 	 [detailViewController release];
 	 */
 	
-	ShipmentListViewController *shipmentListViewController = [[ShipmentListViewController alloc] initWithNibName: @"ShipmentListViewController" bundle: nil];
+	ShipmentListViewController *shipmentListViewController = [[ShipmentListViewController alloc] initWithStyle: UITableViewStylePlain]; //initWithNibName: @"ShipmentListViewController" bundle: nil];
 	
 	if ( [whichStat isEqualToString: kIStat] ) {
 		shipmentListViewController.title = @"iSTAT Shipment List";
