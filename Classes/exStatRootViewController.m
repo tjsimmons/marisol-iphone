@@ -33,13 +33,10 @@
 	weekController.title = @"exSTAT Week List";
 	weekController.whichStat = @"exSTAT";
 	
-	NSArray *array = [[NSArray alloc] initWithObjects: weekController, nil];
-	
-	[self.navController setViewControllers: array animated: NO];
+	[self.navController pushViewController: weekController animated: NO];
 	[self.view addSubview: navController.view];
 	
 	[weekController release];
-	[array release];
 }
 
 /*
