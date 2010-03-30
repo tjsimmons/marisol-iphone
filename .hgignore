@@ -1,5 +1,5 @@
 syntax: glob
 
 build
-*.pbxuser
-*.modelv3
+Marisol.xcodeproj/tjsimmons.pbxuserr
+Marisol.xcodeproj/tjsimmons.mode1v3
