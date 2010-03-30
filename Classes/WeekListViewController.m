@@ -25,6 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
+	[self.tableView setFrame: CGRectMake(0.0, 20.0, 320.0, 367.0)];
+	
 	NSDictionary *weekDict = [[NSDictionary alloc] initWithContentsOfFile: [[NSBundle mainBundle] pathForResource: @"weeklist" ofType: @"plist"]];
 	
 	self.weekList = [weekDict objectForKey: @"2010"];
@@ -56,6 +58,7 @@
 /*
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
+	[self.tableView setFrame: CGRectMake(0.0, 20.0, 320.0, 367.0)];
 }*/
 /*
  - (void)viewDidAppear:(BOOL)animated {
