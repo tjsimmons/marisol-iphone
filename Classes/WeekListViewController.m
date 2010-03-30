@@ -24,10 +24,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	NSLog(@"week list view frame is %.2f, %.2f", self.view.frame.size.width, self.view.frame.size.height);
-	NSLog(@"week list table view frame is %.2f, %.2f", self.tableView.frame.size.width, self.tableView.frame.size.height);
-	NSLog(@"week list superview frame is %.2f, %.2f", self.view.superview.frame.size.width, self.view.superview.frame.size.height);
-	NSLog(@"week list table view superview frame is %.2f, %.2f", self.tableView.superview.frame.size.width, self.tableView.superview.frame.size.height);
 	
 	NSDictionary *weekDict = [[NSDictionary alloc] initWithContentsOfFile: [[NSBundle mainBundle] pathForResource: @"weeklist" ofType: @"plist"]];
 	
@@ -50,8 +46,6 @@
 	[dateFormatter release];
 	[now release];
 	
-	//NSLog(@"week list frame is %.2f, %.2f", self.tableView.frame.size.height, self.tableView.frame.size.width);
-	//NSLog(@"superview frame is %.2f, %.2f", self.tableView.superview.frame.size.height, self.tableView.superview.frame.size.width);
     // Uncomment the following line to preserve selection between presentations.
     //self.clearsSelectionOnViewWillAppear = NO;
 	

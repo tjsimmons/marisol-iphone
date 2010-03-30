@@ -28,15 +28,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	WeekListViewController *weekController = [[WeekListViewController alloc] initWithNibName: @"WeekListViewController" bundle: nil];
+	WeekListViewController *weekViewController = [[WeekListViewController alloc] initWithNibName: @"WeekListViewController" bundle: nil];
 	
-	weekController.title = @"exSTAT Week List";
-	weekController.whichStat = @"exSTAT";
+	NSString *titleString = [[NSString alloc] initWithString: @"iSTAT Week List"];
+	NSString *whichString = [[NSString alloc] initWithString: @"iSTAT"];
 	
-	[self.navController pushViewController: weekController animated: NO];
+	weekViewController.title = titleString;
+	weekViewController.whichStat = whichString;
+	
+	[self.navController pushViewController: weekViewController animated: NO];
 	[self.view addSubview: navController.view];
 	
-	[weekController release];
+	[titleString release];
+	[whichString release];
+	[weekViewController release];
 }
 
 /*
