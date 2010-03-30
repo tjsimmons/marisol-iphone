@@ -7,6 +7,8 @@
 //
 
 #import "HomeViewController.h"
+#import "iStatRootViewController.h"
+#import "exStatRootViewController.h"
 
 
 @implementation HomeViewController
@@ -21,12 +23,44 @@
 }
 */
 
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	// stuff to test
+	BOOL iStat = YES;
+	BOOL exStat = NO;
+	
+	NSMutableArray *viewControllers = [[NSMutableArray alloc] initWithObjects: self, nil];
+	
+	if ( iStat ) {
+		iStatRootViewController *iStatController = [[iStatRootViewController alloc] initWithNibName: @"iStatRootViewController" bundle: nil];
+		
+		NSString *viewTitle = [[NSString alloc] initWithString: @"iSTAT"];
+		
+		iStatController.title = viewTitle;
+		
+		[viewControllers addObject: iStatController];
+		[iStatController release];
+		[viewTitle release];
+	}
+	
+	if ( exStat ) {
+		exStatRootViewController *exStatController = [[exStatRootViewController alloc] initWithNibName: @"exStatRootViewController" bundle: nil];
+		
+		NSString *viewTitle = [[NSString alloc] initWithString: @"exSTAT"];
+		
+		exStatController.title = viewTitle;
+		
+		[viewControllers addObject: exStatController];
+		[exStatController release];
+		[viewTitle release];
+	}
+	
+	[[[UIApplication sharedApplication] delegate] doTheThingWithTheseThings: viewControllers];
+	
+	[viewControllers release];
 }
-*/
 
 /*
 // Override to allow orientations other than the default portrait orientation.
