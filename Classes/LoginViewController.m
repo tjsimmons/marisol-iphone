@@ -130,8 +130,6 @@
 		
 		// scan the product string
 		[scanner scanUpToString: @"!" intoString: &products];
-		
-		NSLog(@"products = %@", products);
 
 		// set user defaults to access later
 		[defaults setObject: customer forKey: kCustomerKey];
