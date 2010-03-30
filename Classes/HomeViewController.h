@@ -13,4 +13,6 @@
 
 }
 
+-(void) setTabBarViewControllers;
+
 @end
