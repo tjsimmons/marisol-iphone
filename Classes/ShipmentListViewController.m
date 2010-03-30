@@ -164,7 +164,11 @@
 			[textString release];
 		}
 	} else {
-		cell.textLabel.text = @"Loading...";
+		NSString *loadingString = [[NSString alloc] initWithString: @"Loading..."];
+		
+		cell.textLabel.text = loadingString;
+		
+		[loadingString release];
 	}
     
     return cell;
