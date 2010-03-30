@@ -77,8 +77,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 291587391;
-			PBXWorkspaceStateSaveDate = 291587391;
+			PBXPerProjectTemplateStateSaveDate = 291606653;
+			PBXWorkspaceStateSaveDate = 291606653;
 		};
 		perUserProjectItems = {
 			5F009FE4115F241700AE2F0C = 5F009FE4115F241700AE2F0C /* PBXBookmark */;
@@ -92,23 +92,21 @@
 			5F04EE2B11612060003EF573 = 5F04EE2B11612060003EF573 /* PBXBookmark */;
 			5F04EE2C11612060003EF573 = 5F04EE2C11612060003EF573 /* PBXTextBookmark */;
 			5F04EE2D11612060003EF573 = 5F04EE2D11612060003EF573 /* PBXTextBookmark */;
-			5F04EE4A116129B6003EF573 = 5F04EE4A116129B6003EF573 /* PBXTextBookmark */;
 			5F04EEBC11613192003EF573 = 5F04EEBC11613192003EF573 /* PBXTextBookmark */;
 			5F04EEBD11613192003EF573 = 5F04EEBD11613192003EF573 /* PBXTextBookmark */;
 			5F04EEBE11613192003EF573 = 5F04EEBE11613192003EF573 /* PlistBookmark */;
 			5F04EED5116132F6003EF573 = 5F04EED5116132F6003EF573 /* PBXTextBookmark */;
-			5F04EEE9116136B1003EF573 = 5F04EEE9116136B1003EF573 /* PBXTextBookmark */;
-			5F04EEEA116136B1003EF573 = 5F04EEEA116136B1003EF573 /* PBXTextBookmark */;
 			5F04EEEB116136B1003EF573 = 5F04EEEB116136B1003EF573 /* PBXTextBookmark */;
 			5F04EEEC116136B1003EF573 = 5F04EEEC116136B1003EF573 /* PBXTextBookmark */;
 			5F04EEF111613716003EF573 = 5F04EEF111613716003EF573 /* PBXTextBookmark */;
-			5F04EF06116139BD003EF573 = 5F04EF06116139BD003EF573 /* PBXTextBookmark */;
-			5F04EF0C11613FFF003EF573 = 5F04EF0C11613FFF003EF573 /* PBXTextBookmark */;
-			5F16136411614542002AF974 /* PBXTextBookmark */ = 5F16136411614542002AF974 /* PBXTextBookmark */;
-			5F16136E11614575002AF974 /* PBXTextBookmark */ = 5F16136E11614575002AF974 /* PBXTextBookmark */;
+			5F0908791161805F00CB3F3E = 5F0908791161805F00CB3F3E /* PBXTextBookmark */;
+			5F09087A1161805F00CB3F3E = 5F09087A1161805F00CB3F3E /* PBXTextBookmark */;
+			5F090889116180C300CB3F3E = 5F090889116180C300CB3F3E /* PBXTextBookmark */;
+			5F16137E116146DC002AF974 = 5F16137E116146DC002AF974 /* PBXTextBookmark */;
 			5F1BE98C11604410002E6AAF = 5F1BE98C11604410002E6AAF /* PBXTextBookmark */;
 			5F1BE99311604410002E6AAF = 5F1BE99311604410002E6AAF /* PBXTextBookmark */;
 			5F1BE99411604410002E6AAF = 5F1BE99411604410002E6AAF /* PBXTextBookmark */;
+			5FFA00B91161905500FEBA23 = 5FFA00B91161905500FEBA23 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 5F52850C115F16C100715B4A /* Source Control */;
 		userBuildSettings = {
@@ -124,24 +122,24 @@
 	5F009F65115F1AA500AE2F0C /* WeekListViewController.m */ = {
 		uiCtxt = {
 			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{5404, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{5455, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{5505, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 7281}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1123, 3003}}";
-			sepNavSelRange = "{3886, 0}";
-			sepNavVisRange = "{3013, 1388}";
+			sepNavIntBoundsRect = "{{0, 0}, {1123, 3146}}";
+			sepNavSelRange = "{451, 0}";
+			sepNavVisRange = "{0, 820}";
+			sepNavWindowFrame = "{{15, 4}, {1425, 874}}";
 		};
 	};
 	5F009F69115F1AC900AE2F0C /* ShipmentListViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1123, 511}}";
-			sepNavSelRange = "{686, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1123, 478}}";
+			sepNavSelRange = "{231, 0}";
 			sepNavVisRange = "{0, 928}";
 		};
 	};
 	5F009F6A115F1AC900AE2F0C /* ShipmentListViewController.m */ = {
 		uiCtxt = {
-			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{6093, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{6144, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{6194, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 8001}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1123, 3718}}";
-			sepNavSelRange = "{735, 0}";
-			sepNavVisRange = "{0, 1087}";
+			sepNavIntBoundsRect = "{{0, 0}, {1139, 3510}}";
+			sepNavSelRange = "{5934, 11}";
+			sepNavVisRange = "{1065, 776}";
 		};
 	};
 	5F009F73115F1AF200AE2F0C /* LoginViewController.h */ = {
@@ -154,8 +152,8 @@
 	5F009F74115F1AF200AE2F0C /* LoginViewController.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1123, 2795}}";
-			sepNavSelRange = "{281, 0}";
-			sepNavVisRange = "{0, 760}";
+			sepNavSelRange = "{432, 0}";
+			sepNavVisRange = "{0, 761}";
 		};
 	};
 	5F009F8E115F1B9B00AE2F0C /* ConnectionHandler.h */ = {
@@ -328,16 +326,6 @@
 		vrLen = 922;
 		vrLoc = 172;
 	};
-	5F04EE4A116129B6003EF573 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 5F009F69115F1AC900AE2F0C /* ShipmentListViewController.h */;
-		name = "ShipmentListViewController.h: 25";
-		rLen = 0;
-		rLoc = 686;
-		rType = 0;
-		vrLen = 928;
-		vrLoc = 0;
-	};
 	5F04EEAB11613122003EF573 /* HomeViewController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1123, 499}}";
@@ -386,26 +374,6 @@
 		vrLen = 429;
 		vrLoc = 0;
 	};
-	5F04EEE9116136B1003EF573 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 5F009F65115F1AA500AE2F0C /* WeekListViewController.m */;
-		name = "WeekListViewController.m: 125";
-		rLen = 0;
-		rLoc = 3886;
-		rType = 0;
-		vrLen = 1388;
-		vrLoc = 3013;
-	};
-	5F04EEEA116136B1003EF573 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 5F009F6A115F1AC900AE2F0C /* ShipmentListViewController.m */;
-		name = "ShipmentListViewController.m: 30";
-		rLen = 0;
-		rLoc = 735;
-		rType = 0;
-		vrLen = 1087;
-		vrLoc = 0;
-	};
 	5F04EEEB116136B1003EF573 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 5F009F9B115F1BD300AE2F0C /* iStatRootViewController.m */;
@@ -436,25 +404,35 @@
 		vrLen = 1025;
 		vrLoc = 0;
 	};
-	5F04EF06116139BD003EF573 /* PBXTextBookmark */ = {
+	5F0908791161805F00CB3F3E /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = 5F009F74115F1AF200AE2F0C /* LoginViewController.m */;
-		name = "LoginViewController.m: 112";
+		fRef = 5F009F69115F1AC900AE2F0C /* ShipmentListViewController.h */;
+		name = "ShipmentListViewController.h: 12";
 		rLen = 0;
-		rLoc = 3430;
+		rLoc = 231;
 		rType = 0;
-		vrLen = 1176;
-		vrLoc = 2432;
+		vrLen = 928;
+		vrLoc = 0;
 	};
-	5F04EF0C11613FFF003EF573 /* PBXTextBookmark */ = {
+	5F09087A1161805F00CB3F3E /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = 5F009F74115F1AF200AE2F0C /* LoginViewController.m */;
-		name = "LoginViewController.m: 117";
-		rLen = 0;
-		rLoc = 3606;
+		fRef = 5F009F6A115F1AC900AE2F0C /* ShipmentListViewController.m */;
+		name = "ShipmentListViewController.m: 216";
+		rLen = 11;
+		rLoc = 5934;
 		rType = 0;
-		vrLen = 1218;
-		vrLoc = 2535;
+		vrLen = 776;
+		vrLoc = 1065;
+	};
+	5F090889116180C300CB3F3E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F65115F1AA500AE2F0C /* WeekListViewController.m */;
+		name = "WeekListViewController.m: 26";
+		rLen = 0;
+		rLoc = 451;
+		rType = 0;
+		vrLen = 1203;
+		vrLoc = 220;
 	};
 	5F0E42A2116040F500768B65 /* ShipmentDetailViewController.h */ = {
 		uiCtxt = {
@@ -470,24 +448,14 @@
 			sepNavVisRange = "{0, 1250}";
 		};
 	};
-	5F16136411614542002AF974 /* PBXTextBookmark */ = {
+	5F16137E116146DC002AF974 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 5F009F74115F1AF200AE2F0C /* LoginViewController.m */;
-		name = "LoginViewController.m: 117";
+		name = "LoginViewController.m: 23";
 		rLen = 0;
-		rLoc = 3606;
+		rLoc = 432;
 		rType = 0;
-		vrLen = 1217;
-		vrLoc = 2535;
-	};
-	5F16136E11614575002AF974 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 5F009F74115F1AF200AE2F0C /* LoginViewController.m */;
-		name = "LoginViewController.m: 15";
-		rLen = 0;
-		rLoc = 281;
-		rType = 0;
-		vrLen = 760;
+		vrLen = 761;
 		vrLoc = 0;
 	};
 	5F1BE98C11604410002E6AAF /* PBXTextBookmark */ = {
@@ -563,5 +531,15 @@
 	5F52850D115F16C100715B4A /* Code sense */ = {
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
+	};
+	5FFA00B91161905500FEBA23 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5F009F65115F1AA500AE2F0C /* WeekListViewController.m */;
+		name = "WeekListViewController.m: 26";
+		rLen = 0;
+		rLoc = 451;
+		rType = 0;
+		vrLen = 820;
+		vrLoc = 0;
 	};
 }

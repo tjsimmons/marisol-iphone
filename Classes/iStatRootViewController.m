@@ -39,21 +39,15 @@
     [super viewDidLoad];
 	
 	WeekListViewController *weekViewController = [[WeekListViewController alloc] initWithNibName: @"WeekListViewController" bundle: nil];
-	LoginViewController *loginController = [[LoginViewController alloc] initWithNibName: @"LoginViewController" bundle: nil];
 	
 	weekViewController.title = @"iSTAT Week List";
 	weekViewController.whichStat = @"iSTAT";
-	
-	NSArray *array = [[NSArray alloc] initWithObjects: weekViewController, nil];
-	
-	[self.navController setViewControllers: array animated: NO];
 		
 	// add in the iSTAT view
+	[self.navController pushViewController: weekViewController animated: NO];
 	[self.view addSubview: self.navController.view];
 	
-	[array release];
 	[weekViewController release];
-	[loginController release];
 }
 
 /*
