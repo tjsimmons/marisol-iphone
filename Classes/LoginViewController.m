@@ -114,9 +114,25 @@
 		[usernameField resignFirstResponder];
 		[passwordField resignFirstResponder];
 		
-		// need to do more here with iSTAT, exSTAT access, maybe XML which makes me sad.
+		// need to do more here with iSTAT, exSTAT access
+		NSScanner *scanner = [[NSScanner alloc] initWithString: loginData];
+		NSString *customer = nil;
+		NSString *products = nil;
 		
-		[[NSUserDefaults standardUserDefaults] setObject: loginData forKey: @"Customer"];
+		// scan customer into customer string
+		[scanner scanUpToString: @"?" intoString: &customer];
+		
+		// ignore the ? and scan past
+		[scanner scanString: @"?" intoString: NULL];
+		
+		// scan the product string
+		[scanner scanUpToString: @"!" intoString: &products];
+
+		// set user defaults to access later
+		[[NSUserDefaults standardUserDefaults] setObject: customer forKey: @"customer"];
+		[[NSUserDefaults standardUserDefaults] setObject: products forKey: @"products"];
+		
+		[scanner release];
 		
 		[self dismissModalViewControllerAnimated: YES];
 	}
