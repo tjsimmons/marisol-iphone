@@ -274,7 +274,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>18</integer>
+									<integer>20</integer>
 									<integer>14</integer>
 									<integer>1</integer>
 									<integer>0</integer>
@@ -318,7 +318,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>iStatRootViewController.m</string>
+								<string>WeekListViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -326,11 +326,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>iStatRootViewController.m</string>
+										<string>WeekListViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>5FCC06C711625C6200CABBF2</string>
+										<string>5FCC06DB11625D5C00CABBF2</string>
 										<key>history</key>
 										<array>
 											<string>5F009FE4115F241700AE2F0C</string>
@@ -354,10 +354,10 @@
 											<string>5F0908791161805F00CB3F3E</string>
 											<string>5FCC0693116259B100CABBF2</string>
 											<string>5FCC0694116259B100CABBF2</string>
-											<string>5FCC06AF11625B3600CABBF2</string>
-											<string>5FCC06C011625C1E00CABBF2</string>
 											<string>5FCC06C511625C6200CABBF2</string>
-											<string>5FCC06C611625C6200CABBF2</string>
+											<string>5FCC06CD11625CEB00CABBF2</string>
+											<string>5FCC06D811625D4100CABBF2</string>
+											<string>5FCC06D911625D4100CABBF2</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

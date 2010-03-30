@@ -45,9 +45,6 @@
 	
 	weekViewController.title = titleString;
 	weekViewController.whichStat = whichString;
-
-	weekViewController.tableView.frame = CGRectMake(0, 0, 320, 367);
-	weekViewController.view.frame = CGRectMake(0, 0, 320, 367);
 		
 	// add in the iSTAT view
 	[self.navController pushViewController: weekViewController animated: NO];
