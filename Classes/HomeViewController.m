@@ -33,8 +33,6 @@
 		exStat = YES;
 	}
 	
-	NSLog(@"defaults are %@", [defaults objectForKey: kProductsKey]);
-	
 	if ( iStat ) {
 		iStatRootViewController *iStatController = [[iStatRootViewController alloc] initWithNibName: @"iStatRootViewController" bundle: nil];
 		
