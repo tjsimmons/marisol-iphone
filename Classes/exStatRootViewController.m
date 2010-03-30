@@ -30,8 +30,8 @@
 	
 	WeekListViewController *weekViewController = [[WeekListViewController alloc] initWithNibName: @"WeekListViewController" bundle: nil];
 	
-	NSString *titleString = [[NSString alloc] initWithString: @"iSTAT Week List"];
-	NSString *whichString = [[NSString alloc] initWithString: @"iSTAT"];
+	NSString *titleString = [[NSString alloc] initWithString: @"exSTAT Week List"];
+	NSString *whichString = [[NSString alloc] initWithString: @"exSTAT"];
 	
 	weekViewController.title = titleString;
 	weekViewController.whichStat = whichString;

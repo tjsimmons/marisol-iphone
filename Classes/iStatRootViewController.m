@@ -8,7 +8,6 @@
 
 #import "iStatRootViewController.h"
 #import "WeekListViewController.h"
-#import "LoginViewController.h"
 
 
 @implementation iStatRootViewController
@@ -53,8 +52,6 @@
 	[titleString release];
 	[whichString release];
 	[weekViewController release];
-	
-	// stuff
 }
 
 /*

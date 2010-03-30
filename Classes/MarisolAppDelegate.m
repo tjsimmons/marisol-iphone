@@ -9,8 +9,6 @@
 #import "MarisolAppDelegate.h"
 #import "LoginViewController.h"
 #import "HomeViewController.h"
-#import "iStatRootViewController.h"
-#import "exStatRootViewController.h"
 
 @implementation MarisolAppDelegate
 
@@ -18,9 +16,7 @@
 @synthesize tabBarController;
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-	BOOL iStat = YES;
-	BOOL exStat = NO;
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	
     // Override point for customization after application launch
 	UITabBarController *tabController = [[UITabBarController alloc] init];
@@ -35,30 +31,6 @@
 	[viewControllers addObject: homeController];
 	
 	[homeTitle release];
-	
-	if ( iStat ) {
-		iStatRootViewController *iStatController = [[iStatRootViewController alloc] initWithNibName: @"iStatRootViewController" bundle: nil];
-		
-		NSString *viewTitle = [[NSString alloc] initWithString: @"iSTAT"];
-		
-		iStatController.title = viewTitle;
-		
-		[viewControllers addObject: iStatController];
-		[iStatController release];
-		[viewTitle release];
-	}
-	
-	if ( exStat ) {
-		exStatRootViewController *exStatController = [[exStatRootViewController alloc] initWithNibName: @"exStatRootViewController" bundle: nil];
-		
-		NSString *viewTitle = [[NSString alloc] initWithString: @"exSTAT"];
-		
-		exStatController.title = viewTitle;
-		
-		[viewControllers addObject: exStatController];
-		[exStatController release];
-		[viewTitle release];
-	}
 	
 	[tabController setViewControllers: viewControllers];
 	
@@ -77,6 +49,10 @@
     [window makeKeyAndVisible];
 	
 	return YES;
+}
+
+-(void) doTheThingWithTheseThings: (NSMutableArray *) things {
+	[self.tabBarController setViewControllers: things];
 }
 
 
