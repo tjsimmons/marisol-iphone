@@ -30,6 +30,7 @@
     [super viewDidLoad];
 	
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSMutableArray *viewControllers = [[NSMutableArray alloc] initWithObjects: self, nil];
 	
 	BOOL iStat = NO;
 	BOOL exStat = NO;
@@ -42,8 +43,6 @@
 		iStat = YES;
 		exStat = YES;
 	}
-	
-	NSMutableArray *viewControllers = [[NSMutableArray alloc] initWithObjects: self, nil];
 	
 	if ( iStat ) {
 		iStatRootViewController *iStatController = [[iStatRootViewController alloc] initWithNibName: @"iStatRootViewController" bundle: nil];
@@ -94,7 +93,6 @@
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
-
 
 - (void)dealloc {
     [super dealloc];

@@ -116,7 +116,8 @@
 		[usernameField resignFirstResponder];
 		[passwordField resignFirstResponder];
 		
-		// need to do more here with iSTAT, exSTAT access
+		// figure out customer name, iSTAT and exSTAT access
+		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 		NSScanner *scanner = [[NSScanner alloc] initWithString: loginData];
 		NSString *customer = nil;
 		NSString *products = nil;
@@ -131,8 +132,8 @@
 		[scanner scanUpToString: @"!" intoString: &products];
 
 		// set user defaults to access later
-		[[NSUserDefaults standardUserDefaults] setObject: customer forKey: kCustomerKey];
-		[[NSUserDefaults standardUserDefaults] setObject: products forKey: kProductsKey];
+		[defaults setObject: customer forKey: kCustomerKey];
+		[defaults setObject: products forKey: kProductsKey];
 		
 		[scanner release];
 		
