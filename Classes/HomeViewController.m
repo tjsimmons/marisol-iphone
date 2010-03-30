@@ -10,6 +10,8 @@
 #import "iStatRootViewController.h"
 #import "exStatRootViewController.h"
 
+#define kProductsKey	@"products"
+
 
 @implementation HomeViewController
 
@@ -27,9 +29,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	// stuff to test
-	BOOL iStat = YES;
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	
+	BOOL iStat = NO;
 	BOOL exStat = NO;
+	
+	if ( [[defaults objectForKey: kProductsKey] isEqualToString: @"iStat"] ) {
+		iStat = YES;
+	} else if ( [[defaults objectForKey: kProductsKey] isEqualToString: @"exStat"] ) {
+		exStat = YES;
+	} else if ( [[defaults objectForKey: kProductsKey] isEqualToString: @"iStatexStat"] ) {
+		iStat = YES;
+		exStat = YES;
+	}
 	
 	NSMutableArray *viewControllers = [[NSMutableArray alloc] initWithObjects: self, nil];
 	
@@ -57,7 +69,7 @@
 		[viewTitle release];
 	}
 	
-	[[[UIApplication sharedApplication] delegate] doTheThingWithTheseThings: viewControllers];
+	[[[UIApplication sharedApplication] delegate] setTabBarControllers: viewControllers];
 	
 	[viewControllers release];
 }

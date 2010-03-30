@@ -10,6 +10,8 @@
 #import "iStatRootViewController.h"
 
 #define kUsernameKey	@"username"
+#define kCustomerKey	@"customer"
+#define kProductsKey	@"products"
 
 
 @implementation LoginViewController
@@ -129,8 +131,8 @@
 		[scanner scanUpToString: @"!" intoString: &products];
 
 		// set user defaults to access later
-		[[NSUserDefaults standardUserDefaults] setObject: customer forKey: @"customer"];
-		[[NSUserDefaults standardUserDefaults] setObject: products forKey: @"products"];
+		[[NSUserDefaults standardUserDefaults] setObject: customer forKey: kCustomerKey];
+		[[NSUserDefaults standardUserDefaults] setObject: products forKey: kProductsKey];
 		
 		[scanner release];
 		
@@ -177,7 +179,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.usernameField.text = [[NSUserDefaults standardUserDefaults] objectForKey: kUsernameKey];
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	
+	self.usernameField.text = [defaults objectForKey: kUsernameKey];
 }
 
 /*
