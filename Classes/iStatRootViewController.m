@@ -40,16 +40,21 @@
 	
 	WeekListViewController *weekViewController = [[WeekListViewController alloc] initWithStyle: UITableViewStylePlain]; //initWithNibName: @"WeekListViewController" bundle: nil];
 	
-	weekViewController.title = @"iSTAT Week List";
-	weekViewController.whichStat = @"iSTAT";
+	NSString *titleString = [[NSString alloc] initWithString: @"iSTAT Week List"];
+	NSString *whichString = [[NSString alloc] initWithString: @"iSTAT"];
+	
+	weekViewController.title = titleString;
+	weekViewController.whichStat = whichString;
+
+	weekViewController.tableView.frame = CGRectMake(0, 0, 320, 367);
+	weekViewController.view.frame = CGRectMake(0, 0, 320, 367);
 		
 	// add in the iSTAT view
 	[self.navController pushViewController: weekViewController animated: NO];
 	[self.view addSubview: self.navController.view];
 	
-	NSLog(@"istat root view frame is %.2f, %.2f", self.view.frame.size.width, self.view.frame.size.height);
-	NSLog(@"navcontroller view frame is %.2f, %.2f", navController.view.frame.size.width, navController.view.frame.size.height);
-	
+	[titleString release];
+	[whichString release];
 	[weekViewController release];
 }
 
