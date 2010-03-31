@@ -140,17 +140,20 @@
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-	if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
-    }
+	
+    UITableViewCell *cell;
     
     // Configure the cell...
 	if ( dataLoaded ) {
 		if ( [self.shipmentList count] > 0 ) {
+			static NSString *LoadedWithDataID = @"LoadedWithData";
+			
+			cell = [tableView dequeueReusableCellWithIdentifier: LoadedWithDataID];
+			
+			if ( cell == nil ) {
+				cell = [[[UITableViewCell alloc] initWithStyle: UITableViewCellStyleSubtitle reuseIdentifier: LoadedWithDataID] autorelease];
+			}
+			
 			NSInteger row = [indexPath row];
 			Shipment *shipment = [self.shipmentList objectAtIndex: row];
 			
@@ -158,12 +161,27 @@
 			cell.detailTextLabel.text = shipment.coldStorageDateString;
 			cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
 		} else {
+			static NSString *LoadedWithNoDataID = @"LoadedWithNoData";
+			
+			cell = [tableView dequeueReusableCellWithIdentifier: LoadedWithNoDataID];
+			
+			if ( cell == nil ) {
+				cell = [[[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: LoadedWithNoDataID] autorelease];
+			}
+			
 			NSString *textString = [[NSString alloc] initWithString: @"No shipments."];
 			cell.textLabel.text = textString;
 			
 			[textString release];
 		}
 	} else {
+		static NSString *LoadedWithNoDataID = @"LoadedWithNoData";
+		
+		cell = [tableView dequeueReusableCellWithIdentifier: LoadedWithNoDataID];
+		
+		if ( cell == nil ) {
+			cell = [[[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: LoadedWithNoDataID] autorelease];
+		}
 		NSString *loadingString = [[NSString alloc] initWithString: @"Loading..."];
 		
 		cell.textLabel.text = loadingString;
