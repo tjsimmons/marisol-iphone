@@ -51,8 +51,8 @@
 	return YES;
 }
 
--(void) setTabBarControllers: (NSMutableArray *) things {
-	[self.tabBarController setViewControllers: things];
+-(void) setTabBarControllers: (NSMutableArray *) controllers {
+	[self.tabBarController setViewControllers: controllers];
 }
 
 
