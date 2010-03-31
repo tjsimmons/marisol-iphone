@@ -68,9 +68,10 @@
 					<bool key="IBUIMultipleTouchEnabled">YES</bool>
 					<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				</object>
-				<object class="NSArray" key="IBUIViewControllers">
+				<object class="NSMutableArray" key="IBUIViewControllers">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<object class="IBUITableViewController" id="506392842">
+						<string key="IBUITitle">exSTAT</string>
 						<object class="IBUINavigationItem" key="IBUINavigationItem" id="1072812932">
 							<reference key="IBUINavigationBar"/>
 							<string key="IBUITitle">exSTAT</string>
