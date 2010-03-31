@@ -29,9 +29,9 @@
 	
 	NSString *customer = [[NSString alloc] initWithString: [[NSUserDefaults standardUserDefaults] objectForKey: @"Customer"]];
 	
-	NSString *url = [[NSString alloc] initWithFormat: @"https://www.marisolintl.com/iphone/shipmentxml.asp?customer=%@&start=%@&end=%@", 
-					 customer, self.startDate, self.endDate];
-	
+	NSString *url = [[NSString alloc] initWithFormat: @"https://www.marisolintl.com/iphone/%@shipmentxml.asp?customer=%@&start=%@&end=%@", 
+					 self.whichStat, customer, self.startDate, self.endDate];
+
 	handler.xmlPathComponent = path;
 	
 	[handler beginURLConnection: url];
