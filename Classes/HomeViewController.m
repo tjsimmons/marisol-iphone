@@ -18,6 +18,8 @@
 #pragma mark -
 #pragma mark Custom Methods
 -(void) setTabBarViewControllers {
+	pastInitialLogin = YES;
+	
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	NSMutableArray *viewControllers = [[NSMutableArray alloc] initWithObjects: self, nil];
 	
@@ -101,7 +103,9 @@
 -(void) viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	
-	[self setTabBarViewControllers];
+	if ( pastInitialLogin != YES ) {
+		[self setTabBarViewControllers];
+	}
 }
 
 - (void)dealloc {
