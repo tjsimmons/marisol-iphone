@@ -15,12 +15,6 @@
 @synthesize navController;
 
 #pragma mark -
-#pragma mark Custom Methods
--(void) loginViewDidDismiss {
-	
-}
-
-#pragma mark -
 #pragma mark View Methods
 
 /*
