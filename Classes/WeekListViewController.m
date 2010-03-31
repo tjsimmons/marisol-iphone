@@ -25,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	[self.tableView setFrame: CGRectMake(0.0, 20.0, 320.0, 367.0)];
+	//[self.tableView setFrame: CGRectMake(0.0, 20.0, 320.0, 367.0)];
 	
 	NSDictionary *weekDict = [[NSDictionary alloc] initWithContentsOfFile: [[NSBundle mainBundle] pathForResource: @"weeklist" ofType: @"plist"]];
 	

@@ -7,7 +7,7 @@
 //
 
 #import "exStatRootViewController.h"
-#import "WeekListViewController.h"
+//#import "WeekListViewController.h"
 
 
 @implementation exStatRootViewController
@@ -29,7 +29,7 @@
     [super viewDidLoad];
 	
 	//WeekListViewController *weekViewController = [[WeekListViewController alloc] initWithNibName: @"WeekListViewController" bundle: nil];
-	WeekListViewController *weekViewController = [[WeekListViewController alloc] initWithStyle: UITableViewStylePlain];
+	/*WeekListViewController *weekViewController = [[WeekListViewController alloc] initWithStyle: UITableViewStylePlain];
 	
 	NSString *titleString = [[NSString alloc] initWithString: @"exSTAT Week List"];
 	NSString *whichString = [[NSString alloc] initWithString: @"exSTAT"];
@@ -37,12 +37,12 @@
 	weekViewController.title = titleString;
 	weekViewController.whichStat = whichString;
 	
-	[self.navController pushViewController: weekViewController animated: NO];
+	[self.navController pushViewController: weekViewController animated: NO];*/
 	[self.view addSubview: navController.view];
 	
-	[titleString release];
+	/*[titleString release];
 	[whichString release];
-	[weekViewController release];
+	[weekViewController release];*/
 }
 
 /*
