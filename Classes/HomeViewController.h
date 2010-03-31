@@ -10,7 +10,7 @@
 
 
 @interface HomeViewController : UIViewController {
-
+	BOOL pastInitialLogin;
 }
 
 -(void) setTabBarViewControllers;
