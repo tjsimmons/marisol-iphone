@@ -15,7 +15,6 @@
 
 @implementation WeekListViewController
 
-@synthesize whichStat;
 @synthesize weekList;
 
 
@@ -24,9 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
-	//[self.tableView setFrame: CGRectMake(0.0, 20.0, 320.0, 367.0)];
-	
+	NSLog(@"my title is %@", self.title);
 	NSDictionary *weekDict = [[NSDictionary alloc] initWithContentsOfFile: [[NSBundle mainBundle] pathForResource: @"weeklist" ofType: @"plist"]];
 	
 	self.weekList = [weekDict objectForKey: @"2010"];
@@ -170,18 +167,9 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-	/*
-	 <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-	 [self.navigationController pushViewController:detailViewController animated:YES];
-	 [detailViewController release];
-	 */
+    ShipmentListViewController *shipmentListViewController = [[ShipmentListViewController alloc] initWithStyle: UITableViewStylePlain]; //initWithNibName: @"ShipmentListViewController" bundle: nil];
 	
-	ShipmentListViewController *shipmentListViewController = [[ShipmentListViewController alloc] initWithStyle: UITableViewStylePlain]; //initWithNibName: @"ShipmentListViewController" bundle: nil];
-	
-	if ( [whichStat isEqualToString: kIStat] ) {
+	if ( [self.title isEqualToString: kIStat] ) {
 		shipmentListViewController.title = @"iSTAT Shipment List";
 		shipmentListViewController.whichStat = kIStat;
 	} else {
@@ -224,7 +212,6 @@
 
 
 - (void)dealloc {
-	self.whichStat = nil;
 	self.weekList = nil;
     [super dealloc];
 }

@@ -12,8 +12,8 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="10"/>
 			<integer value="1"/>
+			<integer value="10"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -72,6 +72,7 @@
 				<object class="NSMutableArray" key="IBUIViewControllers">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<object class="IBUITableViewController" id="916147156">
+						<string key="IBUITitle">iSTAT</string>
 						<object class="IBUINavigationItem" key="IBUINavigationItem" id="1013353228">
 							<reference key="IBUINavigationBar"/>
 							<string key="IBUITitle">iSTAT</string>
@@ -183,7 +184,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>iStatRootViewController</string>
 					<string>UIResponder</string>
-					<string>{{85, 345}, {320, 480}}</string>
+					<string>{{110, 347}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>WeekListViewController</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
