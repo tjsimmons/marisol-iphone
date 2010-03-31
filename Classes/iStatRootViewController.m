@@ -7,7 +7,7 @@
 //
 
 #import "iStatRootViewController.h"
-#import "WeekListViewController.h"
+//#import "WeekListViewController.h"
 
 
 @implementation iStatRootViewController
@@ -37,21 +37,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	WeekListViewController *weekViewController = [[WeekListViewController alloc] initWithStyle: UITableViewStylePlain]; //initWithNibName: @"WeekListViewController" bundle: nil];
+	//WeekListViewController *weekViewController = [[WeekListViewController alloc] initWithStyle: UITableViewStylePlain]; //initWithNibName: @"WeekListViewController" bundle: nil];
 	
-	NSString *titleString = [[NSString alloc] initWithString: @"iSTAT Week List"];
-	NSString *whichString = [[NSString alloc] initWithString: @"iSTAT"];
+	//NSString *titleString = [[NSString alloc] initWithString: @"iSTAT Week List"];
+	//NSString *whichString = [[NSString alloc] initWithString: @"iSTAT"];
 	
-	weekViewController.title = titleString;
-	weekViewController.whichStat = whichString;
+	//weekViewController.title = titleString;
+	//weekViewController.whichStat = whichString;
 		
 	// add in the iSTAT view
-	[self.navController pushViewController: weekViewController animated: NO];
-	[self.view addSubview: self.navController.view];
+	//[self.navController pushViewController: weekViewController animated: NO];
+	[self.view addSubview: navController.view];
 	
-	[titleString release];
-	[whichString release];
-	[weekViewController release];
+	//[titleString release];
+	//[whichString release];
+	//[weekViewController release];
 }
 
 /*
