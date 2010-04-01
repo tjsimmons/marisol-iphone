@@ -46,6 +46,15 @@
 	[now release];
 }
 
+/*-(void) viewDidAppear:(BOOL)animated {
+	NSLog(@"view did appear");
+	
+	NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+	
+	[self.tableView deselectRowAtIndexPath: path animated: YES];
+	[super viewDidAppear:animated];
+}*/
+
 #pragma mark -
 #pragma mark Table view data source
 
@@ -93,25 +102,26 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ShipmentListViewController *shipmentListViewController = [[ShipmentListViewController alloc] initWithStyle: UITableViewStylePlain];
 	
-	if ( [self.title isEqualToString: kIStat] ) {
-		shipmentListViewController.title = @"iSTAT Shipment List";
-		shipmentListViewController.whichStat = kIStat;
-	} else {
-		shipmentListViewController.title = @"exSTAT Shipment List";
-		shipmentListViewController.whichStat = kExStat;
-	}
-	
 	NSInteger row = [indexPath row];
 	NSDictionary *cellTextDict = [weekList objectAtIndex: row];
 	NSString *start = [[NSString alloc] initWithString: [cellTextDict objectForKey: @"Start"]];
 	NSString *end = [[NSString alloc] initWithString: [cellTextDict objectForKey: @"End"]];
 	
+	if ( [self.title isEqualToString: kIStat] ) {
+		shipmentListViewController.whichStat = kIStat;
+	} else {
+		shipmentListViewController.whichStat = kExStat;
+	}
+	
+	shipmentListViewController.title =  [NSString stringWithFormat: @"Week %i", row + 1];
 	shipmentListViewController.startDate = start;
 	shipmentListViewController.endDate = end;
 	
 	[shipmentListViewController startConnectionProcess];
 	
 	[self.navigationController pushViewController: shipmentListViewController animated: YES];
+	
+	[self.tableView deselectRowAtIndexPath: indexPath animated: YES];
 	
 	[start release];
 	[end release];
