@@ -171,6 +171,7 @@
 			ShipmentDetailViewController *detailController = [[ShipmentDetailViewController alloc] initWithNibName: @"ShipmentDetailViewController" bundle: nil];
 			
 			detailController.shipment = theShipment;
+			detailController.title = theShipment.marisolNum;
 			
 			[self.navigationController pushViewController: detailController animated: YES];
 			[self.tableView deselectRowAtIndexPath: indexPath animated: YES];
