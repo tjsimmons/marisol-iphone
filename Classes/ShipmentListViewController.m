@@ -31,7 +31,7 @@
 	
 	NSString *url = [[NSString alloc] initWithFormat: @"https://www.marisolintl.com/iphone/%@shipmentxml.asp?customer=%@&start=%@&end=%@", 
 					 self.whichStat, customer, self.startDate, self.endDate];
-
+	
 	handler.xmlPathComponent = path;
 	
 	[handler beginURLConnection: url];
@@ -153,7 +153,7 @@
 -(NSIndexPath *) tableView:(UITableView *) tableView willSelectRowAtIndexPath:(NSIndexPath *) indexPath {
 	UITableViewCell *cell = [self.tableView cellForRowAtIndexPath: indexPath];
 	
-	if ( [cell.textLabel.text isEqualToString: @"No shipments."] ) {
+	if ( [cell.textLabel.text isEqualToString: @"No shipments."] || [cell.textLabel.text isEqualToString: @"Loading..."] ) {
 		return nil;
 	}
 	
@@ -173,6 +173,7 @@
 			detailController.shipment = theShipment;
 			
 			[self.navigationController pushViewController: detailController animated: YES];
+			[self.tableView deselectRowAtIndexPath: indexPath animated: YES];
 			
 			[detailController release];
 		} else {
