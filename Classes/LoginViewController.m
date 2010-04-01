@@ -57,9 +57,6 @@
 		self.activityIndicator.hidden = NO;
 		
 		[self initiateLogin];
-		/*[defaults setObject: @"Optronics" forKey: kCustomerKey];
-		[defaults setObject: @"iStat" forKey: kProductsKey];
-		[self dismissModalViewControllerAnimated: YES];*/
 	}
 }
 
