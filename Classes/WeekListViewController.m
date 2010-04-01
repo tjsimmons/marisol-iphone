@@ -91,7 +91,7 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ShipmentListViewController *shipmentListViewController = [[ShipmentListViewController alloc] initWithStyle: UITableViewStylePlain]; //initWithNibName: @"ShipmentListViewController" bundle: nil];
+    ShipmentListViewController *shipmentListViewController = [[ShipmentListViewController alloc] initWithStyle: UITableViewStylePlain];
 	
 	if ( [self.title isEqualToString: kIStat] ) {
 		shipmentListViewController.title = @"iSTAT Shipment List";
