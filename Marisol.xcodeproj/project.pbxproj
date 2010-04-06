@@ -27,6 +27,7 @@
 		5F15C358116B76CE001ED14A /* XMLParseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15C34F116B76CE001ED14A /* XMLParseHandler.m */; };
 		5F15C3DD116B7BB3001ED14A /* iStatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15C3DC116B7BB3001ED14A /* iStatViewController.m */; };
 		5F15C402116B7C94001ED14A /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F15C401116B7C94001ED14A /* globe.png */; };
+		5F15C514116B90EB001ED14A /* exStatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15C513116B90EB001ED14A /* exStatViewController.m */; };
 		5F3E9482116A4332003C2BFD /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3E9481116A4332003C2BFD /* icon.png */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,8 @@
 		5F15C3DB116B7BB3001ED14A /* iStatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iStatViewController.h; sourceTree = "<group>"; };
 		5F15C3DC116B7BB3001ED14A /* iStatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iStatViewController.m; sourceTree = "<group>"; };
 		5F15C401116B7C94001ED14A /* globe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = globe.png; sourceTree = "<group>"; };
+		5F15C512116B90EB001ED14A /* exStatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exStatViewController.h; sourceTree = "<group>"; };
+		5F15C513116B90EB001ED14A /* exStatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = exStatViewController.m; sourceTree = "<group>"; };
 		5F3E9481116A4332003C2BFD /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Marisol-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Marisol-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +148,7 @@
 				5F15C32F116B75A6001ED14A /* LoginViewController.h */,
 				5F15C32C116B75A5001ED14A /* HomeViewController.h */,
 				5F15C3DB116B7BB3001ED14A /* iStatViewController.h */,
+				5F15C512116B90EB001ED14A /* exStatViewController.h */,
 				5F15C34C116B76CE001ED14A /* WeekListViewController.h */,
 				5F15C348116B76CE001ED14A /* ShipmentListViewController.h */,
 				5F15C345116B76CE001ED14A /* ShipmentDetailViewController.h */,
@@ -162,6 +166,7 @@
 				5F15C330116B75A6001ED14A /* LoginViewController.m */,
 				5F15C32D116B75A5001ED14A /* HomeViewController.m */,
 				5F15C3DC116B7BB3001ED14A /* iStatViewController.m */,
+				5F15C513116B90EB001ED14A /* exStatViewController.m */,
 				5F15C34D116B76CE001ED14A /* WeekListViewController.m */,
 				5F15C349116B76CE001ED14A /* ShipmentListViewController.m */,
 				5F15C346116B76CE001ED14A /* ShipmentDetailViewController.m */,
@@ -264,6 +269,7 @@
 				5F15C357116B76CE001ED14A /* WeekListViewController.m in Sources */,
 				5F15C358116B76CE001ED14A /* XMLParseHandler.m in Sources */,
 				5F15C3DD116B7BB3001ED14A /* iStatViewController.m in Sources */,
+				5F15C514116B90EB001ED14A /* exStatViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
