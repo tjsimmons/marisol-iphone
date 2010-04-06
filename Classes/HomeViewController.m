@@ -38,8 +38,6 @@
 	if ( iStat ) {
 		iStatViewController *iStatController = [[iStatViewController alloc] init];
 		
-		[iStatController.view setFrame: CGRectMake(0, 40, 320, 347)];
-		
 		NSString *viewTitle = [[NSString alloc] initWithString: @"iSTAT"];
 		
 		iStatController.title = viewTitle;

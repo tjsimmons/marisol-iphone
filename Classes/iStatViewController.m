@@ -33,10 +33,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	WeekListViewController *weekViewController = [[WeekListViewController alloc] initWithStyle: UITableViewStylePlain];
+	// the following line MAGICALLY fixes our cell cutting off problem
+	self.view.frame = CGRectMake(0, 20, 320, 480);
 	
-	weekViewController.title = @"iSTAT";
-	weekViewController.view.frame = CGRectMake(0, 0, 320, 347);
+	WeekListViewController *weekViewController = [[WeekListViewController alloc] initWithStyle: UITableViewStylePlain];
+	NSString *weekViewTitle = [[NSString alloc] initWithString: @"iSTAT"];
+	
+	weekViewController.title = weekViewTitle;
+	[weekViewTitle release];
 	
 	UINavigationController *navCont = [[UINavigationController alloc] initWithRootViewController: weekViewController];
 	
