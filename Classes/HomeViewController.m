@@ -7,8 +7,8 @@
 //
 
 #import "HomeViewController.h"
-#import "WeekListViewController.h"
 #import "iStatViewController.h"
+#import "exStatViewController.h"
 
 #define kProductsKey	@"products"
 
@@ -48,7 +48,7 @@
 	}
 	
 	if ( exStat ) {
-		WeekListViewController *exStatController = [[WeekListViewController alloc] initWithStyle: UITableViewStylePlain];
+		exStatViewController *exStatController = [[exStatViewController alloc] init];
 		
 		NSString *viewTitle = [[NSString alloc] initWithString: @"exSTAT"];
 		
