@@ -10,7 +10,8 @@
 #import "iStatViewController.h"
 #import "exStatViewController.h"
 
-#define kProductsKey @"products"
+#define kProductsKey		@"products"
+#define kHomeCellHeight		102
 
 
 @implementation HomeViewController
@@ -146,9 +147,18 @@
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    }
+	
+	// load up our custom cell
+	if ( cell == nil ) {
+		NSArray		*nib = [[NSBundle mainBundle] loadNibNamed: @"HomeCell"
+													  owner: self options: nil];
+		
+		for ( id oneObject in nib ) {
+			if ( [oneObject isKindOfClass: [UITableViewCell class]] ) {
+				cell = oneObject;
+			}
+		}
+	}
     
     // Configure the cell...
     
@@ -198,6 +208,10 @@
 
 #pragma mark -
 #pragma mark Table view delegate
+// this sets the height for every row called for by table
+-(CGFloat) tableView: (UITableView *) tableView heightForRowAtIndexPath: (NSIndexPath *) indexPath {
+	return kHomeCellHeight;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here. Create and push another view controller.
