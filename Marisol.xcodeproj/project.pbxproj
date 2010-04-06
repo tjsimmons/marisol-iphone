@@ -13,6 +13,18 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		5F15C332116B75A6001ED14A /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15C32D116B75A5001ED14A /* HomeViewController.m */; };
+		5F15C333116B75A6001ED14A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F15C32E116B75A6001ED14A /* HomeViewController.xib */; };
+		5F15C334116B75A6001ED14A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15C330116B75A6001ED14A /* LoginViewController.m */; };
+		5F15C335116B75A6001ED14A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F15C331116B75A6001ED14A /* LoginViewController.xib */; };
+		5F15C350116B76CE001ED14A /* ConnectionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15C342116B76CE001ED14A /* ConnectionHandler.m */; };
+		5F15C351116B76CE001ED14A /* Shipment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15C344116B76CE001ED14A /* Shipment.m */; };
+		5F15C352116B76CE001ED14A /* ShipmentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15C346116B76CE001ED14A /* ShipmentDetailViewController.m */; };
+		5F15C353116B76CE001ED14A /* ShipmentDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F15C347116B76CE001ED14A /* ShipmentDetailViewController.xib */; };
+		5F15C354116B76CE001ED14A /* ShipmentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15C349116B76CE001ED14A /* ShipmentListViewController.m */; };
+		5F15C356116B76CE001ED14A /* weeklist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F15C34B116B76CE001ED14A /* weeklist.plist */; };
+		5F15C357116B76CE001ED14A /* WeekListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15C34D116B76CE001ED14A /* WeekListViewController.m */; };
+		5F15C358116B76CE001ED14A /* XMLParseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15C34F116B76CE001ED14A /* XMLParseHandler.m */; };
 		5F3E9482116A4332003C2BFD /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3E9481116A4332003C2BFD /* icon.png */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +38,26 @@
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Marisol_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Marisol_Prefix.pch; sourceTree = "<group>"; };
+		5F15C32C116B75A5001ED14A /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		5F15C32D116B75A5001ED14A /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		5F15C32E116B75A6001ED14A /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeViewController.xib; path = Classes/HomeViewController.xib; sourceTree = "<group>"; };
+		5F15C32F116B75A6001ED14A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		5F15C330116B75A6001ED14A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		5F15C331116B75A6001ED14A /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoginViewController.xib; path = Classes/LoginViewController.xib; sourceTree = "<group>"; };
+		5F15C341116B76CE001ED14A /* ConnectionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionHandler.h; sourceTree = "<group>"; };
+		5F15C342116B76CE001ED14A /* ConnectionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionHandler.m; sourceTree = "<group>"; };
+		5F15C343116B76CE001ED14A /* Shipment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shipment.h; sourceTree = "<group>"; };
+		5F15C344116B76CE001ED14A /* Shipment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shipment.m; sourceTree = "<group>"; };
+		5F15C345116B76CE001ED14A /* ShipmentDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShipmentDetailViewController.h; sourceTree = "<group>"; };
+		5F15C346116B76CE001ED14A /* ShipmentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShipmentDetailViewController.m; sourceTree = "<group>"; };
+		5F15C347116B76CE001ED14A /* ShipmentDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ShipmentDetailViewController.xib; path = Classes/ShipmentDetailViewController.xib; sourceTree = "<group>"; };
+		5F15C348116B76CE001ED14A /* ShipmentListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShipmentListViewController.h; sourceTree = "<group>"; };
+		5F15C349116B76CE001ED14A /* ShipmentListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShipmentListViewController.m; sourceTree = "<group>"; };
+		5F15C34B116B76CE001ED14A /* weeklist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = weeklist.plist; path = Classes/weeklist.plist; sourceTree = "<group>"; };
+		5F15C34C116B76CE001ED14A /* WeekListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekListViewController.h; sourceTree = "<group>"; };
+		5F15C34D116B76CE001ED14A /* WeekListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekListViewController.m; sourceTree = "<group>"; };
+		5F15C34E116B76CE001ED14A /* XMLParseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParseHandler.h; sourceTree = "<group>"; };
+		5F15C34F116B76CE001ED14A /* XMLParseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParseHandler.m; sourceTree = "<group>"; };
 		5F3E9481116A4332003C2BFD /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Marisol-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Marisol-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +137,14 @@
 			isa = PBXGroup;
 			children = (
 				1D3623240D0F684500981E51 /* MarisolAppDelegate.h */,
+				5F15C32F116B75A6001ED14A /* LoginViewController.h */,
+				5F15C32C116B75A5001ED14A /* HomeViewController.h */,
+				5F15C34C116B76CE001ED14A /* WeekListViewController.h */,
+				5F15C348116B76CE001ED14A /* ShipmentListViewController.h */,
+				5F15C345116B76CE001ED14A /* ShipmentDetailViewController.h */,
+				5F15C341116B76CE001ED14A /* ConnectionHandler.h */,
+				5F15C34E116B76CE001ED14A /* XMLParseHandler.h */,
+				5F15C343116B76CE001ED14A /* Shipment.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -113,6 +153,14 @@
 			isa = PBXGroup;
 			children = (
 				1D3623250D0F684500981E51 /* MarisolAppDelegate.m */,
+				5F15C330116B75A6001ED14A /* LoginViewController.m */,
+				5F15C32D116B75A5001ED14A /* HomeViewController.m */,
+				5F15C34D116B76CE001ED14A /* WeekListViewController.m */,
+				5F15C349116B76CE001ED14A /* ShipmentListViewController.m */,
+				5F15C346116B76CE001ED14A /* ShipmentDetailViewController.m */,
+				5F15C342116B76CE001ED14A /* ConnectionHandler.m */,
+				5F15C34F116B76CE001ED14A /* XMLParseHandler.m */,
+				5F15C344116B76CE001ED14A /* Shipment.m */,
 			);
 			name = Implementations;
 			sourceTree = "<group>";
@@ -121,6 +169,9 @@
 			isa = PBXGroup;
 			children = (
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				5F15C331116B75A6001ED14A /* LoginViewController.xib */,
+				5F15C32E116B75A6001ED14A /* HomeViewController.xib */,
+				5F15C347116B76CE001ED14A /* ShipmentDetailViewController.xib */,
 			);
 			name = NIBs;
 			sourceTree = "<group>";
@@ -128,6 +179,7 @@
 		5F3E9477116A4302003C2BFD /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				5F15C34B116B76CE001ED14A /* weeklist.plist */,
 				5F3E9481116A4332003C2BFD /* icon.png */,
 				8D1107310486CEB800E47090 /* Marisol-Info.plist */,
 			);
@@ -178,6 +230,10 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				5F3E9482116A4332003C2BFD /* icon.png in Resources */,
+				5F15C333116B75A6001ED14A /* HomeViewController.xib in Resources */,
+				5F15C335116B75A6001ED14A /* LoginViewController.xib in Resources */,
+				5F15C353116B76CE001ED14A /* ShipmentDetailViewController.xib in Resources */,
+				5F15C356116B76CE001ED14A /* weeklist.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +246,14 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* MarisolAppDelegate.m in Sources */,
+				5F15C332116B75A6001ED14A /* HomeViewController.m in Sources */,
+				5F15C334116B75A6001ED14A /* LoginViewController.m in Sources */,
+				5F15C350116B76CE001ED14A /* ConnectionHandler.m in Sources */,
+				5F15C351116B76CE001ED14A /* Shipment.m in Sources */,
+				5F15C352116B76CE001ED14A /* ShipmentDetailViewController.m in Sources */,
+				5F15C354116B76CE001ED14A /* ShipmentListViewController.m in Sources */,
+				5F15C357116B76CE001ED14A /* WeekListViewController.m in Sources */,
+				5F15C358116B76CE001ED14A /* XMLParseHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
