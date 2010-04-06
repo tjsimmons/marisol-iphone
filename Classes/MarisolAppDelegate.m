@@ -30,5 +30,10 @@
     [super dealloc];
 }
 
+#pragma mark -
+#pragma mark Custom Methods
+-(void) setTabBarControllers: (NSArray *) controllers {
+	[self.tabBarController setViewControllers: controllers];
+}
 
 @end

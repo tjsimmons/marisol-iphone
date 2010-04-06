@@ -16,5 +16,7 @@
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) UITabBarController *tabBarController;
 
+-(void) setTabBarControllers: (NSArray *) controllers;
+
 @end
 
