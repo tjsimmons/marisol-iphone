@@ -11,6 +11,7 @@
 @implementation MarisolAppDelegate
 
 @synthesize window;
+@synthesize tabBarController;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
@@ -24,6 +25,7 @@
 
 
 - (void)dealloc {
+	[tabBarController release];
     [window release];
     [super dealloc];
 }
