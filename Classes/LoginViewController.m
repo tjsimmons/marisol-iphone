@@ -7,7 +7,6 @@
 //
 
 #import "LoginViewController.h"
-#import "iStatRootViewController.h"
 
 #define kUsernameKey	@"username"
 #define kCustomerKey	@"customer"

@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "WeekListViewController.h"
 
 #define kProductsKey	@"products"
 
@@ -34,7 +35,7 @@
 	}
 	
 	if ( iStat ) {
-		iStatRootViewController *iStatController = [[iStatRootViewController alloc] initWithNibName: @"iStatRootViewController" bundle: nil];
+		WeekListViewController *iStatController = [[WeekListViewController alloc] initWithStyle: UITableViewStylePlain];
 		
 		NSString *viewTitle = [[NSString alloc] initWithString: @"iSTAT"];
 		
@@ -46,7 +47,7 @@
 	}
 	
 	if ( exStat ) {
-		exStatRootViewController *exStatController = [[exStatRootViewController alloc] initWithNibName: @"exStatRootViewController" bundle: nil];
+		WeekListViewController *exStatController = [[WeekListViewController alloc] initWithStyle: UITableViewStylePlain];
 		
 		NSString *viewTitle = [[NSString alloc] initWithString: @"exSTAT"];
 		
