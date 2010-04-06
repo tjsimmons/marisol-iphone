@@ -10,9 +10,11 @@
 
 @interface MarisolAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
+	UITabBarController *tabBarController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) UITabBarController *tabBarController;
 
 @end
 
