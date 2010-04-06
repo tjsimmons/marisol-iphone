@@ -25,6 +25,8 @@
 		5F15C356116B76CE001ED14A /* weeklist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F15C34B116B76CE001ED14A /* weeklist.plist */; };
 		5F15C357116B76CE001ED14A /* WeekListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15C34D116B76CE001ED14A /* WeekListViewController.m */; };
 		5F15C358116B76CE001ED14A /* XMLParseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15C34F116B76CE001ED14A /* XMLParseHandler.m */; };
+		5F15C3DD116B7BB3001ED14A /* iStatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15C3DC116B7BB3001ED14A /* iStatViewController.m */; };
+		5F15C402116B7C94001ED14A /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F15C401116B7C94001ED14A /* globe.png */; };
 		5F3E9482116A4332003C2BFD /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3E9481116A4332003C2BFD /* icon.png */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,9 @@
 		5F15C34D116B76CE001ED14A /* WeekListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekListViewController.m; sourceTree = "<group>"; };
 		5F15C34E116B76CE001ED14A /* XMLParseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParseHandler.h; sourceTree = "<group>"; };
 		5F15C34F116B76CE001ED14A /* XMLParseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParseHandler.m; sourceTree = "<group>"; };
+		5F15C3DB116B7BB3001ED14A /* iStatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iStatViewController.h; sourceTree = "<group>"; };
+		5F15C3DC116B7BB3001ED14A /* iStatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iStatViewController.m; sourceTree = "<group>"; };
+		5F15C401116B7C94001ED14A /* globe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = globe.png; sourceTree = "<group>"; };
 		5F3E9481116A4332003C2BFD /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Marisol-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Marisol-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +86,8 @@
 			children = (
 				5F3E9472116A42EB003C2BFD /* Headers */,
 				5F3E9475116A42F2003C2BFD /* Implementations */,
+				5F15C3DB116B7BB3001ED14A /* iStatViewController.h */,
+				5F15C3DC116B7BB3001ED14A /* iStatViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -181,6 +188,7 @@
 			children = (
 				5F15C34B116B76CE001ED14A /* weeklist.plist */,
 				5F3E9481116A4332003C2BFD /* icon.png */,
+				5F15C401116B7C94001ED14A /* globe.png */,
 				8D1107310486CEB800E47090 /* Marisol-Info.plist */,
 			);
 			name = Other;
@@ -234,6 +242,7 @@
 				5F15C335116B75A6001ED14A /* LoginViewController.xib in Resources */,
 				5F15C353116B76CE001ED14A /* ShipmentDetailViewController.xib in Resources */,
 				5F15C356116B76CE001ED14A /* weeklist.plist in Resources */,
+				5F15C402116B7C94001ED14A /* globe.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +263,7 @@
 				5F15C354116B76CE001ED14A /* ShipmentListViewController.m in Sources */,
 				5F15C357116B76CE001ED14A /* WeekListViewController.m in Sources */,
 				5F15C358116B76CE001ED14A /* XMLParseHandler.m in Sources */,
+				5F15C3DD116B7BB3001ED14A /* iStatViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
