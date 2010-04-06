@@ -7,6 +7,8 @@
 //
 
 #import "MarisolAppDelegate.h"
+#import "LoginViewController.h"
+#import "HomeViewController.h"
 
 @implementation MarisolAppDelegate
 
@@ -17,6 +19,27 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
 
     // Override point for customization after application launch
+	UITabBarController *tabController = [[UITabBarController alloc] init];
+	LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName: @"LoginViewController" bundle: nil];
+	HomeViewController *homeController = [[HomeViewController alloc] initWithNibName: @"HomeViewController" bundle: nil];
+	NSString *homeTitle = [[NSString alloc] initWithString: @"Home"];
+	
+	homeController.title = homeTitle;
+	[homeTitle release];
+	
+	NSArray *array = [[NSArray alloc] initWithObjects: homeController, nil];
+	
+	[tabController setViewControllers: array];
+	[array release];
+	[homeController release];
+	
+	self.tabBarController = tabController;
+	
+	[tabController release];
+	
+	[window addSubview: tabBarController.view];
+	[tabBarController presentModalViewController: loginViewController animated: YES];
+	[loginViewController release];
 	
     [window makeKeyAndVisible];
 	
