@@ -13,8 +13,6 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
-		5F15C332116B75A6001ED14A /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15C32D116B75A5001ED14A /* HomeViewController.m */; };
-		5F15C333116B75A6001ED14A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F15C32E116B75A6001ED14A /* HomeViewController.xib */; };
 		5F15C334116B75A6001ED14A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15C330116B75A6001ED14A /* LoginViewController.m */; };
 		5F15C335116B75A6001ED14A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F15C331116B75A6001ED14A /* LoginViewController.xib */; };
 		5F15C350116B76CE001ED14A /* ConnectionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15C342116B76CE001ED14A /* ConnectionHandler.m */; };
@@ -29,6 +27,7 @@
 		5F15C402116B7C94001ED14A /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F15C401116B7C94001ED14A /* globe.png */; };
 		5F15C514116B90EB001ED14A /* exStatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15C513116B90EB001ED14A /* exStatViewController.m */; };
 		5F3E9482116A4332003C2BFD /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3E9481116A4332003C2BFD /* icon.png */; };
+		5FC57CE4116BC95A00F41F4B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC57CE3116BC95A00F41F4B /* HomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,9 +40,6 @@
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Marisol_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Marisol_Prefix.pch; sourceTree = "<group>"; };
-		5F15C32C116B75A5001ED14A /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		5F15C32D116B75A5001ED14A /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		5F15C32E116B75A6001ED14A /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeViewController.xib; path = Classes/HomeViewController.xib; sourceTree = "<group>"; };
 		5F15C32F116B75A6001ED14A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		5F15C330116B75A6001ED14A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		5F15C331116B75A6001ED14A /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoginViewController.xib; path = Classes/LoginViewController.xib; sourceTree = "<group>"; };
@@ -67,6 +63,8 @@
 		5F15C512116B90EB001ED14A /* exStatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exStatViewController.h; sourceTree = "<group>"; };
 		5F15C513116B90EB001ED14A /* exStatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = exStatViewController.m; sourceTree = "<group>"; };
 		5F3E9481116A4332003C2BFD /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		5FC57CE2116BC95A00F41F4B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = ../HomeViewController.h; sourceTree = "<group>"; };
+		5FC57CE3116BC95A00F41F4B /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = ../HomeViewController.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Marisol-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Marisol-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,7 +144,7 @@
 			children = (
 				1D3623240D0F684500981E51 /* MarisolAppDelegate.h */,
 				5F15C32F116B75A6001ED14A /* LoginViewController.h */,
-				5F15C32C116B75A5001ED14A /* HomeViewController.h */,
+				5FC57CE2116BC95A00F41F4B /* HomeViewController.h */,
 				5F15C3DB116B7BB3001ED14A /* iStatViewController.h */,
 				5F15C512116B90EB001ED14A /* exStatViewController.h */,
 				5F15C34C116B76CE001ED14A /* WeekListViewController.h */,
@@ -164,7 +162,7 @@
 			children = (
 				1D3623250D0F684500981E51 /* MarisolAppDelegate.m */,
 				5F15C330116B75A6001ED14A /* LoginViewController.m */,
-				5F15C32D116B75A5001ED14A /* HomeViewController.m */,
+				5FC57CE3116BC95A00F41F4B /* HomeViewController.m */,
 				5F15C3DC116B7BB3001ED14A /* iStatViewController.m */,
 				5F15C513116B90EB001ED14A /* exStatViewController.m */,
 				5F15C34D116B76CE001ED14A /* WeekListViewController.m */,
@@ -182,7 +180,6 @@
 			children = (
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				5F15C331116B75A6001ED14A /* LoginViewController.xib */,
-				5F15C32E116B75A6001ED14A /* HomeViewController.xib */,
 				5F15C347116B76CE001ED14A /* ShipmentDetailViewController.xib */,
 			);
 			name = NIBs;
@@ -243,7 +240,6 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				5F3E9482116A4332003C2BFD /* icon.png in Resources */,
-				5F15C333116B75A6001ED14A /* HomeViewController.xib in Resources */,
 				5F15C335116B75A6001ED14A /* LoginViewController.xib in Resources */,
 				5F15C353116B76CE001ED14A /* ShipmentDetailViewController.xib in Resources */,
 				5F15C356116B76CE001ED14A /* weeklist.plist in Resources */,
@@ -260,7 +256,6 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* MarisolAppDelegate.m in Sources */,
-				5F15C332116B75A6001ED14A /* HomeViewController.m in Sources */,
 				5F15C334116B75A6001ED14A /* LoginViewController.m in Sources */,
 				5F15C350116B76CE001ED14A /* ConnectionHandler.m in Sources */,
 				5F15C351116B76CE001ED14A /* Shipment.m in Sources */,
@@ -270,6 +265,7 @@
 				5F15C358116B76CE001ED14A /* XMLParseHandler.m in Sources */,
 				5F15C3DD116B7BB3001ED14A /* iStatViewController.m in Sources */,
 				5F15C514116B90EB001ED14A /* exStatViewController.m in Sources */,
+				5FC57CE4116BC95A00F41F4B /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,7 +308,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
