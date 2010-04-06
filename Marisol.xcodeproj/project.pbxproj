@@ -86,8 +86,6 @@
 			children = (
 				5F3E9472116A42EB003C2BFD /* Headers */,
 				5F3E9475116A42F2003C2BFD /* Implementations */,
-				5F15C3DB116B7BB3001ED14A /* iStatViewController.h */,
-				5F15C3DC116B7BB3001ED14A /* iStatViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -146,6 +144,7 @@
 				1D3623240D0F684500981E51 /* MarisolAppDelegate.h */,
 				5F15C32F116B75A6001ED14A /* LoginViewController.h */,
 				5F15C32C116B75A5001ED14A /* HomeViewController.h */,
+				5F15C3DB116B7BB3001ED14A /* iStatViewController.h */,
 				5F15C34C116B76CE001ED14A /* WeekListViewController.h */,
 				5F15C348116B76CE001ED14A /* ShipmentListViewController.h */,
 				5F15C345116B76CE001ED14A /* ShipmentDetailViewController.h */,
@@ -162,6 +161,7 @@
 				1D3623250D0F684500981E51 /* MarisolAppDelegate.m */,
 				5F15C330116B75A6001ED14A /* LoginViewController.m */,
 				5F15C32D116B75A5001ED14A /* HomeViewController.m */,
+				5F15C3DC116B7BB3001ED14A /* iStatViewController.m */,
 				5F15C34D116B76CE001ED14A /* WeekListViewController.m */,
 				5F15C349116B76CE001ED14A /* ShipmentListViewController.m */,
 				5F15C346116B76CE001ED14A /* ShipmentDetailViewController.m */,

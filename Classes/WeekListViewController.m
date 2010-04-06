@@ -23,6 +23,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+	//self.view.bounds = CGRectMake(0, 0, 320, 367);
+	//self.view.frame = CGRectMake(0, 20, 320, 480);
 	
 	NSDictionary *weekDict = [[NSDictionary alloc] initWithContentsOfFile: [[NSBundle mainBundle] pathForResource: @"weeklist" ofType: @"plist"]];
 	
