@@ -11,10 +11,8 @@
 
 @interface WeekListViewController : UITableViewController {
 	NSArray		*weekList;
-	NSString	*whichStat;
 }
 
 @property (nonatomic, retain) NSArray *weekList;
-@property (nonatomic, retain) NSString *whichStat;
 
 @end

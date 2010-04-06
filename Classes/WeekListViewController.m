@@ -16,7 +16,6 @@
 @implementation WeekListViewController
 
 @synthesize weekList;
-@synthesize whichStat;
 
 
 #pragma mark -
@@ -149,7 +148,6 @@
 
 - (void)dealloc {
 	self.weekList = nil;
-	self.whichStat = nil;
     [super dealloc];
 }
 
