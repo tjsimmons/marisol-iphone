@@ -12,9 +12,11 @@
 @implementation HomeCellViewController
 
 @synthesize valueLabel;
+@synthesize titleLabel;
 
--(void) setValueText: (NSString *) text {
-	self.valueLabel.text = text;
+-(void) setTitleText: (NSString *) titleText andValueText: (NSString *) valueText {
+	self.titleLabel.text = titleText;
+	self.valueLabel.text = valueText;
 }
 
 /*
@@ -53,11 +55,13 @@
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 	self.valueLabel = nil;
+	self.titleLabel = nil;
 }
 
 
 - (void)dealloc {
 	self.valueLabel = nil;
+	self.titleLabel = nil;
     [super dealloc];
 }
 

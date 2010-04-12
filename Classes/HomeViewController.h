@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ConnectionHandler.h"
+#import "HomeXMLParseHandler.h"
 
 
-@interface HomeViewController : UIViewController {
+@interface HomeViewController : UIViewController <ConnectionHandlerDelegate, HomeXMLParseHandlerDelegate> {
 	BOOL pastInitialLogin;
 	NSMutableArray *cells;
 }
@@ -17,7 +19,13 @@
 @property (nonatomic, retain) NSMutableArray *cells;
 
 -(void) setTabBarViewControllers;
--(void) setCellValues;
--(void) handleConnectionAndXMLForCellAtRow: (NSNumber *) row;
+-(void) setCellValuesWithArray: (NSArray *) array;
+-(void) startConnectionForCellData;
+
+// connection handler delegate method
+-(void) connectionFinishedWithFilePath: (NSString *) filePath;
+
+// home xml parse handler delegate method
+-(void) xmlDidFinishParsingWithArray: (NSMutableArray *) array;
 
 @end
