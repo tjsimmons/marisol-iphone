@@ -78,6 +78,12 @@
 	[array release];
 }
 
+-(void) viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:animated];
+	
+	NSLog(@"disappear");
+}
+
 #pragma mark -
 #pragma mark Table view data source
 
