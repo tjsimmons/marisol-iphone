@@ -21,11 +21,11 @@
     // Override point for customization after application launch
 	UITabBarController *tabController = [[UITabBarController alloc] init];
 	LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName: @"LoginViewController" bundle: nil];
-	HomeViewController *homeController = [[HomeViewController alloc] initWithStyle: UITableViewStylePlain];
+	HomeViewController *homeController = [[HomeViewController alloc] initWithNibName: @"HomeViewController" bundle: nil];
 	NSString *homeTitle = [[NSString alloc] initWithString: @"Home"];
 	
-	homeController.view.backgroundColor = [UIColor grayColor];
 	homeController.title = homeTitle;
+	
 	[homeTitle release];
 	
 	NSArray *array = [[NSArray alloc] initWithObjects: homeController, nil];
