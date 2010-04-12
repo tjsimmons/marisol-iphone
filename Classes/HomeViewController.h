@@ -9,10 +9,15 @@
 #import <UIKit/UIKit.h>
 
 
-@interface HomeViewController : UITableViewController {
+@interface HomeViewController : UIViewController {
 	BOOL pastInitialLogin;
+	NSMutableArray *cells;
 }
 
+@property (nonatomic, retain) NSMutableArray *cells;
+
 -(void) setTabBarViewControllers;
+-(void) setCellValues;
+-(void) handleConnectionAndXMLForCellAtRow: (NSNumber *) row;
 
 @end

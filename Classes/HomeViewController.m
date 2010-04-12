@@ -9,12 +9,15 @@
 #import "HomeViewController.h"
 #import "iStatViewController.h"
 #import "exStatViewController.h"
+#import "HomeCellViewController.h"
 
 #define kProductsKey		@"products"
-#define kHomeCellHeight		102
+#define kNumCells			4
 
 
 @implementation HomeViewController
+
+@synthesize cells;
 
 #pragma mark -
 #pragma mark Custom Methods
@@ -63,6 +66,44 @@
 	[[[UIApplication sharedApplication] delegate] setTabBarControllers: viewControllers];
 	
 	[viewControllers release];
+	
+	[self setCellValues];
+}
+
+-(void) setCellValues {
+	for ( int i = 0; i < [self.cells count]; i++ ) {
+		//HomeCellViewController *cell = (HomeCellViewController *) [cells objectAtIndex: i];
+		NSNumber *row = [[NSNumber alloc] initWithInteger: i];
+		
+		// detach a thread for each cell to keep things snappy
+		[NSThread detachNewThreadSelector:@selector(handleConnectionAndXMLForCellAtRow:) toTarget: self withObject: row];
+		
+		[row release];
+	}
+}
+
+-(void) handleConnectionAndXMLForCellAtRow: (NSNumber *) row {
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	
+	switch ( [row integerValue] ) {
+		case 0:
+			NSLog(@"1");
+			break;
+		case 1:
+			NSLog(@"2");
+			break;
+		case 2:
+			NSLog(@"3");
+			break;
+		case 3:
+			NSLog(@"4");
+			break;
+		default:
+			NSLog(@"wtf");
+			break;
+	}
+	
+	[pool drain];
 }
 
 #pragma mark -
@@ -81,17 +122,53 @@
 #pragma mark -
 #pragma mark View lifecycle
 
-/*
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     // Uncomment the following line to preserve selection between presentations.
-    self.clearsSelectionOnViewWillAppear = NO;
+    //self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	
+	for ( int i = 0; i < kNumCells; i++ ) {
+		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+		HomeCellViewController *cell = [[HomeCellViewController alloc] initWithNibName: @"HomeCellViewController" bundle: nil];
+		
+		switch (i) {
+			case 0:
+				cell.view.backgroundColor = [UIColor grayColor];
+				cell.view.frame = CGRectMake(0, 0, 320, 96);
+				break;
+			case 1:
+				cell.view.backgroundColor = [UIColor grayColor];
+				cell.view.frame = CGRectMake(0, 105, 320, 96);
+				break;
+			case 2:
+				cell.view.backgroundColor = [UIColor grayColor];
+				cell.view.frame = CGRectMake(0, 210, 320, 96);
+				break;
+			case 3:
+				cell.view.backgroundColor = [UIColor grayColor];
+				cell.view.frame = CGRectMake(0, 315, 320, 96);
+				break;
+			default:
+				break;
+		}
+		
+		[self.view insertSubview: cell.view atIndex: 1];
+		
+		if ( !self.cells ) {
+			self.cells = [[NSMutableArray alloc] init];
+		}
+		
+		[self.cells addObject: cell];
+		
+		[cell release];
+		
+		[pool drain];
+	}
 }
-*/
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
@@ -125,106 +202,6 @@
 }
 */
 
-
-#pragma mark -
-#pragma mark Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
-    return 1;
-}
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
-    return 4;
-}
-
-
-// Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-	
-	// load up our custom cell
-	if ( cell == nil ) {
-		NSArray		*nib = [[NSBundle mainBundle] loadNibNamed: @"HomeCell"
-													  owner: self options: nil];
-		
-		for ( id oneObject in nib ) {
-			if ( [oneObject isKindOfClass: [UITableViewCell class]] ) {
-				cell = oneObject;
-			}
-		}
-	}
-    
-    // Configure the cell...
-    
-    return cell;
-}
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-
-#pragma mark -
-#pragma mark Table view delegate
-// this sets the height for every row called for by table
--(CGFloat) tableView: (UITableView *) tableView heightForRowAtIndexPath: (NSIndexPath *) indexPath {
-	return kHomeCellHeight;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-	/*
-	 <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-	 [self.navigationController pushViewController:detailViewController animated:YES];
-	 [detailViewController release];
-	 */
-}
-
-
 #pragma mark -
 #pragma mark Memory management
 
@@ -238,10 +215,12 @@
 - (void)viewDidUnload {
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
+	self.cells = nil;
 }
 
 
 - (void)dealloc {
+	self.cells = nil;
     [super dealloc];
 }
 
