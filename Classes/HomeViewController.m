@@ -10,6 +10,7 @@
 #import "iStatViewController.h"
 #import "exStatViewController.h"
 #import "HomeCellViewController.h"
+#import "HomeCellModel.h"
 
 #define kProductsKey		@"products"
 #define kNumCells			4
@@ -67,43 +68,47 @@
 	
 	[viewControllers release];
 	
-	[self setCellValues];
+	[self startConnectionForCellData];
 }
 
--(void) setCellValues {
-	for ( int i = 0; i < [self.cells count]; i++ ) {
-		//HomeCellViewController *cell = (HomeCellViewController *) [cells objectAtIndex: i];
-		NSNumber *row = [[NSNumber alloc] initWithInteger: i];
+-(void) setCellValuesWithArray: (NSArray *) array {
+	for ( int i = 0; i < [array count]; i++ ) {
+		HomeCellViewController *cell = (HomeCellViewController *) [cells objectAtIndex: i];
+		HomeCellModel *cellModel = (HomeCellModel *) [array objectAtIndex: i];
 		
-		// detach a thread for each cell to keep things snappy
-		[NSThread detachNewThreadSelector:@selector(handleConnectionAndXMLForCellAtRow:) toTarget: self withObject: row];
-		
-		[row release];
+		[cell setTitleText: cellModel.cellTitle andValueText: cellModel.cellValue];
 	}
 }
 
--(void) handleConnectionAndXMLForCellAtRow: (NSNumber *) row {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+-(void) startConnectionForCellData {	
+	ConnectionHandler *handler = [[ConnectionHandler alloc] initWithDelegate: self];
+	NSString *path = [[NSString alloc] initWithString: @"celldata.xml"];
 	
-	switch ( [row integerValue] ) {
-		case 0:
-			NSLog(@"1");
-			break;
-		case 1:
-			NSLog(@"2");
-			break;
-		case 2:
-			NSLog(@"3");
-			break;
-		case 3:
-			NSLog(@"4");
-			break;
-		default:
-			NSLog(@"wtf");
-			break;
-	}
+	NSString *url = [[NSString alloc] initWithString: @"https://www.marisolintl.com/iphone/homexml.asp"];
 	
-	[pool drain];
+	handler.xmlPathComponent = path;
+	
+	[handler beginURLConnection: url];
+	
+	[handler release];
+	[path release];
+	[url release];
+}
+
+#pragma mark -
+#pragma mark Connection Handler Delegate Method
+-(void) connectionFinishedWithFilePath: (NSString *) filePath {
+	HomeXMLParseHandler *handler = [[HomeXMLParseHandler alloc] initWithDelegate: self];
+	
+	[handler startXMLParseWithFile: filePath];
+	
+	[handler release];
+}
+
+#pragma mark -
+#pragma mark Home XML Parse Handler Delegate Method
+-(void) xmlDidFinishParsingWithArray: (NSMutableArray *) array {
+	[self setCellValuesWithArray: array];
 }
 
 #pragma mark -

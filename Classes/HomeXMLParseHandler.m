@@ -1,20 +1,18 @@
 //
-//  XMLParseHandler.m
-//  
+//  HomeXMLParseHandler.m
+//  Marisol
 //
-//  Created by T.J. Simmons on 3/25/10.
+//  Created by T.J. Simmons on 4/12/10.
 //  Copyright 2010 T.J. Simmons. All rights reserved.
 //
 
-#import "XMLParseHandler.h"
-#import "Shipment.h"
+#import "HomeXMLParseHandler.h"
+#import "HomeCellModel.h"
 
-#define kShipmentElementName			@"shipment"
-#define kMarisolNumElementName			@"marisolNum"
-#define kDeliveryDateElementName		@"deliveryDate"
-#define kColdStorageDateElementName		@"coldStorageDate"
+#define	kCellElementName			@"cell"
+#define kTitleElementName			@"title"
 
-@implementation XMLParseHandler
+@implementation HomeXMLParseHandler
 
 @synthesize delegate;
 
@@ -68,14 +66,16 @@
 #pragma mark NSXMLParser Delegate Methods
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
 	// override
-	if ( [elementName isEqualToString: kShipmentElementName] ) {
-		Shipment *shipment = [[Shipment alloc] init];
+	if ( [elementName isEqualToString: kCellElementName] ) {
+		HomeCellModel *cellModel = [[HomeCellModel alloc] init];
 		
-		self.currentObject = shipment;
-		[shipment release];
+		self.currentObject = cellModel;
+		[cellModel release];
 		
-		currentObject.shipmentID = [[attributeDict objectForKey: @"id"] integerValue];
-	} else if ( [elementName isEqualToString: kMarisolNumElementName] || [elementName isEqualToString: kDeliveryDateElementName] || [elementName isEqualToString: kColdStorageDateElementName] ) {
+		currentObject.cellIndex = [[attributeDict objectForKey: @"index"] integerValue];
+	} else if ( [elementName isEqualToString: kTitleElementName] ) {
+		currentObject.cellValue = [attributeDict objectForKey: @"value"];
+		
 		accumulatingCharacterData = YES;
 		
 		self.currentParsedCharacterData = [NSMutableString string];
@@ -86,19 +86,11 @@
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
 	// override
-	if ( [elementName isEqualToString: kMarisolNumElementName] ) {
-		currentObject.marisolNum = self.currentParsedCharacterData;
+	if ( [elementName isEqualToString: kTitleElementName] ) {
+		currentObject.cellTitle = self.currentParsedCharacterData;
 		
 		self.currentParsedCharacterData = nil;
-	} else if ( [elementName isEqualToString: kDeliveryDateElementName] ) {
-		currentObject.deliveryDateString = self.currentParsedCharacterData;
-		
-		self.currentParsedCharacterData = nil;
-	} else if ( [elementName isEqualToString: kColdStorageDateElementName] ) {
-		currentObject.coldStorageDateString = self.currentParsedCharacterData;
-		
-		self.currentParsedCharacterData = nil;
-	} else if ( [elementName isEqualToString: kShipmentElementName] ) {
+	} else if ( [elementName isEqualToString: kCellElementName] ) {
 		[self.objectList addObject: currentObject];
 		
 		self.currentObject = nil;
@@ -133,3 +125,4 @@
 }
 
 @end
+

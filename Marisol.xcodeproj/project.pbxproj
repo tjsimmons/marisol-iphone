@@ -28,6 +28,8 @@
 		5F15C514116B90EB001ED14A /* exStatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15C513116B90EB001ED14A /* exStatViewController.m */; };
 		5F3E9482116A4332003C2BFD /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3E9481116A4332003C2BFD /* icon.png */; };
 		5FC57D14116BCE7A00F41F4B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC57D13116BCE7A00F41F4B /* HomeViewController.m */; };
+		5FD1E2A81173A4DE00CD0782 /* HomeXMLParseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD1E2A71173A4DE00CD0782 /* HomeXMLParseHandler.m */; };
+		5FD1E2C31173A65100CD0782 /* HomeCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD1E2C21173A65100CD0782 /* HomeCellModel.m */; };
 		5FE154EE1173621C0061F3CE /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FE154EC1173621C0061F3CE /* HomeViewController.xib */; };
 		5FE155A911737D4F0061F3CE /* HomeCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE155A711737D4F0061F3CE /* HomeCellViewController.m */; };
 		5FE155AA11737D4F0061F3CE /* HomeCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FE155A811737D4F0061F3CE /* HomeCellViewController.xib */; };
@@ -68,6 +70,10 @@
 		5F3E9481116A4332003C2BFD /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		5FC57D12116BCE7A00F41F4B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		5FC57D13116BCE7A00F41F4B /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		5FD1E2A61173A4DE00CD0782 /* HomeXMLParseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeXMLParseHandler.h; sourceTree = "<group>"; };
+		5FD1E2A71173A4DE00CD0782 /* HomeXMLParseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeXMLParseHandler.m; sourceTree = "<group>"; };
+		5FD1E2C11173A65100CD0782 /* HomeCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCellModel.h; sourceTree = "<group>"; };
+		5FD1E2C21173A65100CD0782 /* HomeCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCellModel.m; sourceTree = "<group>"; };
 		5FE154EC1173621C0061F3CE /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeViewController.xib; path = Classes/HomeViewController.xib; sourceTree = "<group>"; };
 		5FE155A611737D4F0061F3CE /* HomeCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCellViewController.h; sourceTree = "<group>"; };
 		5FE155A711737D4F0061F3CE /* HomeCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCellViewController.m; sourceTree = "<group>"; };
@@ -160,6 +166,8 @@
 				5F15C345116B76CE001ED14A /* ShipmentDetailViewController.h */,
 				5F15C341116B76CE001ED14A /* ConnectionHandler.h */,
 				5F15C34E116B76CE001ED14A /* XMLParseHandler.h */,
+				5FD1E2A61173A4DE00CD0782 /* HomeXMLParseHandler.h */,
+				5FD1E2C11173A65100CD0782 /* HomeCellModel.h */,
 				5F15C343116B76CE001ED14A /* Shipment.h */,
 			);
 			name = Headers;
@@ -179,6 +187,8 @@
 				5F15C346116B76CE001ED14A /* ShipmentDetailViewController.m */,
 				5F15C342116B76CE001ED14A /* ConnectionHandler.m */,
 				5F15C34F116B76CE001ED14A /* XMLParseHandler.m */,
+				5FD1E2A71173A4DE00CD0782 /* HomeXMLParseHandler.m */,
+				5FD1E2C21173A65100CD0782 /* HomeCellModel.m */,
 				5F15C344116B76CE001ED14A /* Shipment.m */,
 			);
 			name = Implementations;
@@ -280,6 +290,8 @@
 				5F15C514116B90EB001ED14A /* exStatViewController.m in Sources */,
 				5FC57D14116BCE7A00F41F4B /* HomeViewController.m in Sources */,
 				5FE155A911737D4F0061F3CE /* HomeCellViewController.m in Sources */,
+				5FD1E2A81173A4DE00CD0782 /* HomeXMLParseHandler.m in Sources */,
+				5FD1E2C31173A65100CD0782 /* HomeCellModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

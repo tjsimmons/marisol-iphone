@@ -11,10 +11,12 @@
 
 @interface HomeCellViewController : UIViewController {
 	UILabel *valueLabel;
+	UILabel *titleLabel;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *valueLabel;
+@property (nonatomic, retain) IBOutlet UILabel *titleLabel;
 
--(void) setValueText: (NSString *) text;
+-(void) setTitleText: (NSString *) titleText andValueText: (NSString *) valueText;
 
 @end
