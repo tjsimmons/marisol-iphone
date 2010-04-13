@@ -21,6 +21,7 @@
 -(void) setTabBarViewControllers;
 -(void) setCellValuesWithArray: (NSArray *) array;
 -(void) startConnectionForCellData;
+-(void) addCellsToHomeScreen;
 
 // connection handler delegate method
 -(void) connectionFinishedWithFilePath: (NSString *) filePath;
