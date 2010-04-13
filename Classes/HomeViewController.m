@@ -152,19 +152,6 @@
 }
 
 #pragma mark -
-#pragma mark Initialization
-
-/*
- - (id)initWithStyle:(UITableViewStyle)style {
- // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
- if ((self = [super initWithStyle:style])) {
- }
- return self;
- }
- */
-
-
-#pragma mark -
 #pragma mark View lifecycle
 
 - (void)viewDidLoad {
@@ -179,12 +166,6 @@
 	[self addCellsToHomeScreen];
 }
 
-/*
- - (void)viewWillAppear:(BOOL)animated {
- [super viewWillAppear:animated];
- }
- */
-
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 	
@@ -192,24 +173,6 @@
 		[self setTabBarViewControllers];
 	}
 }
-
-/*
- - (void)viewWillDisappear:(BOOL)animated {
- [super viewWillDisappear:animated];
- }
- */
-/*
- - (void)viewDidDisappear:(BOOL)animated {
- [super viewDidDisappear:animated];
- }
- */
-/*
- // Override to allow orientations other than the default portrait orientation.
- - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
- // Return YES for supported orientations
- return (interfaceOrientation == UIInterfaceOrientationPortrait);
- }
- */
 
 #pragma mark -
 #pragma mark Memory management
