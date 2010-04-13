@@ -10,8 +10,9 @@
 #import "ShipmentDetailViewController.h"
 #import "Shipment.h"
 
-#define kIStat		@"iSTAT"
-#define kExStat		@"exSTAT"
+#define kIStat			@"iSTAT"
+#define kExStat			@"exSTAT"
+#define kCustomerKey	@"customer"
 
 
 @implementation ShipmentListViewController
@@ -27,7 +28,7 @@
 	ConnectionHandler *handler = [[ConnectionHandler alloc] initWithDelegate: self];
 	NSString *path = [[NSString alloc] initWithFormat: @"%@.xml", self.whichStat];
 	
-	NSString *customer = [[NSString alloc] initWithString: [[NSUserDefaults standardUserDefaults] objectForKey: @"Customer"]];
+	NSString *customer = [[NSString alloc] initWithString: [[NSUserDefaults standardUserDefaults] objectForKey: kCustomerKey]];
 	
 	NSString *url = [[NSString alloc] initWithFormat: @"https://www.marisolintl.com/iphone/%@shipmentxml.asp?customer=%@&start=%@&end=%@", 
 					 self.whichStat, customer, self.startDate, self.endDate];
