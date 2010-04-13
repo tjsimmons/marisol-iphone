@@ -95,49 +95,9 @@
 	[url release];
 }
 
-#pragma mark -
-#pragma mark Connection Handler Delegate Method
--(void) connectionFinishedWithFilePath: (NSString *) filePath {
-	HomeXMLParseHandler *handler = [[HomeXMLParseHandler alloc] initWithDelegate: self];
-	
-	[handler startXMLParseWithFile: filePath];
-	
-	[handler release];
-}
-
-#pragma mark -
-#pragma mark Home XML Parse Handler Delegate Method
--(void) xmlDidFinishParsingWithArray: (NSMutableArray *) array {
-	[self setCellValuesWithArray: array];
-}
-
-#pragma mark -
-#pragma mark Initialization
-
-/*
-- (id)initWithStyle:(UITableViewStyle)style {
-    // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-    if ((self = [super initWithStyle:style])) {
-    }
-    return self;
-}
-*/
-
-
-#pragma mark -
-#pragma mark View lifecycle
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    //self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-	
+-(void) addCellsToHomeScreen {
 	for ( int i = 0; i < kNumCells; i++ ) {
-		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+		//NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 		HomeCellViewController *cell = [[HomeCellViewController alloc] initWithNibName: @"HomeCellViewController" bundle: nil];
 		
 		switch (i) {
@@ -171,15 +131,59 @@
 		
 		[cell release];
 		
-		[pool drain];
+		//[pool drain];
 	}
 }
 
-/*
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+#pragma mark -
+#pragma mark Connection Handler Delegate Method
+-(void) connectionFinishedWithFilePath: (NSString *) filePath {
+	HomeXMLParseHandler *handler = [[HomeXMLParseHandler alloc] initWithDelegate: self];
+	
+	[handler startXMLParseWithFile: filePath];
+	
+	[handler release];
 }
-*/
+
+#pragma mark -
+#pragma mark Home XML Parse Handler Delegate Method
+-(void) xmlDidFinishParsingWithArray: (NSMutableArray *) array {
+	[self setCellValuesWithArray: array];
+}
+
+#pragma mark -
+#pragma mark Initialization
+
+/*
+ - (id)initWithStyle:(UITableViewStyle)style {
+ // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
+ if ((self = [super initWithStyle:style])) {
+ }
+ return self;
+ }
+ */
+
+
+#pragma mark -
+#pragma mark View lifecycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+	
+    // Uncomment the following line to preserve selection between presentations.
+    //self.clearsSelectionOnViewWillAppear = NO;
+	
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	
+	[self addCellsToHomeScreen];
+}
+
+/*
+ - (void)viewWillAppear:(BOOL)animated {
+ [super viewWillAppear:animated];
+ }
+ */
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -190,22 +194,22 @@
 }
 
 /*
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-}
-*/
+ - (void)viewWillDisappear:(BOOL)animated {
+ [super viewWillDisappear:animated];
+ }
+ */
 /*
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-}
-*/
+ - (void)viewDidDisappear:(BOOL)animated {
+ [super viewDidDisappear:animated];
+ }
+ */
 /*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
+ // Override to allow orientations other than the default portrait orientation.
+ - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+ // Return YES for supported orientations
+ return (interfaceOrientation == UIInterfaceOrientationPortrait);
+ }
+ */
 
 #pragma mark -
 #pragma mark Memory management
