@@ -83,8 +83,8 @@
 -(void) startConnectionForCellData {	
 	ConnectionHandler *handler = [[ConnectionHandler alloc] initWithDelegate: self];
 	NSString *path = [[NSString alloc] initWithString: @"celldata.xml"];
-	
-	NSString *url = [[NSString alloc] initWithString: @"https://www.marisolintl.com/iphone/homexml.asp"];
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSString *url = [[NSString alloc] initWithFormat: @"https://www.marisolintl.com/iphone/homexml.asp?customer=%@", [defaults objectForKey: @"customer"]];
 	
 	handler.xmlPathComponent = path;
 	

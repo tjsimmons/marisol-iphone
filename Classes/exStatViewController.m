@@ -47,6 +47,7 @@
 	
 	self.navController = navCont;
 	[navCont release];
+	[weekViewController release];
 	
 	[self.view addSubview: navController.view];
 	
