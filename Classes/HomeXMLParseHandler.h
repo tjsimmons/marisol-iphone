@@ -12,7 +12,13 @@
 
 @class HomeCellModel;
 
-@interface HomeXMLParseHandler : NSObject {
+#ifndef __IPHONE_4_0
+@interface HomeXMLParseHandler : NSObject
+#else
+@interface HomeXMLParseHandler : NSObject <NSXMLParserDelegate>
+#endif
+
+{
 	id <HomeXMLParseHandlerDelegate> delegate;
 	
 	// stuff used during parsing

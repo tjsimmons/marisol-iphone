@@ -13,7 +13,14 @@
 
 @protocol XMLParseHandlerDelegate;
 
-@interface XMLParseHandler : NSObject {
+// make this a little more "copy" friendly for OS 4.0, which requires the NSXMLParserDelegate protocol to be declared as implemented
+#ifndef __IPHONE_4_0
+@interface XMLParseHandler : NSObject
+#else
+@interface XMLParseHandler : NSObject <NSXMLParserDelegate>
+#endif
+
+{
 	id <XMLParseHandlerDelegate> delegate;
 	
 	// stuff used during parsing
