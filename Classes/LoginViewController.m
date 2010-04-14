@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "Reachability.h"
 
 #define kUsernameKey	@"username"
 #define kCustomerKey	@"customer"
@@ -52,10 +53,22 @@
 	if ( ![passwordField.text isEqualToString: @""] && ![usernameField.text isEqualToString: @""] ) {
 		[defaults setObject: usernameField.text forKey: kUsernameKey];
 		
-		self.loginButton.hidden = YES;
-		self.activityIndicator.hidden = NO;
+		networkAvailability = [[Reachability reachabilityWithHostName: @"www.marisolintl.com"] retain];
+		NetworkStatus networkStatus = [networkAvailability currentReachabilityStatus];
 		
-		[self initiateLogin];
+		if ( networkStatus != NotReachable ) {
+			self.loginButton.hidden = YES;
+			self.activityIndicator.hidden = NO;
+			
+			[self initiateLogin];
+		} else {
+			UIAlertView *alert =  [[UIAlertView alloc] initWithTitle: @"Connection Error"
+															 message: @"No internet connection" delegate: nil cancelButtonTitle: @"Done"
+												   otherButtonTitles: nil];
+			
+			[alert show];
+			[alert release];
+		}
 	}
 }
 
@@ -129,7 +142,7 @@
 		
 		// scan the product string
 		[scanner scanUpToString: @"!" intoString: &products];
-
+		
 		// set user defaults to access later
 		[defaults setObject: customer forKey: kCustomerKey];
 		[defaults setObject: products forKey: kProductsKey];
@@ -197,6 +210,8 @@
 	self.passwordField = nil;
 	self.activityIndicator = nil;
 	self.loginButton = nil;
+	
+	[networkAvailability release];
     [super dealloc];
 }
 

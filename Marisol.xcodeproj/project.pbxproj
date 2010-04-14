@@ -27,6 +27,8 @@
 		5F15C402116B7C94001ED14A /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F15C401116B7C94001ED14A /* globe.png */; };
 		5F15C514116B90EB001ED14A /* exStatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15C513116B90EB001ED14A /* exStatViewController.m */; };
 		5F3E9482116A4332003C2BFD /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3E9481116A4332003C2BFD /* icon.png */; };
+		5F748F0A11764EC4000B1BA1 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F748F0911764EC4000B1BA1 /* Reachability.m */; };
+		5F748F3B11765349000B1BA1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F748F3A11765349000B1BA1 /* SystemConfiguration.framework */; };
 		5FC57D14116BCE7A00F41F4B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC57D13116BCE7A00F41F4B /* HomeViewController.m */; };
 		5FD1E2A81173A4DE00CD0782 /* HomeXMLParseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD1E2A71173A4DE00CD0782 /* HomeXMLParseHandler.m */; };
 		5FD1E2C31173A65100CD0782 /* HomeCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD1E2C21173A65100CD0782 /* HomeCellModel.m */; };
@@ -68,6 +70,9 @@
 		5F15C512116B90EB001ED14A /* exStatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exStatViewController.h; sourceTree = "<group>"; };
 		5F15C513116B90EB001ED14A /* exStatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = exStatViewController.m; sourceTree = "<group>"; };
 		5F3E9481116A4332003C2BFD /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		5F748F0811764EC3000B1BA1 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		5F748F0911764EC4000B1BA1 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		5F748F3A11765349000B1BA1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5FC57D12116BCE7A00F41F4B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		5FC57D13116BCE7A00F41F4B /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		5FD1E2A61173A4DE00CD0782 /* HomeXMLParseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeXMLParseHandler.h; sourceTree = "<group>"; };
@@ -89,6 +94,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
+				5F748F3B11765349000B1BA1 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +154,7 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
+				5F748F3A11765349000B1BA1 /* SystemConfiguration.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -169,6 +176,7 @@
 				5FD1E2A61173A4DE00CD0782 /* HomeXMLParseHandler.h */,
 				5FD1E2C11173A65100CD0782 /* HomeCellModel.h */,
 				5F15C343116B76CE001ED14A /* Shipment.h */,
+				5F748F0811764EC3000B1BA1 /* Reachability.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -190,6 +198,7 @@
 				5FD1E2A71173A4DE00CD0782 /* HomeXMLParseHandler.m */,
 				5FD1E2C21173A65100CD0782 /* HomeCellModel.m */,
 				5F15C344116B76CE001ED14A /* Shipment.m */,
+				5F748F0911764EC4000B1BA1 /* Reachability.m */,
 			);
 			name = Implementations;
 			sourceTree = "<group>";
@@ -292,6 +301,7 @@
 				5FE155A911737D4F0061F3CE /* HomeCellViewController.m in Sources */,
 				5FD1E2A81173A4DE00CD0782 /* HomeXMLParseHandler.m in Sources */,
 				5FD1E2C31173A65100CD0782 /* HomeCellModel.m in Sources */,
+				5F748F0A11764EC4000B1BA1 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
