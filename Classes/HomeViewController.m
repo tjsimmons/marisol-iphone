@@ -97,7 +97,6 @@
 
 -(void) addCellsToHomeScreen {
 	for ( int i = 0; i < kNumCells; i++ ) {
-		//NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 		HomeCellViewController *cell = [[HomeCellViewController alloc] initWithNibName: @"HomeCellViewController" bundle: nil];
 		
 		switch (i) {
@@ -130,8 +129,6 @@
 		[self.cells addObject: cell];
 		
 		[cell release];
-		
-		//[pool drain];
 	}
 }
 
@@ -157,11 +154,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-    // Uncomment the following line to preserve selection between presentations.
+    // Uncomment the following line to preserve selection between presentations. OS 3.2 and later?
     //self.clearsSelectionOnViewWillAppear = NO;
-	
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	
 	[self addCellsToHomeScreen];
 }
