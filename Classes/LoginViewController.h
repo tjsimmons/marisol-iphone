@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class iStatRootViewController;
+@class Reachability;
 
 @interface LoginViewController : UIViewController {
 	// IB stuff
@@ -21,6 +21,9 @@
 	NSMutableData	*theData;
 	NSString		*tempFilePath;
 	NSURLConnection *connection;
+	
+	// check for network availability
+	Reachability *networkAvailability;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField *usernameField;
