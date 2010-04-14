@@ -99,21 +99,19 @@
 	for ( int i = 0; i < kNumCells; i++ ) {
 		HomeCellViewController *cell = [[HomeCellViewController alloc] initWithNibName: @"HomeCellViewController" bundle: nil];
 		
+		cell.view.backgroundColor = [UIColor colorWithRed: 0.37 green: 0.37 blue: 0.37 alpha: 1.0];
+		
 		switch (i) {
 			case 0:
-				cell.view.backgroundColor = [UIColor grayColor];
 				cell.view.frame = CGRectMake(0, 0, 320, 96);
 				break;
 			case 1:
-				cell.view.backgroundColor = [UIColor grayColor];
 				cell.view.frame = CGRectMake(0, 105, 320, 96);
 				break;
 			case 2:
-				cell.view.backgroundColor = [UIColor grayColor];
 				cell.view.frame = CGRectMake(0, 210, 320, 96);
 				break;
 			case 3:
-				cell.view.backgroundColor = [UIColor grayColor];
 				cell.view.frame = CGRectMake(0, 315, 320, 96);
 				break;
 			default:
