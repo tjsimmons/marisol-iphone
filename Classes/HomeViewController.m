@@ -43,42 +43,44 @@
 	
 	if ( iStat ) {
 		iStatViewController *iStatController = [[iStatViewController alloc] init];
-		
 		NSString *viewTitle = [[NSString alloc] initWithString: @"iSTAT"];
+		UITabBarItem *iTabBarItem = [[UITabBarItem alloc] initWithTitle: viewTitle image: nil tag: 1];
 		
-		iStatController.title = viewTitle;
+		//iStatController.title = viewTitle;
+		iStatController.tabBarItem = iTabBarItem;
 		
 		[viewControllers addObject: iStatController];
 		[iStatController release];
+		[iTabBarItem release];
 		[viewTitle release];
 	}
 	
 	if ( exStat ) {
 		exStatViewController *exStatController = [[exStatViewController alloc] init];
-		
 		NSString *viewTitle = [[NSString alloc] initWithString: @"exSTAT"];
+		UITabBarItem *exTabBarItem = [[UITabBarItem alloc] initWithTitle: viewTitle image: nil tag: 2];
 		
 		exStatController.title = viewTitle;
+		exStatController.tabBarItem = exTabBarItem;
 		
 		[viewControllers addObject: exStatController];
 		[exStatController release];
+		[exTabBarItem release];
 		[viewTitle release];
 	}
 	
+	// set up the search tab
 	SearchViewController *searchController = [[SearchViewController alloc] initWithNibName: @"SearchViewController" bundle: nil];
-	
 	NSString *viewTitle = [[NSString alloc] initWithString: @"Search"];
-	
-	searchController.title = viewTitle;
-	
 	UITabBarItem *searchTabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem: UITabBarSystemItemSearch tag: 3];
+	
+	//searchController.title = viewTitle;
 	
 	searchController.tabBarItem = searchTabBarItem;
 	
-	[searchTabBarItem release];
-	
 	[viewControllers addObject: searchController];
 	[searchController release];
+	[searchTabBarItem release];
 	[viewTitle release];
 	
 	[[[UIApplication sharedApplication] delegate] setTabBarControllers: viewControllers];
@@ -101,7 +103,8 @@
 	ConnectionHandler *handler = [[ConnectionHandler alloc] initWithDelegate: self];
 	NSString *path = [[NSString alloc] initWithString: @"celldata.xml"];
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	NSString *url = [[NSString alloc] initWithFormat: @"https://www.marisolintl.com/iphone/homexml.asp?customer=%@", [defaults objectForKey: @"customer"]];
+	NSString *url = [[NSString alloc] initWithFormat: @"https://www.marisolintl.com/iphone/homexml.asp?customer=%@", 
+					 [defaults objectForKey: @"customer"]];
 	
 	handler.xmlPathComponent = path;
 	
