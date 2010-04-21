@@ -23,8 +23,11 @@
 	LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName: @"LoginViewController" bundle: nil];
 	HomeViewController *homeController = [[HomeViewController alloc] initWithNibName: @"HomeViewController" bundle: nil];
 	NSString *homeTitle = [[NSString alloc] initWithString: @"Home"];
+	UITabBarItem *homeTabBarItem = [[UITabBarItem alloc] initWithTitle: homeTitle image: nil tag: 0];
 	
-	homeController.title = homeTitle;
+	homeController.tabBarItem = homeTabBarItem;
+	
+	[homeTabBarItem release];
 	
 	[homeTitle release];
 	
