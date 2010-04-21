@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "iStatViewController.h"
 #import "exStatViewController.h"
+#import "SearchViewController.h"
 #import "HomeCellViewController.h"
 #import "HomeCellModel.h"
 
@@ -63,6 +64,22 @@
 		[exStatController release];
 		[viewTitle release];
 	}
+	
+	SearchViewController *searchController = [[SearchViewController alloc] initWithNibName: @"SearchViewController" bundle: nil];
+	
+	NSString *viewTitle = [[NSString alloc] initWithString: @"Search"];
+	
+	searchController.title = viewTitle;
+	
+	UITabBarItem *searchTabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem: UITabBarSystemItemSearch tag: 3];
+	
+	searchController.tabBarItem = searchTabBarItem;
+	
+	[searchTabBarItem release];
+	
+	[viewControllers addObject: searchController];
+	[searchController release];
+	[viewTitle release];
 	
 	[[[UIApplication sharedApplication] delegate] setTabBarControllers: viewControllers];
 	
