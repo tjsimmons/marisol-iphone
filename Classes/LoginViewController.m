@@ -35,7 +35,7 @@
 
 -(IBAction) backgroundTap {
 	[usernameField resignFirstResponder];
-	[passwordField resignFirstResponder]; //test
+	[passwordField resignFirstResponder];
 }
 
 -(IBAction) loginButtonPressed {

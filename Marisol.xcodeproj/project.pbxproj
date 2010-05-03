@@ -29,8 +29,8 @@
 		5F3E9482116A4332003C2BFD /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3E9481116A4332003C2BFD /* icon.png */; };
 		5F748F0A11764EC4000B1BA1 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F748F0911764EC4000B1BA1 /* Reachability.m */; };
 		5F748F3B11765349000B1BA1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F748F3A11765349000B1BA1 /* SystemConfiguration.framework */; };
-		5FB8D895117F514E00C18ADD /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB8D893117F514E00C18ADD /* SearchViewController.m */; };
-		5FB8D896117F514F00C18ADD /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FB8D894117F514E00C18ADD /* SearchViewController.xib */; };
+		5F777FB8118F24FB006088B2 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F777FB6118F24FB006088B2 /* SearchViewController.m */; };
+		5F777FB9118F24FB006088B2 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F777FB7118F24FB006088B2 /* SearchViewController.xib */; };
 		5FC57D14116BCE7A00F41F4B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC57D13116BCE7A00F41F4B /* HomeViewController.m */; };
 		5FD1E2A81173A4DE00CD0782 /* HomeXMLParseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD1E2A71173A4DE00CD0782 /* HomeXMLParseHandler.m */; };
 		5FD1E2C31173A65100CD0782 /* HomeCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD1E2C21173A65100CD0782 /* HomeCellModel.m */; };
@@ -75,9 +75,9 @@
 		5F748F0811764EC3000B1BA1 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		5F748F0911764EC4000B1BA1 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		5F748F3A11765349000B1BA1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		5FB8D892117F514E00C18ADD /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
-		5FB8D893117F514E00C18ADD /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
-		5FB8D894117F514E00C18ADD /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SearchViewController.xib; path = Classes/SearchViewController.xib; sourceTree = "<group>"; };
+		5F777FB5118F24FB006088B2 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		5F777FB6118F24FB006088B2 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		5F777FB7118F24FB006088B2 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SearchViewController.xib; path = Classes/SearchViewController.xib; sourceTree = "<group>"; };
 		5FC57D12116BCE7A00F41F4B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		5FC57D13116BCE7A00F41F4B /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		5FD1E2A61173A4DE00CD0782 /* HomeXMLParseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeXMLParseHandler.h; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 				5FE155A611737D4F0061F3CE /* HomeCellViewController.h */,
 				5F15C3DB116B7BB3001ED14A /* iStatViewController.h */,
 				5F15C512116B90EB001ED14A /* exStatViewController.h */,
-				5FB8D892117F514E00C18ADD /* SearchViewController.h */,
+				5F777FB5118F24FB006088B2 /* SearchViewController.h */,
 				5F15C34C116B76CE001ED14A /* WeekListViewController.h */,
 				5F15C348116B76CE001ED14A /* ShipmentListViewController.h */,
 				5F15C345116B76CE001ED14A /* ShipmentDetailViewController.h */,
@@ -196,7 +196,7 @@
 				5FE155A711737D4F0061F3CE /* HomeCellViewController.m */,
 				5F15C3DC116B7BB3001ED14A /* iStatViewController.m */,
 				5F15C513116B90EB001ED14A /* exStatViewController.m */,
-				5FB8D893117F514E00C18ADD /* SearchViewController.m */,
+				5F777FB6118F24FB006088B2 /* SearchViewController.m */,
 				5F15C34D116B76CE001ED14A /* WeekListViewController.m */,
 				5F15C349116B76CE001ED14A /* ShipmentListViewController.m */,
 				5F15C346116B76CE001ED14A /* ShipmentDetailViewController.m */,
@@ -217,7 +217,7 @@
 				5F15C331116B75A6001ED14A /* LoginViewController.xib */,
 				5FE154EC1173621C0061F3CE /* HomeViewController.xib */,
 				5FE155A811737D4F0061F3CE /* HomeCellViewController.xib */,
-				5FB8D894117F514E00C18ADD /* SearchViewController.xib */,
+				5F777FB7118F24FB006088B2 /* SearchViewController.xib */,
 				5F15C347116B76CE001ED14A /* ShipmentDetailViewController.xib */,
 			);
 			name = NIBs;
@@ -284,7 +284,7 @@
 				5F15C402116B7C94001ED14A /* globe.png in Resources */,
 				5FE154EE1173621C0061F3CE /* HomeViewController.xib in Resources */,
 				5FE155AA11737D4F0061F3CE /* HomeCellViewController.xib in Resources */,
-				5FB8D896117F514F00C18ADD /* SearchViewController.xib in Resources */,
+				5F777FB9118F24FB006088B2 /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +311,7 @@
 				5FD1E2A81173A4DE00CD0782 /* HomeXMLParseHandler.m in Sources */,
 				5FD1E2C31173A65100CD0782 /* HomeCellModel.m in Sources */,
 				5F748F0A11764EC4000B1BA1 /* Reachability.m in Sources */,
-				5FB8D895117F514E00C18ADD /* SearchViewController.m in Sources */,
+				5F777FB8118F24FB006088B2 /* SearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
