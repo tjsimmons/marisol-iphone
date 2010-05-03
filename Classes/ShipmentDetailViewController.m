@@ -49,7 +49,6 @@
 	self.deliveryDateLabel = nil;
 }
 
-
 - (void)dealloc {
 	self.shipment = nil;
 	self.shipmentIDLabel = nil;

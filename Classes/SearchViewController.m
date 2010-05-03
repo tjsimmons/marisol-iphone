@@ -218,13 +218,15 @@
 	 [detailViewController release];
 	 */
 	
-	/*ShipmentDetailViewController *detailViewController = [[ShipmentDetailViewController alloc] initWithNibName: @"ShipmentDetailViewController" bundle: nil];
+	ShipmentDetailViewController *detailViewController = [[ShipmentDetailViewController alloc] initWithNibName: @"ShipmentDetailViewController" bundle: nil];
 	
 	detailViewController.shipment = [self.searchList objectAtIndex: indexPath.row];
 	
-	[self.navController pushViewController: detailViewController animated: YES];
+	[self.tableView deselectRowAtIndexPath: indexPath animated: YES];
 	
-	[detailViewController release];*/
+	[self.navigationController pushViewController: detailViewController animated: YES];
+	
+	[detailViewController release];
 }
 
 #pragma mark -

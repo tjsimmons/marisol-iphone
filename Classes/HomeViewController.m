@@ -9,7 +9,7 @@
 #import "HomeViewController.h"
 #import "iStatViewController.h"
 #import "exStatViewController.h"
-#import "SearchViewController.h"
+#import "RootSearchController.h"
 #import "HomeCellViewController.h"
 #import "HomeCellModel.h"
 
@@ -70,7 +70,8 @@
 	}
 	
 	// set up the search tab
-	SearchViewController *searchController = [[SearchViewController alloc] initWithNibName: @"SearchViewController" bundle: nil];
+	//SearchViewController *searchController = [[SearchViewController alloc] initWithNibName: @"SearchViewController" bundle: nil];
+	RootSearchController *searchController = [[RootSearchController alloc] initWithNibName: @"RootSearchController" bundle: nil];
 	NSString *viewTitle = [[NSString alloc] initWithString: @"Search"];
 	UITabBarItem *searchTabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem: UITabBarSystemItemSearch tag: 3];
 	
