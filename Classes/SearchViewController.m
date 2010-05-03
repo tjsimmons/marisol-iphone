@@ -89,7 +89,6 @@
 	[self.connection beginURLConnection: url];
 	
 	[customer release];
-	[handler release];
 	[path release];
 	[url release];
 }
@@ -221,11 +220,11 @@
 	[self startConnectionProcessFromSearchBar: searchBar];
 }
 
-/*-(void) searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+-(void) searchBarCancelButtonClicked:(UISearchBar *)searchBar {
 	if ( self.connection ) {
 		[self.connection stopConnection];
 	}
-}*/
+}
 
 #pragma mark -
 #pragma mark UISearchDisplayDelegate Methods
