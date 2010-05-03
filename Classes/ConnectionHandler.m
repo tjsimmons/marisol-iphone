@@ -52,6 +52,8 @@
 -(void) stopConnection {
 	[self.urlConnection cancel];
 	self.urlConnection = nil;
+	
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 #pragma mark -
