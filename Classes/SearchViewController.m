@@ -8,6 +8,7 @@
 
 #import "SearchViewController.h"
 #import "Shipment.h"
+#import "ShipmentDetailViewController.h"
 
 #define kCustomerKey	@"customer"
 
@@ -15,7 +16,6 @@
 @implementation SearchViewController
 
 @synthesize searchList, connection, MISearchBar, savedSearchTerm, savedScopeButtonIndex, searchWasActive;
-
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -217,6 +217,14 @@
 	 [self.navigationController pushViewController:detailViewController animated:YES];
 	 [detailViewController release];
 	 */
+	
+	/*ShipmentDetailViewController *detailViewController = [[ShipmentDetailViewController alloc] initWithNibName: @"ShipmentDetailViewController" bundle: nil];
+	
+	detailViewController.shipment = [self.searchList objectAtIndex: indexPath.row];
+	
+	[self.navController pushViewController: detailViewController animated: YES];
+	
+	[detailViewController release];*/
 }
 
 #pragma mark -
