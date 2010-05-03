@@ -27,6 +27,9 @@
 		 do stuff
 		 */
 	}
+	
+	[self.tableView reloadData];
+	self.tableView.scrollEnabled = YES;
 
     // Uncomment the following line to preserve selection between presentations.
     //self.clearsSelectionOnViewWillAppear = NO;
@@ -63,6 +66,26 @@
 }
 */
 
+#pragma mark -
+#pragma mark Custom Methods
+
+-(void) startConnectionProcess {
+	
+}
+
+#pragma mark -
+#pragma mark ConnectionHandler Delegate Method
+
+-(void) connectionFinishedWithFilePath:(NSString *)filePath {
+	
+}
+
+#pragma mark -
+#pragma mark XMLParseHandler Delegate Method
+
+-(void) xmlDidFinishParsingWithArray: (NSMutableArray *) array {
+	
+}
 
 #pragma mark -
 #pragma mark Table view data source
@@ -148,6 +171,16 @@
 	 [detailViewController release];
 	 */
 }
+
+#pragma mark -
+#pragma mark UISearchBar Delegate Methods
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+	NSLog(@"search button clicked, text was %@", searchBar.text);
+}
+
+#pragma mark -
+#pragma mark UISearchDisplayDelegate Methods
 
 
 #pragma mark -
