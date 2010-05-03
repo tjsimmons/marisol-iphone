@@ -13,6 +13,7 @@
 
 @interface SearchViewController : UITableViewController <UISearchDisplayDelegate, UISearchBarDelegate, ConnectionHandlerDelegate, XMLParseHandlerDelegate> {
 	NSMutableArray	*searchList;
+	ConnectionHandler *connection;
 	
 	// as demo'd in Apple's TableSearch example code, saved state of search UI
 	NSString		*savedSearchTerm;
@@ -21,12 +22,13 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *searchList;
+@property (nonatomic, retain) ConnectionHandler *connection;
 
 @property (nonatomic, copy) NSString *savedSearchTerm;
 @property (nonatomic) NSInteger savedScopeButtonIndex;
 @property (nonatomic) BOOL searchWasActive;
 
--(void) startConnectionProcess;
+-(void) startConnectionProcessFromSearchBar: (UISearchBar *) searchBar;
 
 // Connection Handler Delegate Method
 -(void) connectionFinishedWithFilePath:(NSString *)filePath;

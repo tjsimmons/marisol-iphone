@@ -29,6 +29,7 @@
 
 -(id) initWithDelegate: (id) del;
 -(void) beginURLConnection: (NSString *) webURL;
+-(void) stopConnection;
 
 @end
 

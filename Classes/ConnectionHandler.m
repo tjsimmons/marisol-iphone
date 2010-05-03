@@ -44,7 +44,14 @@
 		[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 		
 		receivedData = [[NSMutableData data] retain];
+	} else {
+		NSLog(@"connection was not established");
 	}
+}
+
+-(void) stopConnection {
+	[self.urlConnection cancel];
+	self.urlConnection = nil;
 }
 
 #pragma mark -
