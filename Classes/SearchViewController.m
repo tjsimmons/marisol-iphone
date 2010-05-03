@@ -14,7 +14,7 @@
 
 @implementation SearchViewController
 
-@synthesize searchList, connection, savedSearchTerm, savedScopeButtonIndex, searchWasActive;
+@synthesize searchList, connection, MISearchBar, savedSearchTerm, savedScopeButtonIndex, searchWasActive;
 
 
 #pragma mark -
@@ -31,6 +31,8 @@
 		 */
 	}
 	
+	dataLoaded = NO;
+	
 	[self.tableView reloadData];
 	
     // Uncomment the following line to preserve selection between presentations.
@@ -45,11 +47,13 @@
  [super viewWillAppear:animated];
  }
  */
-/*
- - (void)viewDidAppear:(BOOL)animated {
- [super viewDidAppear:animated];
- }
- */
+
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+	
+	[self.MISearchBar becomeFirstResponder];
+}
+
 /*
  - (void)viewWillDisappear:(BOOL)animated {
  [super viewWillDisappear:animated];
@@ -112,6 +116,10 @@
 -(void) xmlDidFinishParsingWithArray: (NSMutableArray *) array {
 	self.searchList = array;
 	
+	dataLoaded = YES;
+	
+	[self.tableView setContentOffset: CGPointMake(0.0, 44.0) animated: YES];
+	[self.tableView reloadData];
 }
 
 #pragma mark -
@@ -126,8 +134,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
 	// check for whether the calling table view is the search display or main view
-    if ( tableView == self.searchDisplayController.searchResultsTableView ) {
-		return [self.searchList count];
+    if ( !dataLoaded ) {
+		return 1;
 	} else {
 		return [self.searchList count];
 	}
@@ -145,10 +153,8 @@
     }
     
     // Configure the cell...
-	if ( tableView == self.searchDisplayController.searchResultsTableView ) {
-		Shipment *shipment = [self.searchList objectAtIndex: indexPath.row];
+	if ( !dataLoaded ) {
 		
-		cell.textLabel.text = shipment.marisolNum;
 	} else {
 		Shipment *shipment = [self.searchList objectAtIndex: indexPath.row];
 		
@@ -218,6 +224,8 @@
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
 	[self startConnectionProcessFromSearchBar: searchBar];
+	
+	[searchBar resignFirstResponder];
 }
 
 -(void) searchBarCancelButtonClicked:(UISearchBar *)searchBar {
@@ -245,12 +253,14 @@
     // For example: self.myOutlet = nil;
 	self.searchList = nil;
 	self.connection = nil;
+	self.MISearchBar = nil;
 }
 
 
 - (void)dealloc {
 	self.searchList = nil;
 	self.connection = nil;
+	self.MISearchBar = nil;
     [super dealloc];
 }
 

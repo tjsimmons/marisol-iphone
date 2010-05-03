@@ -11,9 +11,11 @@
 #import "XMLParseHandler.h"
 
 
-@interface SearchViewController : UITableViewController <UISearchDisplayDelegate, UISearchBarDelegate, ConnectionHandlerDelegate, XMLParseHandlerDelegate> {
-	NSMutableArray	*searchList;
-	ConnectionHandler *connection;
+@interface SearchViewController : UITableViewController <UISearchBarDelegate, ConnectionHandlerDelegate, XMLParseHandlerDelegate> {
+	NSMutableArray		*searchList;
+	ConnectionHandler	*connection;
+	UISearchBar			*MISearchBar;
+	BOOL				dataLoaded;
 	
 	// as demo'd in Apple's TableSearch example code, saved state of search UI
 	NSString		*savedSearchTerm;
@@ -23,6 +25,7 @@
 
 @property (nonatomic, retain) NSMutableArray *searchList;
 @property (nonatomic, retain) ConnectionHandler *connection;
+@property (nonatomic, retain) IBOutlet UISearchBar *MISearchBar;
 
 @property (nonatomic, copy) NSString *savedSearchTerm;
 @property (nonatomic) NSInteger savedScopeButtonIndex;
