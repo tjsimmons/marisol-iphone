@@ -25,6 +25,12 @@
 	
 	self.title = @"Search";
 	
+	NSArray *scopeButtonTitles = [[NSArray alloc] initWithObjects: @"Marisol #", @"BL #", @"PO #", @"Delivery Date", nil];
+	
+	self.MISearchBar.scopeButtonTitles = scopeButtonTitles;
+	
+	[scopeButtonTitles release];
+	
 	if ( self.savedSearchTerm ) {
 		/*
 		 do stuff, as in TableSearch example code
@@ -51,8 +57,7 @@
 	
 	NSString *customer = [[NSString alloc] initWithString: [[NSUserDefaults standardUserDefaults] objectForKey: kCustomerKey]];
 	
-	NSString *url = [[NSString alloc] initWithFormat:
-					 @"https://www.marisolintl.com/iphone/shipmentsearchxml.asp?customer=%@&query=%@&field=%@&stat=%@",
+	NSString *url = [[NSString alloc] initWithFormat: @"https://www.marisolintl.com/iphone/shipmentsearchxml.asp?customer=%@&query=%@&field=%@&stat=%@",
 					 customer, searchBar.text, @"marisol_num", @"istat"];
 	
 	handler.xmlPathComponent = path;
@@ -138,15 +143,25 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	ShipmentDetailViewController *detailViewController = [[ShipmentDetailViewController alloc] initWithNibName: @"ShipmentDetailViewController" bundle: nil];
-	
-	detailViewController.shipment = [self.searchList objectAtIndex: indexPath.row];
-	
-	[self.tableView deselectRowAtIndexPath: indexPath animated: YES];
-	
-	[self.navigationController pushViewController: detailViewController animated: YES];
-	
-	[detailViewController release];
+	if ( dataLoaded ) {
+		ShipmentDetailViewController *detailViewController = [[ShipmentDetailViewController alloc] initWithNibName: @"ShipmentDetailViewController" bundle: nil];
+		
+		detailViewController.shipment = [self.searchList objectAtIndex: indexPath.row];
+		
+		[self.tableView deselectRowAtIndexPath: indexPath animated: YES];
+		
+		[self.navigationController pushViewController: detailViewController animated: YES];
+		
+		[detailViewController release];
+	}
+}
+
+-(NSIndexPath *) tableView: (UITableView *) tableView willSelectRowAtIndexPath: (NSIndexPath *) indexPath {
+	if ( dataLoaded ) {
+		return indexPath;
+	} else {
+		return NO;
+	}
 }
 
 #pragma mark -
