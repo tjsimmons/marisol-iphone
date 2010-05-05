@@ -25,9 +25,8 @@
 	
 	self.title = @"Search";
 	
-	NSArray *scopeButtonTitles = [[NSArray alloc] initWithObjects: @"Marisol #", @"BL #", @"PO #", @"Delivery Date", nil];
+	NSArray *scopeButtonTitles = [[NSArray alloc] initWithObjects: @"Marisol #", @"PO #", @"Cold Storage", nil];
 	
-	self.MISearchBar.showsScopeBar = YES;
 	self.MISearchBar.scopeButtonTitles = scopeButtonTitles;
 	self.MISearchBar.showsCancelButton = YES;
 	
@@ -56,11 +55,33 @@
 -(void) startConnectionProcessFromSearchBar: (UISearchBar *) searchBar {
 	ConnectionHandler *handler = [[ConnectionHandler alloc] initWithDelegate: self];
 	NSString *path = [[NSString alloc] initWithFormat: @"%@search.xml", @"istat"];
+	NSString *searchField;
+	NSString *fieldType;
+	NSInteger scopeButtonIndex = [searchBar selectedScopeButtonIndex];
+	
+	switch ( scopeButtonIndex ) {
+		case 0:
+			searchField = @"marisol_num";
+			fieldType = @"string";
+			break;
+		case 1:
+			searchField = @"purchase_num";
+			fieldType = @"string";
+			break;
+		case 2:
+			searchField = @"cold_storage";
+			fieldType = @"datetime";
+			break;
+		default:
+			searchField = @"marisol_num";
+			fieldType = @"string";
+	}
+			
 	
 	NSString *customer = [[NSString alloc] initWithString: [[NSUserDefaults standardUserDefaults] objectForKey: kCustomerKey]];
 	
-	NSString *url = [[NSString alloc] initWithFormat: @"https://www.marisolintl.com/iphone/shipmentsearchxml.asp?customer=%@&query=%@&field=%@&stat=%@",
-					 customer, searchBar.text, @"marisol_num", @"istat"];
+	NSString *url = [[NSString alloc] initWithFormat: @"https://www.marisolintl.com/iphone/shipmentsearchxml.asp?customer=%@&query=%@&field=%@&stat=%@&type=%@",
+					 customer, searchBar.text, searchField, @"istat", fieldType];
 	
 	handler.xmlPathComponent = path;
 	
