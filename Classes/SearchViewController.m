@@ -27,7 +27,9 @@
 	
 	NSArray *scopeButtonTitles = [[NSArray alloc] initWithObjects: @"Marisol #", @"BL #", @"PO #", @"Delivery Date", nil];
 	
+	self.MISearchBar.showsScopeBar = YES;
 	self.MISearchBar.scopeButtonTitles = scopeButtonTitles;
+	self.MISearchBar.showsCancelButton = YES;
 	
 	[scopeButtonTitles release];
 	
@@ -126,16 +128,19 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-    
     // Configure the cell...
-	if ( !dataLoaded ) {
-		
-	} else {
+	if ( dataLoaded ) {
 		Shipment *shipment = [self.searchList objectAtIndex: indexPath.row];
 		
-		cell.textLabel.text = shipment.marisolNum;
+		if ( [shipment.marisolNum isEqualToString: @"noshipments"] ) {
+			cell.textLabel.text = @"No shipments found.";
+		} else {
+			cell.textLabel.text = shipment.marisolNum;
+		}
+	} else {
+		cell.textLabel.text = @"";
 	}
-    
+	
     return cell;
 }
 
@@ -158,7 +163,11 @@
 
 -(NSIndexPath *) tableView: (UITableView *) tableView willSelectRowAtIndexPath: (NSIndexPath *) indexPath {
 	if ( dataLoaded ) {
-		return indexPath;
+		if ( [[(Shipment *) [self.searchList objectAtIndex: indexPath.row] marisolNum] isEqualToString: @"noshipments"] ) {
+			return NO;
+		} else {
+			return indexPath;
+		}
 	} else {
 		return NO;
 	}
@@ -177,6 +186,11 @@
 	if ( self.connection ) {
 		[self.connection stopConnection];
 	}
+	
+	self.searchList = nil;
+	dataLoaded = NO;
+	
+	[self.tableView reloadData];
 }
 
 #pragma mark -
