@@ -169,6 +169,8 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	[self.MISearchBar resignFirstResponder];
+	
 	if ( dataLoaded ) {
 		ShipmentDetailViewController *detailViewController = [[ShipmentDetailViewController alloc] initWithNibName: @"ShipmentDetailViewController" bundle: nil];
 		
@@ -208,10 +210,12 @@
 		[self.connection stopConnection];
 	}
 	
-	self.searchList = nil;
+	[self.MISearchBar resignFirstResponder];
+	
+	/*self.searchList = nil;
 	dataLoaded = NO;
 	
-	[self.tableView reloadData];
+	[self.tableView reloadData];*/
 }
 
 #pragma mark -
