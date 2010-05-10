@@ -36,6 +36,7 @@ UIActionSheetDelegate> {
 
 -(void) startConnectionProcessFromSearchBar: (UISearchBar *) searchBar;
 -(void) callActionSheet;
+-(void) changeActiveProduct;
 
 // Connection Handler Delegate Method
 -(void) connectionFinishedWithFilePath:(NSString *)filePath;
