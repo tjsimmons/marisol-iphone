@@ -11,6 +11,7 @@
 #import "ShipmentDetailViewController.h"
 
 #define kCustomerKey	@"customer"
+#define kProductsKey	@"products"
 
 
 @implementation SearchViewController
@@ -29,14 +30,13 @@
 	NSArray *scopeButtonTitles = [[NSArray alloc] initWithObjects: @"Marisol #", @"PO #", @"Cold Storage", nil];
 	
 	self.MISearchBar.scopeButtonTitles = scopeButtonTitles;
-	self.MISearchBar.showsCancelButton = YES;
 	
 	[scopeButtonTitles release];
 	
 	if ( self.savedSearchTerm ) {
-		/*
-		 do stuff, as in TableSearch example code
-		 */
+		[self.searchDisplayController setActive: self.searchWasActive];
+		[self.searchDisplayController.searchBar setSelectedScopeButtonIndex: self.savedScopeButtonIndex];
+		[self.searchDisplayController.searchBar setText: self.savedSearchTerm];
 	}
 	
 	dataLoaded = NO;
@@ -48,6 +48,14 @@
 	[super viewDidAppear:animated];
 	
 	[self.MISearchBar becomeFirstResponder];
+}
+
+-(void) viewDidDisappear:(BOOL)animated {
+	[super viewDidDisappear: animated];
+	
+	self.searchWasActive = [self.searchDisplayController isActive];
+	self.savedSearchTerm = [self.searchDisplayController.searchBar text];
+	self.savedScopeButtonIndex = [self.searchDisplayController.searchBar selectedScopeButtonIndex];
 }
 
 #pragma mark -
@@ -223,10 +231,6 @@
 	 
 	 [self.tableView reloadData];*/
 }
-
-#pragma mark -
-#pragma mark UISearchDisplayDelegate Methods
-
 
 #pragma mark -
 #pragma mark Memory management
