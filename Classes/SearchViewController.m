@@ -37,14 +37,18 @@
 	self.whichStat = [[NSUserDefaults standardUserDefaults] objectForKey: kProductsKey];
 	
 	if ( [self.whichStat isEqualToString: kBoth] ) {
-		UIBarButtonItem *productButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAction target: nil 
-																					   action: @selector(callActionSheet)];
+		UIBarButtonItem *productButton = [[UIBarButtonItem alloc] initWithTitle: @"Change" style: UIBarButtonItemStyleBordered 
+																		 target: self action: @selector(changeActiveProduct)];
 		
-		NSArray *buttons = [[NSArray alloc] initWithObjects: productButton, nil];
+		self.navigationItem.rightBarButtonItem = productButton;
 		
-		[self setToolbarItems: buttons];
-		
-		[buttons release];
+		[productButton release];
+	}
+	
+	if ( [self.whichStat isEqualToString: kIStat] ) {
+		self.MISearchBar.placeholder = @"Search iSTAT";
+	} else if ( [self.whichStat isEqualToString: kExStat] ) {
+		self.MISearchBar.placeholder = @"Search exSTAT";
 	}
 	
 	NSArray *scopeButtonTitles = [[NSArray alloc] initWithObjects: @"Marisol #", @"PO #", @"Cold Storage", nil];
@@ -132,6 +136,14 @@
 		[actionSheet showFromTabBar: [[[[UIApplication sharedApplication] delegate] tabBarController] tabBar]];
 		[actionSheet release];
 	}
+}
+
+-(void) changeActiveProduct {
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle: @"Please select a product:" delegate: self cancelButtonTitle: @"Cancel" 
+											   destructiveButtonTitle: nil otherButtonTitles: @"iSTAT", @"exSTAT", nil];
+	
+	[actionSheet showFromTabBar: [[[[UIApplication sharedApplication] delegate] tabBarController] tabBar]];
+	[actionSheet release];
 }
 
 #pragma mark -
@@ -276,9 +288,13 @@
 			break;
 		case kIStatButtonIndex:
 			self.whichStat = kIStat;
+			self.MISearchBar.userInteractionEnabled = YES;
+			self.MISearchBar.placeholder = @"Search iSTAT";
 			break;
 		case kExStatButtonIndex:
 			self.whichStat = kExStat;
+			self.MISearchBar.userInteractionEnabled = YES;
+			self.MISearchBar.placeholder = @"Search exSTAT";
 			break;
 	}
 }
