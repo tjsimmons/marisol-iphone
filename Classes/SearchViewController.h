@@ -2,7 +2,7 @@
 //  SearchViewController.h
 //  Marisol
 //
-//  Created by T.J. Simmons on 5/3/10.
+//  Created by T.J. Simmons on 5/10/10.
 //  Copyright 2010 T.J. Simmons. All rights reserved.
 //
 
@@ -11,7 +11,7 @@
 #import "XMLParseHandler.h"
 
 
-@interface SearchViewController : UITableViewController <UISearchBarDelegate, ConnectionHandlerDelegate, XMLParseHandlerDelegate> {
+@interface SearchViewController : UITableViewController <UISearchDisplayDelegate, UISearchBarDelegate, ConnectionHandlerDelegate, XMLParseHandlerDelegate> {
 	NSMutableArray		*searchList;
 	ConnectionHandler	*connection;
 	UISearchBar			*MISearchBar;
@@ -38,6 +38,5 @@
 
 // XML Parse Handler Delegate Method
 -(void) xmlDidFinishParsingWithArray: (NSMutableArray *) array;
-
 
 @end
