@@ -175,6 +175,20 @@
 	[theData release];
 }
 
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+	NSLog(@"%@", error);
+	
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Error"
+													message: @"There was an error. Please try again."
+												   delegate: nil cancelButtonTitle: @"Okay" otherButtonTitles: nil];
+	[alert show];
+	[alert release];
+	
+	self.activityIndicator.hidden = YES;
+	self.loginButton.hidden = NO;
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
 #pragma mark -
 #pragma mark View Methods
 

@@ -12,12 +12,15 @@
 
 #define kCustomerKey	@"customer"
 #define kProductsKey	@"products"
+#define kIStat			@"iStat"
+#define kExStat			@"exStat"
+#define kBoth			@"iStatexStat"
 
 
 @implementation SearchViewController
 
 
-@synthesize searchList, connection, MISearchBar, savedSearchTerm, savedScopeButtonIndex, searchWasActive;
+@synthesize searchList, connection, MISearchBar, savedSearchTerm, savedScopeButtonIndex, searchWasActive, whichStat;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -26,6 +29,8 @@
     [super viewDidLoad];
 	
 	self.title = @"Search";
+	
+	self.whichStat = [[NSUserDefaults standardUserDefaults] objectForKey: kProductsKey];
 	
 	NSArray *scopeButtonTitles = [[NSArray alloc] initWithObjects: @"Marisol #", @"PO #", @"Cold Storage", nil];
 	
@@ -41,13 +46,11 @@
 	
 	dataLoaded = NO;
 	
-	[self.tableView reloadData];
+	//[self.tableView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
-	
-	[self.MISearchBar becomeFirstResponder];
 }
 
 -(void) viewDidDisappear:(BOOL)animated {
@@ -63,7 +66,7 @@
 
 -(void) startConnectionProcessFromSearchBar: (UISearchBar *) searchBar {
 	ConnectionHandler *handler = [[ConnectionHandler alloc] initWithDelegate: self];
-	NSString *path = [[NSString alloc] initWithFormat: @"%@search.xml", @"istat"];
+	NSString *path = [[NSString alloc] initWithFormat: @"%@search.xml", self.whichStat];
 	NSString *searchField;
 	NSString *fieldType;
 	NSInteger scopeButtonIndex = [searchBar selectedScopeButtonIndex];
@@ -90,7 +93,7 @@
 	NSString *customer = [[NSString alloc] initWithString: [[NSUserDefaults standardUserDefaults] objectForKey: kCustomerKey]];
 	
 	NSString *url = [[NSString alloc] initWithFormat: @"https://www.marisolintl.com/iphone/shipmentsearchxml.asp?customer=%@&query=%@&field=%@&stat=%@&type=%@",
-					 customer, searchBar.text, searchField, @"istat", fieldType];
+					 customer, searchBar.text, searchField, self.whichStat, fieldType];
 	
 	handler.xmlPathComponent = path;
 	
@@ -102,6 +105,17 @@
 	[customer release];
 	[path release];
 	[url release];
+}
+
+-(void) callActionSheet {
+	if ( [self.whichStat isEqualToString: kBoth] ) {
+		UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle: @"Please select a product:" delegate: self cancelButtonTitle: @"Cancel" 
+												   destructiveButtonTitle: nil otherButtonTitles: @"iSTAT", @"exSTAT", nil];
+		
+		[actionSheet showFromTabBar: [[[[[UIApplication sharedApplication] delegate] tabBarController] tabBar] view]];
+		
+		[actionSheet release];
+	}
 }
 
 #pragma mark -
@@ -248,6 +262,7 @@
 	self.searchList = nil;
 	self.connection = nil;
 	self.MISearchBar = nil;
+	self.whichStat = nil;
 }
 
 
@@ -255,6 +270,8 @@
 	self.searchList = nil;
 	self.connection = nil;
 	self.MISearchBar = nil;
+	self.whichStat = nil;
+	
     [super dealloc];
 }
 
