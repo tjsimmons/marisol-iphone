@@ -2,7 +2,7 @@
 //  SearchViewController.m
 //  Marisol
 //
-//  Created by T.J. Simmons on 5/3/10.
+//  Created by T.J. Simmons on 5/10/10.
 //  Copyright 2010 T.J. Simmons. All rights reserved.
 //
 
@@ -14,6 +14,7 @@
 
 
 @implementation SearchViewController
+
 
 @synthesize searchList, connection, MISearchBar, savedSearchTerm, savedScopeButtonIndex, searchWasActive;
 
@@ -76,7 +77,7 @@
 			searchField = @"marisol_num";
 			fieldType = @"string";
 	}
-			
+	
 	
 	NSString *customer = [[NSString alloc] initWithString: [[NSUserDefaults standardUserDefaults] objectForKey: kCustomerKey]];
 	
@@ -118,6 +119,7 @@
 	
 	[self.tableView setContentOffset: CGPointMake(0.0, 44.0) animated: YES];
 	[self.tableView reloadData];
+	[self.searchDisplayController.searchResultsTableView reloadData];
 }
 
 #pragma mark -
@@ -210,12 +212,16 @@
 		[self.connection stopConnection];
 	}
 	
+	self.searchList = nil;
+	
+	[self.tableView reloadData];
+	
 	[self.MISearchBar resignFirstResponder];
 	
 	/*self.searchList = nil;
-	dataLoaded = NO;
-	
-	[self.tableView reloadData];*/
+	 dataLoaded = NO;
+	 
+	 [self.tableView reloadData];*/
 }
 
 #pragma mark -
@@ -250,4 +256,3 @@
 
 
 @end
-
