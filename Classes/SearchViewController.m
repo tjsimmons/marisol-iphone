@@ -16,6 +16,10 @@
 #define kExStat			@"exStat"
 #define kBoth			@"iStatexStat"
 
+#define kIStatButtonIndex	0
+#define kExStatButtonIndex	1
+#define kCancelButtonIndex	2
+
 
 @implementation SearchViewController
 
@@ -32,6 +36,17 @@
 	
 	self.whichStat = [[NSUserDefaults standardUserDefaults] objectForKey: kProductsKey];
 	
+	if ( [self.whichStat isEqualToString: kBoth] ) {
+		UIBarButtonItem *productButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAction target: nil 
+																					   action: @selector(callActionSheet)];
+		
+		NSArray *buttons = [[NSArray alloc] initWithObjects: productButton, nil];
+		
+		[self setToolbarItems: buttons];
+		
+		[buttons release];
+	}
+	
 	NSArray *scopeButtonTitles = [[NSArray alloc] initWithObjects: @"Marisol #", @"PO #", @"Cold Storage", nil];
 	
 	self.MISearchBar.scopeButtonTitles = scopeButtonTitles;
@@ -46,7 +61,9 @@
 	
 	dataLoaded = NO;
 	
-	//[self.tableView reloadData];
+	[self.tableView reloadData];
+	
+	[self callActionSheet];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -112,8 +129,7 @@
 		UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle: @"Please select a product:" delegate: self cancelButtonTitle: @"Cancel" 
 												   destructiveButtonTitle: nil otherButtonTitles: @"iSTAT", @"exSTAT", nil];
 		
-		[actionSheet showFromTabBar: [[[[[UIApplication sharedApplication] delegate] tabBarController] tabBar] view]];
-		
+		[actionSheet showFromTabBar: [[[[UIApplication sharedApplication] delegate] tabBarController] tabBar]];
 		[actionSheet release];
 	}
 }
@@ -244,6 +260,31 @@
 	 dataLoaded = NO;
 	 
 	 [self.tableView reloadData];*/
+}
+
+#pragma mark -
+#pragma mark UIActionSheet Delegate Methods
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+	switch ( buttonIndex ) {
+		case kCancelButtonIndex:
+			self.MISearchBar.userInteractionEnabled = NO;
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Alert"
+															message: @"Please choose a product to search"
+														   delegate: nil cancelButtonTitle: @"Okay" otherButtonTitles: nil];
+			[alert show];
+			[alert release];
+			break;
+		case kIStatButtonIndex:
+			self.whichStat = kIStat;
+			break;
+		case kExStatButtonIndex:
+			self.whichStat = kExStat;
+			break;
+	}
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet willDismissWithButtonIndex:(NSInteger)buttonIndex {
+	
 }
 
 #pragma mark -
