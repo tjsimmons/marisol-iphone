@@ -15,6 +15,8 @@
 
 -(void) dealloc {
 	self.customerName = nil;
+	self.iStat = nil;
+	self.exStat = nil;
 	
 	[super dealloc];
 }

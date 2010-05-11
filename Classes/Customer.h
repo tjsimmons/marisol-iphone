@@ -12,11 +12,12 @@
 @interface Customer : NSObject {
 	NSInteger	customerID;
 	NSString	*customerName;
-	BOOL		iStat, exStat;
+	NSString	*iStat;
+	NSString	*exStat;
 }
 
 @property NSInteger customerID;
 @property (nonatomic, retain) NSString *customerName;
-@property BOOL iStat, exStat;
+@property (nonatomic, retain) NSString *iStat, *exStat;
 
 @end

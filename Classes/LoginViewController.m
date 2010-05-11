@@ -8,12 +8,18 @@
 
 #import "LoginViewController.h"
 #import "Reachability.h"
+#import "Customer.h"
 
 #define kUsernameKey	@"username"
 #define kCustomerKey	@"customer"
 #define kProductsKey	@"products"
+#define kIstatKey		@"istat"
+#define kExstatKey		@"exstat"
 
 #define kApplication	[UIApplication sharedApplication]
+#define kUserDefaults	[NSUserDefaults standardUserDefaults]
+
+#define MILoginVC		2
 
 
 @implementation LoginViewController
@@ -75,30 +81,41 @@
 }
 
 -(void) initiateLogin {
-	if ( connection == nil ) {
-		NSString *loginURLString = [NSString stringWithFormat: @"https://www.marisolintl.com/iphone/login.asp?username=%@&password=%@", usernameField.text, passwordField.text];
-		NSURL *loginURL = [NSURL URLWithString: loginURLString];
-		NSURLRequest *loginRequest = [NSURLRequest requestWithURL: loginURL
-													  cachePolicy: NSURLRequestUseProtocolCachePolicy
-												  timeoutInterval: 10.0];
-		connection = [[NSURLConnection alloc] initWithRequest: loginRequest
-													 delegate: self];
-		
-		if ( connection ) {
-			kApplication.networkActivityIndicatorVisible = YES;
-			theData = [[NSMutableData data] retain];
-		} else {
-			UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Unable to connect"
-															message: @"There is an error."
-														   delegate: nil
-												  cancelButtonTitle: @"Okay" otherButtonTitles: nil];
-			[alert show];
-			[alert release];
-			
-			[self.connection cancel];
-			self.connection = nil;
-		}
-	}
+	NSString *url = [[NSString alloc] initWithFormat: @"https://www.marisolintl.com/iphone/loginxml.asp?username=%@&password=%@",
+					 usernameField.text, passwordField.text];
+	ConnectionHandler *handler = [[ConnectionHandler alloc] initWithDelegate: self];
+	
+	handler.xmlPathComponent = @"login.xml";
+	
+	[handler beginURLConnection: url];
+	
+	[url release];
+	[handler release];
+	
+	/*if ( connection == nil ) {
+	 NSString *loginURLString = [NSString stringWithFormat: @"https://www.marisolintl.com/iphone/login.asp?username=%@&password=%@", usernameField.text, passwordField.text];
+	 NSURL *loginURL = [NSURL URLWithString: loginURLString];
+	 NSURLRequest *loginRequest = [NSURLRequest requestWithURL: loginURL
+	 cachePolicy: NSURLRequestUseProtocolCachePolicy
+	 timeoutInterval: 10.0];
+	 connection = [[NSURLConnection alloc] initWithRequest: loginRequest
+	 delegate: self];
+	 
+	 if ( connection ) {
+	 kApplication.networkActivityIndicatorVisible = YES;
+	 theData = [[NSMutableData data] retain];
+	 } else {
+	 UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Unable to connect"
+	 message: @"There is an error."
+	 delegate: nil
+	 cancelButtonTitle: @"Okay" otherButtonTitles: nil];
+	 [alert show];
+	 [alert release];
+	 
+	 [self.connection cancel];
+	 self.connection = nil;
+	 }
+	 }*/
 }
 
 -(void) loginFinished {
@@ -153,6 +170,32 @@
 		
 		[self dismissModalViewControllerAnimated: YES];
 	}
+}
+
+#pragma mark -
+#pragma mark Connection Handler Delegate Methods
+-(void) connectionFinishedWithFilePath: (NSString *) filePath {
+	XMLParseHandler *handler = [[XMLParseHandler alloc] initWithDelegate: self];
+	
+	handler.callingClass = MILoginVC;
+	
+	[handler startXMLParseWithFile: filePath];
+	
+	[handler release];
+}
+
+#pragma mark -
+#pragma mark XML Parse Handler Delegate Methods
+-(void) xmlDidFinishParsingWithArray: (NSMutableArray *) array {
+	if ( [array count] == 1 ) {
+		Customer *customer = (Customer *) [array objectAtIndex: 0];
+		
+		[kUserDefaults setObject: customer.customerName forKey: kCustomerKey];
+		[kUserDefaults setObject: customer.iStat forKey: kIstatKey];
+		[kUserDefaults setObject: customer.exStat forKey: kExstatKey];
+	}
+
+	[self dismissModalViewControllerAnimated: YES];
 }
 
 #pragma mark -

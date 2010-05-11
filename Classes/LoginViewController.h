@@ -7,15 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ConnectionHandler.h"
+#import "XMLParseHandler.h"
 
 @class Reachability;
 
-@interface LoginViewController : UIViewController {
+@interface LoginViewController : UIViewController <ConnectionHandlerDelegate, XMLParseHandlerDelegate> {
 	// IB stuff
-	UITextField *usernameField;
-	UITextField *passwordField;
-	UIButton *loginButton;
-	UIActivityIndicatorView *activityIndicator;
+	UITextField					*usernameField;
+	UITextField					*passwordField;
+	UIButton					*loginButton;
+	UIActivityIndicatorView		*activityIndicator;
 	
 	// stuff to log in with
 	NSMutableData	*theData;
@@ -39,5 +41,11 @@
 
 -(void) initiateLogin;
 -(void) loginFinished;
+
+// connection handler delegate
+-(void) connectionFinishedWithFilePath: (NSString *) filePath;
+
+// xml parse handler delegate
+-(void) xmlDidFinishParsingWithArray: (NSMutableArray *) array;
 
 @end
