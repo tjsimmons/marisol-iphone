@@ -27,6 +27,7 @@
 #define kIstatElementName			@"istat"
 #define kExstatElementName			@"exstat"
 
+
 @implementation XMLParseHandler
 
 @synthesize delegate;
@@ -167,19 +168,11 @@
 			
 			self.currentParsedCharacterData = nil;
 		} else if ( [elementName isEqualToString: kIstatElementName] ) {
-			if ( [self.currentParsedCharacterData isEqualToString: @"yes"] ) {
-				[currentObject setIStat: YES];
-			} else if ( [self.currentParsedCharacterData isEqualToString: @"no"] ) {
-				[currentObject setIStat: NO];
-			}
+			[currentObject setIStat: self.currentParsedCharacterData];
 			
 			self.currentParsedCharacterData = nil;
 		} else if ( [elementName isEqualToString: kExstatElementName] ) {
-			if ( [self.currentParsedCharacterData isEqualToString: @"yes"] ) {
-				[currentObject setExStat: YES];
-			} else if ( [self.currentParsedCharacterData isEqualToString: @"no"] ) {
-				[currentObject setExStat: NO];
-			}
+			[currentObject setExStat: self.currentParsedCharacterData];
 			
 			self.currentParsedCharacterData = nil;
 		} else if ( [elementName isEqualToString: kCustomerElementName] ) {

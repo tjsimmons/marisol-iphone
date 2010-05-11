@@ -15,9 +15,13 @@
 
 #define kCustomerKey		@"customer"
 #define kProductsKey		@"products"
+#define kIstatKey			@"istat"
+#define kExstatKey			@"exstat"
+
 #define kNumCells			4
 
 #define kAppDelegate		[[UIApplication sharedApplication] delegate]
+#define kUserDefaults		[NSUserDefaults standardUserDefaults]
 
 #define MIHomeVC	0
 
@@ -31,22 +35,22 @@
 -(void) setTabBarViewControllers {
 	pastInitialLogin = YES;
 	
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	//NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	NSMutableArray *viewControllers = [[NSMutableArray alloc] initWithObjects: self, nil];
 	
-	BOOL iStat = NO;
-	BOOL exStat = NO;
+	/*BOOL iStat = NO;
+	BOOL exStat = NO;*/
 	
-	if ( [[defaults objectForKey: kProductsKey] isEqualToString: @"iStat"] ) {
+	/*if ( [[defaults objectForKey: kProductsKey] isEqualToString: @"iStat"] ) {
 		iStat = YES;
 	} else if ( [[defaults objectForKey: kProductsKey] isEqualToString: @"exStat"] ) {
 		exStat = YES;
 	} else if ( [[defaults objectForKey: kProductsKey] isEqualToString: @"iStatexStat"] ) {
 		iStat = YES;
 		exStat = YES;
-	}
+	}*/
 	
-	if ( iStat ) {
+	if ( [[kUserDefaults objectForKey: kIstatKey] isEqualToString: @"yes"] ) {
 		iStatViewController *iStatController = [[iStatViewController alloc] init];
 		NSString *viewTitle = [[NSString alloc] initWithString: @"iSTAT"];
 		UITabBarItem *iTabBarItem = [[UITabBarItem alloc] initWithTitle: viewTitle image: nil tag: 1];
@@ -60,7 +64,7 @@
 		[viewTitle release];
 	}
 	
-	if ( exStat ) {
+	if ( [[kUserDefaults objectForKey: kExstatKey] isEqualToString: @"yes"] ) {
 		exStatViewController *exStatController = [[exStatViewController alloc] init];
 		NSString *viewTitle = [[NSString alloc] initWithString: @"exSTAT"];
 		UITabBarItem *exTabBarItem = [[UITabBarItem alloc] initWithTitle: viewTitle image: nil tag: 2];
