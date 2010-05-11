@@ -91,31 +91,6 @@
 	
 	[url release];
 	[handler release];
-	
-	/*if ( connection == nil ) {
-	 NSString *loginURLString = [NSString stringWithFormat: @"https://www.marisolintl.com/iphone/login.asp?username=%@&password=%@", usernameField.text, passwordField.text];
-	 NSURL *loginURL = [NSURL URLWithString: loginURLString];
-	 NSURLRequest *loginRequest = [NSURLRequest requestWithURL: loginURL
-	 cachePolicy: NSURLRequestUseProtocolCachePolicy
-	 timeoutInterval: 10.0];
-	 connection = [[NSURLConnection alloc] initWithRequest: loginRequest
-	 delegate: self];
-	 
-	 if ( connection ) {
-	 kApplication.networkActivityIndicatorVisible = YES;
-	 theData = [[NSMutableData data] retain];
-	 } else {
-	 UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Unable to connect"
-	 message: @"There is an error."
-	 delegate: nil
-	 cancelButtonTitle: @"Okay" otherButtonTitles: nil];
-	 [alert show];
-	 [alert release];
-	 
-	 [self.connection cancel];
-	 self.connection = nil;
-	 }
-	 }*/
 }
 
 -(void) loginFinished {
