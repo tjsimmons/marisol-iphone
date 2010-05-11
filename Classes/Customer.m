@@ -11,7 +11,7 @@
 
 @implementation Customer
 
-@synthesize customerID, customerName;
+@synthesize customerID, customerName, iStat, exStat;
 
 -(void) dealloc {
 	self.customerName = nil;

@@ -22,8 +22,10 @@
 #define kTitleElementName			@"title"
 
 // Login Constants
-#define kLoginInfoElementName		@"loginInformation"
 #define kCustomerElementName		@"customer"
+#define kNameElementName			@"name"
+#define kIstatElementName			@"istat"
+#define kExstatElementName			@"exstat"
 
 @implementation XMLParseHandler
 
@@ -120,7 +122,7 @@
 			[customer release];
 			
 			[currentObject setCustomerID: customerID];
-			
+		} else if ( [elementName isEqualToString: kNameElementName] || [elementName isEqualToString: kIstatElementName] || [elementName isEqualToString: kExstatElementName] ) {
 			accumulatingCharacterData = YES;
 			
 			self.currentParsedCharacterData = [NSMutableString string];
@@ -160,11 +162,27 @@
 			self.currentObject = nil;
 		}
 	} else if ( callingClass == MILoginVC ) {
-		if ( [elementName isEqualToString: kCustomerElementName] ) {
+		if ( [elementName isEqualToString: kNameElementName] ) {
 			[currentObject setCustomerName: self.currentParsedCharacterData];
 			
 			self.currentParsedCharacterData = nil;
+		} else if ( [elementName isEqualToString: kIstatElementName] ) {
+			if ( [self.currentParsedCharacterData isEqualToString: @"yes"] ) {
+				[currentObject setIStat: YES];
+			} else if ( [self.currentParsedCharacterData isEqualToString: @"no"] ) {
+				[currentObject setIStat: NO];
+			}
 			
+			self.currentParsedCharacterData = nil;
+		} else if ( [elementName isEqualToString: kExstatElementName] ) {
+			if ( [self.currentParsedCharacterData isEqualToString: @"yes"] ) {
+				[currentObject setExStat: YES];
+			} else if ( [self.currentParsedCharacterData isEqualToString: @"no"] ) {
+				[currentObject setExStat: NO];
+			}
+			
+			self.currentParsedCharacterData = nil;
+		} else if ( [elementName isEqualToString: kCustomerElementName] ) {
 			[self.objectList addObject: currentObject];
 			
 			self.currentObject = nil;
