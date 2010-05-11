@@ -31,6 +31,7 @@
 		5F5C7B431198845A008A786F /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F5C7B411198845A008A786F /* SearchViewController.xib */; };
 		5F748F0A11764EC4000B1BA1 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F748F0911764EC4000B1BA1 /* Reachability.m */; };
 		5F748F3B11765349000B1BA1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F748F3A11765349000B1BA1 /* SystemConfiguration.framework */; };
+		5F90A80A1199C0E7009BA591 /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F90A8091199C0E7009BA591 /* Customer.m */; };
 		5FB5C748118F710C007B24BD /* RootSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB5C747118F710C007B24BD /* RootSearchController.m */; };
 		5FB5C753118F7234007B24BD /* RootSearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FB5C752118F7234007B24BD /* RootSearchController.xib */; };
 		5FC57D14116BCE7A00F41F4B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC57D13116BCE7A00F41F4B /* HomeViewController.m */; };
@@ -79,6 +80,8 @@
 		5F748F0811764EC3000B1BA1 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		5F748F0911764EC4000B1BA1 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		5F748F3A11765349000B1BA1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5F90A8081199C0E7009BA591 /* Customer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Customer.h; sourceTree = "<group>"; };
+		5F90A8091199C0E7009BA591 /* Customer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Customer.m; sourceTree = "<group>"; };
 		5FB5C746118F710C007B24BD /* RootSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootSearchController.h; sourceTree = "<group>"; };
 		5FB5C747118F710C007B24BD /* RootSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootSearchController.m; sourceTree = "<group>"; };
 		5FB5C752118F7234007B24BD /* RootSearchController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RootSearchController.xib; path = Classes/RootSearchController.xib; sourceTree = "<group>"; };
@@ -240,10 +243,11 @@
 		5F90A7051199A9B5009BA591 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				1D3623240D0F684500981E51 /* MarisolAppDelegate.h */,
 				5FD1E2C11173A65100CD0782 /* HomeCellModel.h */,
+				5F90A8081199C0E7009BA591 /* Customer.h */,
 				5F15C343116B76CE001ED14A /* Shipment.h */,
 				5F748F0811764EC3000B1BA1 /* Reachability.h */,
-				1D3623240D0F684500981E51 /* MarisolAppDelegate.h */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -253,6 +257,7 @@
 			children = (
 				1D3623250D0F684500981E51 /* MarisolAppDelegate.m */,
 				5FD1E2C21173A65100CD0782 /* HomeCellModel.m */,
+				5F90A8091199C0E7009BA591 /* Customer.m */,
 				5F15C344116B76CE001ED14A /* Shipment.m */,
 				5F748F0911764EC4000B1BA1 /* Reachability.m */,
 			);
@@ -364,6 +369,7 @@
 				5F748F0A11764EC4000B1BA1 /* Reachability.m in Sources */,
 				5FB5C748118F710C007B24BD /* RootSearchController.m in Sources */,
 				5F5C7B421198845A008A786F /* SearchViewController.m in Sources */,
+				5F90A80A1199C0E7009BA591 /* Customer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
