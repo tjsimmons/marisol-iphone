@@ -9,6 +9,7 @@
 #import "XMLParseHandler.h"
 #import "Shipment.h"
 #import "HomeCellModel.h"
+#import "Customer.h"
 
 // Shipment List Constants
 #define kShipmentElementName			@"shipment"
@@ -19,6 +20,10 @@
 // Home Constants
 #define	kCellElementName			@"cell"
 #define kTitleElementName			@"title"
+
+// Login Constants
+#define kLoginInfoElementName		@"loginInformation"
+#define kCustomerElementName		@"customer"
 
 @implementation XMLParseHandler
 
@@ -64,7 +69,6 @@
 	[parser setDelegate: self];
 	[parser parse];
 	
-	
 	self.currentParsedCharacterData = nil;
 	self.currentObject = nil;
 	
@@ -107,6 +111,22 @@
 			
 			[self.currentParsedCharacterData setString: @""];
 		}
+	} else if ( callingClass == MILoginVC ) {
+		if ( [elementName isEqualToString: kCustomerElementName] ) {
+			Customer *customer = [[Customer alloc] init];
+			NSInteger customerID = [[attributeDict objectForKey: @"id"] integerValue];
+			
+			self.currentObject = customer;
+			[customer release];
+			
+			[currentObject setCustomerID: customerID];
+			
+			accumulatingCharacterData = YES;
+			
+			self.currentParsedCharacterData = [NSMutableString string];
+			
+			[self.currentParsedCharacterData setString: @""];
+		}
 	}
 }
 
@@ -135,6 +155,16 @@
 			
 			self.currentParsedCharacterData = nil;
 		} else if ( [elementName isEqualToString: kCellElementName] ) {
+			[self.objectList addObject: currentObject];
+			
+			self.currentObject = nil;
+		}
+	} else if ( callingClass == MILoginVC ) {
+		if ( [elementName isEqualToString: kCustomerElementName] ) {
+			[currentObject setCustomerName: self.currentParsedCharacterData];
+			
+			self.currentParsedCharacterData = nil;
+			
 			[self.objectList addObject: currentObject];
 			
 			self.currentObject = nil;
