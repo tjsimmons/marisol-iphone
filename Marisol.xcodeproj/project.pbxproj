@@ -32,6 +32,8 @@
 		5F748F0A11764EC4000B1BA1 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F748F0911764EC4000B1BA1 /* Reachability.m */; };
 		5F748F3B11765349000B1BA1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F748F3A11765349000B1BA1 /* SystemConfiguration.framework */; };
 		5F90A80A1199C0E7009BA591 /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F90A8091199C0E7009BA591 /* Customer.m */; };
+		5F90A9761199F456009BA591 /* ChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F90A9741199F455009BA591 /* ChooserViewController.m */; };
+		5F90A9771199F456009BA591 /* ChooserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F90A9751199F456009BA591 /* ChooserViewController.xib */; };
 		5FB5C748118F710C007B24BD /* RootSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB5C747118F710C007B24BD /* RootSearchController.m */; };
 		5FB5C753118F7234007B24BD /* RootSearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FB5C752118F7234007B24BD /* RootSearchController.xib */; };
 		5FC57D14116BCE7A00F41F4B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC57D13116BCE7A00F41F4B /* HomeViewController.m */; };
@@ -82,6 +84,9 @@
 		5F748F3A11765349000B1BA1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5F90A8081199C0E7009BA591 /* Customer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Customer.h; sourceTree = "<group>"; };
 		5F90A8091199C0E7009BA591 /* Customer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Customer.m; sourceTree = "<group>"; };
+		5F90A9731199F455009BA591 /* ChooserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooserViewController.h; sourceTree = "<group>"; };
+		5F90A9741199F455009BA591 /* ChooserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooserViewController.m; sourceTree = "<group>"; };
+		5F90A9751199F456009BA591 /* ChooserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ChooserViewController.xib; path = Classes/ChooserViewController.xib; sourceTree = "<group>"; };
 		5FB5C746118F710C007B24BD /* RootSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootSearchController.h; sourceTree = "<group>"; };
 		5FB5C747118F710C007B24BD /* RootSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootSearchController.m; sourceTree = "<group>"; };
 		5FB5C752118F7234007B24BD /* RootSearchController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RootSearchController.xib; path = Classes/RootSearchController.xib; sourceTree = "<group>"; };
@@ -194,6 +199,7 @@
 			children = (
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				5F15C331116B75A6001ED14A /* LoginViewController.xib */,
+				5F90A9751199F456009BA591 /* ChooserViewController.xib */,
 				5FE154EC1173621C0061F3CE /* HomeViewController.xib */,
 				5FE155A811737D4F0061F3CE /* HomeCellViewController.xib */,
 				5FB5C752118F7234007B24BD /* RootSearchController.xib */,
@@ -218,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				5F15C32F116B75A6001ED14A /* LoginViewController.h */,
+				5F90A9731199F455009BA591 /* ChooserViewController.h */,
 				5FC57D12116BCE7A00F41F4B /* HomeViewController.h */,
 				5FE155A611737D4F0061F3CE /* HomeCellViewController.h */,
 				5F15C3DB116B7BB3001ED14A /* iStatViewController.h */,
@@ -277,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				5F15C330116B75A6001ED14A /* LoginViewController.m */,
+				5F90A9741199F455009BA591 /* ChooserViewController.m */,
 				5FC57D13116BCE7A00F41F4B /* HomeViewController.m */,
 				5FE155A711737D4F0061F3CE /* HomeCellViewController.m */,
 				5F15C3DC116B7BB3001ED14A /* iStatViewController.m */,
@@ -342,6 +350,7 @@
 				5FE155AA11737D4F0061F3CE /* HomeCellViewController.xib in Resources */,
 				5FB5C753118F7234007B24BD /* RootSearchController.xib in Resources */,
 				5F5C7B431198845A008A786F /* SearchViewController.xib in Resources */,
+				5F90A9771199F456009BA591 /* ChooserViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +379,7 @@
 				5FB5C748118F710C007B24BD /* RootSearchController.m in Sources */,
 				5F5C7B421198845A008A786F /* SearchViewController.m in Sources */,
 				5F90A80A1199C0E7009BA591 /* Customer.m in Sources */,
+				5F90A9761199F456009BA591 /* ChooserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
