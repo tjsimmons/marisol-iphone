@@ -11,10 +11,11 @@
 #import "ShipmentDetailViewController.h"
 
 #define kCustomerKey	@"customer"
-#define kProductsKey	@"products"
-#define kIStat			@"iStat"
-#define kExStat			@"exStat"
-#define kBoth			@"iStatexStat"
+#define kIstatKey		@"istat"
+#define kExstatKey		@"exstat"
+
+#define iSTAT			@"iSTAT"
+#define exSTAT			@"exSTAT"
 
 #define kIStatButtonIndex	0
 #define kExStatButtonIndex	1
@@ -23,12 +24,13 @@
 #define MIShipmentVC	1
 
 #define kAppDelegateTabBar	[[[[UIApplication sharedApplication] delegate] tabBarController] tabBar]
+#define kUserDefaults		[NSUserDefaults standardUserDefaults]
 
 
 @implementation SearchViewController
 
 
-@synthesize searchList, connection, MISearchBar, savedSearchTerm, savedScopeButtonIndex, searchWasActive, whichStat;
+@synthesize searchList, connection, MISearchBar, savedSearchTerm, savedScopeButtonIndex, searchWasActive, activeStat;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -38,21 +40,23 @@
 	
 	self.title = @"Search";
 	
-	self.whichStat = [[NSUserDefaults standardUserDefaults] objectForKey: kProductsKey];
-	
-	if ( [self.whichStat isEqualToString: kBoth] ) {
+	if ( [[kUserDefaults objectForKey: kIstatKey] isEqualToString: @"yes"] && [[kUserDefaults objectForKey: kExstatKey] isEqualToString: @"yes"] ) {
 		UIBarButtonItem *productButton = [[UIBarButtonItem alloc] initWithTitle: @"Change" style: UIBarButtonItemStyleBordered 
 																		 target: self action: @selector(changeActiveProduct)];
 		
 		self.navigationItem.rightBarButtonItem = productButton;
 		
 		[productButton release];
-	}
-	
-	if ( [self.whichStat isEqualToString: kIStat] ) {
-		self.MISearchBar.placeholder = @"Search iSTAT";
-	} else if ( [self.whichStat isEqualToString: kExStat] ) {
-		self.MISearchBar.placeholder = @"Search exSTAT";
+		
+		[self changeActiveProduct];
+	} else {
+		if ( [[kUserDefaults objectForKey: kIstatKey] isEqualToString: @"yes"] ) {
+			self.activeStat = iSTAT;
+			self.MISearchBar.placeholder = @"Search iSTAT";
+		} else if ( [[kUserDefaults objectForKey: kExstatKey] isEqualToString: @"yes"] ) {
+			self.activeStat = exSTAT;
+			self.MISearchBar.placeholder = @"Search exSTAT";
+		}
 	}
 	
 	NSArray *scopeButtonTitles = [[NSArray alloc] initWithObjects: @"Marisol #", @"PO #", @"Cold Storage", nil];
@@ -70,8 +74,6 @@
 	dataLoaded = NO;
 	
 	[self.tableView reloadData];
-	
-	[self callActionSheet];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -91,7 +93,7 @@
 
 -(void) startConnectionProcessFromSearchBar: (UISearchBar *) searchBar {
 	ConnectionHandler *handler = [[ConnectionHandler alloc] initWithDelegate: self];
-	NSString *path = [[NSString alloc] initWithFormat: @"%@search.xml", self.whichStat];
+	NSString *path = [[NSString alloc] initWithFormat: @"%@search.xml", self.activeStat];
 	NSString *searchField;
 	NSString *fieldType;
 	NSInteger scopeButtonIndex = [searchBar selectedScopeButtonIndex];
@@ -114,12 +116,11 @@
 			fieldType = @"string";
 	}
 	
-	
 	NSString *customer = [[NSString alloc] initWithString: [[NSUserDefaults standardUserDefaults] objectForKey: kCustomerKey]];
 	
 	NSString *url = [[NSString alloc] initWithFormat: @"https://www.marisolintl.com/iphone/shipmentsearchxml.asp?customer=%@&query=%@&field=%@&stat=%@&type=%@",
-					 customer, searchBar.text, searchField, self.whichStat, fieldType];
-	
+					 customer, searchBar.text, searchField, self.activeStat, fieldType];
+
 	handler.xmlPathComponent = path;
 	
 	self.connection = handler;
@@ -130,16 +131,6 @@
 	[customer release];
 	[path release];
 	[url release];
-}
-
--(void) callActionSheet {
-	if ( [self.whichStat isEqualToString: kBoth] ) {
-		UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle: @"Please select a product:" delegate: self cancelButtonTitle: @"Cancel" 
-												   destructiveButtonTitle: nil otherButtonTitles: @"iSTAT", @"exSTAT", nil];
-		
-		[actionSheet showFromTabBar: kAppDelegateTabBar];
-		[actionSheet release];
-	}
 }
 
 -(void) changeActiveProduct {
@@ -285,20 +276,22 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
 	switch ( buttonIndex ) {
 		case kCancelButtonIndex:
-			self.MISearchBar.userInteractionEnabled = NO;
-			UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Alert"
-															message: @"Please choose a product to search"
-														   delegate: nil cancelButtonTitle: @"Okay" otherButtonTitles: nil];
-			[alert show];
-			[alert release];
+			if ( !self.activeStat ) {
+				self.MISearchBar.userInteractionEnabled = NO;
+				UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Alert"
+																message: @"Please choose a product to search"
+															   delegate: nil cancelButtonTitle: @"Okay" otherButtonTitles: nil];
+				[alert show];
+				[alert release];
+			}
 			break;
 		case kIStatButtonIndex:
-			self.whichStat = kIStat;
+			self.activeStat = iSTAT;
 			self.MISearchBar.userInteractionEnabled = YES;
 			self.MISearchBar.placeholder = @"Search iSTAT";
 			break;
 		case kExStatButtonIndex:
-			self.whichStat = kExStat;
+			self.activeStat = exSTAT;
 			self.MISearchBar.userInteractionEnabled = YES;
 			self.MISearchBar.placeholder = @"Search exSTAT";
 			break;
@@ -325,7 +318,7 @@
 	self.searchList = nil;
 	self.connection = nil;
 	self.MISearchBar = nil;
-	self.whichStat = nil;
+	self.activeStat = nil;
 }
 
 
@@ -333,7 +326,7 @@
 	self.searchList = nil;
 	self.connection = nil;
 	self.MISearchBar = nil;
-	self.whichStat = nil;
+	self.activeStat = nil;
 	
     [super dealloc];
 }
