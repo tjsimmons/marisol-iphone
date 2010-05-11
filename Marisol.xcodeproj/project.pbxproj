@@ -172,23 +172,9 @@
 		5F3E9472116A42EB003C2BFD /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				1D3623240D0F684500981E51 /* MarisolAppDelegate.h */,
-				5F15C32F116B75A6001ED14A /* LoginViewController.h */,
-				5FC57D12116BCE7A00F41F4B /* HomeViewController.h */,
-				5FE155A611737D4F0061F3CE /* HomeCellViewController.h */,
-				5F15C3DB116B7BB3001ED14A /* iStatViewController.h */,
-				5F15C512116B90EB001ED14A /* exStatViewController.h */,
-				5FB5C746118F710C007B24BD /* RootSearchController.h */,
-				5F5C7B3F1198845A008A786F /* SearchViewController.h */,
-				5F15C34C116B76CE001ED14A /* WeekListViewController.h */,
-				5F15C348116B76CE001ED14A /* ShipmentListViewController.h */,
-				5F15C345116B76CE001ED14A /* ShipmentDetailViewController.h */,
-				5F15C341116B76CE001ED14A /* ConnectionHandler.h */,
-				5F15C34E116B76CE001ED14A /* XMLParseHandler.h */,
-				5FD1E2A61173A4DE00CD0782 /* HomeXMLParseHandler.h */,
-				5FD1E2C11173A65100CD0782 /* HomeCellModel.h */,
-				5F15C343116B76CE001ED14A /* Shipment.h */,
-				5F748F0811764EC3000B1BA1 /* Reachability.h */,
+				5F90A7031199A97C009BA591 /* View Controllers */,
+				5F90A7041199A992009BA591 /* Handlers */,
+				5F90A7051199A9B5009BA591 /* Misc */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -196,23 +182,9 @@
 		5F3E9475116A42F2003C2BFD /* Implementations */ = {
 			isa = PBXGroup;
 			children = (
-				1D3623250D0F684500981E51 /* MarisolAppDelegate.m */,
-				5F15C330116B75A6001ED14A /* LoginViewController.m */,
-				5FC57D13116BCE7A00F41F4B /* HomeViewController.m */,
-				5FE155A711737D4F0061F3CE /* HomeCellViewController.m */,
-				5F15C3DC116B7BB3001ED14A /* iStatViewController.m */,
-				5F15C513116B90EB001ED14A /* exStatViewController.m */,
-				5FB5C747118F710C007B24BD /* RootSearchController.m */,
-				5F5C7B401198845A008A786F /* SearchViewController.m */,
-				5F15C34D116B76CE001ED14A /* WeekListViewController.m */,
-				5F15C349116B76CE001ED14A /* ShipmentListViewController.m */,
-				5F15C346116B76CE001ED14A /* ShipmentDetailViewController.m */,
-				5F15C342116B76CE001ED14A /* ConnectionHandler.m */,
-				5F15C34F116B76CE001ED14A /* XMLParseHandler.m */,
-				5FD1E2A71173A4DE00CD0782 /* HomeXMLParseHandler.m */,
-				5FD1E2C21173A65100CD0782 /* HomeCellModel.m */,
-				5F15C344116B76CE001ED14A /* Shipment.m */,
-				5F748F0911764EC4000B1BA1 /* Reachability.m */,
+				5F90A70B1199A9FA009BA591 /* View Controllers */,
+				5F90A70A1199A9F6009BA591 /* Handlers */,
+				5F90A7091199A9F2009BA591 /* Misc */,
 			);
 			name = Implementations;
 			sourceTree = "<group>";
@@ -240,6 +212,82 @@
 				8D1107310486CEB800E47090 /* Marisol-Info.plist */,
 			);
 			name = Other;
+			sourceTree = "<group>";
+		};
+		5F90A7031199A97C009BA591 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F15C32F116B75A6001ED14A /* LoginViewController.h */,
+				5FC57D12116BCE7A00F41F4B /* HomeViewController.h */,
+				5FE155A611737D4F0061F3CE /* HomeCellViewController.h */,
+				5F15C3DB116B7BB3001ED14A /* iStatViewController.h */,
+				5F15C512116B90EB001ED14A /* exStatViewController.h */,
+				5FB5C746118F710C007B24BD /* RootSearchController.h */,
+				5F5C7B3F1198845A008A786F /* SearchViewController.h */,
+				5F15C34C116B76CE001ED14A /* WeekListViewController.h */,
+				5F15C348116B76CE001ED14A /* ShipmentListViewController.h */,
+				5F15C345116B76CE001ED14A /* ShipmentDetailViewController.h */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		5F90A7041199A992009BA591 /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				5F15C341116B76CE001ED14A /* ConnectionHandler.h */,
+				5F15C34E116B76CE001ED14A /* XMLParseHandler.h */,
+				5FD1E2A61173A4DE00CD0782 /* HomeXMLParseHandler.h */,
+			);
+			name = Handlers;
+			sourceTree = "<group>";
+		};
+		5F90A7051199A9B5009BA591 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				5FD1E2C11173A65100CD0782 /* HomeCellModel.h */,
+				5F15C343116B76CE001ED14A /* Shipment.h */,
+				5F748F0811764EC3000B1BA1 /* Reachability.h */,
+				1D3623240D0F684500981E51 /* MarisolAppDelegate.h */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		5F90A7091199A9F2009BA591 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				1D3623250D0F684500981E51 /* MarisolAppDelegate.m */,
+				5FD1E2C21173A65100CD0782 /* HomeCellModel.m */,
+				5F15C344116B76CE001ED14A /* Shipment.m */,
+				5F748F0911764EC4000B1BA1 /* Reachability.m */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		5F90A70A1199A9F6009BA591 /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				5F15C342116B76CE001ED14A /* ConnectionHandler.m */,
+				5F15C34F116B76CE001ED14A /* XMLParseHandler.m */,
+				5FD1E2A71173A4DE00CD0782 /* HomeXMLParseHandler.m */,
+			);
+			name = Handlers;
+			sourceTree = "<group>";
+		};
+		5F90A70B1199A9FA009BA591 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F15C330116B75A6001ED14A /* LoginViewController.m */,
+				5FC57D13116BCE7A00F41F4B /* HomeViewController.m */,
+				5FE155A711737D4F0061F3CE /* HomeCellViewController.m */,
+				5F15C3DC116B7BB3001ED14A /* iStatViewController.m */,
+				5F15C513116B90EB001ED14A /* exStatViewController.m */,
+				5FB5C747118F710C007B24BD /* RootSearchController.m */,
+				5F5C7B401198845A008A786F /* SearchViewController.m */,
+				5F15C34D116B76CE001ED14A /* WeekListViewController.m */,
+				5F15C349116B76CE001ED14A /* ShipmentListViewController.m */,
+				5F15C346116B76CE001ED14A /* ShipmentDetailViewController.m */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
