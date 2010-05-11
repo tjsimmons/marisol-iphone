@@ -19,4 +19,7 @@
 @property (nonatomic, retain) IBOutlet UITableView *MItableView;
 @property (nonatomic, retain) NSIndexPath *lastCheckedCell;
 
+-(IBAction) cancel;
+-(IBAction) chooseCustomer;
+
 @end

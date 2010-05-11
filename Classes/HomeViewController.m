@@ -14,7 +14,7 @@
 #import "HomeCellModel.h"
 
 #define kCustomerKey		@"customer"
-#define kProductsKey		@"products"
+#define kLoggedInKey		@"loggedIn"
 #define kIstatKey			@"istat"
 #define kExstatKey			@"exstat"
 
@@ -37,18 +37,6 @@
 	
 	//NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	NSMutableArray *viewControllers = [[NSMutableArray alloc] initWithObjects: self, nil];
-	
-	/*BOOL iStat = NO;
-	BOOL exStat = NO;*/
-	
-	/*if ( [[defaults objectForKey: kProductsKey] isEqualToString: @"iStat"] ) {
-		iStat = YES;
-	} else if ( [[defaults objectForKey: kProductsKey] isEqualToString: @"exStat"] ) {
-		exStat = YES;
-	} else if ( [[defaults objectForKey: kProductsKey] isEqualToString: @"iStatexStat"] ) {
-		iStat = YES;
-		exStat = YES;
-	}*/
 	
 	if ( [[kUserDefaults objectForKey: kIstatKey] isEqualToString: @"yes"] ) {
 		iStatViewController *iStatController = [[iStatViewController alloc] init];
@@ -113,11 +101,11 @@
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	NSString *url = [[NSString alloc] initWithFormat: @"https://www.marisolintl.com/iphone/homexml.asp?customer=%@", 
 					 [defaults objectForKey: kCustomerKey]];
-	
+
 	handler.xmlPathComponent = path;
-	
+
 	[handler beginURLConnection: url];
-	
+
 	[handler release];
 	[path release];
 	[url release];
@@ -191,7 +179,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 	
-	if ( !pastInitialLogin ) {
+	if ( [kUserDefaults boolForKey: kLoggedInKey] == YES ) {
 		[self setTabBarViewControllers];
 	}
 }
