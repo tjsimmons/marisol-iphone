@@ -8,15 +8,23 @@
 
 #import "XMLParseHandler.h"
 #import "Shipment.h"
+#import "HomeCellModel.h"
 
+// Shipment List Constants
 #define kShipmentElementName			@"shipment"
 #define kMarisolNumElementName			@"marisolNum"
 #define kDeliveryDateElementName		@"deliveryDate"
 #define kColdStorageDateElementName		@"coldStorageDate"
 
+// Home Constants
+#define	kCellElementName			@"cell"
+#define kTitleElementName			@"title"
+
 @implementation XMLParseHandler
 
 @synthesize delegate;
+
+@synthesize callingClass;
 
 @synthesize currentObject;
 @synthesize objectList;
@@ -67,41 +75,70 @@
 #pragma mark -
 #pragma mark NSXMLParser Delegate Methods
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
-	// override
-	if ( [elementName isEqualToString: kShipmentElementName] ) {
-		Shipment *shipment = [[Shipment alloc] init];
-		
-		self.currentObject = shipment;
-		[shipment release];
-		
-		currentObject.shipmentID = [[attributeDict objectForKey: @"id"] integerValue];
-	} else if ( [elementName isEqualToString: kMarisolNumElementName] || [elementName isEqualToString: kDeliveryDateElementName] || [elementName isEqualToString: kColdStorageDateElementName] ) {
-		accumulatingCharacterData = YES;
-		
-		self.currentParsedCharacterData = [NSMutableString string];
-		
-		[self.currentParsedCharacterData setString: @""];
+	if ( callingClass == MIShipmentVC ) {
+		if ( [elementName isEqualToString: kShipmentElementName] ) {
+			Shipment *shipment = [[Shipment alloc] init];
+			
+			self.currentObject = shipment;
+			[shipment release];
+			
+			[currentObject setShipmentID: [[attributeDict objectForKey: @"id"] integerValue]];
+		} else if ( [elementName isEqualToString: kMarisolNumElementName] || [elementName isEqualToString: kDeliveryDateElementName] || [elementName isEqualToString: kColdStorageDateElementName] ) {
+			accumulatingCharacterData = YES;
+			
+			self.currentParsedCharacterData = [NSMutableString string];
+			
+			[self.currentParsedCharacterData setString: @""];
+		}
+	} else if ( callingClass == MIHomeVC ) {
+		if ( [elementName isEqualToString: kCellElementName] ) {
+			HomeCellModel *cellModel = [[HomeCellModel alloc] init];
+			
+			self.currentObject = cellModel;
+			[cellModel release];
+			
+			[currentObject setCellIndex: [[attributeDict objectForKey: @"index"] integerValue]];
+		} else if ( [elementName isEqualToString: kTitleElementName] ) {
+			[currentObject setCellValue: [attributeDict objectForKey: @"value"]];
+			
+			accumulatingCharacterData = YES;
+			
+			self.currentParsedCharacterData = [NSMutableString string];
+			
+			[self.currentParsedCharacterData setString: @""];
+		}
 	}
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-	// override
-	if ( [elementName isEqualToString: kMarisolNumElementName] ) {
-		currentObject.marisolNum = self.currentParsedCharacterData;
-		
-		self.currentParsedCharacterData = nil;
-	} else if ( [elementName isEqualToString: kDeliveryDateElementName] ) {
-		currentObject.deliveryDateString = self.currentParsedCharacterData;
-		
-		self.currentParsedCharacterData = nil;
-	} else if ( [elementName isEqualToString: kColdStorageDateElementName] ) {
-		currentObject.coldStorageDateString = self.currentParsedCharacterData;
-		
-		self.currentParsedCharacterData = nil;
-	} else if ( [elementName isEqualToString: kShipmentElementName] ) {
-		[self.objectList addObject: currentObject];
-		
-		self.currentObject = nil;
+	if ( callingClass == MIShipmentVC ) {
+		if ( [elementName isEqualToString: kMarisolNumElementName] ) {
+			[currentObject setMarisolNum: self.currentParsedCharacterData];
+			
+			self.currentParsedCharacterData = nil;
+		} else if ( [elementName isEqualToString: kDeliveryDateElementName] ) {
+			[currentObject setDeliveryDateString: self.currentParsedCharacterData];
+			
+			self.currentParsedCharacterData = nil;
+		} else if ( [elementName isEqualToString: kColdStorageDateElementName] ) {
+			[currentObject setColdStorageDateString: self.currentParsedCharacterData];
+			
+			self.currentParsedCharacterData = nil;
+		} else if ( [elementName isEqualToString: kShipmentElementName] ) {
+			[self.objectList addObject: currentObject];
+			
+			self.currentObject = nil;
+		}
+	} else if ( callingClass == MIHomeVC ) {
+		if ( [elementName isEqualToString: kTitleElementName] ) {
+			[currentObject setCellTitle: self.currentParsedCharacterData];
+			
+			self.currentParsedCharacterData = nil;
+		} else if ( [elementName isEqualToString: kCellElementName] ) {
+			[self.objectList addObject: currentObject];
+			
+			self.currentObject = nil;
+		}
 	}
 	
 	accumulatingCharacterData = NO;

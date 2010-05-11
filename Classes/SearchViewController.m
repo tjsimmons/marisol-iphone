@@ -20,6 +20,10 @@
 #define kExStatButtonIndex	1
 #define kCancelButtonIndex	2
 
+#define MIShipmentVC	1
+
+#define kAppDelegateTabBar	[[[[UIApplication sharedApplication] delegate] tabBarController] tabBar]
+
 
 @implementation SearchViewController
 
@@ -133,7 +137,7 @@
 		UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle: @"Please select a product:" delegate: self cancelButtonTitle: @"Cancel" 
 												   destructiveButtonTitle: nil otherButtonTitles: @"iSTAT", @"exSTAT", nil];
 		
-		[actionSheet showFromTabBar: [[[[UIApplication sharedApplication] delegate] tabBarController] tabBar]];
+		[actionSheet showFromTabBar: kAppDelegateTabBar];
 		[actionSheet release];
 	}
 }
@@ -142,7 +146,7 @@
 	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle: @"Please select a product:" delegate: self cancelButtonTitle: @"Cancel" 
 											   destructiveButtonTitle: nil otherButtonTitles: @"iSTAT", @"exSTAT", nil];
 	
-	[actionSheet showFromTabBar: [[[[UIApplication sharedApplication] delegate] tabBarController] tabBar]];
+	[actionSheet showFromTabBar: kAppDelegateTabBar];
 	[actionSheet release];
 }
 
@@ -151,6 +155,8 @@
 
 -(void) connectionFinishedWithFilePath:(NSString *)filePath {
 	XMLParseHandler *handler = [[XMLParseHandler alloc] initWithDelegate: self];
+	
+	[handler setCallingClass: MIShipmentVC];
 	
 	[handler startXMLParseWithFile: filePath];
 	

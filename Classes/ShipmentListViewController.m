@@ -14,6 +14,8 @@
 #define kExStat			@"exSTAT"
 #define kCustomerKey	@"customer"
 
+#define	MIShipmentVC	1
+
 
 @implementation ShipmentListViewController
 
@@ -47,6 +49,8 @@
 #pragma mark Connection Handler Delegate Method
 -(void) connectionFinishedWithFilePath:(NSString *)filePath {
 	XMLParseHandler *handler = [[XMLParseHandler alloc] initWithDelegate: self];
+	
+	[handler setCallingClass: MIShipmentVC];
 	
 	[handler startXMLParseWithFile: filePath];
 	
