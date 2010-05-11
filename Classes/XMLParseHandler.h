@@ -9,6 +9,9 @@
 
 #import <Foundation/Foundation.h>
 
+// declare a typedef enum to figure out easily what class called the parser
+typedef enum { MIHomeVC = 0, MIShipmentVC, MILoginVC } caller;
+
 @class Shipment;
 
 @protocol XMLParseHandlerDelegate;
@@ -23,9 +26,12 @@
 {
 	id <XMLParseHandlerDelegate> delegate;
 	
+	// what class called the parser, so we know what elements to parse
+	NSInteger		callingClass;
+	
 	// stuff used during parsing
 	
-	Shipment		*currentObject;
+	id				currentObject;
 	NSMutableArray	*objectList;
 	NSMutableString *currentParsedCharacterData;
 	NSUInteger		parsedObjectCounter;
@@ -34,7 +40,9 @@
 
 @property (nonatomic, assign) id <XMLParseHandlerDelegate> delegate;
 
-@property (nonatomic, retain) Shipment *currentObject;
+@property NSInteger callingClass;
+
+@property (nonatomic, retain) id currentObject;
 @property (nonatomic, retain) NSMutableArray *objectList;
 @property (nonatomic, retain) NSMutableString *currentParsedCharacterData;
 

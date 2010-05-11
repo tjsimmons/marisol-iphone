@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "ConnectionHandler.h"
-#import "HomeXMLParseHandler.h"
+#import "XMLParseHandler.h"
 
 
-@interface HomeViewController : UIViewController <ConnectionHandlerDelegate, HomeXMLParseHandlerDelegate> {
+@interface HomeViewController : UIViewController <ConnectionHandlerDelegate, XMLParseHandlerDelegate> {
 	BOOL pastInitialLogin;
 	NSMutableArray *cells;
 }

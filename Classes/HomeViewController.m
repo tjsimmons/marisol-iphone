@@ -19,6 +19,8 @@
 
 #define kAppDelegate		[[UIApplication sharedApplication] delegate]
 
+#define MIHomeVC	0
+
 
 @implementation HomeViewController
 
@@ -155,7 +157,9 @@
 #pragma mark -
 #pragma mark Connection Handler Delegate Method
 -(void) connectionFinishedWithFilePath: (NSString *) filePath {
-	HomeXMLParseHandler *handler = [[HomeXMLParseHandler alloc] initWithDelegate: self];
+	XMLParseHandler *handler = [[XMLParseHandler alloc] initWithDelegate: self];
+	
+	[handler setCallingClass: MIHomeVC];
 	
 	[handler startXMLParseWithFile: filePath];
 	
