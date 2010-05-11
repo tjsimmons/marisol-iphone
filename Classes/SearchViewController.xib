@@ -228,7 +228,7 @@
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<string>TestSearchViewController</string>
+					<string>SearchViewController</string>
 					<string>UIResponder</string>
 					<string>{{-1350, 190}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -257,7 +257,7 @@
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<object class="IBPartialClassDescription">
-					<string key="className">TestSearchViewController</string>
+					<string key="className">SearchViewController</string>
 					<string key="superclassName">UITableViewController</string>
 					<object class="NSMutableDictionary" key="outlets">
 						<string key="NS.key.0">MISearchBar</string>
@@ -265,7 +265,7 @@
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Classes/TestSearchViewController.h</string>
+						<string key="minorKey">Classes/SearchViewController.h</string>
 					</object>
 				</object>
 			</object>
