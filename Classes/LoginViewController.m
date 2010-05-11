@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "Reachability.h"
 #import "Customer.h"
+#import "ChooserViewController.h"
 
 #define kUsernameKey	@"username"
 #define kCustomerKey	@"customer"
@@ -93,60 +94,6 @@
 	[handler release];
 }
 
--(void) loginFinished {
-	kApplication.networkActivityIndicatorVisible = NO;
-	
-	NSString *initialData = [NSString stringWithContentsOfFile: tempFilePath 
-													  encoding: NSUTF8StringEncoding error: nil];
-	
-	NSCharacterSet *trimSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
-	
-	NSString *loginData = [initialData stringByTrimmingCharactersInSet: trimSet];
-	
-	if ( [loginData isEqualToString: @"0"] ) {
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Error"
-														message: @"Incorrect login"
-													   delegate: nil
-											  cancelButtonTitle: @"Okay" otherButtonTitles: nil];
-		[alert show];
-		[alert release];
-		[passwordField becomeFirstResponder];
-		
-		[connection cancel];
-		self.connection = nil;
-		
-		// revert activity indicator and login button
-		self.activityIndicator.hidden = YES;
-		self.loginButton.hidden = NO;
-	} else {
-		[usernameField resignFirstResponder];
-		[passwordField resignFirstResponder];
-		
-		// figure out customer name, iSTAT and exSTAT access
-		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-		NSScanner *scanner = [[NSScanner alloc] initWithString: loginData];
-		NSString *customer = nil;
-		NSString *products = nil;
-		
-		// scan customer into customer string
-		[scanner scanUpToString: @"?" intoString: &customer];
-		
-		// ignore the ? and scan past
-		[scanner scanString: @"?" intoString: NULL];
-		
-		// scan the product string
-		[scanner scanUpToString: @"!" intoString: &products];
-		
-		// set user defaults to access later
-		[defaults setObject: customer forKey: kCustomerKey];
-		[defaults setObject: products forKey: kProductsKey];
-		
-		[scanner release];
-		
-		[self dismissModalViewControllerAnimated: YES];
-	}
-}
-
 #pragma mark -
 #pragma mark Connection Handler Delegate Methods
 -(void) connectionFinishedWithFilePath: (NSString *) filePath {
@@ -165,48 +112,31 @@
 	if ( [array count] == 1 ) {
 		Customer *customer = (Customer *) [array objectAtIndex: 0];
 		
-		[kUserDefaults setObject: customer.customerName forKey: kCustomerKey];
-		[kUserDefaults setObject: customer.iStat forKey: kIstatKey];
-		[kUserDefaults setObject: customer.exStat forKey: kExstatKey];
+		if ( [[customer customerName] isEqualToString: @"nologin"] ) {
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Error"
+															message: @"Incorrect login"
+														   delegate: nil
+												  cancelButtonTitle: @"Okay" otherButtonTitles: nil];
+			[alert show];
+			[alert release];
+			
+			[passwordField becomeFirstResponder];
+		} else {
+			[kUserDefaults setObject: customer.customerName forKey: kCustomerKey];
+			[kUserDefaults setObject: customer.iStat forKey: kIstatKey];
+			[kUserDefaults setObject: customer.exStat forKey: kExstatKey];
+			
+			[self dismissModalViewControllerAnimated: YES];
+		}
+	} else {
+		ChooserViewController *chooserVC = [[ChooserViewController alloc] initWithNibName: @"ChooserViewController" bundle: nil];
+		
+		[self presentModalViewController: chooserVC animated: YES];
+		
+		[chooserVC setCustomerList: array];
+		
+		[chooserVC release];
 	}
-
-	[self dismissModalViewControllerAnimated: YES];
-}
-
-#pragma mark -
-#pragma mark NSURLConnection Delegate Methods
--(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-	[theData setLength: 0];
-};
-
--(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-	[theData appendData: data];
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-	tempFilePath = [NSTemporaryDirectory() stringByAppendingPathComponent: @"temp.txt"];
-	
-	[theData writeToFile: tempFilePath atomically: YES];
-	
-	[self loginFinished];
-	
-	[self.connection cancel];
-	[self.connection release];
-	[theData release];
-}
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-	NSLog(@"%@", error);
-	
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Error"
-													message: @"There was an error. Please try again."
-												   delegate: nil cancelButtonTitle: @"Okay" otherButtonTitles: nil];
-	[alert show];
-	[alert release];
-	
-	self.activityIndicator.hidden = YES;
-	self.loginButton.hidden = NO;
-	kApplication.networkActivityIndicatorVisible = NO;
 }
 
 #pragma mark -
