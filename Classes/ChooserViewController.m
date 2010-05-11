@@ -9,6 +9,13 @@
 #import "ChooserViewController.h"
 #import "Customer.h"
 
+#define kCustomerKey	@"customer"
+#define kIstatKey		@"istat"
+#define kExstatKey		@"exstat"
+#define kLoggedInKey	@"loggedIn"
+
+#define kUserDefaults	[NSUserDefaults standardUserDefaults]
+
 
 @implementation ChooserViewController
 
@@ -21,44 +28,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
+	self.view.frame = CGRectMake(0, 0, 320, 480);
+	
 	self.MItableView.delegate = self;
-	self.MItableView.frame = CGRectMake(0, 0, 320, 460);
-
-    // Uncomment the following line to preserve selection between presentations.
-    //self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-
-/*
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-*/
-/*
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-*/
-/*
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-}
-*/
-/*
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-}
-*/
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
-
 
 #pragma mark -
 #pragma mark Table view data source
@@ -93,60 +66,43 @@
     return cell;
 }
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	return @"Choose an active customer";
 }
-*/
-
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 
 #pragma mark -
 #pragma mark Table view delegate
+-(IBAction) cancel {
+	[self dismissModalViewControllerAnimated: YES];
+	NSLog(@"istat %i", [kUserDefaults boolForKey: kIstatKey]);
+	NSLog(@"customer %@", [kUserDefaults objectForKey: kCustomerKey]);
+}
+
+-(IBAction) chooseCustomer {
+	if ( self.lastCheckedCell ) {
+		Customer *customer = (Customer *) [customerList objectAtIndex: self.lastCheckedCell.row];
+		
+		[kUserDefaults setObject: customer.customerName forKey: kCustomerKey];
+		[kUserDefaults setObject: customer.iStat forKey: kIstatKey];
+		[kUserDefaults setObject: customer.exStat forKey: kExstatKey];
+		[kUserDefaults setBool: YES forKey: kLoggedInKey];
+		
+		[kUserDefaults setObject: customer.customerName forKey: kCustomerKey];
+		[kUserDefaults setObject: customer.iStat forKey: kIstatKey];
+		[kUserDefaults setObject: customer.exStat forKey: kExstatKey];
+		[kUserDefaults setBool: YES forKey: kLoggedInKey];
+		
+		[self dismissModalViewControllerAnimated: YES];
+	} else {
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Alert"
+														message: @"Please choose a customer or press cancel." delegate: nil cancelButtonTitle: @"Okay" 
+											  otherButtonTitles: nil];
+		[alert show];
+		[alert release];
+	}
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-	/*
-	 <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-	 [self.navigationController pushViewController:detailViewController animated:YES];
-	 [detailViewController release];
-	 */
-	
 	UITableViewCell *chosenCell = [self.MItableView cellForRowAtIndexPath: indexPath];
 	
 	if ( self.lastCheckedCell ) {
@@ -160,7 +116,6 @@
 	
 	[self.MItableView deselectRowAtIndexPath: indexPath animated: YES];
 }
-
 
 #pragma mark -
 #pragma mark Memory management

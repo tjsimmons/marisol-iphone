@@ -40,6 +40,7 @@
 -(IBAction) loginButtonPressed;
 
 -(void) initiateLogin;
+-(void) isLoggedIn;
 
 // connection handler delegate
 -(void) connectionFinishedWithFilePath: (NSString *) filePath;

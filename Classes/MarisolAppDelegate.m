@@ -10,6 +10,13 @@
 #import "LoginViewController.h"
 #import "HomeViewController.h"
 
+#define kCustomerKey	@"customer"
+#define kIstatKey		@"istat"
+#define kExstatKey		@"exstat"
+#define kLoggedInKey	@"loggedIn"
+
+#define kUserDefaults	[NSUserDefaults standardUserDefaults]
+
 @implementation MarisolAppDelegate
 
 @synthesize window;
@@ -48,6 +55,13 @@
     [window makeKeyAndVisible];
 	
 	return YES;
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application {
+	[kUserDefaults setObject: nil forKey: kCustomerKey];
+	[kUserDefaults setObject: nil forKey: kIstatKey];
+	[kUserDefaults setObject: nil forKey: kExstatKey];
+	[kUserDefaults setBool: NO forKey: kLoggedInKey];
 }
 
 

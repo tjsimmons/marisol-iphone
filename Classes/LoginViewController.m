@@ -13,9 +13,9 @@
 
 #define kUsernameKey	@"username"
 #define kCustomerKey	@"customer"
-#define kProductsKey	@"products"
 #define kIstatKey		@"istat"
 #define kExstatKey		@"exstat"
+#define kLoggedInKey	@"loggedIn"
 
 #define kApplication	[UIApplication sharedApplication]
 #define kUserDefaults	[NSUserDefaults standardUserDefaults]
@@ -94,6 +94,10 @@
 	[handler release];
 }
 
+-(void) isLoggedIn {
+	[self dismissModalViewControllerAnimated: YES];
+}
+
 #pragma mark -
 #pragma mark Connection Handler Delegate Methods
 -(void) connectionFinishedWithFilePath: (NSString *) filePath {
@@ -121,10 +125,14 @@
 			[alert release];
 			
 			[passwordField becomeFirstResponder];
+			
+			self.loginButton.hidden = NO;
+			self.activityIndicator.hidden = YES;
 		} else {
 			[kUserDefaults setObject: customer.customerName forKey: kCustomerKey];
 			[kUserDefaults setObject: customer.iStat forKey: kIstatKey];
 			[kUserDefaults setObject: customer.exStat forKey: kExstatKey];
+			[kUserDefaults setBool: YES forKey: kLoggedInKey];
 			
 			[self dismissModalViewControllerAnimated: YES];
 		}
@@ -166,6 +174,21 @@
 	self.passwordField = nil;
 	self.activityIndicator = nil;
 	self.loginButton = nil;
+}
+
+-(void) viewWillAppear:(BOOL)animated {
+	[super viewWillAppear: animated];
+
+	self.loginButton.hidden = NO;
+	self.activityIndicator.hidden = YES;
+}
+
+-(void) viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+	
+	if ( [kUserDefaults boolForKey: kLoggedInKey] == YES ) {
+		[self isLoggedIn];
+	}
 }
 
 
