@@ -13,8 +13,11 @@
 #import "HomeCellViewController.h"
 #import "HomeCellModel.h"
 
+#define kCustomerKey		@"customer"
 #define kProductsKey		@"products"
 #define kNumCells			4
+
+#define kAppDelegate		[[UIApplication sharedApplication] delegate]
 
 
 @implementation HomeViewController
@@ -72,7 +75,6 @@
 	// set up the search tab
 	//SearchViewController *searchController = [[SearchViewController alloc] initWithNibName: @"SearchViewController" bundle: nil];
 	RootSearchController *searchController = [[RootSearchController alloc] initWithNibName: @"RootSearchController" bundle: nil];
-	NSString *viewTitle = [[NSString alloc] initWithString: @"Search"];
 	UITabBarItem *searchTabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem: UITabBarSystemItemSearch tag: 3];
 	
 	//searchController.title = viewTitle;
@@ -82,9 +84,8 @@
 	[viewControllers addObject: searchController];
 	[searchController release];
 	[searchTabBarItem release];
-	[viewTitle release];
 	
-	[[[UIApplication sharedApplication] delegate] setTabBarControllers: viewControllers];
+	[kAppDelegate setTabBarControllers: viewControllers];
 	
 	[viewControllers release];
 	
@@ -105,7 +106,7 @@
 	NSString *path = [[NSString alloc] initWithString: @"celldata.xml"];
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	NSString *url = [[NSString alloc] initWithFormat: @"https://www.marisolintl.com/iphone/homexml.asp?customer=%@", 
-					 [defaults objectForKey: @"customer"]];
+					 [defaults objectForKey: kCustomerKey]];
 	
 	handler.xmlPathComponent = path;
 	

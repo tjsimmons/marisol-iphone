@@ -13,6 +13,8 @@
 #define kCustomerKey	@"customer"
 #define kProductsKey	@"products"
 
+#define kApplication	[UIApplication sharedApplication]
+
 
 @implementation LoginViewController
 
@@ -63,7 +65,7 @@
 			[self initiateLogin];
 		} else {
 			UIAlertView *alert =  [[UIAlertView alloc] initWithTitle: @"Connection Error"
-															 message: @"No internet connection" delegate: nil cancelButtonTitle: @"Done"
+															 message: @"Unable to connect" delegate: nil cancelButtonTitle: @"Done"
 												   otherButtonTitles: nil];
 			
 			[alert show];
@@ -83,7 +85,7 @@
 													 delegate: self];
 		
 		if ( connection ) {
-			[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+			kApplication.networkActivityIndicatorVisible = YES;
 			theData = [[NSMutableData data] retain];
 		} else {
 			UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Unable to connect"
@@ -100,7 +102,7 @@
 }
 
 -(void) loginFinished {
-	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+	kApplication.networkActivityIndicatorVisible = NO;
 	
 	NSString *initialData = [NSString stringWithContentsOfFile: tempFilePath 
 													  encoding: NSUTF8StringEncoding error: nil];
@@ -186,7 +188,7 @@
 	
 	self.activityIndicator.hidden = YES;
 	self.loginButton.hidden = NO;
-	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+	kApplication.networkActivityIndicatorVisible = NO;
 }
 
 #pragma mark -
