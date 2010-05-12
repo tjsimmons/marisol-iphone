@@ -34,6 +34,7 @@
 #pragma mark -
 #pragma mark Custom Methods
 -(void) setTabBarViewControllers {
+	NSLog(@"set tab controls");
 	NSMutableArray *viewControllers = [[NSMutableArray alloc] initWithObjects: self, nil];
 	
 	if ( [[kUserDefaults objectForKey: kIstatKey] isEqualToString: @"yes"] ) {
@@ -72,10 +73,12 @@
 	[viewControllers addObject: searchController];
 	[searchController release];
 	[searchTabBarItem release];
-	
+
 	[kAppDelegate setTabBarControllers: viewControllers];
-	
+
 	[viewControllers release];
+	
+	[self startConnectionForCellData];
 }
 
 -(void) setCellValuesWithArray: (NSArray *) array {
@@ -87,20 +90,26 @@
 	}
 }
 
--(void) startConnectionForCellData {	
-	ConnectionHandler *handler = [[ConnectionHandler alloc] initWithDelegate: self];
-	NSString *path = [[NSString alloc] initWithString: @"celldata.xml"];
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	NSString *url = [[NSString alloc] initWithFormat: @"https://www.marisolintl.com/iphone/homexml.asp?customer=%@", 
-					 [defaults objectForKey: kCustomerKey]];
+-(void) startConnectionForCellData {
+	static int loadCount;
 	
-	handler.xmlPathComponent = path;
-	
-	[handler beginURLConnection: url];
-	
-	[handler release];
-	[path release];
-	[url release];
+	if ( loadCount == 0 ) {
+		ConnectionHandler *handler = [[ConnectionHandler alloc] initWithDelegate: self];
+		NSString *path = [[NSString alloc] initWithString: @"celldata.xml"];
+		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+		NSString *url = [[NSString alloc] initWithFormat: @"https://www.marisolintl.com/iphone/homexml.asp?customer=%@", 
+						 [defaults objectForKey: kCustomerKey]];
+		
+		handler.xmlPathComponent = path;
+		
+		[handler beginURLConnection: url];
+		
+		[handler release];
+		[path release];
+		[url release];
+		
+		loadCount++;
+	}
 }
 
 -(void) addCellsToHomeScreen {
@@ -138,6 +147,7 @@
 	}
 	
 	cellsLoaded = YES;
+	[self setTabBarViewControllers];
 }
 
 #pragma mark -
@@ -162,7 +172,8 @@
 #pragma mark View lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
+	NSLog(@"view did load");
+	cellsLoaded = NO;
 	// clears logged in status upon initial app launch, or every time this view loads
 	//[kUserDefaults setBool: NO forKey: kLoggedInKey];
 	
@@ -174,32 +185,31 @@
 		
 		[loginController release];
 	}
-	
-    // Uncomment the following line to preserve selection between presentations. OS 3.2 and later?
-    //self.clearsSelectionOnViewWillAppear = NO;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-	
+
 	if ( [kUserDefaults boolForKey: kLoggedInKey] && cellsLoaded ) {
-		[self startConnectionForCellData];
+		//[self startConnectionForCellData];
 	}
 }
 
 -(void) viewWillAppear:(BOOL)animated {
+	NSLog(@"view will app");
 	[super viewWillAppear:animated];
 	
 	if ( [kUserDefaults boolForKey: kLoggedInKey] && !cellsLoaded ) {
+		NSLog(@"logged in, cells not loaded");
 		[self addCellsToHomeScreen];
-		[self setTabBarViewControllers];
-	}
+	} 
 }
 
 #pragma mark -
 #pragma mark Memory management
 
 - (void)didReceiveMemoryWarning {
+	NSLog(@"mem warn");
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
     
@@ -207,6 +217,7 @@
 }
 
 - (void)viewDidUnload {
+	NSLog(@"view did unload");
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
 	self.cells = nil;
@@ -215,6 +226,7 @@
 
 - (void)dealloc {
 	self.cells = nil;
+	
     [super dealloc];
 }
 

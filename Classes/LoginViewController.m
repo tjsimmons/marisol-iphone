@@ -113,7 +113,7 @@
 		Customer *customer = (Customer *) [array objectAtIndex: 0];
 		
 		if ( [[customer customerName] isEqualToString: @"nologin"] ) {
-			UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Error"
+			/*UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Error"
 															message: @"Incorrect login"
 														   delegate: nil
 												  cancelButtonTitle: @"Okay" otherButtonTitles: nil];
@@ -121,7 +121,7 @@
 			[alert release];
 			
 			[passwordField becomeFirstResponder];
-			
+			*/
 			self.loginButton.hidden = NO;
 			self.activityIndicator.hidden = YES;
 		} else {
