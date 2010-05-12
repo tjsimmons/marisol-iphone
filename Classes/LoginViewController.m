@@ -10,6 +10,7 @@
 #import "Reachability.h"
 #import "Customer.h"
 #import "ChooserViewController.h"
+#import "HomeViewController.h"
 
 #define kUsernameKey	@"username"
 #define kCustomerKey	@"customer"
@@ -30,6 +31,7 @@
 @synthesize loginButton;
 @synthesize activityIndicator;
 @synthesize connection;
+//@synthesize homeController;
 
 #pragma mark -
 #pragma mark Custom Methods
@@ -92,10 +94,6 @@
 	
 	[url release];
 	[handler release];
-}
-
--(void) isLoggedIn {
-	[self dismissModalViewControllerAnimated: YES];
 }
 
 #pragma mark -
@@ -174,6 +172,7 @@
 	self.passwordField = nil;
 	self.activityIndicator = nil;
 	self.loginButton = nil;
+	//self.homeController = nil;
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -186,7 +185,7 @@
 -(void) viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
 	
-	if ( [kUserDefaults boolForKey: kLoggedInKey] == YES ) {
+	if ( [kUserDefaults boolForKey: kLoggedInKey] ) {
 		[self dismissModalViewControllerAnimated: YES];
 	}
 }
@@ -197,6 +196,7 @@
 	self.passwordField = nil;
 	self.activityIndicator = nil;
 	self.loginButton = nil;
+	//self.homeController = nil;
 	
 	[networkAvailability release];
     [super dealloc];

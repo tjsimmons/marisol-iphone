@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.view.frame = CGRectMake(0, 0, 320, 480);
+	//self.view.frame = CGRectMake(0, 0, 320, 480);
 	
 	self.MItableView.delegate = self;
 }
@@ -67,7 +67,9 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	return @"Choose an active customer";
+	NSString *sectionTitle = [[[NSString alloc] initWithString: @"Choose an active customer"] autorelease];
+	
+	return sectionTitle;
 }
 
 #pragma mark -
@@ -81,11 +83,6 @@
 -(IBAction) setCustomer {
 	if ( self.lastCheckedCell ) {
 		Customer *customer = (Customer *) [customerList objectAtIndex: self.lastCheckedCell.row];
-		
-		[kUserDefaults setObject: customer.customerName forKey: kCustomerKey];
-		[kUserDefaults setObject: customer.iStat forKey: kIstatKey];
-		[kUserDefaults setObject: customer.exStat forKey: kExstatKey];
-		[kUserDefaults setBool: YES forKey: kLoggedInKey];
 		
 		[kUserDefaults setObject: customer.customerName forKey: kCustomerKey];
 		[kUserDefaults setObject: customer.iStat forKey: kIstatKey];

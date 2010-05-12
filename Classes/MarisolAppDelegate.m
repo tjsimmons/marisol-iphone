@@ -7,7 +7,7 @@
 //
 
 #import "MarisolAppDelegate.h"
-#import "LoginViewController.h"
+//#import "LoginViewController.h"
 #import "HomeViewController.h"
 
 #define kCustomerKey	@"customer"
@@ -27,7 +27,7 @@
 
     // Override point for customization after application launch
 	UITabBarController *tabController = [[UITabBarController alloc] init];
-	LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName: @"LoginViewController" bundle: nil];
+	//LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName: @"LoginViewController" bundle: nil];
 	HomeViewController *homeController = [[HomeViewController alloc] initWithNibName: @"HomeViewController" bundle: nil];
 	NSString *homeTitle = [[NSString alloc] initWithString: @"Home"];
 	UITabBarItem *homeTabBarItem = [[UITabBarItem alloc] initWithTitle: homeTitle image: nil tag: 0];
@@ -48,9 +48,13 @@
 	
 	[tabController release];
 	
+	//loginViewController.homeController = [[self.tabBarController viewControllers] objectAtIndex: 0];
+	
 	[window addSubview: tabBarController.view];
-	[tabBarController presentModalViewController: loginViewController animated: YES];
-	[loginViewController release];
+	
+	//[tabBarController presentModalViewController: loginViewController animated: YES];
+	
+	//[loginViewController release];
 	
     [window makeKeyAndVisible];
 	
