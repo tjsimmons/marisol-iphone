@@ -12,6 +12,7 @@
 #import "RootSearchController.h"
 #import "HomeCellViewController.h"
 #import "HomeCellModel.h"
+#import "LoginViewController.h"
 
 #define kCustomerKey		@"customer"
 #define kLoggedInKey		@"loggedIn"
@@ -33,9 +34,6 @@
 #pragma mark -
 #pragma mark Custom Methods
 -(void) setTabBarViewControllers {
-	pastInitialLogin = YES;
-	
-	//NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	NSMutableArray *viewControllers = [[NSMutableArray alloc] initWithObjects: self, nil];
 	
 	if ( [[kUserDefaults objectForKey: kIstatKey] isEqualToString: @"yes"] ) {
@@ -83,18 +81,16 @@
 	
 	[viewControllers release];
 	
-	[self startConnectionForCellData];
+	//[self startConnectionForCellData];
 }
 
 -(void) setCellValuesWithArray: (NSArray *) array {
 	for ( int i = 0; i < [array count]; i++ ) {
-		HomeCellViewController *cell = (HomeCellViewController *) [cells objectAtIndex: i];
+		HomeCellViewController *cell = (HomeCellViewController *) [self.cells objectAtIndex: i];
 		HomeCellModel *cellModel = (HomeCellModel *) [array objectAtIndex: i];
 		
 		[cell setTitleText: cellModel.cellTitle andValueText: cellModel.cellValue];
 	}
-	
-	cellsLoaded = YES;
 }
 
 -(void) startConnectionForCellData {	
@@ -103,11 +99,11 @@
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	NSString *url = [[NSString alloc] initWithFormat: @"https://www.marisolintl.com/iphone/homexml.asp?customer=%@", 
 					 [defaults objectForKey: kCustomerKey]];
-
+	
 	handler.xmlPathComponent = path;
-
+	
 	[handler beginURLConnection: url];
-
+	
 	[handler release];
 	[path release];
 	[url release];
@@ -146,6 +142,8 @@
 		
 		[cell release];
 	}
+	
+	cellsLoaded = YES;
 }
 
 #pragma mark -
@@ -168,12 +166,20 @@
 
 #pragma mark -
 #pragma mark View lifecycle
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
 	// clears logged in status upon initial app launch, or every time this view loads
-	[kUserDefaults setBool: NO forKey: kLoggedInKey];
+	//[kUserDefaults setBool: NO forKey: kLoggedInKey];
+	
+	if ( ![kUserDefaults boolForKey: kLoggedInKey] ) {
+		
+		LoginViewController *loginController = [[LoginViewController alloc] initWithNibName: @"LoginViewController" bundle: nil];
+		
+		[self presentModalViewController: loginController animated: YES];
+		
+		[loginController release];
+	}
 	
     // Uncomment the following line to preserve selection between presentations. OS 3.2 and later?
     //self.clearsSelectionOnViewWillAppear = NO;
@@ -182,8 +188,8 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 	
-	if ( [kUserDefaults boolForKey: kLoggedInKey] && !cellsLoaded ) {
-		[self setTabBarViewControllers];
+	if ( [kUserDefaults boolForKey: kLoggedInKey] && cellsLoaded ) {
+		[self startConnectionForCellData];
 	}
 }
 
@@ -192,6 +198,9 @@
 	
 	if ( [kUserDefaults boolForKey: kLoggedInKey] && !cellsLoaded ) {
 		[self addCellsToHomeScreen];
+		[self setTabBarViewControllers];
+		//[self setTabBarViewControllers];
+		//[self startConnectionForCellData];
 	}
 }
 

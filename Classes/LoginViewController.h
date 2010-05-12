@@ -11,6 +11,7 @@
 #import "XMLParseHandler.h"
 
 @class Reachability;
+@class HomeViewController;
 
 @interface LoginViewController : UIViewController <ConnectionHandlerDelegate, XMLParseHandlerDelegate> {
 	// IB stuff
@@ -26,6 +27,9 @@
 	
 	// check for network availability
 	Reachability *networkAvailability;
+	
+	// hold a pointer to our home controller to call methods on it
+	//HomeViewController *homeController;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField *usernameField;
@@ -34,13 +38,14 @@
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, retain) NSURLConnection *connection;
 
+@property (nonatomic, assign) HomeViewController *homeController;
+
 -(IBAction) usernameFieldDoneEditing;
 -(IBAction) passwordFieldDoneEditing;
 -(IBAction) backgroundTap;
 -(IBAction) loginButtonPressed;
 
 -(void) initiateLogin;
--(void) isLoggedIn;
 
 // connection handler delegate
 -(void) connectionFinishedWithFilePath: (NSString *) filePath;
