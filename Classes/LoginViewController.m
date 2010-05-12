@@ -10,7 +10,6 @@
 #import "Reachability.h"
 #import "Customer.h"
 #import "ChooserViewController.h"
-#import "HomeViewController.h"
 
 #define kUsernameKey	@"username"
 #define kCustomerKey	@"customer"
@@ -31,7 +30,6 @@
 @synthesize loginButton;
 @synthesize activityIndicator;
 @synthesize connection;
-//@synthesize homeController;
 
 #pragma mark -
 #pragma mark Custom Methods
@@ -172,7 +170,6 @@
 	self.passwordField = nil;
 	self.activityIndicator = nil;
 	self.loginButton = nil;
-	//self.homeController = nil;
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -196,7 +193,6 @@
 	self.passwordField = nil;
 	self.activityIndicator = nil;
 	self.loginButton = nil;
-	//self.homeController = nil;
 	
 	[networkAvailability release];
     [super dealloc];
