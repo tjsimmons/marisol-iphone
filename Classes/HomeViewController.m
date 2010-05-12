@@ -24,7 +24,7 @@
 #define kAppDelegate		[[UIApplication sharedApplication] delegate]
 #define kUserDefaults		[NSUserDefaults standardUserDefaults]
 
-#define MIHomeVC	0
+#define MIHomeVC			0
 
 
 @implementation HomeViewController
@@ -41,7 +41,6 @@
 		NSString *viewTitle = [[NSString alloc] initWithString: @"iSTAT"];
 		UITabBarItem *iTabBarItem = [[UITabBarItem alloc] initWithTitle: viewTitle image: nil tag: 1];
 		
-		//iStatController.title = viewTitle;
 		iStatController.tabBarItem = iTabBarItem;
 		
 		[viewControllers addObject: iStatController];
@@ -65,11 +64,8 @@
 	}
 	
 	// set up the search tab
-	//SearchViewController *searchController = [[SearchViewController alloc] initWithNibName: @"SearchViewController" bundle: nil];
 	RootSearchController *searchController = [[RootSearchController alloc] initWithNibName: @"RootSearchController" bundle: nil];
 	UITabBarItem *searchTabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem: UITabBarSystemItemSearch tag: 3];
-	
-	//searchController.title = viewTitle;
 	
 	searchController.tabBarItem = searchTabBarItem;
 	
@@ -80,8 +76,6 @@
 	[kAppDelegate setTabBarControllers: viewControllers];
 	
 	[viewControllers release];
-	
-	//[self startConnectionForCellData];
 }
 
 -(void) setCellValuesWithArray: (NSArray *) array {
