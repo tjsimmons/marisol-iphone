@@ -93,6 +93,8 @@
 		
 		[cell setTitleText: cellModel.cellTitle andValueText: cellModel.cellValue];
 	}
+	
+	cellsLoaded = YES;
 }
 
 -(void) startConnectionForCellData {	
@@ -134,13 +136,13 @@
 				break;
 		}
 		
-		[self.view insertSubview: cell.view atIndex: 1];
-		
 		if ( !self.cells ) {
 			self.cells = [[NSMutableArray alloc] init];
 		}
 		
 		[self.cells addObject: cell];
+		
+		[self.view insertSubview: [[self.cells objectAtIndex: i] view] atIndex: 1];
 		
 		[cell release];
 	}
@@ -170,6 +172,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
+	// clears logged in status upon initial app launch, or every time this view loads
+	[kUserDefaults setBool: NO forKey: kLoggedInKey];
+	
     // Uncomment the following line to preserve selection between presentations. OS 3.2 and later?
     //self.clearsSelectionOnViewWillAppear = NO;
 	
@@ -179,9 +184,13 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 	
-	if ( [kUserDefaults boolForKey: kLoggedInKey] == YES ) {
+	if ( [kUserDefaults boolForKey: kLoggedInKey] && !cellsLoaded ) {
 		[self setTabBarViewControllers];
 	}
+}
+
+-(void) viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
 }
 
 #pragma mark -

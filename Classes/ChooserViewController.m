@@ -51,7 +51,7 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"ChooserCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -78,7 +78,7 @@
 	NSLog(@"customer %@", [kUserDefaults objectForKey: kCustomerKey]);
 }
 
--(IBAction) chooseCustomer {
+-(IBAction) setCustomer {
 	if ( self.lastCheckedCell ) {
 		Customer *customer = (Customer *) [customerList objectAtIndex: self.lastCheckedCell.row];
 		
@@ -125,6 +125,7 @@
     [super didReceiveMemoryWarning];
     
     // Relinquish ownership any cached data, images, etc that aren't in use.
+
 }
 
 - (void)viewDidUnload {

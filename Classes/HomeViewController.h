@@ -13,6 +13,7 @@
 
 @interface HomeViewController : UIViewController <ConnectionHandlerDelegate, XMLParseHandlerDelegate> {
 	BOOL pastInitialLogin;
+	BOOL cellsLoaded;
 	NSMutableArray *cells;
 }
 

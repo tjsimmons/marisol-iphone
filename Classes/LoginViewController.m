@@ -187,7 +187,7 @@
 	[super viewDidAppear:animated];
 	
 	if ( [kUserDefaults boolForKey: kLoggedInKey] == YES ) {
-		[self isLoggedIn];
+		[self dismissModalViewControllerAnimated: YES];
 	}
 }
 
