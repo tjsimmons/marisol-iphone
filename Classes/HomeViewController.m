@@ -177,8 +177,6 @@
 	
     // Uncomment the following line to preserve selection between presentations. OS 3.2 and later?
     //self.clearsSelectionOnViewWillAppear = NO;
-	
-	[self addCellsToHomeScreen];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -191,6 +189,10 @@
 
 -(void) viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
+	
+	if ( [kUserDefaults boolForKey: kLoggedInKey] && !cellsLoaded ) {
+		[self addCellsToHomeScreen];
+	}
 }
 
 #pragma mark -
