@@ -39,29 +39,29 @@
 	
 	if ( [[kUserDefaults objectForKey: kIstatKey] isEqualToString: @"yes"] ) {
 		iStatViewController *iStatController = [[iStatViewController alloc] init];
-		NSString *viewTitle = [[NSString alloc] initWithString: @"iSTAT"];
-		UITabBarItem *iTabBarItem = [[UITabBarItem alloc] initWithTitle: viewTitle image: nil tag: 1];
+		NSString *iTitle = [[NSString alloc] initWithString: @"iSTAT"];
+		UITabBarItem *iTabBarItem = [[UITabBarItem alloc] initWithTitle: iTitle image: nil tag: 1];
 		
 		iStatController.tabBarItem = iTabBarItem;
 		
 		[viewControllers addObject: iStatController];
 		[iStatController release];
 		[iTabBarItem release];
-		[viewTitle release];
+		[iTitle release];
 	}
 	
 	if ( [[kUserDefaults objectForKey: kExstatKey] isEqualToString: @"yes"] ) {
 		exStatViewController *exStatController = [[exStatViewController alloc] init];
-		NSString *viewTitle = [[NSString alloc] initWithString: @"exSTAT"];
-		UITabBarItem *exTabBarItem = [[UITabBarItem alloc] initWithTitle: viewTitle image: nil tag: 2];
+		NSString *exTitle = [[NSString alloc] initWithString: @"exSTAT"];
+		UITabBarItem *exTabBarItem = [[UITabBarItem alloc] initWithTitle: exTitle image: nil tag: 2];
 		
-		exStatController.title = viewTitle;
+		exStatController.title = exTitle;
 		exStatController.tabBarItem = exTabBarItem;
 		
 		[viewControllers addObject: exStatController];
 		[exStatController release];
 		[exTabBarItem release];
-		[viewTitle release];
+		[exTitle release];
 	}
 	
 	// set up the search tab
@@ -77,20 +77,22 @@
 	[kAppDelegate setTabBarControllers: viewControllers];
 
 	[viewControllers release];
-	
-	[self startConnectionForCellData];
+	NSLog(@"set tab controls end");
 }
 
 -(void) setCellValuesWithArray: (NSArray *) array {
+	NSLog(@"set cell start");
 	for ( int i = 0; i < [array count]; i++ ) {
 		HomeCellViewController *cell = (HomeCellViewController *) [self.cells objectAtIndex: i];
 		HomeCellModel *cellModel = (HomeCellModel *) [array objectAtIndex: i];
 		
 		[cell setTitleText: cellModel.cellTitle andValueText: cellModel.cellValue];
 	}
+	NSLog(@"set cell end");
 }
 
 -(void) startConnectionForCellData {
+	NSLog(@"start conn start");
 	static int loadCount;
 	
 	if ( loadCount == 0 ) {
@@ -110,9 +112,12 @@
 		
 		loadCount++;
 	}
+	
+	NSLog(@"start cell data conn finished, loadcount is %i", loadCount);
 }
 
 -(void) addCellsToHomeScreen {
+	NSLog(@"start add cells");
 	for ( int i = 0; i < kNumCells; i++ ) {
 		HomeCellViewController *cell = [[HomeCellViewController alloc] initWithNibName: @"HomeCellViewController" bundle: nil];
 		
@@ -147,12 +152,14 @@
 	}
 	
 	cellsLoaded = YES;
+	NSLog(@"end add cells");
 	[self setTabBarViewControllers];
 }
 
 #pragma mark -
 #pragma mark Connection Handler Delegate Method
 -(void) connectionFinishedWithFilePath: (NSString *) filePath {
+	NSLog(@"conn finished file start");
 	XMLParseHandler *handler = [[XMLParseHandler alloc] initWithDelegate: self];
 	
 	[handler setCallingClass: MIHomeVC];
@@ -160,12 +167,15 @@
 	[handler startXMLParseWithFile: filePath];
 	
 	[handler release];
+	NSLog(@"conn finished file end");
 }
 
 #pragma mark -
 #pragma mark Home XML Parse Handler Delegate Method
 -(void) xmlDidFinishParsingWithArray: (NSMutableArray *) array {
+	NSLog(@"xml finished start");
 	[self setCellValuesWithArray: array];
+	NSLog(@"xml finished end");
 }
 
 #pragma mark -
@@ -174,8 +184,6 @@
     [super viewDidLoad];
 	NSLog(@"view did load");
 	cellsLoaded = NO;
-	// clears logged in status upon initial app launch, or every time this view loads
-	//[kUserDefaults setBool: NO forKey: kLoggedInKey];
 	
 	if ( ![kUserDefaults boolForKey: kLoggedInKey] ) {
 		
@@ -191,7 +199,7 @@
     [super viewDidAppear:animated];
 
 	if ( [kUserDefaults boolForKey: kLoggedInKey] && cellsLoaded ) {
-		//[self startConnectionForCellData];
+		[self startConnectionForCellData];
 	}
 }
 
