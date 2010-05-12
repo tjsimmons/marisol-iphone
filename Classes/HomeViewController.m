@@ -199,8 +199,6 @@
 	if ( [kUserDefaults boolForKey: kLoggedInKey] && !cellsLoaded ) {
 		[self addCellsToHomeScreen];
 		[self setTabBarViewControllers];
-		//[self setTabBarViewControllers];
-		//[self startConnectionForCellData];
 	}
 }
 
