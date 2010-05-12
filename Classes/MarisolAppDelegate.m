@@ -77,7 +77,7 @@
 
 #pragma mark -
 #pragma mark Custom Methods
--(void) setTabBarControllers: (NSArray *) controllers {
+-(void) setTabBarControllers: (NSMutableArray *) controllers {
 	[self.tabBarController setViewControllers: controllers];
 }
 
