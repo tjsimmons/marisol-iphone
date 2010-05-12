@@ -20,6 +20,6 @@
 @property (nonatomic, retain) NSIndexPath *lastCheckedCell;
 
 -(IBAction) cancel;
--(IBAction) chooseCustomer;
+-(IBAction) setCustomer;
 
 @end
