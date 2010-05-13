@@ -34,7 +34,6 @@
 #pragma mark -
 #pragma mark Custom Methods
 -(void) setTabBarViewControllers {
-	NSLog(@"set tab controls");
 	NSMutableArray *viewControllers = [[NSMutableArray alloc] initWithObjects: self, nil];
 	
 	if ( [[kUserDefaults objectForKey: kIstatKey] isEqualToString: @"yes"] ) {
@@ -77,22 +76,18 @@
 	[kAppDelegate setTabBarControllers: viewControllers];
 
 	[viewControllers release];
-	NSLog(@"set tab controls end");
 }
 
 -(void) setCellValuesWithArray: (NSArray *) array {
-	NSLog(@"set cell start");
 	for ( int i = 0; i < [array count]; i++ ) {
 		HomeCellViewController *cell = (HomeCellViewController *) [self.cells objectAtIndex: i];
 		HomeCellModel *cellModel = (HomeCellModel *) [array objectAtIndex: i];
 		
 		[cell setTitleText: cellModel.cellTitle andValueText: cellModel.cellValue];
 	}
-	NSLog(@"set cell end");
 }
 
 -(void) startConnectionForCellData {
-	NSLog(@"start conn start");
 	static int loadCount;
 	
 	if ( loadCount == 0 ) {
@@ -112,12 +107,9 @@
 		
 		loadCount++;
 	}
-	
-	NSLog(@"start cell data conn finished, loadcount is %i", loadCount);
 }
 
 -(void) addCellsToHomeScreen {
-	NSLog(@"start add cells");
 	for ( int i = 0; i < kNumCells; i++ ) {
 		HomeCellViewController *cell = [[HomeCellViewController alloc] initWithNibName: @"HomeCellViewController" bundle: nil];
 		
@@ -152,14 +144,13 @@
 	}
 	
 	cellsLoaded = YES;
-	NSLog(@"end add cells");
+
 	[self setTabBarViewControllers];
 }
 
 #pragma mark -
 #pragma mark Connection Handler Delegate Method
 -(void) connectionFinishedWithFilePath: (NSString *) filePath {
-	NSLog(@"conn finished file start");
 	XMLParseHandler *handler = [[XMLParseHandler alloc] initWithDelegate: self];
 	
 	[handler setCallingClass: MIHomeVC];
@@ -167,22 +158,19 @@
 	[handler startXMLParseWithFile: filePath];
 	
 	[handler release];
-	NSLog(@"conn finished file end");
 }
 
 #pragma mark -
 #pragma mark Home XML Parse Handler Delegate Method
 -(void) xmlDidFinishParsingWithArray: (NSMutableArray *) array {
-	NSLog(@"xml finished start");
 	[self setCellValuesWithArray: array];
-	NSLog(@"xml finished end");
 }
 
 #pragma mark -
 #pragma mark View lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-	NSLog(@"view did load");
+
 	cellsLoaded = NO;
 	
 	if ( ![kUserDefaults boolForKey: kLoggedInKey] ) {
@@ -204,11 +192,9 @@
 }
 
 -(void) viewWillAppear:(BOOL)animated {
-	NSLog(@"view will app");
 	[super viewWillAppear:animated];
 	
 	if ( [kUserDefaults boolForKey: kLoggedInKey] && !cellsLoaded ) {
-		NSLog(@"logged in, cells not loaded");
 		[self addCellsToHomeScreen];
 	} 
 }
@@ -217,7 +203,6 @@
 #pragma mark Memory management
 
 - (void)didReceiveMemoryWarning {
-	NSLog(@"mem warn");
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
     
@@ -225,7 +210,6 @@
 }
 
 - (void)viewDidUnload {
-	NSLog(@"view did unload");
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
 	self.cells = nil;
