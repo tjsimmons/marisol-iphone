@@ -6,8 +6,10 @@
 //  Copyright 2010 T.J. Simmons. All rights reserved.
 //
 
-// declare a typedef enum to figure out easily what class called the parser
+// set a typedef to figure out what class called the parser
 typedef enum { MIHomeVC = 0, MIShipmentVC, MILoginVC } caller;
+
+// index of the action sheet button in search and stat controllers
 typedef enum { iStatButton = 0, exStatButton, cancelButton } actionButtonIndex;
 
 #define kUsernameKey		@"username"
