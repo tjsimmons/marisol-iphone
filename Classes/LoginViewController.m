@@ -75,10 +75,13 @@
 					 usernameField.text, passwordField.text];
 	ConnectionHandler *handler = [[ConnectionHandler alloc] initWithDelegate: self];
 	
-	handler.xmlPathComponent = @"login.xml";
+	NSString *component = [[NSString alloc] initWithString: @"login.xml"];
+	
+	handler.xmlPathComponent = component;
 	
 	[handler beginURLConnection: url];
 	
+	[component release];
 	[url release];
 	[handler release];
 }
@@ -102,7 +105,7 @@
 		Customer *customer = (Customer *) [array objectAtIndex: 0];
 		
 		if ( [[customer customerName] isEqualToString: @"nologin"] ) {
-			/*UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Error"
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Error"
 															message: @"Incorrect login"
 														   delegate: nil
 												  cancelButtonTitle: @"Okay" otherButtonTitles: nil];
@@ -110,9 +113,9 @@
 			[alert release];
 			
 			[passwordField becomeFirstResponder];
-			*/
+			
 			self.loginButton.hidden = NO;
-			self.activityIndicator.hidden = YES;
+			self.activityIndicator.hidden = YES;			
 		} else {
 			[kUserDefaults setObject: customer.customerName forKey: kCustomerKey];
 			[kUserDefaults setObject: customer.iStat forKey: kIstatKey];

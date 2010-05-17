@@ -24,11 +24,13 @@
 	self.title = @"Search";
 	
 	if ( [[kUserDefaults objectForKey: kIstatKey] isEqualToString: @"yes"] && [[kUserDefaults objectForKey: kExstatKey] isEqualToString: @"yes"] ) {
-		UIBarButtonItem *productButton = [[UIBarButtonItem alloc] initWithTitle: @"Change" style: UIBarButtonItemStyleBordered 
+		NSString *buttonTitle = [[NSString alloc] initWithString: @"Change"];
+		UIBarButtonItem *productButton = [[UIBarButtonItem alloc] initWithTitle: buttonTitle style: UIBarButtonItemStyleBordered 
 																		 target: self action: @selector(changeActiveProduct)];
 		
 		self.navigationItem.rightBarButtonItem = productButton;
 		
+		[buttonTitle release];
 		[productButton release];
 		
 		[self changeActiveProduct];
