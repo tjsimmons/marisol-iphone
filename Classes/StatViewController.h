@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TSGlobalDefines.h"
 
 @class WeekListViewController;
 

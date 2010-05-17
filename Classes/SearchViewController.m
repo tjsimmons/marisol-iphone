@@ -10,23 +10,6 @@
 #import "Shipment.h"
 #import "ShipmentDetailViewController.h"
 
-#define kCustomerKey	@"customer"
-#define kIstatKey		@"istat"
-#define kExstatKey		@"exstat"
-
-#define iSTAT			@"iSTAT"
-#define exSTAT			@"exSTAT"
-
-#define kIStatButtonIndex	0
-#define kExStatButtonIndex	1
-#define kCancelButtonIndex	2
-
-#define MIShipmentVC	1
-
-#define kAppDelegateTabBar	[[[[UIApplication sharedApplication] delegate] tabBarController] tabBar]
-#define kUserDefaults		[NSUserDefaults standardUserDefaults]
-
-
 @implementation SearchViewController
 
 
@@ -275,7 +258,7 @@
 #pragma mark UIActionSheet Delegate Methods
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
 	switch ( buttonIndex ) {
-		case kCancelButtonIndex:
+		case cancelButton:
 			if ( !self.activeStat ) {
 				self.MISearchBar.userInteractionEnabled = NO;
 				UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Alert"
@@ -285,12 +268,12 @@
 				[alert release];
 			}
 			break;
-		case kIStatButtonIndex:
+		case iStatButton:
 			self.activeStat = iSTAT;
 			self.MISearchBar.userInteractionEnabled = YES;
 			self.MISearchBar.placeholder = @"Search iSTAT";
 			break;
-		case kExStatButtonIndex:
+		case exStatButton:
 			self.activeStat = exSTAT;
 			self.MISearchBar.userInteractionEnabled = YES;
 			self.MISearchBar.placeholder = @"Search exSTAT";

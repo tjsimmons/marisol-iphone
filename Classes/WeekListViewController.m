@@ -9,9 +9,6 @@
 #import "WeekListViewController.h"
 #import "ShipmentListViewController.h"
 
-#define kIStat		@"iSTAT"
-#define kExStat		@"exSTAT"
-
 
 @implementation WeekListViewController
 
@@ -112,10 +109,10 @@
 	NSString *start = [[NSString alloc] initWithString: [cellTextDict objectForKey: @"Start"]];
 	NSString *end = [[NSString alloc] initWithString: [cellTextDict objectForKey: @"End"]];
 	
-	if ( [self.title isEqualToString: kIStat] ) {
-		shipmentListViewController.whichStat = kIStat;
+	if ( [self.title isEqualToString: iSTAT] ) {
+		shipmentListViewController.activeStat = iSTAT;
 	} else {
-		shipmentListViewController.whichStat = kExStat;
+		shipmentListViewController.activeStat = exSTAT;
 	}
 	
 	shipmentListViewController.title =  [NSString stringWithFormat: @"Week %i", row + 1];

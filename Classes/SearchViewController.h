@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TSGlobalDefines.h"
 #import "ConnectionHandler.h"
 #import "XMLParseHandler.h"
 

@@ -9,20 +9,6 @@
 #import "StatViewController.h"
 #import "WeekListViewController.h"
 
-#define kAppDelegateTabBar	[[[[UIApplication sharedApplication] delegate] tabBarController] tabBar]
-#define kUserDefaults		[NSUserDefaults standardUserDefaults]
-
-#define kCustomerKey	@"customer"
-#define kIstatKey		@"istat"
-#define kExstatKey		@"exstat"
-
-#define iSTAT			@"iSTAT"
-#define exSTAT			@"exSTAT"
-
-#define kIStatButtonIndex	0
-#define kExStatButtonIndex	1
-#define kCancelButtonIndex	2
-
 
 @implementation StatViewController
 
@@ -97,7 +83,7 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
 	NSMutableString *weekTitle = [[NSMutableString alloc] init];
 	switch ( buttonIndex ) {
-		case kCancelButtonIndex:
+		case cancelButton:
 			if ( !self.activeStat ) {
 				UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Alert"
 																message: @"Please choose a product"
@@ -106,12 +92,12 @@
 				[alert release];
 			}
 			break;
-		case kIStatButtonIndex:
+		case iStatButton:
 			self.activeStat = iSTAT;
 			self.childController.activeStat = iSTAT;
 			[weekTitle setString: iSTAT];
 			break;
-		case kExStatButtonIndex:
+		case exStatButton:
 			self.activeStat = exSTAT;
 			self.childController.activeStat = exSTAT;
 			[weekTitle setString: exSTAT];
