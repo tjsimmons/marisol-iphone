@@ -48,10 +48,12 @@
 	[searchTabBarItem release];
 	
 	StatViewController *statController = [[StatViewController alloc] init];
-	UITabBarItem *statTabBarItem = [[UITabBarItem alloc] initWithTitle: @"Shipments" image: nil tag: 1];
+	NSString *statTabTitle = [[NSString alloc] initWithString: @"Shipments"];
+	UITabBarItem *statTabBarItem = [[UITabBarItem alloc] initWithTitle: statTabTitle image: nil tag: 1];
 	
 	statController.tabBarItem = statTabBarItem;
 	
+	[statTabTitle release];
 	[statTabBarItem release];
 	
 	NSArray *array = [[NSArray alloc] initWithObjects: homeController, statController, searchController, nil];
