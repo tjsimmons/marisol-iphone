@@ -7,19 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TSGlobalDefines.h"
 #import "ConnectionHandler.h"
 #import "XMLParseHandler.h"
 
 
 @interface ShipmentListViewController : UITableViewController <ConnectionHandlerDelegate, XMLParseHandlerDelegate> {
-	NSString			*whichStat;
+	NSString			*activeStat;
 	NSMutableArray		*shipmentList;
 	NSString			*startDate;
 	NSString			*endDate;
 	BOOL				dataLoaded;
 }
 
-@property (nonatomic, retain) NSString *whichStat;
+@property (nonatomic, retain) NSString *activeStat;
 @property (nonatomic, retain) NSMutableArray *shipmentList;
 @property (nonatomic, retain) NSString *startDate;
 @property (nonatomic, retain) NSString *endDate;

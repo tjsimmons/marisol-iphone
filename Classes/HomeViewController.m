@@ -12,17 +12,7 @@
 #import "HomeCellModel.h"
 #import "LoginViewController.h"
 
-#define kCustomerKey		@"customer"
-#define kLoggedInKey		@"loggedIn"
-#define kIstatKey			@"istat"
-#define kExstatKey			@"exstat"
-
 #define kNumCells			4
-
-#define kAppDelegate		[[UIApplication sharedApplication] delegate]
-#define kUserDefaults		[NSUserDefaults standardUserDefaults]
-
-#define MIHomeVC			0
 
 
 @implementation HomeViewController

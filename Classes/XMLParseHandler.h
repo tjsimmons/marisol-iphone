@@ -8,9 +8,7 @@
 //	Uncomment everything for currentObject with the correct object class to set the class up properly
 
 #import <Foundation/Foundation.h>
-
-// declare a typedef enum to figure out easily what class called the parser
-typedef enum { MIHomeVC = 0, MIShipmentVC, MILoginVC } caller;
+#import "TSGlobalDefines.h"
 
 @class Shipment;
 
@@ -27,7 +25,7 @@ typedef enum { MIHomeVC = 0, MIShipmentVC, MILoginVC } caller;
 	id <XMLParseHandlerDelegate> delegate;
 	
 	// what class called the parser, so we know what elements to parse
-	NSInteger		callingClass;
+	caller			callingClass;
 	
 	// stuff used during parsing
 	
@@ -40,7 +38,7 @@ typedef enum { MIHomeVC = 0, MIShipmentVC, MILoginVC } caller;
 
 @property (nonatomic, assign) id <XMLParseHandlerDelegate> delegate;
 
-@property NSInteger callingClass;
+@property caller callingClass;
 
 @property (nonatomic, retain) id currentObject;
 @property (nonatomic, retain) NSMutableArray *objectList;

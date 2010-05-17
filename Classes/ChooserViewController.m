@@ -9,13 +9,6 @@
 #import "ChooserViewController.h"
 #import "Customer.h"
 
-#define kCustomerKey	@"customer"
-#define kIstatKey		@"istat"
-#define kExstatKey		@"exstat"
-#define kLoggedInKey	@"loggedIn"
-
-#define kUserDefaults	[NSUserDefaults standardUserDefaults]
-
 
 @implementation ChooserViewController
 

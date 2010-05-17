@@ -10,16 +10,10 @@
 #import "ShipmentDetailViewController.h"
 #import "Shipment.h"
 
-#define kIStat			@"iSTAT"
-#define kExStat			@"exSTAT"
-#define kCustomerKey	@"customer"
-
-#define	MIShipmentVC	1
-
 
 @implementation ShipmentListViewController
 
-@synthesize whichStat;
+@synthesize activeStat;
 @synthesize shipmentList;
 @synthesize startDate;
 @synthesize endDate;
@@ -28,12 +22,12 @@
 #pragma mark Custom Methods
 -(void) startConnectionProcess {
 	ConnectionHandler *handler = [[ConnectionHandler alloc] initWithDelegate: self];
-	NSString *path = [[NSString alloc] initWithFormat: @"%@.xml", self.whichStat];
+	NSString *path = [[NSString alloc] initWithFormat: @"%@.xml", self.activeStat];
 	
 	NSString *customer = [[NSString alloc] initWithString: [[NSUserDefaults standardUserDefaults] objectForKey: kCustomerKey]];
 	
 	NSString *url = [[NSString alloc] initWithFormat: @"https://www.marisolintl.com/iphone/%@shipmentxml.asp?customer=%@&start=%@&end=%@", 
-					 self.whichStat, customer, self.startDate, self.endDate];
+					 self.activeStat, customer, self.startDate, self.endDate];
 	
 	handler.xmlPathComponent = path;
 	
@@ -215,12 +209,12 @@
 - (void)viewDidUnload {
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
-	self.whichStat = nil;
+	self.activeStat = nil;
 }
 
 
 - (void)dealloc {
-	self.whichStat = nil;
+	self.activeStat = nil;
 	self.shipmentList = nil;
 	self.startDate = nil;
 	self.endDate = nil;

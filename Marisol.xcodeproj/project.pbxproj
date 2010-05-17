@@ -91,6 +91,7 @@
 		5FD1E2C21173A65100CD0782 /* HomeCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCellModel.m; sourceTree = "<group>"; };
 		5FD68A0F11A1C2D900C5C05F /* StatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatViewController.h; sourceTree = "<group>"; };
 		5FD68A1011A1C2D900C5C05F /* StatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatViewController.m; sourceTree = "<group>"; };
+		5FD68B0911A1E26500C5C05F /* TSGlobalDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSGlobalDefines.h; sourceTree = "<group>"; };
 		5FE154EC1173621C0061F3CE /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeViewController.xib; path = Classes/HomeViewController.xib; sourceTree = "<group>"; };
 		5FE155A611737D4F0061F3CE /* HomeCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCellViewController.h; sourceTree = "<group>"; };
 		5FE155A711737D4F0061F3CE /* HomeCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCellViewController.m; sourceTree = "<group>"; };
@@ -251,6 +252,7 @@
 				5F90A8081199C0E7009BA591 /* Customer.h */,
 				5F15C343116B76CE001ED14A /* Shipment.h */,
 				5F748F0811764EC3000B1BA1 /* Reachability.h */,
+				5FD68B0911A1E26500C5C05F /* TSGlobalDefines.h */,
 			);
 			name = Misc;
 			sourceTree = "<group>";

@@ -11,17 +11,6 @@
 #import "Customer.h"
 #import "ChooserViewController.h"
 
-#define kUsernameKey	@"username"
-#define kCustomerKey	@"customer"
-#define kIstatKey		@"istat"
-#define kExstatKey		@"exstat"
-#define kLoggedInKey	@"loggedIn"
-
-#define kApplication	[UIApplication sharedApplication]
-#define kUserDefaults	[NSUserDefaults standardUserDefaults]
-
-#define MILoginVC		2
-
 
 @implementation LoginViewController
 
