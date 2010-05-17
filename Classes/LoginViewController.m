@@ -109,10 +109,12 @@
 															message: @"Incorrect login"
 														   delegate: nil
 												  cancelButtonTitle: @"Okay" otherButtonTitles: nil];
-			[alert show];
+			[alert performSelectorOnMainThread: @selector(show) withObject: nil waitUntilDone: NO];
+			
 			[alert release];
 			
-			[passwordField becomeFirstResponder];
+			//[passwordField performSelectorOnMainThread: @selector(becomeFirstResponder) withObject: nil waitUntilDone: NO];
+			//[passwordField becomeFirstResponder];
 			
 			self.loginButton.hidden = NO;
 			self.activityIndicator.hidden = YES;			
@@ -122,14 +124,16 @@
 			[kUserDefaults setObject: customer.exStat forKey: kExstatKey];
 			[kUserDefaults setBool: YES forKey: kLoggedInKey];
 			
+			//[self performSelectorOnMainThread: @selector(dismissModalViewControllerAnimated:) withObject: nil waitUntilDone: YES];
+			
 			[self dismissModalViewControllerAnimated: YES];
 		}
 	} else {
 		ChooserViewController *chooserVC = [[ChooserViewController alloc] initWithNibName: @"ChooserViewController" bundle: nil];
 		
-		[self presentModalViewController: chooserVC animated: YES];
-		
 		[chooserVC setCustomerList: array];
+		
+		[self performSelectorOnMainThread: @selector(presentModalViewController:animated:) withObject: chooserVC waitUntilDone: NO];
 		
 		[chooserVC release];
 	}
