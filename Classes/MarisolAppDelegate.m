@@ -7,8 +7,10 @@
 //
 
 #import "MarisolAppDelegate.h"
-//#import "LoginViewController.h"
+#import "LoginViewController.h"
 #import "HomeViewController.h"
+#import "StatViewController.h"
+#import "RootSearchController.h"
 
 #define kCustomerKey	@"customer"
 #define kIstatKey		@"istat"
@@ -38,11 +40,27 @@
 	
 	[homeTitle release];
 	
-	NSArray *array = [[NSArray alloc] initWithObjects: homeController, nil];
+	RootSearchController *searchController = [[RootSearchController alloc] initWithNibName: @"RootSearchController" bundle: nil];
+	UITabBarItem *searchTabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem: UITabBarSystemItemSearch tag: 3];
+	
+	searchController.tabBarItem = searchTabBarItem;
+	
+	[searchTabBarItem release];
+	
+	StatViewController *statController = [[StatViewController alloc] init];
+	UITabBarItem *statTabBarItem = [[UITabBarItem alloc] initWithTitle: @"Shipments" image: nil tag: 1];
+	
+	statController.tabBarItem = statTabBarItem;
+	
+	[statTabBarItem release];
+	
+	NSArray *array = [[NSArray alloc] initWithObjects: homeController, statController, searchController, nil];
 	
 	[tabController setViewControllers: array];
 	[array release];
 	[homeController release];
+	[searchController release];
+	[statController release];
 	
 	self.tabBarController = tabController;
 	
@@ -68,17 +86,10 @@
 	[kUserDefaults setBool: NO forKey: kLoggedInKey];
 }
 
-
 - (void)dealloc {
 	[tabBarController release];
     [window release];
     [super dealloc];
-}
-
-#pragma mark -
-#pragma mark Custom Methods
--(void) setTabBarControllers: (NSMutableArray *) controllers {
-	[self.tabBarController setViewControllers: controllers];
 }
 
 @end

@@ -7,8 +7,6 @@
 //
 
 #import "HomeViewController.h"
-#import "iStatViewController.h"
-#import "exStatViewController.h"
 #import "RootSearchController.h"
 #import "HomeCellViewController.h"
 #import "HomeCellModel.h"
@@ -33,51 +31,6 @@
 
 #pragma mark -
 #pragma mark Custom Methods
--(void) setTabBarViewControllers {
-	NSMutableArray *viewControllers = [[NSMutableArray alloc] initWithObjects: self, nil];
-	
-	if ( [[kUserDefaults objectForKey: kIstatKey] isEqualToString: @"yes"] ) {
-		iStatViewController *iStatController = [[iStatViewController alloc] init];
-		NSString *iTitle = [[NSString alloc] initWithString: @"iSTAT"];
-		UITabBarItem *iTabBarItem = [[UITabBarItem alloc] initWithTitle: iTitle image: nil tag: 1];
-		
-		iStatController.tabBarItem = iTabBarItem;
-		
-		[viewControllers addObject: iStatController];
-		[iStatController release];
-		[iTabBarItem release];
-		[iTitle release];
-	}
-	
-	if ( [[kUserDefaults objectForKey: kExstatKey] isEqualToString: @"yes"] ) {
-		exStatViewController *exStatController = [[exStatViewController alloc] init];
-		NSString *exTitle = [[NSString alloc] initWithString: @"exSTAT"];
-		UITabBarItem *exTabBarItem = [[UITabBarItem alloc] initWithTitle: exTitle image: nil tag: 2];
-		
-		exStatController.title = exTitle;
-		exStatController.tabBarItem = exTabBarItem;
-		
-		[viewControllers addObject: exStatController];
-		[exStatController release];
-		[exTabBarItem release];
-		[exTitle release];
-	}
-	
-	// set up the search tab
-	RootSearchController *searchController = [[RootSearchController alloc] initWithNibName: @"RootSearchController" bundle: nil];
-	UITabBarItem *searchTabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem: UITabBarSystemItemSearch tag: 3];
-	
-	searchController.tabBarItem = searchTabBarItem;
-	
-	[viewControllers addObject: searchController];
-	[searchController release];
-	[searchTabBarItem release];
-
-	[kAppDelegate setTabBarControllers: viewControllers];
-
-	[viewControllers release];
-}
-
 -(void) setCellValuesWithArray: (NSArray *) array {
 	for ( int i = 0; i < [array count]; i++ ) {
 		HomeCellViewController *cell = (HomeCellViewController *) [self.cells objectAtIndex: i];
@@ -144,8 +97,6 @@
 	}
 	
 	cellsLoaded = YES;
-
-	[self setTabBarViewControllers];
 }
 
 #pragma mark -
