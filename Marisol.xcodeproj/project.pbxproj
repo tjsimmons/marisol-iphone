@@ -23,9 +23,7 @@
 		5F15C356116B76CE001ED14A /* weeklist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F15C34B116B76CE001ED14A /* weeklist.plist */; };
 		5F15C357116B76CE001ED14A /* WeekListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15C34D116B76CE001ED14A /* WeekListViewController.m */; };
 		5F15C358116B76CE001ED14A /* XMLParseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15C34F116B76CE001ED14A /* XMLParseHandler.m */; };
-		5F15C3DD116B7BB3001ED14A /* iStatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15C3DC116B7BB3001ED14A /* iStatViewController.m */; };
 		5F15C402116B7C94001ED14A /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F15C401116B7C94001ED14A /* globe.png */; };
-		5F15C514116B90EB001ED14A /* exStatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15C513116B90EB001ED14A /* exStatViewController.m */; };
 		5F3E9482116A4332003C2BFD /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3E9481116A4332003C2BFD /* icon.png */; };
 		5F5C7B421198845A008A786F /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5C7B401198845A008A786F /* SearchViewController.m */; };
 		5F5C7B431198845A008A786F /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F5C7B411198845A008A786F /* SearchViewController.xib */; };
@@ -38,6 +36,7 @@
 		5FB5C753118F7234007B24BD /* RootSearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FB5C752118F7234007B24BD /* RootSearchController.xib */; };
 		5FC57D14116BCE7A00F41F4B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC57D13116BCE7A00F41F4B /* HomeViewController.m */; };
 		5FD1E2C31173A65100CD0782 /* HomeCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD1E2C21173A65100CD0782 /* HomeCellModel.m */; };
+		5FD68A1111A1C2D900C5C05F /* StatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD68A1011A1C2D900C5C05F /* StatViewController.m */; };
 		5FE154EE1173621C0061F3CE /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FE154EC1173621C0061F3CE /* HomeViewController.xib */; };
 		5FE155A911737D4F0061F3CE /* HomeCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE155A711737D4F0061F3CE /* HomeCellViewController.m */; };
 		5FE155AA11737D4F0061F3CE /* HomeCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FE155A811737D4F0061F3CE /* HomeCellViewController.xib */; };
@@ -70,11 +69,7 @@
 		5F15C34D116B76CE001ED14A /* WeekListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekListViewController.m; sourceTree = "<group>"; };
 		5F15C34E116B76CE001ED14A /* XMLParseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParseHandler.h; sourceTree = "<group>"; };
 		5F15C34F116B76CE001ED14A /* XMLParseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParseHandler.m; sourceTree = "<group>"; };
-		5F15C3DB116B7BB3001ED14A /* iStatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iStatViewController.h; sourceTree = "<group>"; };
-		5F15C3DC116B7BB3001ED14A /* iStatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iStatViewController.m; sourceTree = "<group>"; };
 		5F15C401116B7C94001ED14A /* globe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = globe.png; sourceTree = "<group>"; };
-		5F15C512116B90EB001ED14A /* exStatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exStatViewController.h; sourceTree = "<group>"; };
-		5F15C513116B90EB001ED14A /* exStatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = exStatViewController.m; sourceTree = "<group>"; };
 		5F3E9481116A4332003C2BFD /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		5F5C7B3F1198845A008A786F /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		5F5C7B401198845A008A786F /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
@@ -94,6 +89,8 @@
 		5FC57D13116BCE7A00F41F4B /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		5FD1E2C11173A65100CD0782 /* HomeCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCellModel.h; sourceTree = "<group>"; };
 		5FD1E2C21173A65100CD0782 /* HomeCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCellModel.m; sourceTree = "<group>"; };
+		5FD68A0F11A1C2D900C5C05F /* StatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatViewController.h; sourceTree = "<group>"; };
+		5FD68A1011A1C2D900C5C05F /* StatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatViewController.m; sourceTree = "<group>"; };
 		5FE154EC1173621C0061F3CE /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeViewController.xib; path = Classes/HomeViewController.xib; sourceTree = "<group>"; };
 		5FE155A611737D4F0061F3CE /* HomeCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCellViewController.h; sourceTree = "<group>"; };
 		5FE155A711737D4F0061F3CE /* HomeCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCellViewController.m; sourceTree = "<group>"; };
@@ -227,8 +224,7 @@
 				5F90A9731199F455009BA591 /* ChooserViewController.h */,
 				5FC57D12116BCE7A00F41F4B /* HomeViewController.h */,
 				5FE155A611737D4F0061F3CE /* HomeCellViewController.h */,
-				5F15C3DB116B7BB3001ED14A /* iStatViewController.h */,
-				5F15C512116B90EB001ED14A /* exStatViewController.h */,
+				5FD68A0F11A1C2D900C5C05F /* StatViewController.h */,
 				5FB5C746118F710C007B24BD /* RootSearchController.h */,
 				5F5C7B3F1198845A008A786F /* SearchViewController.h */,
 				5F15C34C116B76CE001ED14A /* WeekListViewController.h */,
@@ -287,8 +283,7 @@
 				5F90A9741199F455009BA591 /* ChooserViewController.m */,
 				5FC57D13116BCE7A00F41F4B /* HomeViewController.m */,
 				5FE155A711737D4F0061F3CE /* HomeCellViewController.m */,
-				5F15C3DC116B7BB3001ED14A /* iStatViewController.m */,
-				5F15C513116B90EB001ED14A /* exStatViewController.m */,
+				5FD68A1011A1C2D900C5C05F /* StatViewController.m */,
 				5FB5C747118F710C007B24BD /* RootSearchController.m */,
 				5F5C7B401198845A008A786F /* SearchViewController.m */,
 				5F15C34D116B76CE001ED14A /* WeekListViewController.m */,
@@ -370,8 +365,6 @@
 				5F15C354116B76CE001ED14A /* ShipmentListViewController.m in Sources */,
 				5F15C357116B76CE001ED14A /* WeekListViewController.m in Sources */,
 				5F15C358116B76CE001ED14A /* XMLParseHandler.m in Sources */,
-				5F15C3DD116B7BB3001ED14A /* iStatViewController.m in Sources */,
-				5F15C514116B90EB001ED14A /* exStatViewController.m in Sources */,
 				5FC57D14116BCE7A00F41F4B /* HomeViewController.m in Sources */,
 				5FE155A911737D4F0061F3CE /* HomeCellViewController.m in Sources */,
 				5FD1E2C31173A65100CD0782 /* HomeCellModel.m in Sources */,
@@ -380,6 +373,7 @@
 				5F5C7B421198845A008A786F /* SearchViewController.m in Sources */,
 				5F90A80A1199C0E7009BA591 /* Customer.m in Sources */,
 				5F90A9761199F456009BA591 /* ChooserViewController.m in Sources */,
+				5FD68A1111A1C2D900C5C05F /* StatViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

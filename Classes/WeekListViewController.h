@@ -10,9 +10,13 @@
 
 
 @interface WeekListViewController : UITableViewController {
+	NSString	*activeStat;
 	NSArray		*weekList;
 }
 
+@property (nonatomic, retain) NSString *activeStat;
 @property (nonatomic, retain) NSArray *weekList;
+
+-(void) setWeekOffset;
 
 @end

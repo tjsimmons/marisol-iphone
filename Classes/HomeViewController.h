@@ -18,7 +18,6 @@
 
 @property (nonatomic, retain) NSMutableArray *cells;
 
--(void) setTabBarViewControllers;
 -(void) setCellValuesWithArray: (NSArray *) array;
 -(void) startConnectionForCellData;
 -(void) addCellsToHomeScreen;
