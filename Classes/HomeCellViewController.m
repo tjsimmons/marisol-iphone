@@ -14,8 +14,19 @@
 @synthesize valueLabel;
 @synthesize titleLabel;
 
+
+#pragma mark -
+#pragma mark Custom Methods
 -(void) setTitleText: (NSString *) titleText andValueText: (NSString *) valueText {
 	self.titleLabel.text = titleText;
+	self.valueLabel.text = valueText;
+}
+
+-(void) setTitleText: (NSString *) titleText {
+	self.titleLabel.text = titleText;
+}
+
+-(void) setValueText: (NSString *) valueText {
 	self.valueLabel.text = valueText;
 }
 
