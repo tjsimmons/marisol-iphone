@@ -78,10 +78,6 @@
 				break;
 		}
 		
-		if ( !self.cells ) {
-			self.cells = [[NSMutableArray alloc] init];
-		}
-		
 		[self.cells addObject: cell];
 		
 		[self.view insertSubview: [[self.cells objectAtIndex: i] view] atIndex: 1];
@@ -114,8 +110,11 @@
 #pragma mark View lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	self.cells = [[NSMutableArray alloc] init];
 
 	cellsLoaded = NO;
+	[self addCellsToHomeScreen];
 	
 	if ( ![kUserDefaults boolForKey: kLoggedInKey] ) {
 		
@@ -138,9 +137,9 @@
 -(void) viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	
-	if ( [kUserDefaults boolForKey: kLoggedInKey] && !cellsLoaded ) {
+	/*if ( [kUserDefaults boolForKey: kLoggedInKey] && !cellsLoaded ) {
 		[self addCellsToHomeScreen];
-	} 
+	}*/
 }
 
 #pragma mark -

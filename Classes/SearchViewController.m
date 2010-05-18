@@ -301,7 +301,6 @@
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
 	self.searchList = nil;
-	self.connection = nil;
 	self.MISearchBar = nil;
 	self.activeStat = nil;
 }
@@ -309,7 +308,6 @@
 
 - (void)dealloc {
 	self.searchList = nil;
-	self.connection = nil;
 	self.MISearchBar = nil;
 	self.activeStat = nil;
 	
