@@ -19,6 +19,7 @@
 @synthesize loginButton;
 @synthesize activityIndicator;
 @synthesize connection;
+@synthesize parentController;
 
 #pragma mark -
 #pragma mark Custom Methods
@@ -101,8 +102,9 @@
 #pragma mark -
 #pragma mark XML Parse Handler Delegate Methods
 -(void) xmlDidFinishParsingWithArray: (NSMutableArray *) array {
+	NSArray *xmlArray = [[NSArray alloc] initWithArray: array];
 	if ( [array count] == 1 ) {
-		Customer *customer = (Customer *) [array objectAtIndex: 0];
+		Customer *customer = (Customer *) [xmlArray objectAtIndex: 0];
 		
 		if ( [[customer customerName] isEqualToString: @"nologin"] ) {
 			UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Error"
@@ -129,14 +131,17 @@
 			[self dismissModalViewControllerAnimated: YES];
 		}
 	} else {
-		ChooserViewController *chooserVC = [[ChooserViewController alloc] initWithNibName: @"ChooserViewController" bundle: nil];
+		/*ChooserViewController *chooserVC = [[ChooserViewController alloc] initWithNibName: @"ChooserViewController" bundle: nil];
 		
 		[chooserVC setCustomerList: array];
 		
 		[self performSelectorOnMainThread: @selector(presentModalViewController:animated:) withObject: chooserVC waitUntilDone: NO];
 		
-		[chooserVC release];
+		[chooserVC release];*/
+		[self.parentController setCustomerList: xmlArray];
+		[self dismissModalViewControllerAnimated: YES];
 	}
+	[xmlArray release];
 }
 
 #pragma mark -
