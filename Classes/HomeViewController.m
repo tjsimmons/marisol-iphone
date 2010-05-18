@@ -11,6 +11,7 @@
 #import "HomeCellViewController.h"
 #import "HomeCellModel.h"
 #import "LoginViewController.h"
+#import "ChooserViewController.h"
 
 #define kNumCells			4
 
@@ -18,6 +19,7 @@
 @implementation HomeViewController
 
 @synthesize cells;
+@synthesize customerList;
 
 #pragma mark -
 #pragma mark Custom Methods
@@ -88,6 +90,14 @@
 	cellsLoaded = YES;
 }
 
+-(void) showChooser {
+	ChooserViewController *chooserVC = [[ChooserViewController alloc] initWithNibName: @"ChooserViewController" bundle: nil];
+	
+	[chooserVC setCustomerList: self.customerList];
+	
+	[self presentModalViewController: chooserVC animated: YES];
+}
+
 #pragma mark -
 #pragma mark Connection Handler Delegate Method
 -(void) connectionFinishedWithFilePath: (NSString *) filePath {
@@ -119,7 +129,7 @@
 	if ( ![kUserDefaults boolForKey: kLoggedInKey] ) {
 		
 		LoginViewController *loginController = [[LoginViewController alloc] initWithNibName: @"LoginViewController" bundle: nil];
-		
+		loginController.parentController = self;
 		[self presentModalViewController: loginController animated: YES];
 		
 		[loginController release];
@@ -131,6 +141,8 @@
 
 	if ( [kUserDefaults boolForKey: kLoggedInKey] && cellsLoaded ) {
 		[self startConnectionForCellData];
+	} else if ( ![kUserDefaults boolForKey: kLoggedInKey] ) {
+		[self performSelector: @selector(showChooser) withObject: nil afterDelay: 0.1];
 	}
 }
 
@@ -161,6 +173,7 @@
 
 - (void)dealloc {
 	self.cells = nil;
+	self.customerList = nil;
 	
     [super dealloc];
 }

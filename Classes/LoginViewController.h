@@ -27,6 +27,8 @@
 	
 	// check for network availability
 	Reachability *networkAvailability;
+	
+	id parentController;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField *usernameField;
@@ -34,6 +36,7 @@
 @property (nonatomic, retain) IBOutlet UIButton *loginButton;
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, retain) NSURLConnection *connection;
+@property (nonatomic, assign) id parentController;
 
 -(IBAction) usernameFieldDoneEditing;
 -(IBAction) passwordFieldDoneEditing;

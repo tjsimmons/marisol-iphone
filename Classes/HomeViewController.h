@@ -15,13 +15,16 @@
 @interface HomeViewController : UIViewController <ConnectionHandlerDelegate, XMLParseHandlerDelegate> {
 	BOOL cellsLoaded;
 	NSMutableArray *cells;
+	NSArray *customerList;
 }
 
 @property (nonatomic, retain) NSMutableArray *cells;
+@property (nonatomic, retain) NSArray *customerList;
 
 -(void) setCellValuesWithArray: (NSArray *) array;
 -(void) startConnectionForCellData;
 -(void) addCellsToHomeScreen;
+-(void) showChooser;
 
 // connection handler delegate method
 -(void) connectionFinishedWithFilePath: (NSString *) filePath;
