@@ -19,4 +19,8 @@
 
 -(void) setTitleText: (NSString *) titleText andValueText: (NSString *) valueText;
 
+// methods to perform on main thread
+-(void) setTitleText: (NSString *) titleText;
+-(void) setValueText: (NSString *) valueText;
+
 @end

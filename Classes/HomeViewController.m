@@ -26,7 +26,10 @@
 		HomeCellViewController *cell = (HomeCellViewController *) [self.cells objectAtIndex: i];
 		HomeCellModel *cellModel = (HomeCellModel *) [array objectAtIndex: i];
 		
-		[cell setTitleText: cellModel.cellTitle andValueText: cellModel.cellValue];
+		[cell performSelectorOnMainThread: @selector(setTitleText:) withObject: cellModel.cellTitle waitUntilDone: NO];
+		[cell performSelectorOnMainThread: @selector(setValueText:) withObject: cellModel.cellValue waitUntilDone: NO];
+		
+		//[cell setTitleText: cellModel.cellTitle andValueText: cellModel.cellValue];
 	}
 }
 
