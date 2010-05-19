@@ -98,16 +98,17 @@
 			self.activeStat = iSTAT;
 			self.childController.activeStat = iSTAT;
 			[weekTitle setString: iSTAT];
+			self.childController.title = weekTitle;
+			[self.childController setWeekOffset];
 			break;
 		case exStatButton:
 			self.activeStat = exSTAT;
 			self.childController.activeStat = exSTAT;
 			[weekTitle setString: exSTAT];
+			self.childController.title = weekTitle;
+			[self.childController setWeekOffset];
 			break;
 	}
-	
-	self.childController.title = weekTitle;
-	[self.childController setWeekOffset];
 	
 	[weekTitle release];
 }
