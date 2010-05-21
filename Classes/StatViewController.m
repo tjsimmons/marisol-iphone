@@ -122,7 +122,8 @@
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
 	if ( [viewController isMemberOfClass: [ShipmentDetailViewController class]] ) {
-		kAppDelegateTabBar.hidden = YES;
+		//kAppDelegateTabBar.hidden = YES;
+		[viewController setHidesBottomBarWhenPushed: YES];
 	} else {
 		kAppDelegateTabBar.hidden = NO;
 	}
