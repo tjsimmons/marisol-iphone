@@ -37,7 +37,7 @@
 @property (nonatomic, retain) IBOutlet UITableViewCell *thirdCell;
 @property (nonatomic, retain) IBOutlet UITableViewCell *fourthCell;
 
--(void) setCellValuesWithArray: (NSArray *) array;
+-(void) setCellValues;//WithArray: (NSArray *) array;
 -(void) startConnectionForCellData;
 -(void) showChooser;
 

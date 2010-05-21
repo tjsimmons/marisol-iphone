@@ -94,6 +94,7 @@
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
 										<int key="IBUIContentMode">7</int>
+										<int key="IBUITag">11</int>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 										<string key="IBUIText">Label</string>
@@ -113,7 +114,7 @@
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
 										<int key="IBUIContentMode">7</int>
-										<int key="IBUITag">1</int>
+										<int key="IBUITag">12</int>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 										<string key="IBUIText">Label</string>
@@ -130,6 +131,7 @@
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MC4zMDQzNDc4MTMxIDAuMzA0MzQ3ODEzMSAwLjMwNDM0NzgxMzEAA</bytes>
 								</object>
+								<int key="IBUITag">10</int>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 						</object>

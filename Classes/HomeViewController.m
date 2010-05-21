@@ -44,20 +44,20 @@
 	}
 }
 
--(void) setCellValuesWithArray:(NSArray *)array {
+-(void) setCellValues /*WithArray:(NSArray *)array*/ {
 	UITableViewCell *cell;
 	UILabel *titleLabel;
 	UILabel *valueLabel;
 	HomeCellModel *cellModel;
 	
-	for ( int i = 0; i < [array count]; i++ ) {
-		cellModel = (HomeCellModel *) [array objectAtIndex: i];
+	for ( int i = 0; i < [self.cellInformation count]; i++ ) {
+		cellModel = (HomeCellModel *) [self.cellInformation objectAtIndex: i];
 		
 		switch ( i ) {
 			case 0:
 				cell = self.firstCell;
-				titleLabel = (UILabel *) [cell viewWithTag: 0];
-				valueLabel = (UILabel *) [cell viewWithTag: 1];
+				titleLabel = (UILabel *) [cell viewWithTag: 10];
+				valueLabel = (UILabel *) [cell viewWithTag: 11];
 				
 				titleLabel.text = cellModel.cellTitle;
 				valueLabel.text = cellModel.cellValue;
@@ -103,7 +103,8 @@
 -(void) xmlDidFinishParsingWithArray: (NSMutableArray *) array {
 	self.cellInformation = array;
 	dataLoaded = YES;
-	[self.infoTableView performSelectorOnMainThread:@selector(reloadData) withObject: nil waitUntilDone: NO];
+	//[self.infoTableView performSelectorOnMainThread:@selector(reloadData) withObject: nil waitUntilDone: NO];
+	[self setCellValues];
 }
 
 #pragma mark -
@@ -127,25 +128,6 @@
 		default:
 			return nil;
 			break;
-	}
-	
-	if ( dataLoaded ) {
-		UILabel *titleLabel;
-		UILabel *valueLabel;
-		HomeCellModel *cellModel = (HomeCellModel *) [self.cellInformation objectAtIndex: indexPath.row];
-		switch ( indexPath.row ) {
-			case 0:
-				titleLabel = (UILabel *) [cell viewWithTag: 0];
-				valueLabel = (UILabel *) [cell viewWithTag: 1];
-				
-				titleLabel.text = cellModel.cellTitle;
-				valueLabel.text = cellModel.cellValue;
-				
-				break;
-			default:
-				break;
-		}
-				
 	}
 	
 	return cell;
