@@ -56,25 +56,34 @@
 		switch ( i ) {
 			case 0:
 				cell = self.firstCell;
-				titleLabel = (UILabel *) [cell viewWithTag: 10];
-				valueLabel = (UILabel *) [cell viewWithTag: 11];
-				
-				titleLabel.text = cellModel.cellTitle;
-				valueLabel.text = cellModel.cellValue;
+				titleLabel = (UILabel *) [cell viewWithTag: MIFirstTitleTag];
+				valueLabel = (UILabel *) [cell viewWithTag: MIFirstValueTag];
 				
 				break;
 			case 1:
 				cell = self.secondCell;
+				titleLabel = (UILabel *) [cell viewWithTag: MISecondTitleTag];
+				valueLabel = (UILabel *) [cell viewWithTag: MISecondValueTag];
+				
 				break;
 			case 2:
 				cell = self.thirdCell;
+				titleLabel = (UILabel *) [cell viewWithTag: MIThirdTitleTag];
+				valueLabel = (UILabel *) [cell viewWithTag: MIThirdValueTag];
+				
 				break;
 			case 3:
 				cell = self.fourthCell;
+				titleLabel = (UILabel *) [cell viewWithTag: MIFourthTitleTag];
+				valueLabel = (UILabel *) [cell viewWithTag: MIFourthValueTag];
+				
 				break;
 			default:
 				break;
 		}
+		
+		titleLabel.text = cellModel.cellTitle;
+		valueLabel.text = cellModel.cellValue;
 	}
 }
 

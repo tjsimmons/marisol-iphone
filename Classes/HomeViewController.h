@@ -11,6 +11,9 @@
 #import "ConnectionHandler.h"
 #import "XMLParseHandler.h"
 
+typedef enum { MIFirstTitleTag = 11, MIFirstValueTag, MISecondTitleTag = 21, MISecondValueTag, MIThirdTitleTag = 31, MIThirdValueTag, MIFourthTitleTag = 41,
+	MIFourthValueTag } TagTags;
+
 
 @interface HomeViewController : UIViewController <ConnectionHandlerDelegate, XMLParseHandlerDelegate, UITableViewDataSource, UITableViewDelegate> {
 	NSArray *customerList;
