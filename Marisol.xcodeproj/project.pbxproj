@@ -38,8 +38,6 @@
 		5FD1E2C31173A65100CD0782 /* HomeCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD1E2C21173A65100CD0782 /* HomeCellModel.m */; };
 		5FD68A1111A1C2D900C5C05F /* StatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD68A1011A1C2D900C5C05F /* StatViewController.m */; };
 		5FE154EE1173621C0061F3CE /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FE154EC1173621C0061F3CE /* HomeViewController.xib */; };
-		5FE155A911737D4F0061F3CE /* HomeCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE155A711737D4F0061F3CE /* HomeCellViewController.m */; };
-		5FE155AA11737D4F0061F3CE /* HomeCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FE155A811737D4F0061F3CE /* HomeCellViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,9 +91,6 @@
 		5FD68A1011A1C2D900C5C05F /* StatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatViewController.m; sourceTree = "<group>"; };
 		5FD68B0911A1E26500C5C05F /* TSGlobalDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSGlobalDefines.h; sourceTree = "<group>"; };
 		5FE154EC1173621C0061F3CE /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeViewController.xib; path = Classes/HomeViewController.xib; sourceTree = "<group>"; };
-		5FE155A611737D4F0061F3CE /* HomeCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCellViewController.h; sourceTree = "<group>"; };
-		5FE155A711737D4F0061F3CE /* HomeCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCellViewController.m; sourceTree = "<group>"; };
-		5FE155A811737D4F0061F3CE /* HomeCellViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeCellViewController.xib; path = Classes/HomeCellViewController.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Marisol-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Marisol-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,7 +194,6 @@
 				5F15C331116B75A6001ED14A /* LoginViewController.xib */,
 				5F90A9751199F456009BA591 /* ChooserViewController.xib */,
 				5FE154EC1173621C0061F3CE /* HomeViewController.xib */,
-				5FE155A811737D4F0061F3CE /* HomeCellViewController.xib */,
 				5FB5C752118F7234007B24BD /* RootSearchController.xib */,
 				5F5C7B411198845A008A786F /* SearchViewController.xib */,
 				5F15C347116B76CE001ED14A /* ShipmentDetailViewController.xib */,
@@ -224,7 +218,6 @@
 				5F15C32F116B75A6001ED14A /* LoginViewController.h */,
 				5F90A9731199F455009BA591 /* ChooserViewController.h */,
 				5FC57D12116BCE7A00F41F4B /* HomeViewController.h */,
-				5FE155A611737D4F0061F3CE /* HomeCellViewController.h */,
 				5FD68A0F11A1C2D900C5C05F /* StatViewController.h */,
 				5FB5C746118F710C007B24BD /* RootSearchController.h */,
 				5F5C7B3F1198845A008A786F /* SearchViewController.h */,
@@ -284,7 +277,6 @@
 				5F15C330116B75A6001ED14A /* LoginViewController.m */,
 				5F90A9741199F455009BA591 /* ChooserViewController.m */,
 				5FC57D13116BCE7A00F41F4B /* HomeViewController.m */,
-				5FE155A711737D4F0061F3CE /* HomeCellViewController.m */,
 				5FD68A1011A1C2D900C5C05F /* StatViewController.m */,
 				5FB5C747118F710C007B24BD /* RootSearchController.m */,
 				5F5C7B401198845A008A786F /* SearchViewController.m */,
@@ -343,7 +335,6 @@
 				5F15C356116B76CE001ED14A /* weeklist.plist in Resources */,
 				5F15C402116B7C94001ED14A /* globe.png in Resources */,
 				5FE154EE1173621C0061F3CE /* HomeViewController.xib in Resources */,
-				5FE155AA11737D4F0061F3CE /* HomeCellViewController.xib in Resources */,
 				5FB5C753118F7234007B24BD /* RootSearchController.xib in Resources */,
 				5F5C7B431198845A008A786F /* SearchViewController.xib in Resources */,
 				5F90A9771199F456009BA591 /* ChooserViewController.xib in Resources */,
@@ -368,7 +359,6 @@
 				5F15C357116B76CE001ED14A /* WeekListViewController.m in Sources */,
 				5F15C358116B76CE001ED14A /* XMLParseHandler.m in Sources */,
 				5FC57D14116BCE7A00F41F4B /* HomeViewController.m in Sources */,
-				5FE155A911737D4F0061F3CE /* HomeCellViewController.m in Sources */,
 				5FD1E2C31173A65100CD0782 /* HomeCellModel.m in Sources */,
 				5F748F0A11764EC4000B1BA1 /* Reachability.m in Sources */,
 				5FB5C748118F710C007B24BD /* RootSearchController.m in Sources */,

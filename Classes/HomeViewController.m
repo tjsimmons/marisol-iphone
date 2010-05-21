@@ -7,8 +7,6 @@
 //
 
 #import "HomeViewController.h"
-#import "RootSearchController.h"
-#import "HomeCellViewController.h"
 #import "HomeCellModel.h"
 #import "LoginViewController.h"
 #import "ChooserViewController.h"
@@ -18,23 +16,12 @@
 
 @implementation HomeViewController
 
-@synthesize cells;
-@synthesize customerList;
+@synthesize customerList, cellInformation;
+@synthesize infoTableView;
+@synthesize firstCell, secondCell, thirdCell, fourthCell;
 
 #pragma mark -
 #pragma mark Custom Methods
--(void) setCellValuesWithArray: (NSArray *) array {
-	for ( int i = 0; i < [array count]; i++ ) {
-		HomeCellViewController *cell = (HomeCellViewController *) [self.cells objectAtIndex: i];
-		HomeCellModel *cellModel = (HomeCellModel *) [array objectAtIndex: i];
-		
-		[cell performSelectorOnMainThread: @selector(setTitleText:) withObject: cellModel.cellTitle waitUntilDone: NO];
-		[cell performSelectorOnMainThread: @selector(setValueText:) withObject: cellModel.cellValue waitUntilDone: NO];
-		
-		//[cell setTitleText: cellModel.cellTitle andValueText: cellModel.cellValue];
-	}
-}
-
 -(void) startConnectionForCellData {
 	static int loadCount;
 	
@@ -57,37 +44,38 @@
 	}
 }
 
--(void) addCellsToHomeScreen {
-	for ( int i = 0; i < kNumCells; i++ ) {
-		HomeCellViewController *cell = [[HomeCellViewController alloc] initWithNibName: @"HomeCellViewController" bundle: nil];
+-(void) setCellValuesWithArray:(NSArray *)array {
+	UITableViewCell *cell;
+	UILabel *titleLabel;
+	UILabel *valueLabel;
+	HomeCellModel *cellModel;
+	
+	for ( int i = 0; i < [array count]; i++ ) {
+		cellModel = (HomeCellModel *) [array objectAtIndex: i];
 		
-		cell.view.backgroundColor = [UIColor colorWithRed: 0.37 green: 0.37 blue: 0.37 alpha: 1.0];
-		
-		switch (i) {
+		switch ( i ) {
 			case 0:
-				cell.view.frame = CGRectMake(0, 0, 320, 96);
+				cell = self.firstCell;
+				titleLabel = (UILabel *) [cell viewWithTag: 0];
+				valueLabel = (UILabel *) [cell viewWithTag: 1];
+				
+				titleLabel.text = cellModel.cellTitle;
+				valueLabel.text = cellModel.cellValue;
+				
 				break;
 			case 1:
-				cell.view.frame = CGRectMake(0, 105, 320, 96);
+				cell = self.secondCell;
 				break;
 			case 2:
-				cell.view.frame = CGRectMake(0, 210, 320, 96);
+				cell = self.thirdCell;
 				break;
 			case 3:
-				cell.view.frame = CGRectMake(0, 315, 320, 96);
+				cell = self.fourthCell;
 				break;
 			default:
 				break;
 		}
-		
-		[self.cells addObject: cell];
-		
-		[self.view insertSubview: [[self.cells objectAtIndex: i] view] atIndex: 1];
-		
-		[cell release];
 	}
-	
-	cellsLoaded = YES;
 }
 
 -(void) showChooser {
@@ -113,7 +101,64 @@
 #pragma mark -
 #pragma mark Home XML Parse Handler Delegate Method
 -(void) xmlDidFinishParsingWithArray: (NSMutableArray *) array {
-	[self setCellValuesWithArray: array];
+	self.cellInformation = array;
+	dataLoaded = YES;
+	[self.infoTableView performSelectorOnMainThread:@selector(reloadData) withObject: nil waitUntilDone: NO];
+}
+
+#pragma mark -
+#pragma mark UITableView Data Source Methods
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	UITableViewCell *cell;
+	
+	switch ( indexPath.row ) {
+		case 0:
+			cell = self.firstCell;
+			break;
+		case 1:
+			cell = self.secondCell;
+			break;
+		case 2:
+			cell = self.thirdCell;
+			break;
+		case 3:
+			cell = self.fourthCell;
+			break;
+		default:
+			return nil;
+			break;
+	}
+	
+	if ( dataLoaded ) {
+		UILabel *titleLabel;
+		UILabel *valueLabel;
+		HomeCellModel *cellModel = (HomeCellModel *) [self.cellInformation objectAtIndex: indexPath.row];
+		switch ( indexPath.row ) {
+			case 0:
+				titleLabel = (UILabel *) [cell viewWithTag: 0];
+				valueLabel = (UILabel *) [cell viewWithTag: 1];
+				
+				titleLabel.text = cellModel.cellTitle;
+				valueLabel.text = cellModel.cellValue;
+				
+				break;
+			default:
+				break;
+		}
+				
+	}
+	
+	return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	return kNumCells;
+}
+
+#pragma mark -
+#pragma mark UITableView Delegate Methods
+-(NSIndexPath *) tableView: (UITableView *) tableView willSelectRowAtIndexPath: (NSIndexPath *) indexPath {
+	return nil;
 }
 
 #pragma mark -
@@ -121,10 +166,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.cells = [[NSMutableArray alloc] init];
-
-	cellsLoaded = NO;
-	[self addCellsToHomeScreen];
+	dataLoaded = NO;
 	
 	if ( ![kUserDefaults boolForKey: kLoggedInKey] ) {
 		
@@ -139,7 +181,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
-	if ( [kUserDefaults boolForKey: kLoggedInKey] && cellsLoaded ) {
+	if ( [kUserDefaults boolForKey: kLoggedInKey] ) {
 		[self startConnectionForCellData];
 	} else if ( ![kUserDefaults boolForKey: kLoggedInKey] ) {
 		[self performSelector: @selector(showChooser) withObject: nil afterDelay: 0.1];
@@ -167,13 +209,25 @@
 - (void)viewDidUnload {
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
-	self.cells = nil;
+	self.infoTableView = nil;
+	
+	self.firstCell = nil;
+	self.secondCell = nil;
+	self.thirdCell = nil;
+	self.fourthCell = nil;
 }
 
 
 - (void)dealloc {
-	self.cells = nil;
 	self.customerList = nil;
+	self.cellInformation = nil;
+	
+	self.infoTableView = nil;
+	
+	self.firstCell = nil;
+	self.secondCell = nil;
+	self.thirdCell = nil;
+	self.fourthCell = nil;
 	
     [super dealloc];
 }
