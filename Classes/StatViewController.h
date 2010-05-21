@@ -10,6 +10,7 @@
 #import "TSGlobalDefines.h"
 
 @class WeekListViewController;
+@class ShipmentDetailViewController;
 
 @interface StatViewController : UIViewController <UIActionSheetDelegate, UINavigationControllerDelegate> {
 	UINavigationController *navController;

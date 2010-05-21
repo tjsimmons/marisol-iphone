@@ -12,17 +12,8 @@
 
 @interface ShipmentDetailViewController : UIViewController {
 	Shipment *shipment;
-	
-	UILabel *shipmentIDLabel;
-	UILabel *marisolNumLabel;
-	UILabel *coldStorageLabel;
-	UILabel *deliveryDateLabel;
 }
 
 @property (nonatomic, retain) Shipment *shipment;
-@property (nonatomic, retain) IBOutlet UILabel *shipmentIDLabel;
-@property (nonatomic, retain) IBOutlet UILabel *marisolNumLabel;
-@property (nonatomic, retain) IBOutlet UILabel *coldStorageLabel;
-@property (nonatomic, retain) IBOutlet UILabel *deliveryDateLabel;
 
 @end
