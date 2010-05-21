@@ -11,7 +11,7 @@
 
 @class WeekListViewController;
 
-@interface StatViewController : UIViewController <UIActionSheetDelegate> {
+@interface StatViewController : UIViewController <UIActionSheetDelegate, UINavigationControllerDelegate> {
 	UINavigationController *navController;
 	NSString	*activeStat;
 	WeekListViewController *childController;

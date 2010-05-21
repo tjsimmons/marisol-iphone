@@ -77,6 +77,12 @@
 	[array release];
 }
 
+-(void) viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	
+	kAppDelegateTabBar.hidden = NO;
+}
+
 #pragma mark -
 #pragma mark Table view data source
 
@@ -168,13 +174,16 @@
 			Shipment *theShipment = [self.shipmentList objectAtIndex: row];
 			
 			ShipmentDetailViewController *detailController = [[ShipmentDetailViewController alloc] initWithNibName: @"ShipmentDetailViewController" bundle: nil];
+			NSString *detailTitle = [[NSString alloc] initWithString: @"Shipment Details"];
 			
 			detailController.shipment = theShipment;
-			detailController.title = theShipment.marisolNum;
+			detailController.title = detailTitle;
+			//detailController.hidesBottomBarWhenPushed = YES;
 			
 			[self.navigationController pushViewController: detailController animated: YES];
 			[self.tableView deselectRowAtIndexPath: indexPath animated: YES];
 			
+			[detailTitle release];
 			[detailController release];
 		} else {
 			return;
