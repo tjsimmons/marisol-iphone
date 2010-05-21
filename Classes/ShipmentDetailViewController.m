@@ -13,28 +13,10 @@
 @implementation ShipmentDetailViewController
 
 @synthesize shipment;
-@synthesize shipmentIDLabel;
-@synthesize marisolNumLabel;
-@synthesize coldStorageLabel;
-@synthesize deliveryDateLabel;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
-	NSString *shipmentIDString = [[NSString alloc] initWithFormat: @"%i", shipment.shipmentID];
-	
-	self.shipmentIDLabel.text = shipmentIDString;
-	self.marisolNumLabel.text = shipment.marisolNum;
-	self.deliveryDateLabel.text = shipment.deliveryDateString;
-	self.coldStorageLabel.text = shipment.coldStorageDateString;
-	
-	[shipmentIDString release];
-}
-
--(void) viewWillAppear:(BOOL)animated {
-	NSLog(@"will appear");
-	[super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,18 +30,11 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-	self.shipmentIDLabel = nil;
-	self.marisolNumLabel = nil;
-	self.coldStorageLabel = nil;
-	self.deliveryDateLabel = nil;
 }
 
 - (void)dealloc {
 	self.shipment = nil;
-	self.shipmentIDLabel = nil;
-	self.marisolNumLabel = nil;
-	self.coldStorageLabel = nil;
-	self.deliveryDateLabel = nil;
+	
     [super dealloc];
 }
 

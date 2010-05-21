@@ -174,7 +174,7 @@
 			Shipment *theShipment = [self.shipmentList objectAtIndex: row];
 			
 			ShipmentDetailViewController *detailController = [[ShipmentDetailViewController alloc] initWithNibName: @"ShipmentDetailViewController" bundle: nil];
-			NSString *detailTitle = [[NSString alloc] initWithString: @"Shipment Details"];
+			NSString *detailTitle = [[NSString alloc] initWithFormat: @"%@", theShipment.marisolNum];
 			
 			detailController.shipment = theShipment;
 			detailController.title = detailTitle;

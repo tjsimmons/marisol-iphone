@@ -121,7 +121,7 @@
 }
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-	if ( [viewController.title isEqualToString: @"Shipment Details"] ) {
+	if ( [viewController isMemberOfClass: [ShipmentDetailViewController class]] ) {
 		kAppDelegateTabBar.hidden = YES;
 	} else {
 		kAppDelegateTabBar.hidden = NO;
