@@ -61,6 +61,7 @@
 	[weekViewTitle release];
 	
 	UINavigationController *navCont = [[UINavigationController alloc] initWithRootViewController: weekViewController];
+	navCont.delegate = self;
 	
 	self.navController = navCont;
 	[navCont release];
@@ -111,6 +112,20 @@
 	}
 	
 	[weekTitle release];
+}
+
+#pragma mark -
+#pragma mark UINavigationController Delegate Methods
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+	/* hold in case we want to use it at some point */
+}
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+	if ( [viewController.title isEqualToString: @"Shipment Details"] ) {
+		kAppDelegateTabBar.hidden = YES;
+	} else {
+		kAppDelegateTabBar.hidden = NO;
+	}
 }
 
 #pragma mark -

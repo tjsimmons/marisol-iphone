@@ -32,6 +32,11 @@
 	[shipmentIDString release];
 }
 
+-(void) viewWillAppear:(BOOL)animated {
+	NSLog(@"will appear");
+	[super viewWillAppear:animated];
+}
+
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
