@@ -102,6 +102,7 @@
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
+						<int key="IBUIClearButtonMode">1</int>
 					</object>
 					<object class="IBUITextField" id="325441925">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -126,6 +127,7 @@
 							<bool key="IBUISecureTextEntry">YES</bool>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
+						<int key="IBUIClearButtonMode">1</int>
 					</object>
 					<object class="IBUIButton" id="57041896">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -420,6 +422,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>activityIndicator</string>
 							<string>loginButton</string>
+							<string>parentController</string>
 							<string>passwordField</string>
 							<string>usernameField</string>
 						</object>
@@ -427,6 +430,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>UIActivityIndicatorView</string>
 							<string>UIButton</string>
+							<string>id</string>
 							<string>UITextField</string>
 							<string>UITextField</string>
 						</object>
