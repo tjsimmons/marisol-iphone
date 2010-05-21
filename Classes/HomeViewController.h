@@ -12,18 +12,33 @@
 #import "XMLParseHandler.h"
 
 
-@interface HomeViewController : UIViewController <ConnectionHandlerDelegate, XMLParseHandlerDelegate> {
-	BOOL cellsLoaded;
-	NSMutableArray *cells;
+@interface HomeViewController : UIViewController <ConnectionHandlerDelegate, XMLParseHandlerDelegate, UITableViewDataSource, UITableViewDelegate> {
 	NSArray *customerList;
+	NSArray *cellInformation;
+	
+	BOOL dataLoaded;
+	
+	UITableView *infoTableView;
+	
+	// cells for the home screen
+	UITableViewCell *firstCell;
+	UITableViewCell *secondCell;
+	UITableViewCell *thirdCell;
+	UITableViewCell *fourthCell;
 }
 
-@property (nonatomic, retain) NSMutableArray *cells;
 @property (nonatomic, retain) NSArray *customerList;
+@property (nonatomic, retain) NSArray *cellInformation;
+
+@property (nonatomic, retain) IBOutlet UITableView *infoTableView;
+
+@property (nonatomic, retain) IBOutlet UITableViewCell *firstCell;
+@property (nonatomic, retain) IBOutlet UITableViewCell *secondCell;
+@property (nonatomic, retain) IBOutlet UITableViewCell *thirdCell;
+@property (nonatomic, retain) IBOutlet UITableViewCell *fourthCell;
 
 -(void) setCellValuesWithArray: (NSArray *) array;
 -(void) startConnectionForCellData;
--(void) addCellsToHomeScreen;
 -(void) showChooser;
 
 // connection handler delegate method
