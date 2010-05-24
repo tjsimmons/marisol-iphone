@@ -17,13 +17,13 @@
 	NSString 	*marisolNum;
 	NSString	*shipperName;
 	// iSTAT only
-	NSString	*customsStatus;
+	//NSString	*customsStatus;
 	
 	// timeline fields
 	NSString	*coldStorageDateString;
 	NSString	*deliveryDateString;
 	NSString 	*clearanceDateString;
-	NSString	*dischargeDateString;
+	NSString	*deliveredDateString;
 }
 
 @property NSInteger shipmentID;
@@ -31,11 +31,11 @@
 @property (nonatomic, retain) NSString *blNum;
 @property (nonatomic, retain) NSString *marisolNum;
 @property (nonatomic, retain) NSString *shipperName;
-@property (nonatomic, retain) NSString *customsStatus;
+//@property (nonatomic, retain) NSString *customsStatus;
 
 @property (nonatomic, retain) NSString *coldStorageDateString;
 @property (nonatomic, retain) NSString *deliveryDateString;
 @property (nonatomic, retain) NSString *clearanceDateString;
-@property (nonatomic, retain) NSString *dischargeDateString;
+@property (nonatomic, retain) NSString *deliveredDateString;
 
 @end
