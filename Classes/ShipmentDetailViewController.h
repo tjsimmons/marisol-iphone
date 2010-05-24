@@ -13,17 +13,29 @@
 @interface ShipmentDetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
 	Shipment *shipment;
 	UITableView *shipmentDetailTableView;
-	UIImageView *tlFirst;
-	UIImageView *tlSecond;
-	UIImageView *tlThird;
-	UIImageView *tlFourth;
+	
+	UIImageView *tlImageFirst;
+	UIImageView *tlImageSecond;
+	UIImageView *tlImageThird;
+	UIImageView *tlImageFourth;
+	
+	UILabel *tlDateFirst;
+	UILabel *tlDateSecond;
+	UILabel *tlDateThird;
+	UILabel *tlDateFourth;
 }
 
 @property (nonatomic, retain) Shipment *shipment;
 @property (nonatomic, retain) IBOutlet UITableView *shipmentDetailTableView;
-@property (nonatomic, retain) IBOutlet UIImageView *tlFirst;
-@property (nonatomic, retain) IBOutlet UIImageView *tlSecond;
-@property (nonatomic, retain) IBOutlet UIImageView *tlThird;
-@property (nonatomic, retain) IBOutlet UIImageView *tlFourth;
+
+@property (nonatomic, retain) IBOutlet UIImageView *tlImageFirst;
+@property (nonatomic, retain) IBOutlet UIImageView *tlImageSecond;
+@property (nonatomic, retain) IBOutlet UIImageView *tlImageThird;
+@property (nonatomic, retain) IBOutlet UIImageView *tlImageFourth;
+
+@property (nonatomic, retain) IBOutlet UILabel *tlDateFirst;
+@property (nonatomic, retain) IBOutlet UILabel *tlDateSecond;
+@property (nonatomic, retain) IBOutlet UILabel *tlDateThird;
+@property (nonatomic, retain) IBOutlet UILabel *tlDateFourth;
 
 @end

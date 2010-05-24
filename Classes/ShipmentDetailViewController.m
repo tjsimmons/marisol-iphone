@@ -13,16 +13,22 @@
 @implementation ShipmentDetailViewController
 
 @synthesize shipment, shipmentDetailTableView;
-@synthesize tlFirst, tlSecond, tlThird, tlFourth;
+@synthesize tlImageFirst, tlImageSecond, tlImageThird, tlImageFourth;
+@synthesize tlDateFirst, tlDateSecond, tlDateThird, tlDateFourth;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	[self.tlFirst setImage: [UIImage imageNamed: @"tl_green_left.png"]];
-	[self.tlSecond setImage: [UIImage imageNamed: @"tl_green_mid.png"]];
-	[self.tlThird setImage: [UIImage imageNamed: @"tl_red_mid.png"]];
-	[self.tlFourth setImage: [UIImage imageNamed: @"tl_red_right.png"]];
+	self.tlDateFirst.text = @"3/21/2010";
+	self.tlDateSecond.text = @"4/27/2010";
+	/*self.tlDateThird.text = @"5/4/2010";
+	self.tlDateFourth.text = @"5/11/2010";*/
+	
+	[self.tlImageFirst setImage: [UIImage imageNamed: @"tl_green_left.png"]];
+	[self.tlImageSecond setImage: [UIImage imageNamed: @"tl_green_mid.png"]];
+	[self.tlImageThird setImage: [UIImage imageNamed: @"tl_grey_mid.png"]];
+	[self.tlImageFourth setImage: [UIImage imageNamed: @"tl_grey_right.png"]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,20 +44,20 @@
     // e.g. self.myOutlet = nil;
 	self.shipmentDetailTableView = nil;
 	
-	self.tlFirst = nil;
-	self.tlSecond = nil;
-	self.tlThird = nil;
-	self.tlFourth = nil;
+	self.tlImageFirst = nil;
+	self.tlImageSecond = nil;
+	self.tlImageThird = nil;
+	self.tlImageFourth = nil;
 }
 
 - (void)dealloc {
 	self.shipment = nil;
 	self.shipmentDetailTableView;
 	
-	self.tlFirst = nil;
-	self.tlSecond = nil;
-	self.tlThird = nil;
-	self.tlFourth = nil;
+	self.tlImageFirst = nil;
+	self.tlImageSecond = nil;
+	self.tlImageThird = nil;
+	self.tlImageFourth = nil;
 	
     [super dealloc];
 }

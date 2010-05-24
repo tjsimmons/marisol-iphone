@@ -11,14 +11,31 @@
 
 @interface Shipment : NSObject {
 	NSInteger	shipmentID;
-	NSString	*marisolNum;
+	
+	// shipment detail fields
+	NSString	*blNum;
+	NSString 	*marisolNum;
+	NSString	*shipperName;
+	// iSTAT only
+	NSString	*customsStatus;
+	
+	// timeline fields
 	NSString	*coldStorageDateString;
 	NSString	*deliveryDateString;
+	NSString 	*clearanceDateString;
+	NSString	*dischargeDateString;
 }
 
 @property NSInteger shipmentID;
+
+@property (nonatomic, retain) NSString *blNum;
 @property (nonatomic, retain) NSString *marisolNum;
+@property (nonatomic, retain) NSString *shipperName;
+@property (nonatomic, retain) NSString *customsStatus;
+
 @property (nonatomic, retain) NSString *coldStorageDateString;
 @property (nonatomic, retain) NSString *deliveryDateString;
+@property (nonatomic, retain) NSString *clearanceDateString;
+@property (nonatomic, retain) NSString *dischargeDateString;
 
 @end
