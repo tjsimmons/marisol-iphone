@@ -132,7 +132,11 @@
 -(void) connectionFinishedWithFilePath:(NSString *)filePath {
 	XMLParseHandler *handler = [[XMLParseHandler alloc] initWithDelegate: self];
 	
-	[handler setCallingClass: MIShipmentVC];
+	if ( [self.activeStat isEqualToString: iSTAT] ) {
+		[handler setCallingClass: MIiShipmentVC];
+	} else if ( [self.activeStat isEqualToString: exSTAT] ) {
+		[handler setCallingClass: MIeShipmentVC];
+	}
 	
 	[handler startXMLParseWithFile: filePath];
 	

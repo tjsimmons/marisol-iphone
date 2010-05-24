@@ -14,8 +14,13 @@
 // Shipment List Constants
 #define kShipmentElementName			@"shipment"
 #define kMarisolNumElementName			@"marisolNum"
-#define kDeliveryDateElementName		@"deliveryDate"
-#define kColdStorageDateElementName		@"coldStorageDate"
+#define kColdStorageDateElementName		@"coldStorage"
+#define kDeliveryDateElementName		@"outDelivery"
+#define kClearanceDateElementName		@"clearance"
+#define kDeliveredDateElementName		@"delivered"
+#define kBlNumElementName				@"blNum"
+#define kShipperElementName				@"shipper"
+
 
 // Home Constants
 #define	kCellElementName			@"cell"
@@ -82,7 +87,7 @@
 #pragma mark -
 #pragma mark NSXMLParser Delegate Methods
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
-	if ( callingClass == MIShipmentVC ) {
+	if ( callingClass == MIiShipmentVC || callingClass == MIeShipmentVC ) {
 		if ( [elementName isEqualToString: kShipmentElementName] ) {
 			Shipment *shipment = [[Shipment alloc] init];
 			
@@ -90,7 +95,9 @@
 			[shipment release];
 			
 			[currentObject setShipmentID: [[attributeDict objectForKey: @"id"] integerValue]];
-		} else if ( [elementName isEqualToString: kMarisolNumElementName] || [elementName isEqualToString: kDeliveryDateElementName] || [elementName isEqualToString: kColdStorageDateElementName] ) {
+		} else if ( [elementName isEqualToString: kMarisolNumElementName] || [elementName isEqualToString: kDeliveryDateElementName] || [elementName isEqualToString: kColdStorageDateElementName]
+				   || [elementName isEqualToString: kClearanceDateElementName] || [elementName isEqualToString: kDeliveredDateElementName] || [elementName isEqualToString: kBlNumElementName]
+				   || [elementName isEqualToString: kShipperElementName] ) {
 			accumulatingCharacterData = YES;
 			
 			self.currentParsedCharacterData = [NSMutableString string];
@@ -134,7 +141,7 @@
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-	if ( callingClass == MIShipmentVC ) {
+	if ( callingClass == MIiShipmentVC || callingClass == MIeShipmentVC ) {
 		if ( [elementName isEqualToString: kMarisolNumElementName] ) {
 			[currentObject setMarisolNum: self.currentParsedCharacterData];
 			
@@ -145,6 +152,22 @@
 			self.currentParsedCharacterData = nil;
 		} else if ( [elementName isEqualToString: kColdStorageDateElementName] ) {
 			[currentObject setColdStorageDateString: self.currentParsedCharacterData];
+			
+			self.currentParsedCharacterData = nil;
+		} else if ( [elementName isEqualToString: kClearanceDateElementName] ) {
+			[currentObject setClearanceDateString: self.currentParsedCharacterData];
+			
+			self.currentParsedCharacterData = nil;
+		} else if ( [elementName isEqualToString: kDeliveredDateElementName] ) {
+			[currentObject setDeliveredDateString: self.currentParsedCharacterData];
+			
+			self.currentParsedCharacterData = nil;
+		} else if ( [elementName isEqualToString: kBlNumElementName] ) {
+			[currentObject setBlNum: self.currentParsedCharacterData];
+			
+			self.currentParsedCharacterData = nil;
+		} else if ( [elementName isEqualToString: kShipperElementName] ) {
+			[currentObject setShipperName: self.currentParsedCharacterData];
 			
 			self.currentParsedCharacterData = nil;
 		} else if ( [elementName isEqualToString: kShipmentElementName] ) {
