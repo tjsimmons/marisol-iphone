@@ -7,7 +7,7 @@
 //
 
 // set a typedef to figure out what class called the parser
-typedef enum { MIHomeVC = 0, MIShipmentVC, MILoginVC } caller;
+typedef enum { MIHomeVC = 0, MIiShipmentVC, MIeShipmentVC, MILoginVC } caller;
 
 // index of the action sheet button in search and stat controllers
 typedef enum { iStatButton = 0, exStatButton, cancelButton } actionButtonIndex;
