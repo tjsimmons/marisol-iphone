@@ -24,6 +24,7 @@
 		5F15C357116B76CE001ED14A /* WeekListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15C34D116B76CE001ED14A /* WeekListViewController.m */; };
 		5F15C358116B76CE001ED14A /* XMLParseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15C34F116B76CE001ED14A /* XMLParseHandler.m */; };
 		5F15C402116B7C94001ED14A /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F15C401116B7C94001ED14A /* globe.png */; };
+		5F236F6311AADD36002BD067 /* tl_green_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F236F6211AADD36002BD067 /* tl_green_left.png */; };
 		5F5C7B421198845A008A786F /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5C7B401198845A008A786F /* SearchViewController.m */; };
 		5F5C7B431198845A008A786F /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F5C7B411198845A008A786F /* SearchViewController.xib */; };
 		5F748F0A11764EC4000B1BA1 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F748F0911764EC4000B1BA1 /* Reachability.m */; };
@@ -68,6 +69,7 @@
 		5F15C34E116B76CE001ED14A /* XMLParseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParseHandler.h; sourceTree = "<group>"; };
 		5F15C34F116B76CE001ED14A /* XMLParseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParseHandler.m; sourceTree = "<group>"; };
 		5F15C401116B7C94001ED14A /* globe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = globe.png; sourceTree = "<group>"; };
+		5F236F6211AADD36002BD067 /* tl_green_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tl_green_left.png; sourceTree = "<group>"; };
 		5F5C7B3F1198845A008A786F /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		5F5C7B401198845A008A786F /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		5F5C7B411198845A008A786F /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SearchViewController.xib; path = Classes/SearchViewController.xib; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		5F3E9477116A4302003C2BFD /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				5F236F6211AADD36002BD067 /* tl_green_left.png */,
 				5F8FC7E611A5DE48001DA17C /* icon.png */,
 				5F15C34B116B76CE001ED14A /* weeklist.plist */,
 				5F15C401116B7C94001ED14A /* globe.png */,
@@ -339,6 +342,7 @@
 				5F5C7B431198845A008A786F /* SearchViewController.xib in Resources */,
 				5F90A9771199F456009BA591 /* ChooserViewController.xib in Resources */,
 				5F8FC7E711A5DE48001DA17C /* icon.png in Resources */,
+				5F236F6311AADD36002BD067 /* tl_green_left.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

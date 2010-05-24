@@ -12,11 +12,14 @@
 
 @implementation ShipmentDetailViewController
 
-@synthesize shipment;
+@synthesize shipment, shipmentDetailTableView;
+@synthesize tlFirst, tlSecond, tlThird, tlFourth;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	[self.tlFirst setImage: [UIImage imageNamed: @"tl_green_left.png"]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,12 +33,51 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+	self.shipmentDetailTableView = nil;
+	
+	self.tlFirst = nil;
+	self.tlSecond = nil;
+	self.tlThird = nil;
+	self.tlFourth = nil;
 }
 
 - (void)dealloc {
 	self.shipment = nil;
+	self.shipmentDetailTableView;
+	
+	self.tlFirst = nil;
+	self.tlSecond = nil;
+	self.tlThird = nil;
+	self.tlFourth = nil;
 	
     [super dealloc];
+}
+
+#pragma mark -
+#pragma mark Table View Data Source
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	static NSString *cellID = @"CellID";
+	
+	UITableViewCell *cell = [self.shipmentDetailTableView dequeueReusableCellWithIdentifier: cellID];
+	
+	if ( cell == nil ) {
+		cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: cellID];
+	}
+	
+	cell.textLabel.text = [NSString stringWithFormat: @"%i", indexPath.row];
+	cell.textLabel.textColor = [UIColor whiteColor];
+	
+	return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	return 4;
+}
+
+#pragma mark -
+#pragma mark Table View Delegate
+-(NSIndexPath *)tableView:(UITableView *) tableView willSelectRowAtIndexPath: (NSIndexPath *) indexPath {
+	return nil;
 }
 
 
