@@ -10,10 +10,20 @@
 
 @class Shipment;
 
-@interface ShipmentDetailViewController : UIViewController {
+@interface ShipmentDetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
 	Shipment *shipment;
+	UITableView *shipmentDetailTableView;
+	UIImageView *tlFirst;
+	UIImageView *tlSecond;
+	UIImageView *tlThird;
+	UIImageView *tlFourth;
 }
 
 @property (nonatomic, retain) Shipment *shipment;
+@property (nonatomic, retain) IBOutlet UITableView *shipmentDetailTableView;
+@property (nonatomic, retain) IBOutlet UIImageView *tlFirst;
+@property (nonatomic, retain) IBOutlet UIImageView *tlSecond;
+@property (nonatomic, retain) IBOutlet UIImageView *tlThird;
+@property (nonatomic, retain) IBOutlet UIImageView *tlFourth;
 
 @end
