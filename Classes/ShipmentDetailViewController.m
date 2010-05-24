@@ -20,6 +20,9 @@
     [super viewDidLoad];
 	
 	[self.tlFirst setImage: [UIImage imageNamed: @"tl_green_left.png"]];
+	[self.tlSecond setImage: [UIImage imageNamed: @"tl_green_mid.png"]];
+	[self.tlThird setImage: [UIImage imageNamed: @"tl_red_mid.png"]];
+	[self.tlFourth setImage: [UIImage imageNamed: @"tl_red_right.png"]];
 }
 
 - (void)didReceiveMemoryWarning {
