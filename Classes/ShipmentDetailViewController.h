@@ -38,4 +38,6 @@
 @property (nonatomic, retain) IBOutlet UILabel *tlDateThird;
 @property (nonatomic, retain) IBOutlet UILabel *tlDateFourth;
 
+-(void) setTimelineImages;
+
 @end

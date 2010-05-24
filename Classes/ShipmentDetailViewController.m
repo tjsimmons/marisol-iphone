@@ -20,15 +20,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.tlDateFirst.text = @"3/21/2010";
-	self.tlDateSecond.text = @"4/27/2010";
-	/*self.tlDateThird.text = @"5/4/2010";
-	self.tlDateFourth.text = @"5/11/2010";*/
+	self.tlDateFirst.text = [shipment coldStorageDateString];
+	self.tlDateSecond.text = [shipment clearanceDateString];
+	self.tlDateThird.text = [shipment deliveryDateString];
+	self.tlDateFourth.text = [shipment deliveredDateString];
 	
-	[self.tlImageFirst setImage: [UIImage imageNamed: @"tl_green_left.png"]];
-	[self.tlImageSecond setImage: [UIImage imageNamed: @"tl_green_mid.png"]];
-	[self.tlImageThird setImage: [UIImage imageNamed: @"tl_grey_mid.png"]];
-	[self.tlImageFourth setImage: [UIImage imageNamed: @"tl_grey_right.png"]];
+	[self setTimelineImages];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,6 +57,34 @@
 	self.tlImageFourth = nil;
 	
     [super dealloc];
+}
+
+#pragma mark -
+#pragma mark Custom Methods
+-(void) setTimelineImages {
+	if ( [self.tlDateFirst.text isEqualToString: @""] ) {
+		self.tlImageFirst.image = [UIImage imageNamed: @"tl_grey_left.png"];
+	} else {
+		self.tlImageFirst.image = [UIImage imageNamed: @"tl_green_left.png"];
+	}
+	
+	if ( [self.tlDateSecond.text isEqualToString: @""] ) {
+		self.tlImageSecond.image = [UIImage imageNamed: @"tl_grey_mid.png"];
+	} else {
+		self.tlImageSecond.image = [UIImage imageNamed: @"tl_green_mid.png"];
+	}
+	
+	if ( [self.tlDateThird.text isEqualToString: @""] ) {
+		self.tlImageThird.image = [UIImage imageNamed: @"tl_grey_mid.png"];
+	} else {
+		self.tlImageThird.image = [UIImage imageNamed: @"tl_green_mid.png"];
+	}
+	
+	if ( [self.tlDateFourth.text isEqualToString: @""] ) {
+		self.tlImageFourth.image = [UIImage imageNamed: @"tl_grey_right.png"];
+	} else {
+		self.tlImageFourth.image = [UIImage imageNamed: @"tl_green_right.png"];
+	}
 }
 
 #pragma mark -
