@@ -44,7 +44,7 @@
 	}
 }
 
--(void) setCellValues /*WithArray:(NSArray *)array*/ {
+-(void) setCellValues {
 	UITableViewCell *cell;
 	UILabel *titleLabel;
 	UILabel *valueLabel;
@@ -158,6 +158,8 @@
     [super viewDidLoad];
 	
 	dataLoaded = NO;
+	
+	self.infoTableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
 	
 	if ( ![kUserDefaults boolForKey: kLoggedInKey] ) {
 		
