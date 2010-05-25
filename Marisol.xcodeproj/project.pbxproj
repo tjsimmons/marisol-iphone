@@ -34,7 +34,6 @@
 		5F5C7B431198845A008A786F /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F5C7B411198845A008A786F /* SearchViewController.xib */; };
 		5F748F0A11764EC4000B1BA1 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F748F0911764EC4000B1BA1 /* Reachability.m */; };
 		5F748F3B11765349000B1BA1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F748F3A11765349000B1BA1 /* SystemConfiguration.framework */; };
-		5F8FC7E711A5DE48001DA17C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F8FC7E611A5DE48001DA17C /* icon.png */; };
 		5F90A80A1199C0E7009BA591 /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F90A8091199C0E7009BA591 /* Customer.m */; };
 		5F90A9761199F456009BA591 /* ChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F90A9741199F455009BA591 /* ChooserViewController.m */; };
 		5F90A9771199F456009BA591 /* ChooserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F90A9751199F456009BA591 /* ChooserViewController.xib */; };
@@ -44,6 +43,7 @@
 		5FD1E2C31173A65100CD0782 /* HomeCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD1E2C21173A65100CD0782 /* HomeCellModel.m */; };
 		5FD68A1111A1C2D900C5C05F /* StatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD68A1011A1C2D900C5C05F /* StatViewController.m */; };
 		5FE154EE1173621C0061F3CE /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FE154EC1173621C0061F3CE /* HomeViewController.xib */; };
+		5FFEB1B811AB5C7C00A290BB /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FFEB1B711AB5C7C00A290BB /* icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,7 +86,6 @@
 		5F748F0811764EC3000B1BA1 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		5F748F0911764EC4000B1BA1 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		5F748F3A11765349000B1BA1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		5F8FC7E611A5DE48001DA17C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		5F90A8081199C0E7009BA591 /* Customer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Customer.h; sourceTree = "<group>"; };
 		5F90A8091199C0E7009BA591 /* Customer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Customer.m; sourceTree = "<group>"; };
 		5F90A9731199F455009BA591 /* ChooserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooserViewController.h; sourceTree = "<group>"; };
@@ -103,6 +102,7 @@
 		5FD68A1011A1C2D900C5C05F /* StatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatViewController.m; sourceTree = "<group>"; };
 		5FD68B0911A1E26500C5C05F /* TSGlobalDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSGlobalDefines.h; sourceTree = "<group>"; };
 		5FE154EC1173621C0061F3CE /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeViewController.xib; path = Classes/HomeViewController.xib; sourceTree = "<group>"; };
+		5FFEB1B711AB5C7C00A290BB /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Marisol-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Marisol-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -230,8 +230,8 @@
 			isa = PBXGroup;
 			children = (
 				5F236F8511AADFAD002BD067 /* Timeline Images */,
-				5F8FC7E611A5DE48001DA17C /* icon.png */,
 				5F15C34B116B76CE001ED14A /* weeklist.plist */,
+				5FFEB1B711AB5C7C00A290BB /* icon.png */,
 				5F15C401116B7C94001ED14A /* globe.png */,
 				8D1107310486CEB800E47090 /* Marisol-Info.plist */,
 			);
@@ -364,13 +364,13 @@
 				5FB5C753118F7234007B24BD /* RootSearchController.xib in Resources */,
 				5F5C7B431198845A008A786F /* SearchViewController.xib in Resources */,
 				5F90A9771199F456009BA591 /* ChooserViewController.xib in Resources */,
-				5F8FC7E711A5DE48001DA17C /* icon.png in Resources */,
 				5F236F6311AADD36002BD067 /* tl_green_left.png in Resources */,
 				5F236F8011AADFA9002BD067 /* tl_green_mid.png in Resources */,
 				5F236F8111AADFA9002BD067 /* tl_green_right.png in Resources */,
 				5F236FB511AB17B5002BD067 /* tl_grey_left.png in Resources */,
 				5F236FB611AB17B5002BD067 /* tl_grey_mid.png in Resources */,
 				5F236FB711AB17B5002BD067 /* tl_grey_right.png in Resources */,
+				5FFEB1B811AB5C7C00A290BB /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

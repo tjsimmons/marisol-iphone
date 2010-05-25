@@ -20,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
+	self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+	
 	self.tlDateFirst.text = [shipment coldStorageDateString];
 	self.tlDateSecond.text = [shipment clearanceDateString];
 	self.tlDateThird.text = [shipment deliveryDateString];
@@ -99,13 +101,16 @@
 	}
 	
 	cell.textLabel.text = [NSString stringWithFormat: @"%i", indexPath.row];
-	cell.textLabel.textColor = [UIColor whiteColor];
 	
 	return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	return 4;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	return @"Shipment Details";
 }
 
 #pragma mark -
