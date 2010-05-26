@@ -12,7 +12,7 @@
 
 @implementation ShipmentDetailViewController
 
-@synthesize shipment, shipmentDetailTableView;
+@synthesize shipment, shipmentDetailTableView, timelineCell;
 @synthesize tlImageFirst, tlImageSecond, tlImageThird, tlImageFourth;
 @synthesize tlDateFirst, tlDateSecond, tlDateThird, tlDateFourth;
 
@@ -42,6 +42,7 @@
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 	self.shipmentDetailTableView = nil;
+	self.timelineCell = nil;
 	
 	self.tlImageFirst = nil;
 	self.tlImageSecond = nil;
@@ -51,7 +52,8 @@
 
 - (void)dealloc {
 	self.shipment = nil;
-	self.shipmentDetailTableView;
+	self.shipmentDetailTableView = nil;
+	self.timelineCell = nil;
 	
 	self.tlImageFirst = nil;
 	self.tlImageSecond = nil;
@@ -93,30 +95,58 @@
 #pragma mark Table View Data Source
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	static NSString *cellID = @"CellID";
+	UITableViewCell *cell;
 	
-	UITableViewCell *cell = [self.shipmentDetailTableView dequeueReusableCellWithIdentifier: cellID];
-	
-	if ( cell == nil ) {
-		cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: cellID];
+	switch ( indexPath.section ) {
+		case 0:
+			cell = self.timelineCell;
+			break;
+		case 1:
+			cell = [self.shipmentDetailTableView dequeueReusableCellWithIdentifier: cellID];
+			
+			if ( cell == nil ) {
+				cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: cellID];
+			}
+			
+			cell.textLabel.text = [NSString stringWithFormat: @"%i", indexPath.row];
+			break;
 	}
-	
-	cell.textLabel.text = [NSString stringWithFormat: @"%i", indexPath.row];
 	
 	return cell;
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+	return 2;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return 4;
+	if ( section == 0 ) {
+		return 1;
+	} else {
+		return 4;
+	}
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	return @"Shipment Details";
+	if ( section == 1 ) {
+		return @"Shipment Details";
+	} else {
+		return nil;
+	}
 }
 
 #pragma mark -
 #pragma mark Table View Delegate
 -(NSIndexPath *)tableView:(UITableView *) tableView willSelectRowAtIndexPath: (NSIndexPath *) indexPath {
 	return nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath { 
+	if ( indexPath.section == 0 ) {
+		return 63.0;
+	} else {
+		return 44.0;
+	}
 }
 
 

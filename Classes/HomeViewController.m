@@ -112,7 +112,7 @@
 -(void) xmlDidFinishParsingWithArray: (NSMutableArray *) array {
 	self.cellInformation = array;
 	dataLoaded = YES;
-	//[self.infoTableView performSelectorOnMainThread:@selector(reloadData) withObject: nil waitUntilDone: NO];
+
 	[self setCellValues];
 }
 

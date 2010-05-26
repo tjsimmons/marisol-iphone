@@ -13,6 +13,7 @@
 @interface ShipmentDetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
 	Shipment *shipment;
 	UITableView *shipmentDetailTableView;
+	UITableViewCell *timelineCell;
 	
 	UIImageView *tlImageFirst;
 	UIImageView *tlImageSecond;
@@ -27,6 +28,7 @@
 
 @property (nonatomic, retain) Shipment *shipment;
 @property (nonatomic, retain) IBOutlet UITableView *shipmentDetailTableView;
+@property (nonatomic, retain) IBOutlet UITableViewCell *timelineCell;
 
 @property (nonatomic, retain) IBOutlet UIImageView *tlImageFirst;
 @property (nonatomic, retain) IBOutlet UIImageView *tlImageSecond;
