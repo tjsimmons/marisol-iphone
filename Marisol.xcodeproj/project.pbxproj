@@ -34,6 +34,7 @@
 		5F5C7B431198845A008A786F /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F5C7B411198845A008A786F /* SearchViewController.xib */; };
 		5F748F0A11764EC4000B1BA1 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F748F0911764EC4000B1BA1 /* Reachability.m */; };
 		5F748F3B11765349000B1BA1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F748F3A11765349000B1BA1 /* SystemConfiguration.framework */; };
+		5F7D527211AEAFED005AFBE6 /* ShipmentDetailInfoCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7D527111AEAFED005AFBE6 /* ShipmentDetailInfoCellViewController.m */; };
 		5F90A80A1199C0E7009BA591 /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F90A8091199C0E7009BA591 /* Customer.m */; };
 		5F90A9761199F456009BA591 /* ChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F90A9741199F455009BA591 /* ChooserViewController.m */; };
 		5F90A9771199F456009BA591 /* ChooserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F90A9751199F456009BA591 /* ChooserViewController.xib */; };
@@ -86,6 +87,8 @@
 		5F748F0811764EC3000B1BA1 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		5F748F0911764EC4000B1BA1 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		5F748F3A11765349000B1BA1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5F7D527011AEAFED005AFBE6 /* ShipmentDetailInfoCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShipmentDetailInfoCellViewController.h; sourceTree = "<group>"; };
+		5F7D527111AEAFED005AFBE6 /* ShipmentDetailInfoCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShipmentDetailInfoCellViewController.m; sourceTree = "<group>"; };
 		5F90A8081199C0E7009BA591 /* Customer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Customer.h; sourceTree = "<group>"; };
 		5F90A8091199C0E7009BA591 /* Customer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Customer.m; sourceTree = "<group>"; };
 		5F90A9731199F455009BA591 /* ChooserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooserViewController.h; sourceTree = "<group>"; };
@@ -250,6 +253,7 @@
 				5F15C34C116B76CE001ED14A /* WeekListViewController.h */,
 				5F15C348116B76CE001ED14A /* ShipmentListViewController.h */,
 				5F15C345116B76CE001ED14A /* ShipmentDetailViewController.h */,
+				5F7D527011AEAFED005AFBE6 /* ShipmentDetailInfoCellViewController.h */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -309,6 +313,7 @@
 				5F15C34D116B76CE001ED14A /* WeekListViewController.m */,
 				5F15C349116B76CE001ED14A /* ShipmentListViewController.m */,
 				5F15C346116B76CE001ED14A /* ShipmentDetailViewController.m */,
+				5F7D527111AEAFED005AFBE6 /* ShipmentDetailInfoCellViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -398,6 +403,7 @@
 				5F90A80A1199C0E7009BA591 /* Customer.m in Sources */,
 				5F90A9761199F456009BA591 /* ChooserViewController.m in Sources */,
 				5FD68A1111A1C2D900C5C05F /* StatViewController.m in Sources */,
+				5F7D527211AEAFED005AFBE6 /* ShipmentDetailInfoCellViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
