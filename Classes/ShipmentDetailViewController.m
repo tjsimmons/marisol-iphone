@@ -7,6 +7,7 @@
 //
 
 #import "ShipmentDetailViewController.h"
+#import "ShipmentDetailInfoCellViewController.h"
 #import "Shipment.h"
 
 
@@ -94,25 +95,38 @@
 #pragma mark -
 #pragma mark Table View Data Source
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	static NSString *cellID = @"CellID";
-	UITableViewCell *cell;
-	
-	switch ( indexPath.section ) {
-		case 0:
-			cell = self.timelineCell;
-			break;
-		case 1:
-			cell = [self.shipmentDetailTableView dequeueReusableCellWithIdentifier: cellID];
-			
-			if ( cell == nil ) {
-				cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: cellID];
-			}
-			
-			cell.textLabel.text = [NSString stringWithFormat: @"%i", indexPath.row];
-			break;
+	static NSString *cellID = @"InfoCellID";
+
+	if ( indexPath.section == 0 ) {
+		return self.timelineCell;
+	} else {
+		ShipmentDetailInfoCellViewController *cell = (ShipmentDetailInfoCellViewController *) [self.shipmentDetailTableView dequeueReusableCellWithIdentifier: cellID];
+		
+		if ( cell == nil ) {
+			cell = [[ShipmentDetailInfoCellViewController alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: cellID];
+		}
+		
+		switch ( indexPath.row ) {
+			case 0:
+				cell.nameLabel.text = @"BL #";
+				cell.valueLabel.text = self.shipment.blNum;
+				break;
+			case 1:
+				cell.nameLabel.text = @"Shipper";
+				cell.valueLabel.text = self.shipment.shipperName;
+				break;
+			case 2:
+				cell.nameLabel.text = @"Something";
+				cell.valueLabel.text = @"Random value";
+				break;
+			case 3:
+				cell.nameLabel.text = @"Something else";
+				cell.valueLabel.text = @"Another random value";
+				break;
+		}
+		
+		return cell;
 	}
-	
-	return cell;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
