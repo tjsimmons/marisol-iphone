@@ -131,16 +131,10 @@
 			[self dismissModalViewControllerAnimated: YES];
 		}
 	} else {
-		/*ChooserViewController *chooserVC = [[ChooserViewController alloc] initWithNibName: @"ChooserViewController" bundle: nil];
-		
-		[chooserVC setCustomerList: array];
-		
-		[self performSelectorOnMainThread: @selector(presentModalViewController:animated:) withObject: chooserVC waitUntilDone: NO];
-		
-		[chooserVC release];*/
 		[self.parentController setCustomerList: xmlArray];
 		[self dismissModalViewControllerAnimated: YES];
 	}
+	
 	[xmlArray release];
 }
 

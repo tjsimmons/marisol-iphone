@@ -12,7 +12,7 @@
 #import "XMLParseHandler.h"
 
 typedef enum { MIFirstTitleTag = 11, MIFirstValueTag, MISecondTitleTag = 21, MISecondValueTag, MIThirdTitleTag = 31, MIThirdValueTag, MIFourthTitleTag = 41,
-	MIFourthValueTag } TagTags;
+	MIFourthValueTag } tags;
 
 
 @interface HomeViewController : UIViewController <ConnectionHandlerDelegate, XMLParseHandlerDelegate, UITableViewDataSource, UITableViewDelegate> {
