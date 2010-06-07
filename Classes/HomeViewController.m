@@ -152,6 +152,10 @@
 	return nil;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return 105;
+}
+
 #pragma mark -
 #pragma mark View lifecycle
 - (void)viewDidLoad {
