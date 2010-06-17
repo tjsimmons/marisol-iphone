@@ -14,7 +14,6 @@
 
 @synthesize customerList, MItableView, lastCheckedCell;
 
-
 #pragma mark -
 #pragma mark View lifecycle
 
@@ -30,7 +29,7 @@
 #pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
+    // Return the number of section
     return 1;
 }
 

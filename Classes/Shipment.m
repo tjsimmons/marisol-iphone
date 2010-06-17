@@ -13,7 +13,7 @@
 
 @synthesize shipmentID;
 
-@synthesize blNum, marisolNum, shipperName;//, customsStatus;
+@synthesize blNum, marisolNum, shipperName, coordinator, vessel;//, customsStatus;
 @synthesize coldStorageDateString, deliveryDateString, clearanceDateString, deliveredDateString;
 
 -(void) dealloc {
@@ -21,6 +21,8 @@
 	self.marisolNum = nil;
 	self.shipperName = nil;
 	//self.customsStatus = nil;
+	self.coordinator = nil;
+	self.vessel = nil;
 	
 	self.coldStorageDateString = nil;
 	self.deliveryDateString = nil;

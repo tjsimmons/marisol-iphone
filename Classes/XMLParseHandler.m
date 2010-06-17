@@ -20,6 +20,8 @@
 #define kDeliveredDateElementName		@"delivered"
 #define kBlNumElementName				@"blNum"
 #define kShipperElementName				@"shipper"
+#define kCoordElementName				@"coord"
+#define kVesselElementName				@"vessel"
 
 
 // Home Constants
@@ -87,7 +89,24 @@
 #pragma mark -
 #pragma mark NSXMLParser Delegate Methods
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
-	if ( callingClass == MIiShipmentVC || callingClass == MIeShipmentVC ) {
+	if ( callingClass == MIiShipmentVC ) {
+		if ( [elementName isEqualToString: kShipmentElementName] ) {
+			Shipment *shipment = [[Shipment alloc] init];
+			
+			self.currentObject = shipment;
+			[shipment release];
+			
+			[currentObject setShipmentID: [[attributeDict objectForKey: @"id"] integerValue]];
+		} else if ( [elementName isEqualToString: kMarisolNumElementName] || [elementName isEqualToString: kDeliveryDateElementName] || [elementName isEqualToString: kColdStorageDateElementName]
+				   || [elementName isEqualToString: kClearanceDateElementName] || [elementName isEqualToString: kDeliveredDateElementName] || [elementName isEqualToString: kBlNumElementName]
+				   || [elementName isEqualToString: kShipperElementName] || [elementName isEqualToString: kCoordElementName] || [elementName isEqualToString: kVesselElementName] ) {
+			accumulatingCharacterData = YES;
+			
+			self.currentParsedCharacterData = [NSMutableString string];
+			
+			[self.currentParsedCharacterData setString: @""];
+		}
+	} else if ( callingClass == MIeShipmentVC ) {
 		if ( [elementName isEqualToString: kShipmentElementName] ) {
 			Shipment *shipment = [[Shipment alloc] init];
 			
@@ -142,6 +161,17 @@
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
 	if ( callingClass == MIiShipmentVC || callingClass == MIeShipmentVC ) {
+		if ( callingClass == MIiShipmentVC ) {
+			if ( [elementName isEqualToString: kCoordElementName] ) {
+				[currentObject setCoordinator: self.currentParsedCharacterData];
+				
+				self.currentParsedCharacterData = nil;
+			} else if ( [elementName isEqualToString: kVesselElementName] ) {
+				[currentObject setVessel: self.currentParsedCharacterData];
+				
+				self.currentParsedCharacterData = nil;
+			}
+		}
 		if ( [elementName isEqualToString: kMarisolNumElementName] ) {
 			[currentObject setMarisolNum: self.currentParsedCharacterData];
 			

@@ -17,6 +17,8 @@
 	NSString 	*marisolNum;
 	NSString	*shipperName;
 	// iSTAT only
+	NSString	*coordinator;
+	NSString	*vessel;
 	//NSString	*customsStatus;
 	
 	// timeline fields
@@ -32,6 +34,8 @@
 @property (nonatomic, retain) NSString *marisolNum;
 @property (nonatomic, retain) NSString *shipperName;
 //@property (nonatomic, retain) NSString *customsStatus;
+@property (nonatomic, retain) NSString *coordinator;
+@property (nonatomic, retain) NSString *vessel;
 
 @property (nonatomic, retain) NSString *coldStorageDateString;
 @property (nonatomic, retain) NSString *deliveryDateString;
