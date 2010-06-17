@@ -202,6 +202,7 @@
 	ShipmentDetailViewController *detailController = [[ShipmentDetailViewController alloc] initWithNibName: @"ShipmentDetailViewController" bundle: nil];
 	
 	detailController.shipment = theShipment;
+	detailController.activeStat = self.activeStat;
 	
 	[self.navigationController pushViewController: detailController animated: YES];
 	

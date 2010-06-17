@@ -16,6 +16,7 @@
 @synthesize shipment, shipmentDetailTableView, timelineCell;
 @synthesize tlImageFirst, tlImageSecond, tlImageThird, tlImageFourth;
 @synthesize tlDateFirst, tlDateSecond, tlDateThird, tlDateFourth;
+@synthesize activeStat;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -61,6 +62,8 @@
 	self.tlImageThird = nil;
 	self.tlImageFourth = nil;
 	
+	self.activeStat = nil;
+	
     [super dealloc];
 }
 
@@ -96,7 +99,7 @@
 #pragma mark Table View Data Source
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	static NSString *cellID = @"InfoCellID";
-
+	
 	if ( indexPath.section == 0 ) {
 		return self.timelineCell;
 	} else {
@@ -116,12 +119,22 @@
 				cell.valueLabel.text = self.shipment.shipperName;
 				break;
 			case 2:
-				cell.nameLabel.text = @"Something";
-				cell.valueLabel.text = @"Random value";
+				if ( [self.activeStat isEqualToString: iSTAT] ) {
+					cell.nameLabel.text = @"Coordinator";
+					cell.valueLabel.text = self.shipment.coordinator;
+				} else {
+					cell.nameLabel.text = @"Something";
+					cell.valueLabel.text = @"Random value";
+				}
 				break;
 			case 3:
-				cell.nameLabel.text = @"Something else";
-				cell.valueLabel.text = @"Another random value";
+				if ( [self.activeStat isEqualToString: iSTAT] ) {
+					cell.nameLabel.text = @"Vessel";
+					cell.valueLabel.text = self.shipment.vessel;
+				} else {
+					cell.nameLabel.text = @"Something else";
+					cell.valueLabel.text = @"Another random value";
+				}
 				break;
 		}
 		

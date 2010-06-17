@@ -24,6 +24,8 @@
 	UILabel *tlDateSecond;
 	UILabel *tlDateThird;
 	UILabel *tlDateFourth;
+	
+	NSString *activeStat;
 }
 
 @property (nonatomic, retain) Shipment *shipment;
@@ -39,6 +41,8 @@
 @property (nonatomic, retain) IBOutlet UILabel *tlDateSecond;
 @property (nonatomic, retain) IBOutlet UILabel *tlDateThird;
 @property (nonatomic, retain) IBOutlet UILabel *tlDateFourth;
+
+@property (nonatomic, retain) NSString *activeStat;
 
 -(void) setTimelineImages;
 
