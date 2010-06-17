@@ -9,7 +9,7 @@
 #import "ShipmentDetailViewController.h"
 #import "ShipmentDetailInfoCellViewController.h"
 #import "Shipment.h"
-
+#import "TSGlobalDefines.h"
 
 @implementation ShipmentDetailViewController
 

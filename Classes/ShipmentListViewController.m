@@ -182,6 +182,7 @@
 			
 			detailController.shipment = theShipment;
 			detailController.title = detailTitle;
+			detailController.activeStat = self.activeStat;
 			//detailController.hidesBottomBarWhenPushed = YES;
 			
 			[self.navigationController pushViewController: detailController animated: YES];
