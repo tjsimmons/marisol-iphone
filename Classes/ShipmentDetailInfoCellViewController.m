@@ -11,22 +11,23 @@
 
 @implementation ShipmentDetailInfoCellViewController
 
-@synthesize nameLabel, valueLabel;
+//@synthesize nameLabel, valueLabel;
+@synthesize valueLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
-		UILabel *label1 = [[UILabel alloc] initWithFrame: CGRectMake(20, 3, 264, 21)];
-		UILabel *label2 = [[UILabel alloc] initWithFrame: CGRectMake(20, 20, 264, 21)];
+		//UILabel *label1 = [[UILabel alloc] initWithFrame: CGRectMake(20, 3, 264, 21)];
+		UILabel *label = [[UILabel alloc] initWithFrame: CGRectMake(20, 3, 264, 38)];
 		
-		self.nameLabel = label1;
-		self.valueLabel = label2;
+		//self.nameLabel = label1;
+		self.valueLabel = label;
 		
-		[label1 release];
-		[label2 release];
+		//[label1 release];
+		[label release];
 		
-		valueLabel.textAlignment = UITextAlignmentRight;
+		//valueLabel.textAlignment = UITextAlignmentRight;
 		
-		[self.contentView addSubview: nameLabel];
+		//[self.contentView addSubview: nameLabel];
 		[self.contentView addSubview: valueLabel];
     }
     return self;
@@ -42,7 +43,7 @@
 
 
 - (void)dealloc {
-	self.nameLabel = nil;
+	//self.nameLabel = nil;
 	self.valueLabel = nil;
 	
     [super dealloc];
