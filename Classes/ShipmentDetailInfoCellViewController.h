@@ -10,10 +10,11 @@
 
 
 @interface ShipmentDetailInfoCellViewController : UITableViewCell {
-	UILabel *nameLabel;
+	//UILabel *nameLabel;
 	UILabel *valueLabel;
 }
 
-@property (nonatomic, retain) UILabel *nameLabel, *valueLabel;
+//@property (nonatomic, retain) UILabel *nameLabel, *valueLabel;
+@property (nonatomic, retain) UILabel *valueLabel;
 
 @end
