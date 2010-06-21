@@ -109,7 +109,7 @@
 			cell = [[ShipmentDetailInfoCellViewController alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: cellID];
 		}
 		
-		switch ( indexPath.row ) {
+		/*switch ( indexPath.row ) {
 			case 0:
 				cell.nameLabel.text = @"BL #";
 				cell.valueLabel.text = self.shipment.blNum;
@@ -136,6 +136,35 @@
 					cell.valueLabel.text = @"Another random value";
 				}
 				break;
+		}*/
+		
+		switch ( indexPath.section ) {
+			case 1:
+				//cell.nameLabel.text = @"BL #";
+				cell.valueLabel.text = self.shipment.blNum;
+				break;
+			case 2:
+				//cell.nameLabel.text = @"Shipper";
+				cell.valueLabel.text = self.shipment.shipperName;
+				break;
+			case 3:
+				if ( [self.activeStat isEqualToString: iSTAT] ) {
+					//cell.nameLabel.text = @"Coordinator";
+					cell.valueLabel.text = self.shipment.coordinator;
+				} else {
+					//cell.nameLabel.text = @"Something";
+					cell.valueLabel.text = @"Random value";
+				}
+				break;
+			case 4:
+				if ( [self.activeStat isEqualToString: iSTAT] ) {
+					//cell.nameLabel.text = @"Vessel";
+					cell.valueLabel.text = self.shipment.vessel;
+				} else {
+					cell.nameLabel.text = @"Something else";
+					cell.valueLabel.text = @"Another random value";
+				}
+				break;
 		}
 		
 		return cell;
@@ -143,22 +172,43 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return 2;
+	//return 2;
+	return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	if ( section == 0 ) {
+	/*if ( section == 0 ) {
 		return 1;
 	} else {
 		return 4;
-	}
+	}*/
+	
+	return 1;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	if ( section == 1 ) {
+	/*if ( section == 1 ) {
 		return @"Shipment Details";
 	} else {
 		return nil;
+	}*/
+	
+	switch ( section ) {
+		case 1:
+			return @"BL #";
+			break;
+		case 2:
+			return @"Shipper";
+			break;
+		case 3:
+			return @"Coordinator";
+			break;
+		case 4:
+			return @"Vessel";
+			break;
+		default:
+			return nil;
+			break;
 	}
 }
 
