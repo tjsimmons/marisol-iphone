@@ -148,13 +148,14 @@
 	UITableViewCell *cell = [self.infoTableView dequeueReusableCellWithIdentifier: cellID];
 
 	if ( cell == nil ) {
-		cell = [[[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: cellID] autorelease];
+		cell = [[[UITableViewCell alloc] initWithStyle: UITableViewCellStyleSubtitle reuseIdentifier: cellID] autorelease];
 	}
 	
 	if ( dataLoaded ) {
 		HomeCellModel *cellModel = [self.cellInformation objectAtIndex: indexPath.section];
 		
 		cell.textLabel.text = cellModel.cellTitle;
+		cell.detailTextLabel.text = cellModel.cellValue;
 	}
 	
 	return cell;
@@ -166,7 +167,11 @@
 }
 
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
-	return 4;
+	if ( !dataLoaded ) {
+		return 4;
+	} else {
+		return [self.cellInformation count];
+	}
 }
 
 #pragma mark -

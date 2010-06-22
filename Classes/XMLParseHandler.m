@@ -130,7 +130,7 @@
 			self.currentObject = cellModel;
 			[cellModel release];
 			
-			[currentObject setCellIndex: [[attributeDict objectForKey: @"index"] integerValue]];
+			//[currentObject setCellIndex: [[attributeDict objectForKey: @"index"] integerValue]];
 		} else if ( [elementName isEqualToString: kTitleElementName] ) {
 			[currentObject setCellValue: [attributeDict objectForKey: @"value"]];
 			

@@ -11,7 +11,7 @@
 
 @implementation HomeCellModel
 
-@synthesize cellIndex;
+//@synthesize cellIndex;
 @synthesize cellTitle;
 @synthesize cellValue;
 
