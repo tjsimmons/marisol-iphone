@@ -45,46 +45,46 @@
 }
 
 -(void) setCellValues {
-	UITableViewCell *cell;
-	UILabel *titleLabel;
-	UILabel *valueLabel;
-	HomeCellModel *cellModel;
-	
-	for ( int i = 0; i < [self.cellInformation count]; i++ ) {
-		cellModel = (HomeCellModel *) [self.cellInformation objectAtIndex: i];
-		
-		switch ( i ) {
-			case 0:
-				cell = self.firstCell;
-				titleLabel = (UILabel *) [cell viewWithTag: MIFirstTitleTag];
-				valueLabel = (UILabel *) [cell viewWithTag: MIFirstValueTag];
-				
-				break;
-			case 1:
-				cell = self.secondCell;
-				titleLabel = (UILabel *) [cell viewWithTag: MISecondTitleTag];
-				valueLabel = (UILabel *) [cell viewWithTag: MISecondValueTag];
-				
-				break;
-			case 2:
-				cell = self.thirdCell;
-				titleLabel = (UILabel *) [cell viewWithTag: MIThirdTitleTag];
-				valueLabel = (UILabel *) [cell viewWithTag: MIThirdValueTag];
-				
-				break;
-			case 3:
-				cell = self.fourthCell;
-				titleLabel = (UILabel *) [cell viewWithTag: MIFourthTitleTag];
-				valueLabel = (UILabel *) [cell viewWithTag: MIFourthValueTag];
-				
-				break;
-			default:
-				break;
-		}
-		
-		titleLabel.text = cellModel.cellTitle;
-		valueLabel.text = cellModel.cellValue;
-	}
+	/*UITableViewCell *cell;
+	 UILabel *titleLabel;
+	 UILabel *valueLabel;
+	 HomeCellModel *cellModel;
+	 
+	 for ( int i = 0; i < [self.cellInformation count]; i++ ) {
+	 cellModel = (HomeCellModel *) [self.cellInformation objectAtIndex: i];
+	 
+	 switch ( i ) {
+	 case 0:
+	 cell = self.firstCell;
+	 titleLabel = (UILabel *) [cell viewWithTag: MIFirstTitleTag];
+	 valueLabel = (UILabel *) [cell viewWithTag: MIFirstValueTag];
+	 
+	 break;
+	 case 1:
+	 cell = self.secondCell;
+	 titleLabel = (UILabel *) [cell viewWithTag: MISecondTitleTag];
+	 valueLabel = (UILabel *) [cell viewWithTag: MISecondValueTag];
+	 
+	 break;
+	 case 2:
+	 cell = self.thirdCell;
+	 titleLabel = (UILabel *) [cell viewWithTag: MIThirdTitleTag];
+	 valueLabel = (UILabel *) [cell viewWithTag: MIThirdValueTag];
+	 
+	 break;
+	 case 3:
+	 cell = self.fourthCell;
+	 titleLabel = (UILabel *) [cell viewWithTag: MIFourthTitleTag];
+	 valueLabel = (UILabel *) [cell viewWithTag: MIFourthValueTag];
+	 
+	 break;
+	 default:
+	 break;
+	 }
+	 
+	 titleLabel.text = cellModel.cellTitle;
+	 valueLabel.text = cellModel.cellValue;
+	 }*/
 }
 
 -(void) showChooser {
@@ -112,38 +112,73 @@
 -(void) xmlDidFinishParsingWithArray: (NSMutableArray *) array {
 	self.cellInformation = array;
 	dataLoaded = YES;
-
-	[self setCellValues];
+	
+	//[self setCellValues];
+	[self.infoTableView reloadData];
 }
 
 #pragma mark -
 #pragma mark UITableView Data Source Methods
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	UITableViewCell *cell;
+	/*UITableViewCell *cell;
+	 
+	 switch ( indexPath.row ) {
+	 case 0:
+	 cell = self.firstCell;
+	 break;
+	 case 1:
+	 cell = self.secondCell;
+	 break;
+	 case 2:
+	 cell = self.thirdCell;
+	 break;
+	 case 3:
+	 cell = self.fourthCell;
+	 break;
+	 default:
+	 return nil;
+	 break;
+	 }
+	 
+	 return cell;*/
 	
-	switch ( indexPath.row ) {
-		case 0:
-			cell = self.firstCell;
-			break;
-		case 1:
-			cell = self.secondCell;
-			break;
-		case 2:
-			cell = self.thirdCell;
-			break;
-		case 3:
-			cell = self.fourthCell;
-			break;
-		default:
-			return nil;
-			break;
+	static NSString *cellID = @"CellID";
+	
+	UITableViewCell *cell = [self.infoTableView dequeueReusableCellWithIdentifier: cellID];
+	
+	if ( cell == nil ) {
+		cell = [[[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: cellID] autorelease];
+		
+		//cell.contentView.backgroundColor = [UIColor whiteColor];
+		
+		switch ( indexPath.section ) {
+			case 0:
+				cell.textLabel.text = @"1";
+				break;
+			case 1:
+				cell.textLabel.text = @"2";
+				break;
+			case 2:
+				cell.textLabel.text = @"3";
+				break;
+			case 3:
+				cell.textLabel.text = @"4";
+				break;
+			default:
+				break;
+		}
 	}
 	
 	return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return kNumCells;
+	//return kNumCells;
+	return 1;
+}
+
+-(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
+	return 4;
 }
 
 #pragma mark -
@@ -153,7 +188,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return 105.00;
+	return 80.00;
 }
 
 #pragma mark -
@@ -175,7 +210,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-
+	
 	if ( [kUserDefaults boolForKey: kLoggedInKey] ) {
 		[self startConnectionForCellData];
 	} else if ( ![kUserDefaults boolForKey: kLoggedInKey] ) {
