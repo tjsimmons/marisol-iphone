@@ -68,6 +68,9 @@
 #pragma mark -
 #pragma mark Table view delegate
 -(IBAction) cancel {
+	[kUserDefaults setBool: YES forKey: kLoggedInKey];
+	[kUserDefaults setObject: @"cancel" forKey: kCustomerKey];
+	
 	[self dismissModalViewControllerAnimated: YES];
 }
 
@@ -100,6 +103,7 @@
 	}
 	
 	[chosenCell setAccessoryType: UITableViewCellAccessoryCheckmark];
+	
 	self.lastCheckedCell = indexPath;
 	
 	[self.MItableView deselectRowAtIndexPath: indexPath animated: YES];
@@ -121,23 +125,6 @@
     // For example: self.myOutlet = nil;
 	self.MItableView = nil;
 }
-
--(void) viewWillAppear:(BOOL)animated {
-	[super viewWillAppear:animated];
-}
-
--(void) viewDidAppear:(BOOL)animated {
-	[super viewDidAppear: animated];
-}
-
--(void) viewWillDisappear:(BOOL)animated {
-	[super viewWillDisappear:animated];
-}
-
--(void) viewDidDisappear:(BOOL)animated {
-	[super viewDidDisappear: animated];
-}
-
 
 - (void)dealloc {
 	self.customerList = nil;
