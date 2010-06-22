@@ -18,7 +18,6 @@
 
 @synthesize customerList, cellInformation;
 @synthesize infoTableView;
-@synthesize firstCell, secondCell, thirdCell, fourthCell;
 
 #pragma mark -
 #pragma mark Custom Methods
@@ -42,50 +41,6 @@
 		
 		loadCount++;
 	}
-}
-
--(void) setCellValues {
-	[self.infoTableView reloadData];
-	/*UITableViewCell *cell;
-	 UILabel *titleLabel;
-	 UILabel *valueLabel;
-	 HomeCellModel *cellModel;
-	 
-	 for ( int i = 0; i < [self.cellInformation count]; i++ ) {
-	 cellModel = (HomeCellModel *) [self.cellInformation objectAtIndex: i];
-	 
-	 switch ( i ) {
-	 case 0:
-	 cell = self.firstCell;
-	 titleLabel = (UILabel *) [cell viewWithTag: MIFirstTitleTag];
-	 valueLabel = (UILabel *) [cell viewWithTag: MIFirstValueTag];
-	 
-	 break;
-	 case 1:
-	 cell = self.secondCell;
-	 titleLabel = (UILabel *) [cell viewWithTag: MISecondTitleTag];
-	 valueLabel = (UILabel *) [cell viewWithTag: MISecondValueTag];
-	 
-	 break;
-	 case 2:
-	 cell = self.thirdCell;
-	 titleLabel = (UILabel *) [cell viewWithTag: MIThirdTitleTag];
-	 valueLabel = (UILabel *) [cell viewWithTag: MIThirdValueTag];
-	 
-	 break;
-	 case 3:
-	 cell = self.fourthCell;
-	 titleLabel = (UILabel *) [cell viewWithTag: MIFourthTitleTag];
-	 valueLabel = (UILabel *) [cell viewWithTag: MIFourthValueTag];
-	 
-	 break;
-	 default:
-	 break;
-	 }
-	 
-	 titleLabel.text = cellModel.cellTitle;
-	 valueLabel.text = cellModel.cellValue;
-	 }*/
 }
 
 -(void) showChooser {
@@ -113,36 +68,13 @@
 -(void) xmlDidFinishParsingWithArray: (NSMutableArray *) array {
 	self.cellInformation = array;
 	dataLoaded = YES;
-	
-	[self setCellValues];
-	//[self.infoTableView reloadData];
+
+	[self.infoTableView reloadData];
 }
 
 #pragma mark -
 #pragma mark UITableView Data Source Methods
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	/*UITableViewCell *cell;
-	 
-	 switch ( indexPath.row ) {
-	 case 0:
-	 cell = self.firstCell;
-	 break;
-	 case 1:
-	 cell = self.secondCell;
-	 break;
-	 case 2:
-	 cell = self.thirdCell;
-	 break;
-	 case 3:
-	 cell = self.fourthCell;
-	 break;
-	 default:
-	 return nil;
-	 break;
-	 }
-	 
-	 return cell;*/
-	
 	static NSString *cellID = @"CellID";
 	
 	UITableViewCell *cell = [self.infoTableView dequeueReusableCellWithIdentifier: cellID];
@@ -162,7 +94,6 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	//return kNumCells;
 	return 1;
 }
 
@@ -230,11 +161,6 @@
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
 	self.infoTableView = nil;
-	
-	self.firstCell = nil;
-	self.secondCell = nil;
-	self.thirdCell = nil;
-	self.fourthCell = nil;
 }
 
 
@@ -243,14 +169,8 @@
 	self.cellInformation = nil;
 	
 	self.infoTableView = nil;
-	
-	self.firstCell = nil;
-	self.secondCell = nil;
-	self.thirdCell = nil;
-	self.fourthCell = nil;
-	
+
     [super dealloc];
 }
-
 
 @end
