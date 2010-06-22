@@ -10,12 +10,12 @@
 
 
 @interface HomeCellModel : NSObject {
-	NSInteger cellIndex;
+	//NSInteger cellIndex;
 	NSString *cellTitle;
 	NSString *cellValue;
 }
 
-@property (nonatomic) NSInteger cellIndex;
+//@property (nonatomic) NSInteger cellIndex;
 @property (nonatomic, retain) NSString *cellTitle;
 @property (nonatomic, retain) NSString *cellValue;
 
