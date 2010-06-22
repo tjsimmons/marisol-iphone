@@ -11,10 +11,6 @@
 #import "ConnectionHandler.h"
 #import "XMLParseHandler.h"
 
-typedef enum { MIFirstTitleTag = 11, MIFirstValueTag, MISecondTitleTag = 21, MISecondValueTag, MIThirdTitleTag = 31, MIThirdValueTag, MIFourthTitleTag = 41,
-	MIFourthValueTag } tags;
-
-
 @interface HomeViewController : UIViewController <ConnectionHandlerDelegate, XMLParseHandlerDelegate, UITableViewDataSource, UITableViewDelegate> {
 	NSArray *customerList;
 	NSArray *cellInformation;
@@ -22,12 +18,6 @@ typedef enum { MIFirstTitleTag = 11, MIFirstValueTag, MISecondTitleTag = 21, MIS
 	BOOL dataLoaded;
 	
 	UITableView *infoTableView;
-	
-	// cells for the home screen
-	UITableViewCell *firstCell;
-	UITableViewCell *secondCell;
-	UITableViewCell *thirdCell;
-	UITableViewCell *fourthCell;
 }
 
 @property (nonatomic, retain) NSArray *customerList;
@@ -35,12 +25,6 @@ typedef enum { MIFirstTitleTag = 11, MIFirstValueTag, MISecondTitleTag = 21, MIS
 
 @property (nonatomic, retain) IBOutlet UITableView *infoTableView;
 
-@property (nonatomic, retain) IBOutlet UITableViewCell *firstCell;
-@property (nonatomic, retain) IBOutlet UITableViewCell *secondCell;
-@property (nonatomic, retain) IBOutlet UITableViewCell *thirdCell;
-@property (nonatomic, retain) IBOutlet UITableViewCell *fourthCell;
-
--(void) setCellValues;//WithArray: (NSArray *) array;
 -(void) startConnectionForCellData;
 -(void) showChooser;
 

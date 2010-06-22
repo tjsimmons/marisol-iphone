@@ -106,7 +106,7 @@
 		ShipmentDetailInfoCellViewController *cell = (ShipmentDetailInfoCellViewController *) [self.shipmentDetailTableView dequeueReusableCellWithIdentifier: cellID];
 		
 		if ( cell == nil ) {
-			cell = [[ShipmentDetailInfoCellViewController alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: cellID];
+			cell = [[[ShipmentDetailInfoCellViewController alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: cellID] autorelease];
 		}
 		
 		switch ( indexPath.section ) {
