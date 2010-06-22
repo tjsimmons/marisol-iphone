@@ -51,6 +51,16 @@
 	[self presentModalViewController: chooserVC animated: YES];
 }
 
+-(void) showLoginView {
+	LoginViewController *loginController = [[LoginViewController alloc] initWithNibName: @"LoginViewController" bundle: nil];
+	
+	loginController.parentController = self;
+	
+	[self presentModalViewController: loginController animated: YES];
+	
+	[loginController release];
+}
+
 #pragma mark -
 #pragma mark Connection Handler Delegate Method
 -(void) connectionFinishedWithFilePath: (NSString *) filePath {
@@ -123,13 +133,7 @@
 	dataLoaded = NO;
 	
 	if ( ![kUserDefaults boolForKey: kLoggedInKey] ) {
-		
-		LoginViewController *loginController = [[LoginViewController alloc] initWithNibName: @"LoginViewController" bundle: nil];
-		loginController.parentController = self;
-		
-		[self presentModalViewController: loginController animated: YES];
-		
-		[loginController release];
+		[self showLoginView];
 	}
 }
 
@@ -137,7 +141,14 @@
     [super viewDidAppear:animated];
 	
 	if ( [kUserDefaults boolForKey: kLoggedInKey] ) {
-		[self startConnectionForCellData];
+		if ( [[kUserDefaults objectForKey: kCustomerKey] isEqualToString: @"cancel"] ) {
+			[kUserDefaults setObject: nil forKey: kCustomerKey];
+			[kUserDefaults setBool: NO forKey: kLoggedInKey];
+			
+			[self performSelector: @selector(showLoginView) withObject: nil afterDelay: 0.1];
+		} else {
+			[self startConnectionForCellData];
+		}
 	} else if ( ![kUserDefaults boolForKey: kLoggedInKey] ) {
 		[self performSelector: @selector(showChooser) withObject: nil afterDelay: 0.1];
 	}

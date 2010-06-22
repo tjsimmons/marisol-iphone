@@ -25,6 +25,7 @@
 
 @property (nonatomic, retain) IBOutlet UITableView *infoTableView;
 
+-(void) showLoginView;
 -(void) startConnectionForCellData;
 -(void) showChooser;
 
