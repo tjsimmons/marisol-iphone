@@ -45,6 +45,7 @@
 }
 
 -(void) setCellValues {
+	[self.infoTableView reloadData];
 	/*UITableViewCell *cell;
 	 UILabel *titleLabel;
 	 UILabel *valueLabel;
@@ -113,8 +114,8 @@
 	self.cellInformation = array;
 	dataLoaded = YES;
 	
-	//[self setCellValues];
-	[self.infoTableView reloadData];
+	[self setCellValues];
+	//[self.infoTableView reloadData];
 }
 
 #pragma mark -
@@ -145,28 +146,15 @@
 	static NSString *cellID = @"CellID";
 	
 	UITableViewCell *cell = [self.infoTableView dequeueReusableCellWithIdentifier: cellID];
-	
+
 	if ( cell == nil ) {
 		cell = [[[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: cellID] autorelease];
+	}
+	
+	if ( dataLoaded ) {
+		HomeCellModel *cellModel = [self.cellInformation objectAtIndex: indexPath.section];
 		
-		//cell.contentView.backgroundColor = [UIColor whiteColor];
-		
-		switch ( indexPath.section ) {
-			case 0:
-				cell.textLabel.text = @"1";
-				break;
-			case 1:
-				cell.textLabel.text = @"2";
-				break;
-			case 2:
-				cell.textLabel.text = @"3";
-				break;
-			case 3:
-				cell.textLabel.text = @"4";
-				break;
-			default:
-				break;
-		}
+		cell.textLabel.text = cellModel.cellTitle;
 	}
 	
 	return cell;
@@ -202,6 +190,7 @@
 		
 		LoginViewController *loginController = [[LoginViewController alloc] initWithNibName: @"LoginViewController" bundle: nil];
 		loginController.parentController = self;
+		
 		[self presentModalViewController: loginController animated: YES];
 		
 		[loginController release];
