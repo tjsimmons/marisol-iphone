@@ -20,7 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	//self.view.frame = CGRectMake(0, 0, 320, 480);
+	self.view.frame = CGRectMake(0, 0, 320, 480);
+	self.MItableView.frame = CGRectMake(0, 0, 320, 445);
 	
 	self.MItableView.delegate = self;
 }
@@ -68,8 +69,6 @@
 #pragma mark Table view delegate
 -(IBAction) cancel {
 	[self dismissModalViewControllerAnimated: YES];
-	NSLog(@"istat %i", [kUserDefaults boolForKey: kIstatKey]);
-	NSLog(@"customer %@", [kUserDefaults objectForKey: kCustomerKey]);
 }
 
 -(IBAction) setCustomer {
