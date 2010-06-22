@@ -153,7 +153,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return 105;
+	return 105.00;
 }
 
 #pragma mark -
@@ -162,8 +162,6 @@
     [super viewDidLoad];
 	
 	dataLoaded = NO;
-	
-	self.infoTableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
 	
 	if ( ![kUserDefaults boolForKey: kLoggedInKey] ) {
 		
@@ -187,10 +185,6 @@
 
 -(void) viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	
-	/*if ( [kUserDefaults boolForKey: kLoggedInKey] && !cellsLoaded ) {
-		[self addCellsToHomeScreen];
-	}*/
 }
 
 #pragma mark -
